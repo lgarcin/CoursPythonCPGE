@@ -1,0 +1,6 @@
+ipython
+matplotlib
+sphinxcontrib-tikz
+sphinxcontrib-programoutput
+bokeh
+scipy

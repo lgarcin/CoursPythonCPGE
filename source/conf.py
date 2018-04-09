@@ -38,11 +38,18 @@ release = ''
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinx.ext.todo',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.githubpages',
-]
+extensions = ['sphinx.ext.mathjax',
+              'sphinx.ext.viewcode',
+              'sphinx.ext.githubpages',
+              'sphinx.ext.doctest',
+              'sphinx.ext.todo',
+              'IPython.sphinxext.ipython_console_highlighting',
+              'IPython.sphinxext.ipython_directive',
+              'matplotlib.sphinxext.only_directives',
+              'matplotlib.sphinxext.plot_directive',
+              'bokeh.sphinxext.bokeh_plot',
+              'sphinxcontrib.tikz',
+              'sphinxcontrib.programoutput']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -77,7 +84,10 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+import sphinx_rtd_theme
+html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -164,3 +174,21 @@ texinfo_documents = [
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+
+
+plot_include_source = True
+ipython_savefig_dir = '_images'
+
+
+# TikZ config
+tikz_proc_suite = 'GhostScript'
+tikz_libraries = 'positioning, arrows, matrix'
+latex_elements = {
+    'preamble': '\usepackage{tikz}' + '\usetikzlibrary{' + tikz_libraries + '}'
+}
+
+
+# Google API key (for bokeh)
+import os
+os.environ["GOOGLE_API_KEY"] = "AIzaSyDDqERR0JGYccAP_vlLzaKRPxrngg-xTew"
