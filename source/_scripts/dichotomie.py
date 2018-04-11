@@ -24,7 +24,7 @@ for _ in range(N + 1):
 
 source = ColumnDataSource(data=dict(la=la, lb=lb, lc=lc))
 
-p = figure(title='Résolution par dichotomie  zdez', plot_width=700, plot_height=500)
+p = figure(title='Résolution par dichotomie', plot_width=700, plot_height=500)
 p.title.align = 'center'
 p.line(x, y, line_width=2)
 

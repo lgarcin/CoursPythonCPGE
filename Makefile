@@ -10,6 +10,7 @@ BUILDDIR      = build
 
 deploy:
 	cd "$(BUILDDIR)/html" &&\
+	sed -i 's@src="/scripts@src="scripts@g' *.html &&\
 	git config user.email "laurent.garcin@gmail.com" &&\
 	git config user.name "lgarcin" &&\
 	git add -A &&\
