@@ -20,6 +20,7 @@ On suppose qu'on dispose d'une fonction :math:`f` continue et strictement monoto
 .. bokeh-plot:: source/_scripts/dichotomie.py
     :source-position: none
 
+Bla
 
 .. ipython:: python
 
