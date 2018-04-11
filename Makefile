@@ -9,6 +9,10 @@ SOURCEDIR     = source
 BUILDDIR      = build
 
 deploy:
+	make clean &&\
+	git worktree prune &&\
+	git worktree add build/html gh-pages &&\
+	make html &&\
 	cd "$(BUILDDIR)/html" &&\
 	sed -i 's@src="/scripts@src="scripts@g' *.html &&\
 	git config user.email "laurent.garcin@gmail.com" &&\
