@@ -18,6 +18,7 @@ Il faut noter que Python dispose déjà de l'opérateur :code:`in` pour tester s
 La méthode :code:`index` permet de renvoyer l'indice de l'élément dans la liste s'il a été trouvé.
 
 .. ipython:: python
+    :okexcept:
 
     [5, 4, 1, 2, 3].index(2)
     [5, 4, 1, 2, 3].index(6)
@@ -196,12 +197,7 @@ On remarque en particulier que le temps de calcul avec l'algorithme standard aug
 
 .. todo:: mettre un lien vers complexité
 
-.. .. plot::
-..
-..     from matplotlib.pyplot import plot
-..     plot([4, 3, 2])
-..
-..
+
 .. .. ipython:: python
 ..
 ..     val = []
@@ -277,6 +273,7 @@ L'objectif est de retrouver une sous-chaîne (qu'on appellera *motif*) dans une 
 La méthode :code:`index` permet de renvoyer l'indice du caractère où a été trouvé le motif le cas échéant.
 
 .. ipython:: python
+    :okexcept:
 
     "pitapipapa".index("pipa")
     "pitapipapa".index("tapa")

@@ -16,6 +16,7 @@ On peut convertir un objet d'un type vers un autre type : il suffit pour cela d'
 Il se peut que certaines conversions soient impossibles.
 
 .. ipython:: python
+    :okexcept:
 
     int('45f6')
 
@@ -30,5 +31,6 @@ L'utilisation d'opérateurs pour des objets dont le type n'est pas approprié pe
 Mais il se peut qu'aucune conversion implicite ne puisse avoir lieu, ce qui conduit alors à une erreur.
 
 .. ipython:: python
+    :okexcept:
 
     'a' + 1.23

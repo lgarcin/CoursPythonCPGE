@@ -16,7 +16,7 @@ Un dessin vaut probablement mieux qu'un long discours.
 .. ipython:: python
 
     @suppress
-    %run ./scripts/tri_insertion.py
+    %run source/_scripts/ tri_insertion.py
 
 .. image:: _images/tri_insertion.gif
 
@@ -51,7 +51,7 @@ Tri rapide
 .. ipython:: python
 
     def tri_rapide(tab):
-        if tab == []:
+        if len(tab) == 0:
             return []
         else:
             pivot = tab[0]
@@ -69,6 +69,7 @@ Tri rapide
     tab = randint(100, size=20)
     tab
     tri_rapide(tab)
+
 
 Tri par fusion
 ==============

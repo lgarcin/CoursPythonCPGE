@@ -54,6 +54,11 @@ Pour ouvrir un fichier, on utilise la fonction :code:`open` en donnant en argume
 
 .. ipython:: python
 
+    @suppress
+    %cd source
+
+.. ipython:: python
+
     f = open('test.txt', mode='r', encoding='utf8')
     f
     type(f)
@@ -76,6 +81,7 @@ On utilisera pour les exemples le fichier :file:`test.txt` suivant.
     :language: text
 
 Dans les exemples suivants, le caractère :code:`\n` désigne un *retour à la ligne*.
+
 
 .. ipython:: python
 

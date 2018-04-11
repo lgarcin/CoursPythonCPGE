@@ -12,9 +12,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
@@ -176,7 +176,6 @@ texinfo_documents = [
 todo_include_todos = True
 
 
-
 plot_include_source = True
 ipython_savefig_dir = '_images'
 
@@ -192,3 +191,5 @@ latex_elements = {
 # Google API key (for bokeh)
 import os
 os.environ["GOOGLE_API_KEY"] = "AIzaSyDDqERR0JGYccAP_vlLzaKRPxrngg-xTew"
+#bokeh_plot_pyfile_include_dirs = ["_scripts"]
+#exclude_patterns = ['conf.py']

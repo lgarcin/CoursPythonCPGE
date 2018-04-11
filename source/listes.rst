@@ -246,6 +246,7 @@ On peut combiner le slicing et le mot-clé :code:`del` pour supprimer plusieurs 
 .. [#del] De manière générale, le mot-clé :code:`del` "supprime" une variable (sans rentrer dans les détails).
 
     .. ipython:: python
+        :okexcept:
 
         a = 42
         del a

@@ -49,12 +49,8 @@ On peut **accéder** aux éléments d'un tuple de la même manière qu'on accèd
 
 Par contre, on ne peut pas **modifier** un tuple : on ne peut ni modifier ses éléments, ni en ajouter, ni en enlever.
 
-.. sourcecode:: ipython
-
-    s = (1, 2, 3)
-    s[0] = 4
-
 .. ipython:: python
+    :okexcept:
 
     s = (1, 2, 3)
     s[0] = 4

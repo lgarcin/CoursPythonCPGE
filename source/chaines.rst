@@ -34,6 +34,7 @@ On peut **accéder** de la même manière aux caractères d'une chaîne qu'aux �
 Par contre, on ne peut pas **modifier** une chaîne.
 
 .. ipython:: python
+    :okexcept:
 
     s = 'abc'
     s[0] = 'z'

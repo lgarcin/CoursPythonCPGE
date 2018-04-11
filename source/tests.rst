@@ -47,6 +47,8 @@ On peut évidemment combiner :code:`if`, :code:`elif` et :code:`else`.
 Opérateur ternaire :code:`... if ... else ...`
 ==============================================
 
+.. todo:: A compléter
+
 Python dispose
 
 ::

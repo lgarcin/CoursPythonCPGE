@@ -219,6 +219,7 @@ On dit que les variables définies à l'extérieur d'une fonction sont des varia
     Si on veut utiliser une variable globale à l'intérieur d'une fonction, il faut que celle-ci soit déclarée **avant** l'appel de cette fonction.
 
     .. ipython:: python
+        :okexcept:
 
         def f(x):
             return b * x
@@ -261,6 +262,7 @@ Quand il existe des variables locales et globales de même nom, la préférence 
 On ne peut pas accéder à des variables locales à l'extérieur de la fonction où elles sont définies.
 
 .. ipython:: python
+    :okexcept:
 
     def f():
         c = 2
@@ -290,6 +292,7 @@ On peut néanmoins modifier une variable globale à l'intérieur d'une fonction 
 Les paramètres d'une fonction ont également une portée locale.
 
 .. ipython:: python
+    :okexcept:
 
     def f(c):
         return 2 * c
