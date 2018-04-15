@@ -287,7 +287,7 @@ On présente ici un algorithme naïf qui est assez peu efficace mais qui a le m�
     def recherche_chaine(chaine, motif):
         n = len(chaine)
         m = len(motif)
-        for ind in range(n-m):
+        for ind in range(n-m+1):
             nb = 0
             while nb < m and chaine[ind+nb] == motif[nb]:
                 nb +=1
@@ -299,41 +299,15 @@ On présente ici un algorithme naïf qui est assez peu efficace mais qui a le m�
     recherche_chaine("patapipapa", "tapa")
 
 
-.. rubric:: Recherche du motif :code:`"pipa"` dans la chaîne :code:`"pitapipapa"`
+.. ipython:: python
 
-.. tikz::
-    :libs: matrix
+    @suppress
+    %run source/_scripts/recherche_chaine.py
 
-    \tikzset{g/.style={fill=gray!10,draw}}
-    \tikzset{b/.style={fill=blue!10,draw}}
-    \tikzset{r/.style={fill=red!10,draw}}
-    \tikzset{t/.style={fill=green!10,draw}}
-    \tikzset{s/.style={font=\bf}}
-    \tikzset{every node/.style={text height=1.5ex, text depth=.25ex}}
-    \matrix[matrix of nodes, nodes = {minimum width = 1.5em, minimum height = 1.5em}](recherche){
-        |[s,t]|p & |[g]|i & |[g]|t & |[g]|a & |[g]|p & |[g]|i & |[g]|p & |[g]|a & |[g]|p & |[g]|a\\
-        |[s,t]|p & |[t]|i & |[g]|t & |[g]|a & |[g]|p & |[g]|i & |[g]|p & |[g]|a & |[g]|p & |[g]|a\\
-        |[s,t]|p & |[t]|i & |[r]|t & |[g]|a & |[g]|p & |[g]|i & |[g]|p & |[g]|a & |[g]|p & |[g]|a\\
-        |[g]|p & |[s,r]|i & |[g]|t & |[g]|a & |[g]|p & |[g]|i & |[g]|p & |[g]|a & |[g]|p & |[g]|a\\
-        |[g]|p & |[g]|i & |[s,r]|t & |[g]|a & |[g]|p & |[g]|i & |[g]|p & |[g]|a & |[g]|p & |[g]|a\\
-        |[g]|p & |[g]|i & |[g]|t & |[s,r]|a & |[g]|p & |[g]|i & |[g]|p & |[g]|a & |[g]|p & |[g]|a\\
-        |[g]|p & |[g]|i & |[g]|t & |[g]|a & |[s,t]|p & |[g]|i & |[g]|p & |[g]|a & |[g]|p & |[g]|a\\
-        |[g]|p & |[g]|i & |[g]|t & |[g]|a & |[s,t]|p & |[t]|i & |[g]|p & |[g]|a & |[g]|p & |[g]|a\\
-        |[g]|p & |[g]|i & |[g]|t & |[g]|a & |[s,t]|p & |[t]|i & |[t]|p & |[g]|a & |[g]|p & |[g]|a\\
-        |[g]|p & |[g]|i & |[g]|t & |[g]|a & |[s,t]|p & |[t]|i & |[t]|p & |[t]|a & |[g]|p & |[g]|a\\
-    };
-    \node[right of=recherche-1-10, anchor=west]{\tt{ind=0, nb=1}};
-    \node[right of=recherche-2-10, anchor=west]{\tt{ind=0, nb=2}};
-    \node[right of=recherche-3-10, anchor=west]{\tt{ind=0, nb=2}};
-    \node[right of=recherche-4-10, anchor=west]{\tt{ind=1, nb=0}};
-    \node[right of=recherche-5-10, anchor=west]{\tt{ind=2, nb=0}};
-    \node[right of=recherche-6-10, anchor=west]{\tt{ind=3, nb=0}};
-    \node[right of=recherche-7-10, anchor=west]{\tt{ind=4, nb=1}};
-    \node[right of=recherche-8-10, anchor=west]{\tt{ind=4, nb=2}};
-    \node[right of=recherche-9-10, anchor=west]{\tt{ind=4, nb=3}};
-    \node[right of=recherche-10-10, anchor=west]{\tt{ind=4, nb=4}};
+.. image:: _images/recherche_chaine_win.gif
 
-.. todo:: remplacer par une animation
+.. image:: _images/recherche_chaine_lose.gif
+
 
 On peut à nouveau proposer une version de l'algorithme qui renvoie l'indice de la *première occurence* rencontrée.
 

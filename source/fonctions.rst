@@ -140,13 +140,10 @@ La plupart du temps, on préfèrera utiliser utiliser :code:`return` plutôt que
     sum(liste_carres2(10))
 
 
-.. todo:: on peut déclarer une fonction dans une autre fonction.
-
-
 Paramètres et arguments
 =======================
 
-Une fonction peut avoir zéro, un ou plusieurs paramètres [#zeroargument]_.
+Une fonction peut avoir zéro, un ou plusieurs paramètres [#zeroparametre]_.
 
 .. note:: Bien que les termes *paramètres* et *arguments* soient souvent confondus, il existe une nuance dont nous tiendrons compte dans ce chapitre : les *paramètres* sont les noms intervenant dans l'en-tête de la fonction tandis que les *arguments* sont les valeurs passées à la fonction lors de son appel.
 
@@ -510,7 +507,7 @@ Bien entendu, on arriverait plus aisément au même résultat grâce à une list
 
 .. rubric:: Notes
 
-.. [#zeroargument] Une fonction sans paramètre nécessite quand même des parenthèses dans son en-tête.
+.. [#zeroparametre] Une fonction sans paramètre nécessite quand même des parenthèses dans son en-tête.
 
     .. ipython:: python
 
@@ -531,5 +528,3 @@ Bien entendu, on arriverait plus aisément au même résultat grâce à une list
 
 
 .. todo:: Documentation d'une fonction
-
-.. todo:: définir une fonction à l'intérieur d'une autre fonction

@@ -2,16 +2,19 @@
 Tests
 =====
 
-Un test permet d'effectuer un bloc d'instructions lorsqu'une condition est remplie. On emploie pour cela le mot-clé :code:`if` suivie d'une expression à valeur booléenne.
+Branchements conditionnels
+==========================
+
+On souhaite exécuter un bloc d'instructions uniquement si une condition est remplie. On emploie pour cela le mot-clé :code:`if` suivie d'une expression à valeur booléenne.
 
 .. ipython:: python
 
     a = 4       # Changer la valeur de a pour comprendre ce qui se passe
-    if a % 2 ==0 :
+    if a % 2 == 0 :
         print('a est pair')
 
 
-Si on veut introduire un bloc d'instructions à exécuter lorsque la condition **n'est pas** remplie, on emploie le mot-clé :code:`else`.
+Si on veut introduire en plus un bloc d'instructions à exécuter lorsque la condition **n'est pas** remplie, on emploie le mot-clé :code:`else`.
 
 .. ipython:: python
 
@@ -44,18 +47,17 @@ On peut évidemment combiner :code:`if`, :code:`elif` et :code:`else`.
     else:
     ...  print('a est impair et inférieur ou égal à 3')
 
-Opérateur ternaire :code:`... if ... else ...`
+
+Expression conditionnelle
 ==============================================
 
-.. todo:: A compléter
-
-Python dispose
+On appelle *expression conditionnelle* une expression de la forme suivante.
 
 ::
 
     <expression1> if <condition> else <expression2>
 
-Cette expression est évaluée comme :code:`<expression1>` si :code:`<condition>` est vraie et comme :code:`<expression2>` sinon.
+Cette expression est évaluée comme :code:`<expression1>` si :code:`<condition>` est vraie et comme :code:`<expression2>` sinon [#operateur_ternaire]_.
 
 .. ipython:: python
 
@@ -74,3 +76,5 @@ Ce type d'expression peut également accomplir une action plutôt que de renvoye
     # En fait, l'expression est évaluée à None
     print(li.append('toto') if a == 1 else li.append('titi'))
     li
+
+.. [#operateur_ternaire] On dit également que :code:`... if ... else ...` est un opérateur *ternaire*. En effet, une expression conditionnelle prend *trois* arguments et renvoie une valeur.

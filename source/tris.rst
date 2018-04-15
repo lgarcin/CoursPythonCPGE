@@ -16,7 +16,7 @@ Un dessin vaut probablement mieux qu'un long discours.
 .. ipython:: python
 
     @suppress
-    %run source/_scripts/ tri_insertion.py
+    %run source/_scripts/tri_insertion.py
 
 .. image:: _images/tri_insertion.gif
 
