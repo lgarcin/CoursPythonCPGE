@@ -35,3 +35,4 @@ Index et tables
 .. todo:: opérateur * (unpacking)
 .. todo:: Gérer l'intégration des scripts bokeh interactifs
 .. todo:: des trucs sur assert
+.. todo:: la récursivité, c'est le mal

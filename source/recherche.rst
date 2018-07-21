@@ -299,11 +299,6 @@ On présente ici un algorithme naïf qui est assez peu efficace mais qui a le m�
     recherche_chaine("patapipapa", "tapa")
 
 
-.. ipython:: python
-
-    @suppress
-    %run source/_scripts/recherche_chaine.py
-
 .. image:: _images/recherche_chaine_win.gif
 
 .. image:: _images/recherche_chaine_lose.gif

@@ -49,7 +49,7 @@ On peut évidemment combiner :code:`if`, :code:`elif` et :code:`else`.
 
 
 Expression conditionnelle
-==============================================
+=========================
 
 On appelle *expression conditionnelle* une expression de la forme suivante.
 

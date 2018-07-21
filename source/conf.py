@@ -193,3 +193,7 @@ import os
 os.environ["GOOGLE_API_KEY"] = "AIzaSyDDqERR0JGYccAP_vlLzaKRPxrngg-xTew"
 #bokeh_plot_pyfile_include_dirs = ["_scripts"]
 #exclude_patterns = ['conf.py']
+
+
+# import _scripts.recherche_chaine
+# import _scripts.tri_insertion
