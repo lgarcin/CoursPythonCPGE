@@ -45,7 +45,6 @@ extensions = ['sphinx.ext.mathjax',
               'sphinx.ext.todo',
               'IPython.sphinxext.ipython_console_highlighting',
               'IPython.sphinxext.ipython_directive',
-              'matplotlib.sphinxext.only_directives',
               'matplotlib.sphinxext.plot_directive',
               'bokeh.sphinxext.bokeh_plot',
               'sphinxcontrib.tikz',
@@ -184,7 +183,7 @@ ipython_savefig_dir = '_images'
 tikz_proc_suite = 'GhostScript'
 tikz_libraries = 'positioning, arrows, matrix'
 latex_elements = {
-    'preamble': '\usepackage{tikz}' + '\usetikzlibrary{' + tikz_libraries + '}'
+    'preamble': '\\usepackage{tikz}' + '\\usetikzlibrary{' + tikz_libraries + '}'
 }
 
 

@@ -8,7 +8,7 @@ Résolution d'équations par dichotomie
 
 Il s'agit ici de calculer une *valeur approchée* d'une solution d'une équation du type :math:`f(x)=0`. On ne cherche pas à obtenir une expression exacte d'une telle solution, ce qui est de toute façon évidemment impossible de manière générale.
 
-On suppose qu'on dispose d'une fonction :math:`f` continue et strictement monotone sur un intervale :math:`[a,b]` vérifiant :math:`f(a)f(b)\leq0`. Le théorème des valeurs intermédiaires garantit l'existence d'une unique solution à l'équation :math:`f(x)=0` sur l'intervalle :math:`[a,b]`. Pour obtenir une *valeur approchée* de cette solution, on procède par **dichotomie** :
+On suppose qu'on dispose d'une fonction :math:`f` continue et strictement monotone sur un intervalle :math:`[a,b]` vérifiant :math:`f(a)f(b)\leq0`. Le théorème des valeurs intermédiaires garantit l'existence d'une unique solution à l'équation :math:`f(x)=0` sur l'intervalle :math:`[a,b]`. Pour obtenir une *valeur approchée* de cette solution, on procède par **dichotomie** :
 
     1. On calcule :math:`c=(a+b)/2` et :math:`f(c)`.
     2. Si :math:`f(a)f(c)\leq0`, la solution appartient à l'intervalle :math:`[a,c]`. Sinon, elle appartient à l'intervalle :math:`[c,b]`.
@@ -17,7 +17,7 @@ On suppose qu'on dispose d'une fonction :math:`f` continue et strictement monoto
     5. La valeur de :math:`c` est alors une valeur appochée de la solution de :math:`f(x)=0` à :math:`\epsilon/2` près.
 
 
-.. bokeh-plot:: source/_scripts/dichotomie.py
+.. bokeh-plot:: _scripts/dichotomie.py
     :source-position: none
 
 .. ipython:: python
@@ -58,7 +58,7 @@ Méthode des rectangles
 
 On peut approcher une intégrale par une somme d'aire de rectangles comme l'indique la figure suivante.
 
-.. bokeh-plot:: source/_scripts/rectangles.py
+.. bokeh-plot:: _scripts/rectangles.py
     :source-position: none
 
 
@@ -103,7 +103,7 @@ Méthode des trapèzes
 
 On peut également apporcher une intégrale comme une somme d'aires de trapèzes comme sur la figure suivante. Bien évidemment, l'approximation de l'intégrale est meilleure qu'avec des rectangles.
 
-.. bokeh-plot:: source/_scripts/trapezes.py
+.. bokeh-plot:: _scripts/trapezes.py
     :source-position: none
 
 
@@ -221,13 +221,13 @@ On peut tracer la courbe de la solution apporchée que l'on peut comparer à la 
 
     @suppress
     plt.savefig('source/_images/euler.png', width=10)
-    plt.show()
+    # plt.show()
 
 .. image:: _images/euler.png
 
 Bien entendu, l'approximation affine :math:`y'(t+\Delta\!t)\approx f(t)+f'(t)\Delta\!t` est d'autant meilleur que :math:`\Delta\!t` est petit.
 
-.. bokeh-plot:: source/_scripts/euler.py
+.. bokeh-plot:: _scripts/euler.py
     :source-position: none
 
 
@@ -283,7 +283,7 @@ On peut adapter la méthode au cas d'un système différentiel d'ordre 1. Soit p
 
     @suppress
     plt.savefig('source/_images/euler_syst.png', width=10)
-    plt.show()
+    #plt.show()
 
 .. image:: _images/euler_syst.png
 
@@ -334,7 +334,7 @@ on peut se ramener au système différentiel d'ordre 1 suivant
 
     @suppress
     plt.savefig('source/_images/euler_edl2.png', width=10)
-    plt.show()
+    #plt.show()
 
 .. image:: _images/euler_edl2.png
 

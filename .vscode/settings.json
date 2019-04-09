@@ -1,0 +1,9 @@
+{
+    "restructuredtext.linter.extraArgs": [
+        "--ignore D001",
+        "--ignore D002",
+        "--ignore D004"
+    ],
+    "python.pythonPath": "C:\\Users\\laure\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.linting.enabled": true
+}

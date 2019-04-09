@@ -75,6 +75,9 @@ Dans la suite, on fera appel à la fonction :code:`random` du module :code:`rand
 
 Cela nous permettra de simuler des variables aléatoires connaissant leurs lois [#numpy_random]_.
 
+Variables aléatoires finies
+---------------------------
+
 On cherche dans un premier temps à simuler une variable aléatoire :math:`X` **à valeurs dans un ensemble fini**, disons :math:`\{0,\dots,n-1\}` où :math:`n\in\mathbb{N}^*`, dont on connaît la loi, c'est-à-dire les valeurs de :math:`\mathbb{P}(X=k)` pour :math:`k\in\{0,\dots,n-1\}`.
 
 On construit pour cela une fonction prenant pour argument la loi d'une telle variable aléatoire sous la forme d'une liste de réels positifs de somme 1.
@@ -93,6 +96,35 @@ On construit pour cela une fonction prenant pour argument la loi d'une telle var
 
     [simul([.3, .5, .2]) for _ in range(20)]
 
+On pourrait par exemple utiliser la méthode précédente pour simuler une **loi binomiale**.
+
+.. ipython:: python
+
+    from scipy.special import binom
+    binomiale = lambda n,p: simul([binom(n, k) * p**k * (1-p)**(n-k) for k in range(n+1)])
+
+    [binomiale(5, .8) for _ in range(20)]
+
+    [binomiale(5, .2) for _ in range(20)]
+
+Evidemment, il existe un méthode plus simple pour simuler une variable suivant une **loi binomiale** puisque l'on sait qu'elle est de même loi qu'une somme de variables de Bernoulli indépendantes.
+
+.. ipython:: python
+
+    def bernoulli(p):
+        return 1 if random() < p else 0
+
+    def binomiale(n, p):
+        return sum(bernoulli(p) for _ in range(n))
+
+    [binomiale(5, .8) for _ in range(20)]
+
+    [binomiale(5, .2) for _ in range(20)]
+
+
+Variables aléatoires dénombrables
+---------------------------------
+
 On désire maintenant simuler une variable aléatoire :math:`X` **à valeurs dans un ensemble dénombrable**, disons :math:`\mathbb{N}`, dont on connaît la loi, c'est-à-dire les valeurs de :math:`\mathbb{P}(X=k)` pour :math:`k\in\mathbb{N}`.
 
 La loi de cette variable aléatoire ne peut alors plus être représentée sous la forme d'une liste finie ; on la représente donc comme une fonction d'argument un entier :math:`n` et renvoyant :math:`\mathbb{P}(X=n)`.
@@ -108,28 +140,37 @@ La loi de cette variable aléatoire ne peut alors plus être représentée sous 
             s += loi(n)
         return n
 
+On peut utiliser cette méthode pour simuler une loi de Poisson.
+
 .. ipython:: python
 
     from math import factorial, exp
 
     # Simulation d'une loi de Poisson
-    poisson = lambda l: lambda n: exp(-l) * l**n / factorial(n)
-    [simul(poisson(2)) for _ in range(20)]
+    poisson = lambda l: simul(lambda n: exp(-l) * l**n / factorial(n))
+    [poisson(2) for _ in range(20)]
 
-
-Pour terminer, on peut facilement simuler une variable suivant une **loi binomiale** puisque l'on sait qu'elle est de même loi qu'une somme de variables de Bernoulli indépendantes.
+De la même manière, on peut simuler une loi géométrique.
 
 .. ipython:: python
 
-    def bernoulli(p):
-        return 1 if random() < p else 0
+    from math import factorial, exp
 
-    def binomiale(n, p):
-        return sum(bernoulli(p) for _ in range(n))
+    # Simulation d'une loi géométrique
+    geometrique = lambda p: simul(lambda n: 0 if n==0 else (1-p)**(n-1) * p)
+    [geometrique(.2) for _ in range(20)]
 
-    [binomiale(5, .8) for _ in range(20)]
+Bien entendu, il est plus facile d'utiliser l'interprétation de la loi géométrique comme le numéro d'un premier succès.
 
-    [binomiale(5, .2) for _ in range(20)]
+.. ipython:: python
+
+    def geometrique(p):
+        n = 1
+        while random() > p:
+            n +=1
+        return n
+
+    [geometrique(.2) for _ in range(20)]
 
 
 .. [#numpy_moyenne] Evidemment, Python dispose déjà deux fonctions permettant de calculer aisément la moyenne d'une liste de nombres. On peut par exemple utiliser la fonction :code:`sum` qui, comme son nom l'indique, calcule la somme des éléments d'une liste (ou plus généralement d'un objet de type itérable).

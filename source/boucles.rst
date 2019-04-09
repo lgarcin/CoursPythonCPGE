@@ -2,7 +2,7 @@
 Boucles
 =======
 
-Comme dans beau de langages de programmation, il existe deux types de boucles en Python :
+Comme dans beaucoup de langages de programmation, il existe deux types de boucles en Python :
 
     * les boucles inconditionnelles qui permettent d'exécuter un bloc d'instructions un nombre de fois fixé à l'avance ;
 
@@ -12,7 +12,7 @@ Comme dans beau de langages de programmation, il existe deux types de boucles en
 Boucles inconditionnelles
 =========================
 
-Les boucles inconditionnelles en Python permettent de parcourir un objet de type **itérable** (comme une liste, un tuple ou une chaîne de caractères) élément par élément.
+Les boucles inconditionnelles en Python permettent de parcourir un objet de type *itérable* [#iterable]_ (comme une liste, un tuple ou une chaîne de caractères) élément par élément.
 
 De manière générale, on utilise les mots-clés :code:`for` et :code:`in`.
 
@@ -148,8 +148,88 @@ Bien entendu, on peut utiliser ce type de liste pour d'autres objets que des ent
 Boucles conditionnelles
 =======================
 
-Une boucle conditionnelle consiste à répéter un bloc d'instructions **tant qu'une condition est vraie**.
+Une boucle conditionnelle consiste à répéter un bloc d'instructions **tant qu'une condition est vraie**. On emploie pour cela le mot-clé :code:`while`.
 
+.. ipython:: python
+
+    a, b = 15, 6
+    q, r = 0, a
+    while r >= b:
+        q += 1
+        r -= b
+    print(q, r)
+
+Lorsque l'on "sort" de la boucle :code:`while`, on est assuré que la condition suivant le mot-clé :code:`while` est **fausse**.
+
+.. warning::
+
+	Contrairement aux boucles inconditionnelles, il est facile de créer des boucles conditionnelles *infinies* [#generateur]_. En effet, la condition suivant l'instruction :code:`while` peut s'avérer ne jamais être fausse. On peut par exemple méditer l'exemple suivant qui n'est qu'une très subtile modification de l'exemple précédent.
+
+    .. code-block:: python
+
+        a, b = 15, -6
+        q, r = 0, a
+        while r >= b:
+            q += 1
+            r -= b
+        print(q, r)
+
+
+Les instructions :code:`break` et :code:`continue`
+==================================================
+
+Ces deux instructions permettent d'altérer le cours normal d'une boucle.
+
+L'instruction :code:`break` permet de sortir d'une boucle sans avoir effectué toutes les itérations.
+
+.. ipython:: python
+
+    i = 0
+    while i < 5:
+        i += 1
+        print(i)
+        break
+
+.. ipython:: python
+
+    for i in range(10):
+        print(i)
+        if i > 5:
+            print("sortie")
+            break
+
+En cas de boucles *imbriquées*, l'instruction :code:`break` permet de quitter la boucle la plus *interne* dans laquelle elle figure.
+
+.. ipython:: python
+
+    for i in range(5):
+        print('i =', i)
+        for j in range(5):
+            if j > 2:
+                break
+            print('\t j =', j)
+
+Quant à l'instruction :code:`continue`, elle permet de terminer l'itération courante et de passer directement à l'itération suivante.
+
+.. ipython:: python
+
+    s = ""
+    for c in "anticonstitutionnellement":
+        if c == "e":
+            continue
+        s += c
+    print(s)
+
+.. ipython:: python
+
+    i = 0
+    while i < 10:
+        i += 1
+        if i % 3 ==0:
+            continue
+        print(i)
+
+On remarquera que les instructions :code:`break` et :code:`continue` figurent quasiment toujours à l'intérieur d'un test.
 
 .. rubric:: Notes
 
@@ -161,6 +241,6 @@ Une boucle conditionnelle consiste à répéter un bloc d'instructions **tant qu
         [li.append('toto') for li in s]
         s
 
+.. [#generateur] Techniquement, il est possible en Python de créer des boucles :code:`for` infinies en utilisant des objets spéciaux nommés *générateurs*.
 
-.. todo:: blabla sur les itérables
-.. todo:: break et continue
+.. [#iterable] De manière générale, un objet de type *itérable* est une "collection" d'éléments capable d'énumérer lesdits éléments. De manière plus pragmatique, un *itérable* est un objet sur lequel on peut appliquer une boucle :code:`for`.

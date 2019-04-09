@@ -16,8 +16,8 @@ Python pour les CPGE scientifiques
     types_operateurs_variables
     types_composes
     algorithmique
-    algoclassiques
     theorie
+    algoclassiques
 
 Index et tables
 ===============

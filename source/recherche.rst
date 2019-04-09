@@ -299,9 +299,15 @@ On présente ici un algorithme naïf qui est assez peu efficace mais qui a le m�
     recherche_chaine("patapipapa", "tapa")
 
 
-.. image:: _images/recherche_chaine_win.gif
+.. todo:: A débuguer, la directive `figure` ne semble pas fonctionner.
 
-.. image:: _images/recherche_chaine_lose.gif
+.. figure:: _images/recherche_chaine_win.gif
+
+    Succès
+
+.. figure:: _images/recherche_chaine_lose.gif
+
+    Echec
 
 
 On peut à nouveau proposer une version de l'algorithme qui renvoie l'indice de la *première occurence* rencontrée.

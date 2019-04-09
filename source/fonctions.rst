@@ -107,7 +107,7 @@ Une fonction peut ne pas contenir d'instruction :code:`return` ou peut ne renvoy
 
 .. warning::
 
-    Une erreur de débutant consiste à confondre les utilisations de :code:`print` et :code:`return` : une fonction ne compotant qu'un :code:`print` et pas de :code:`return` ne fera qu'afficher un résultat à l'écran mais ne renverra aucune valeur.
+    Une erreur de débutant consiste à confondre les utilisations de :code:`print` et :code:`return` : une fonction ne comportant qu'un :code:`print` et pas de :code:`return` ne fera qu'afficher un résultat à l'écran mais ne renverra aucune valeur.
 
     .. ipython:: python
 
@@ -183,13 +183,12 @@ Il est possible de donner des valeurs par défaut aux paramètres d'une fonction
 Dans l'en-tête d'une fonction les paramètres avec des valeurs par défaut doivent toujours *suivre* les paramètres sans valeurs par défaut sous peine de déclencher une erreur de syntaxe.
 
 .. ipython:: python
+    :okexcept:
 
     def toto(a=1, b, c=2):
         pass
 
 Le but est d'éviter toute ambiguïté. En effet, quels seraient les arguments passés lors de l'appel de fonction :code:`toto(5, 6)` ? :code:`a=1`, :code:`b=5` et :code:`c=6` ou bien :code:`a=5`, :code:`b=6` et :code:`c=2` ?
-
-.. todo:: arguments par défaut mutables
 
 
 Portée des variables
@@ -286,7 +285,7 @@ On peut néanmoins modifier une variable globale à l'intérieur d'une fonction 
     a   # a vaut bien 2
 
 
-Les paramètres d'une fonction ont également une portée locale.
+Les paramètres d'une fonction ont également une portée locale. On ne peut accéder à une variable locale à l'extérieur de la fonction où elle est définie.
 
 .. ipython:: python
     :okexcept:
@@ -295,6 +294,16 @@ Les paramètres d'une fonction ont également une portée locale.
         return 2 * c
 
     c   # c est inconnu à l'extérieur de la fonction
+
+
+Enfin, un paramètre ne peut être déclaré comme variable global à l'intérieur d'une fonction.
+
+.. ipython:: python
+    :okexcept:
+
+     def f(g):
+         global g
+
 
 
 Fonctions et mutabilité
@@ -390,8 +399,6 @@ On se convaincra plus facilement en utilisant la fonction :code:`id` qui renvoie
     print('lst après appel fonction g', id(lst))
     lst
 
-.. todo:: Faire un dessin
-
 Finalement, on peut résumer les choses de la manière suivante.
 
 .. tip::
@@ -399,7 +406,26 @@ Finalement, on peut résumer les choses de la manière suivante.
     Un objet mutable peut-être modifé s'il est passé en argument à une fonction alors que ce ne sera jamais le cas pour un objet immutable.
 
 
-.. todo:: Une variable globale ne peut pas être un paramètre si mot-clé global.
+Enfin, soulignons qu'il peut se passer des choses étranges lorsque l'on utilise des *arguments par défaut mutables*.
+
+.. ipython:: python
+
+    def pizza(supplements, base=['jambon', 'fromage']):
+        base.extend(supplements)
+        return base
+
+    # Jusqu'ici tout va bien
+    print(pizza(['pepperoni', 'poivrons']))
+    print(pizza(['champignons'], ['jambon']))
+
+    # Ca devient bizarre
+    print(pizza(['anchois', 'olives']))
+    print(pizza(['champignons']))
+
+    # Ca redevient normal
+    print(pizza(['anchois', 'olives'], ['jambon', 'oeuf', 'fromage']))
+
+Il faut comprendre que la liste servant d'argument par défaut est créée une fois pour toute *à la déclaration de la fonction* et non à chaque appel de la fonction. Comme il s'agit d'un objet mutable, chaque appel de la fonction modifie cette liste. A chaque appel de la fonction, c'est donc cette nouvelle liste qui sert d'argument par défaut et non celle définie dans l'en-tête de la fonction.
 
 
 Effets de bord
