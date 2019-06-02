@@ -1,3 +1,5 @@
+# -*- coding: latin1 -*-
+
 import numpy as np
 from bokeh.plotting import figure, show, output_file
 from bokeh.models import CustomJS, Slider, RadioButtonGroup, ColumnDataSource
@@ -12,7 +14,7 @@ yy = f(xx)
 
 source = ColumnDataSource(dict(xleft=xx[:-1], xright=xx[1:], yleft=yy[1:], yright=yy[:-1], bottom=[0]*9))
 
-p = figure(title='MÃ©thode des rectangles', plot_width=700, plot_height=500)
+p = figure(title='Méthode des rectangles', plot_width=700, plot_height=500)
 p.title.align = 'center'
 p.xgrid.grid_line_color = None
 p.ygrid.grid_line_color = None

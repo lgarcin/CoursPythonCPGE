@@ -1,3 +1,5 @@
+# -*- coding: latin1 -*-
+
 import numpy as np
 from bokeh.plotting import figure, show, ColumnDataSource
 from bokeh.models import CustomJS, Slider, Span, Label
@@ -24,11 +26,11 @@ for _ in range(N + 1):
 
 source = ColumnDataSource(data=dict(la=la, lb=lb, lc=lc))
 
-p = figure(title='RÃ©solution par dichotomie', plot_width=700, plot_height=500)
+p = figure(title='Résolution par dichotomie', plot_width=700, plot_height=500)
 p.title.align = 'center'
 p.line(x, y, line_width=2)
 
-slider = Slider(start=0, end=N, value=0, step=1, title="ItÃ©rations")
+slider = Slider(start=0, end=N, value=0, step=1, title="Itérations")
 spa = Span(location=la[slider.value], dimension='height',
            line_color='red', line_dash='dashed', line_width=3)
 p.add_layout(spa)

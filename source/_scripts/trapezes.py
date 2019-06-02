@@ -1,3 +1,5 @@
+# -*- coding: latin1 -*-
+
 import numpy as np
 from bokeh.plotting import figure, show, output_file
 from bokeh.models import CustomJS, Slider, RadioButtonGroup, ColumnDataSource
@@ -14,7 +16,7 @@ xpatches = [[xx[i], xx[i+1], xx[i+1], xx[i]] for i in range(len(xx)-1)]
 ypatches = [[0, 0, yy[i+1], yy[i]] for i in range(len(yy)-1)]
 source = ColumnDataSource(dict(xpatches=xpatches, ypatches=ypatches))
 
-p = figure(title="MÃ©thode des trapÃ¨zes", plot_width=700, plot_height=500)
+p = figure(title="Méthode des trapèzes", plot_width=700, plot_height=500)
 p.title.align = 'center'
 p.xgrid.grid_line_color = None
 p.ygrid.grid_line_color = None

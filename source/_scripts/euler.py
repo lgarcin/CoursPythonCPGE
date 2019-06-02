@@ -1,3 +1,5 @@
+# -*- coding: latin1 -*-
+
 import numpy as np
 from bokeh.plotting import figure, show, output_file
 from bokeh.models import CustomJS, Slider, ColumnDataSource, Range1d
@@ -18,7 +20,7 @@ for _ in range(nb):
 
 source = ColumnDataSource(dict(x=xx, y=yy))
 
-p = figure(title="MÃ©thode d'Euler", plot_width=700, plot_height=500)
+p = figure(title="Méthode d'Euler", plot_width=700, plot_height=500)
 p.x_range = Range1d(a, b)
 p.y_range = Range1d(0, 3)
 p.title.align = 'center'
