@@ -191,15 +191,15 @@
 
 <span class="gp">In [4]: </span><span class="n">tab</span>
 <span class="gh">Out[4]: </span><span class="go"></span>
-<span class="go">array([92, 84, 14, 34, 91, 12, 47, 79, 92, 65, 35, 83, 85, 53, 33, 52, 84,</span>
-<span class="go">       32, 86, 61])</span>
+<span class="go">array([40,  7, 94, 79, 49, 68, 15, 33, 58, 95, 85, 35, 24, 21, 90,  2, 26,</span>
+<span class="go">        5,  7, 11])</span>
 
 <span class="gp">In [5]: </span><span class="n">tri_insertion</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
 
 <span class="gp">In [6]: </span><span class="n">tab</span>
 <span class="gh">Out[6]: </span><span class="go"></span>
-<span class="go">array([12, 14, 32, 33, 34, 35, 47, 52, 53, 61, 65, 79, 83, 84, 84, 85, 86,</span>
-<span class="go">       91, 92, 92])</span>
+<span class="go">array([ 2,  5,  7,  7, 11, 15, 21, 24, 26, 33, 35, 40, 49, 58, 68, 79, 85,</span>
+<span class="go">       90, 94, 95])</span>
 </pre></div>
 </div>
 <div class="admonition-todo admonition" id="id1">
@@ -238,10 +238,10 @@
 In [10]: tab = randint(100, size=10)
 
 In [11]: tab
-Out[11]: array([98, 11, 79, 62, 88, 69, 20, 26, 44, 73])
+Out[11]: array([97, 12, 37, 26, 82, 69, 73, 10, 20, 52])
 
 In [12]: tri_rapide(tab)
-Out[12]: [26, 26, 44, 44, 62, 69, 73, 73, 79, 88]</pre>
+Out[12]: [10, 10, 20, 20, 37, 52, 52, 69, 73, 97]</pre>
 <p>L’algorithme précédent crée une nouvelle liste à chaque appel de la fonction <code class="code docutils literal notranslate"><span class="pre">tri_rapide</span></code>. D’un point de vue de l’utilisation de la mémoire, on peut préférer effectuer un tri <em>en place</em> : on modifie le tableau au cours de l’algorithme de tri.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="n">j</span> <span class="o">=</span> <span class="n">g</span>
@@ -268,12 +268,12 @@ Out[12]: [26, 26, 44, 44, 62, 69, 73, 73, 79, 88]</pre>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="n">tab</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="gp">In [16]: </span><span class="n">tab</span>
-<span class="gh">Out[16]: </span><span class="go">array([23, 45, 44, 49, 18, 19, 78, 71, 90, 20])</span>
+<span class="gh">Out[16]: </span><span class="go">array([43, 30, 58, 66,  8,  3, 93, 42, 98, 51])</span>
 
 <span class="gp">In [17]: </span><span class="n">tri_rapide</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
 
 <span class="gp">In [18]: </span><span class="n">tab</span>
-<span class="gh">Out[18]: </span><span class="go">array([18, 19, 20, 23, 44, 45, 49, 71, 78, 90])</span>
+<span class="gh">Out[18]: </span><span class="go">array([ 3,  8, 30, 42, 43, 51, 58, 66, 93, 98])</span>
 </pre></div>
 </div>
 </div>
@@ -322,50 +322,10 @@ Out[12]: [26, 26, 44, 44, 62, 69, 73, 73, 79, 88]</pre>
 In [22]: tab = list(randint(100, size=20))
 
 In [23]: tab
-Out[23]: 
-[17,
- 14,
- 33,
- 10,
- 56,
- 37,
- 23,
- 96,
- 70,
- 11,
- 47,
- 99,
- 97,
- 19,
- 11,
- 55,
- 13,
- 59,
- 28,
- 85]
+Out[23]: [68, 84, 95, 60, 28, 0, 72, 22, 32, 46, 32, 72, 4, 81, 30, 22, 97, 90, 77, 54]
 
 In [24]: tri_fusion(tab)
-Out[24]: 
-[10,
- 11,
- 11,
- 13,
- 14,
- 17,
- 19,
- 23,
- 28,
- 33,
- 37,
- 47,
- 55,
- 56,
- 59,
- 70,
- 85,
- 96,
- 97,
- 99]</pre>
+Out[24]: [0, 4, 22, 22, 28, 30, 32, 32, 46, 54, 60, 68, 72, 72, 77, 81, 84, 90, 95, 97]</pre>
 <p>On peut également donner une implémentation récursive de l’lagorithme de fusion.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="k">def</span> <span class="nf">fusion</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">t1</span><span class="p">:</span>
@@ -384,10 +344,10 @@ Out[24]:
 In [27]: tab = list(randint(100, size=10))
 
 In [28]: tab
-Out[28]: [81, 86, 90, 7, 63, 28, 72, 9, 80, 68]
+Out[28]: [85, 29, 41, 38, 82, 91, 91, 43, 72, 81]
 
 In [29]: tri_fusion(tab)
-Out[29]: [7, 9, 28, 63, 68, 72, 80, 81, 86, 90]</pre>
+Out[29]: [29, 38, 41, 43, 72, 81, 82, 85, 91, 91]</pre>
 <dl class="footnote brackets">
 <dt class="label" id="tri-rapide-pythonesque"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>On peut également proposer une implémentation tirant partie des spécificités de Python (listes en compréhension).</p>
@@ -408,10 +368,10 @@ Out[29]: [7, 9, 28, 63, 68, 72, 80, 81, 86, 90]</pre>
 In [33]: tab = randint(100, size=10)
 
 In [34]: tab
-Out[34]: array([10, 88, 96, 53, 35, 83, 95, 87, 96, 53])
+Out[34]: array([86, 61, 57,  9, 47, 70,  5, 38, 54, 80])
 
 In [35]: tri_rapide(tab)
-Out[35]: [10, 35, 53, 53, 83, 87, 88, 95, 96, 96]</pre>
+Out[35]: [5, 9, 38, 47, 54, 57, 61, 70, 80, 86]</pre>
 </dd>
 </dl>
 </div>
