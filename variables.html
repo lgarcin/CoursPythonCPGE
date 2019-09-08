@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.1. Variables &mdash; Documentation CoursPythonCPGE </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="2.2. Types" href="types.html" />
+    <link rel="prev" title="2. Types, opérateurs et variables" href="types_operateurs_variables.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">2.2. Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operateurs.html">2.3. Opérateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conversions.html">2.4. Conversions de types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CoursPythonCPGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="types_operateurs_variables.html">2. Types, opérateurs et variables</a> &raquo;</li>
+        
+      <li>2.1. Variables</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/variables.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="variables">
+<h1>2.1. Variables<a class="headerlink" href="#variables" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="variable-et-affectation">
+<h2>2.1.1. Variable et affectation<a class="headerlink" href="#variable-et-affectation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une <em>variable</em> est un objet qui associe un nom (<em>identifiant</em>) à un objet stocké en mémoire. Concrètement, une variable permet de conserver un objet en vue d’une utilisation ultérieure.</p>
+<p>Pour stocker un objet dans une variable, on utilise l’opérateur d’affectation <code class="code docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="gp">In [2]: </span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="gp">In [3]: </span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="gh">Out[3]: </span><span class="go">25</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Le symbole <code class="code docutils literal notranslate"><span class="pre">=</span></code> n’a pas du tout le même sens qu’en mathématiques. En mathématiques, ce symbole désigne un état de fait et a une valeur logique (une égalité peut être vraie ou fausse) tandis qu’en Python, il accomplit une action (stocker une valeur dans une variable).</p>
+</div>
+<p>Bien entendu, on peut changer la valeur d’une variable (d’où le nom) et même le type de cette valeur.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="gp">In [5]: </span><span class="n">a</span>
+<span class="gh">Out[5]: </span><span class="go">42</span>
+
+<span class="gp">In [6]: </span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;toto&quot;</span>
+
+<span class="gp">In [7]: </span><span class="n">a</span>
+<span class="gh">Out[7]: </span><span class="go">&#39;toto&#39;</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title first">Echange de deux variables</p>
+<p>On est souvent amené à échanger les valeurs de deux variables. La méthode naïve ne fonctionne pas.</p>
+<pre class="literal-block">In [8]: a = 1
+
+In [9]: b = 2
+
+In [10]: a = b # Les deux variables valent 2 !
+
+In [11]: b = a
+
+In [12]: a
+Out[12]: 2
+
+In [13]: b
+Out[13]: 2</pre>
+<p>L’idée est alors d’employer une variable auxiliaire.</p>
+<pre class="literal-block">In [14]: a = 1
+
+In [15]: b = 2
+
+In [16]: aux = a
+
+In [17]: a = b
+
+In [18]: b = aux
+
+In [19]: a
+Out[19]: 2
+
+In [20]: b
+Out[20]: 1</pre>
+<p>On peut également utiliser des <a class="reference internal" href="tuples.html#affectations-multiples"><span class="std std-ref">affectations multiples</span></a> à l’aide de tuples ou de listes.</p>
+</div>
+</div>
+<div class="section" id="identifiant-d-une-variable">
+<h2>2.1.2. Identifiant d’une variable<a class="headerlink" href="#identifiant-d-une-variable" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Bien que cela n’ait rien d’obligatoire, il est judicieux que l’identifiant d’une variable donne une indication quant à l’utilisation de cette variable. Par exemple, une variable devant contenir la
+<em>moyenne</em> de plusieurs nombres sera plus judicieusement nommée <code class="code docutils literal notranslate"><span class="pre">moyenne</span></code> ou même <code class="code docutils literal notranslate"><span class="pre">moy</span></code> plutôt que <code class="code docutils literal notranslate"><span class="pre">x</span></code> ou <code class="code docutils literal notranslate"><span class="pre">toto</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On ne peut pas choisir n’importe quel identifiant pour une variable.</p>
+<ul class="simple">
+<li><p>Certains mots du langage Python sont dits « réservés » et ne peuvent servir à désigner une variable (<code class="code docutils literal notranslate"><span class="pre">for</span></code>, <code class="code docutils literal notranslate"><span class="pre">while</span></code>, <code class="code docutils literal notranslate"><span class="pre">del</span></code>, …).</p></li>
+<li><p>Le nommage des identifiants doit obéir à certaines règles : le premier caractère ne peut être un chiffre, certains caractères comme <code class="code docutils literal notranslate"><span class="pre">#</span></code> ou <code class="code docutils literal notranslate"><span class="pre">&#64;</span></code> sont proscrits, …</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="types.html" class="btn btn-neutral float-right" title="2.2. Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="types_operateurs_variables.html" class="btn btn-neutral float-left" title="2. Types, opérateurs et variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Laurent Garcin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

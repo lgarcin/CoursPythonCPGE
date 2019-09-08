@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.2. Types &mdash; Documentation CoursPythonCPGE </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="2.3. Opérateurs" href="operateurs.html" />
+    <link rel="prev" title="2.1. Variables" href="variables.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="variables.html">2.1. Variables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operateurs.html">2.3. Opérateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conversions.html">2.4. Conversions de types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CoursPythonCPGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="types_operateurs_variables.html">2. Types, opérateurs et variables</a> &raquo;</li>
+        
+      <li>2.2. Types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/types.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="types">
+<h1>2.2. Types<a class="headerlink" href="#types" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">À faire</p>
+<p>Expliquer ce qu’est un type. En fait, on devrait parler de classe.</p>
+</div>
+<p>On décrit dans ce paragraphe les types de base utilisés par Python.</p>
+<div class="section" id="booleen">
+<h2>2.2.1. Booléen<a class="headerlink" href="#booleen" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Un objet de type <em>booléen</em> peut prendre les valeurs logiques <strong>vrai</strong> (<code class="code docutils literal notranslate"><span class="pre">True</span></code>) ou <strong>faux</strong> (<code class="code docutils literal notranslate"><span class="pre">False</span></code>).</p>
+<pre class="literal-block">In [1]: type(True)
+Out[1]: bool
+
+In [2]: type(False)
+Out[2]: bool</pre>
+</div>
+<div class="section" id="entier">
+<h2>2.2.2. Entier<a class="headerlink" href="#entier" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les entiers Python ne sont théoriquement pas limités en taille même si, en pratique, on est limité par la mémoire de la machine.</p>
+<pre class="literal-block">In [3]: type(12)
+Out[3]: int
+
+In [4]: type(-34)
+Out[4]: int</pre>
+</div>
+<div class="section" id="flottant">
+<h2>2.2.3. Flottant<a class="headerlink" href="#flottant" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les nombres non entiers (nombres « à virgule ») sont stockés sous la forme de nombres <em>flottants</em>. La virgule est notée à l’anglo-saxonne à l’aide du caractère <code class="code docutils literal notranslate"><span class="pre">.</span></code>. On peut également utiliser la notation scientifique : <code class="code docutils literal notranslate"><span class="pre">1.23e45</span></code> signifie <span class="math notranslate nohighlight">\(1,23\times10^{45}\)</span>.</p>
+<pre class="literal-block">In [5]: type(1.23)
+Out[5]: float
+
+In [6]: type(1.)
+Out[6]: float
+
+In [7]: type(1.23e45)
+Out[7]: float</pre>
+<p>Les nombres flottants sont en fait de la forme <span class="math notranslate nohighlight">\(\pm m.2^e\)</span> où <span class="math notranslate nohighlight">\(m\)</span> est un réel de l’intervalle <span class="math notranslate nohighlight">\([1,2[\)</span> appelé mantisse et <span class="math notranslate nohighlight">\(e\)</span> est un entier. Les nombres <span class="math notranslate nohighlight">\(m\)</span> et <span class="math notranslate nohighlight">\(e\)</span> sont stockés sur un nombre fixé de bits <a class="footnote-reference brackets" href="#ieee754" id="id2">1</a> : il n’existe par conséquent qu’un nombre <strong>fini</strong> de nombres flottants.</p>
+<p>Il faut bien comprendre que les nombres flottants ne sont en fait que des <strong>approximations</strong> des nombres réels que l’on considère, ce qui peut parfois créer des surprises.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="mf">2.3</span><span class="o">-</span><span class="mf">1.5</span>
+<span class="gh">Out[8]: </span><span class="go">0.7999999999999998</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="complexe">
+<h2>2.2.4. Complexe<a class="headerlink" href="#complexe" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les nombres complexes se notent à l’aide de la lettre <code class="code docutils literal notranslate"><span class="pre">j</span></code> qui indique la partie imaginaire. Par exemple, le complexe <span class="math notranslate nohighlight">\(1+2i\)</span> s’écrit <code class="code docutils literal notranslate"><span class="pre">1+2j</span></code>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.2</span><span class="o">+</span><span class="mf">3.4j</span><span class="p">)</span>
+<span class="gh">Out[9]: </span><span class="go">complex</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour représenter un complexe la lettre <code class="code docutils literal notranslate"><span class="pre">j</span></code> doit toujours être précédée d’un caractère numérique. Le complexe <span class="math notranslate nohighlight">\(i\)</span> sera donc représenté par <code class="code docutils literal notranslate"><span class="pre">1j</span></code>.</p>
+</div>
+<p>On peut accéder aux parties réelle et imaginaire d’un nombre complexe grâce aux attributs <code class="code docutils literal notranslate"><span class="pre">real</span></code> et <code class="code docutils literal notranslate"><span class="pre">imag</span></code>.</p>
+<pre class="literal-block">In [10]: z = 3 + 4j
+
+In [11]: z.real
+Out[11]: 3.0
+
+In [12]: z.imag
+Out[12]: 4.0</pre>
+</div>
+<div class="section" id="dictionnaire-hors-programme">
+<h2>2.2.5. Dictionnaire (hors programme)<a class="headerlink" href="#dictionnaire-hors-programme" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="nb">type</span><span class="p">({</span><span class="s1">&#39;toto&#39;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;titi&#39;</span><span class="p">:</span> <span class="mf">4.56</span><span class="p">,</span> <span class="s1">&#39;tata&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">})</span>
+<span class="gh">Out[13]: </span><span class="go">dict</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<dl class="footnote brackets">
+<dt class="label" id="ieee754"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Pour plus de précision, on pourra consulter la définition de la norme <a class="reference external" href="https://fr.wikipedia.org/wiki/IEEE_754">IEEE 754</a>.</p>
+</dd>
+</dl>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">À faire</p>
+<p>duck typing</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="operateurs.html" class="btn btn-neutral float-right" title="2.3. Opérateurs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="variables.html" class="btn btn-neutral float-left" title="2.1. Variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Laurent Garcin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

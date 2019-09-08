@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.6. Tris &mdash; Documentation CoursPythonCPGE </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="7.5. Matrices" href="matrices.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="recherche.html">7.1. Algorithmes de recherche</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html">7.2. Analyse numérique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetique.html">7.3. Arithmétique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="probabilites.html">7.4. Probabilités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html">7.5. Matrices</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.6. Tris</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CoursPythonCPGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="algoclassiques.html">7. Algorithmes classiques</a> &raquo;</li>
+        
+      <li>7.6. Tris</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tris.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tris">
+<h1>7.6. Tris<a class="headerlink" href="#tris" title="Lien permanent vers ce titre">¶</a></h1>
+<p>On décrit les algorithmes au programmme permettant de trier un tableau de valeurs numériques.</p>
+<div class="section" id="tri-par-insertion">
+<h2>7.6.1. Tri par insertion<a class="headerlink" href="#tri-par-insertion" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le principe est très simple : c’est l’algorithme qu’utilise naturellement l’être humain pour trier des objets comme par exemple des cartes à jouer.</p>
+<p>On procède en plusieurs étapes. On suppose qu’à l’étape <span class="math notranslate nohighlight">\(i\)</span>, les éléments d’indice <span class="math notranslate nohighlight">\(0\)</span> à <span class="math notranslate nohighlight">\(i-1\)</span> du tableau sont déjà triés et on insère alors l’élément d’indice <span class="math notranslate nohighlight">\(i\)</span> à sa place parmi les éléments précédents.</p>
+<p>Un dessin vaut probablement mieux qu’un long discours.</p>
+<img alt="_images/tri_insertion.gif" src="_images/tri_insertion.gif" />
+<p>On peut alors proposer la fonction Python suivante.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">tri_insertion</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)):</span>
+<span class="gp">   ...: </span>        <span class="n">val</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="gp">   ...: </span>        <span class="n">pos</span> <span class="o">=</span> <span class="n">i</span>
+<span class="gp">   ...: </span>        <span class="k">while</span> <span class="n">pos</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">tab</span><span class="p">[</span><span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">val</span><span class="p">:</span>
+<span class="gp">   ...: </span>            <span class="n">tab</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">   ...: </span>            <span class="n">pos</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="gp">   ...: </span>        <span class="n">tab</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+<span class="gp">   ...: </span>
+</pre></div>
+</div>
+<p>On vérifie qu’elle fonctionne bien sur quelques tableaux choisis aléatoirement.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="gp">In [3]: </span><span class="n">tab</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="gp">In [4]: </span><span class="n">tab</span>
+<span class="gh">Out[4]: </span><span class="go"></span>
+<span class="go">array([69, 47, 89, 18, 85,  7, 44, 71, 65, 66, 94, 10, 48,  2, 14, 56, 95,</span>
+<span class="go">       80, 48, 55])</span>
+
+<span class="gp">In [5]: </span><span class="n">tri_insertion</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+
+<span class="gp">In [6]: </span><span class="n">tab</span>
+<span class="gh">Out[6]: </span><span class="go"></span>
+<span class="go">array([ 2,  7, 10, 14, 18, 44, 47, 48, 48, 55, 56, 65, 66, 69, 71, 80, 85,</span>
+<span class="go">       89, 94, 95])</span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">À faire</p>
+<p>preuve de l’algorithme + complexité</p>
+</div>
+</div>
+<div class="section" id="tri-rapide">
+<h2>7.6.2. Tri rapide<a class="headerlink" href="#tri-rapide" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le <strong>tri rapide</strong> est une application du principe <em>diviser pour régner</em>. Il consiste</p>
+<ul class="simple">
+<li><p>à choisir un élément du tableau à trier comme <em>pivot</em> ;</p></li>
+<li><p>à séparer le tableau à trier en deux sous-tableaux contenant respectivement les éléments inférieurs et supérieurs au pivot ;</p></li>
+<li><p>et à répéter le processus sur les deux sous-tableaux.</p></li>
+</ul>
+<img alt="_images/tri_rapide.png" src="_images/tri_rapide.png" />
+<p>Comme tout algorithme du type <em>diviser pour régner</em>, le tri rapide se prête bien à une implémentation récursive <a class="footnote-reference brackets" href="#tri-rapide-pythonesque" id="id2">1</a>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">choice</span>
+
+<span class="gp">In [8]: </span><span class="k">def</span> <span class="nf">tri_rapide</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ...: </span>        <span class="k">return</span> <span class="p">[]</span>
+<span class="gp">   ...: </span>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>     <span class="c1"># Choix aléatoire d&#39;un élément comme pivot</span>
+<span class="gp">   ...: </span>    <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="gp">   ...: </span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+<span class="gp">   ...: </span>        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
+<span class="gp">   ...: </span>            <span class="n">t1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">   ...: </span>        <span class="k">else</span><span class="p">:</span>
+<span class="gp">   ...: </span>            <span class="n">t2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="n">tri_rapide</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">+</span> <span class="n">tri_rapide</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="gp">   ...: </span>
+</pre></div>
+</div>
+<pre class="literal-block">In [9]: from numpy.random import randint
+
+In [10]: tab = randint(100, size=10)
+
+In [11]: tab
+Out[11]: array([73, 19, 51, 64, 30, 50, 93, 12, 42, 97])
+
+In [12]: tri_rapide(tab)
+Out[12]: [12, 12, 30, 42, 42, 64, 64, 93, 93, 97]</pre>
+<p>L’algorithme précédent crée une nouvelle liste à chaque appel de la fonction <code class="code docutils literal notranslate"><span class="pre">tri_rapide</span></code>. D’un point de vue de l’utilisation de la mémoire, on peut préférer effectuer un tri <em>en place</em> : on modifie le tableau au cours de l’algorithme de tri.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">j</span> <span class="o">=</span> <span class="n">g</span>
+<span class="gp">   ....: </span>    <span class="n">tab</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">d</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
+<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+<span class="gp">   ....: </span>        <span class="k">if</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">tab</span><span class="p">[</span><span class="n">d</span><span class="p">]:</span>
+<span class="gp">   ....: </span>            <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="gp">   ....: </span>            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="gp">   ....: </span>    <span class="n">tab</span><span class="p">[</span><span class="n">d</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">d</span><span class="p">]</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">j</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [14]: </span><span class="k">def</span> <span class="nf">tri_rapide</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="gp">   ....: </span>    <span class="k">if</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="n">p</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">   ....: </span>        <span class="n">pp</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="gp">   ....: </span>        <span class="n">tri_rapide</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">pp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">   ....: </span>        <span class="n">tri_rapide</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">pp</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="n">tab</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="gp">In [16]: </span><span class="n">tab</span>
+<span class="gh">Out[16]: </span><span class="go">array([59, 84, 57, 90, 29, 48,  0, 76, 15, 67])</span>
+
+<span class="gp">In [17]: </span><span class="n">tri_rapide</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+
+<span class="gp">In [18]: </span><span class="n">tab</span>
+<span class="gh">Out[18]: </span><span class="go">array([ 0, 15, 29, 48, 57, 59, 67, 76, 84, 90])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tri-par-fusion">
+<h2>7.6.3. Tri par fusion<a class="headerlink" href="#tri-par-fusion" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le <strong>tri par fusion</strong> est également une application du principe <em>diviser pour régner</em>. Il consiste</p>
+<ul class="simple">
+<li><p>à séparer la liste à trier en deux-sous listes si elle contient plus d’un élément ;</p></li>
+<li><p>appliquer l’algorithme de tri aux deux sous-listes ;</p></li>
+<li><p>fusionner les deux sous-listes triées en une liste triée.</p></li>
+</ul>
+<p>L’algorithme de tri par fusion est de nature récursive par définition.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [19]: </span><span class="k">def</span> <span class="nf">tri_fusion</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="k">return</span> <span class="n">tab</span>
+<span class="gp">   ....: </span>    <span class="k">else</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+<span class="gp">   ....: </span>        <span class="k">return</span> <span class="n">fusion</span><span class="p">(</span><span class="n">tri_fusion</span><span class="p">(</span><span class="n">tab</span><span class="p">[:</span><span class="n">m</span><span class="p">]),</span> <span class="n">tri_fusion</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">m</span><span class="p">:]))</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<p>Le principe de fusion de deux listes triées en une liste triée est très simple :</p>
+<ul class="simple">
+<li><p>on compare les deux premiers éléments de chacune des listes ;</p></li>
+<li><p>on déplace le plus petit d’entre eux de la liste auquel il appartient vers la fin de la liste à renvoyer ;</p></li>
+<li><p>on répète le processus jusqu’à ce qu’une des deux listes soient vides ;</p></li>
+<li><p>on ajoute l’intégralité de l’autre liste à la fin de la liste à renvoyer.</p></li>
+</ul>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="k">def</span> <span class="nf">fusion</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">   ....: </span>    <span class="k">while</span> <span class="n">t1</span> <span class="ow">and</span> <span class="n">t2</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="k">if</span> <span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">t2</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+<span class="gp">   ....: </span>            <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">   ....: </span>        <span class="k">else</span><span class="p">:</span>
+<span class="gp">   ....: </span>            <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="gp">   ....: </span>    <span class="k">if</span> <span class="n">t1</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="n">t</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">else</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="n">t</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">t</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<pre class="literal-block">In [21]: from numpy.random import randint
+
+In [22]: tab = list(randint(100, size=20))
+
+In [23]: tab
+Out[23]: [21, 46, 67, 58, 75, 51, 8, 20, 42, 9, 12, 20, 55, 80, 66, 96, 31, 35, 93, 41]
+
+In [24]: tri_fusion(tab)
+Out[24]: [8, 9, 12, 20, 20, 21, 31, 35, 41, 42, 46, 51, 55, 58, 66, 67, 75, 80, 93, 96]</pre>
+<p>On peut également donner une implémentation récursive de l’lagorithme de fusion.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="k">def</span> <span class="nf">fusion</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">t1</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="k">return</span> <span class="n">t2</span>
+<span class="gp">   ....: </span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">t2</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="k">return</span> <span class="n">t1</span>
+<span class="gp">   ....: </span>    <span class="k">if</span> <span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">t2</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+<span class="gp">   ....: </span>        <span class="k">return</span> <span class="p">[</span><span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">fusion</span><span class="p">(</span><span class="n">t1</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">t2</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">else</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="k">return</span> <span class="p">[</span><span class="n">t2</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">fusion</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<pre class="literal-block">In [26]: from numpy.random import randint
+
+In [27]: tab = list(randint(100, size=10))
+
+In [28]: tab
+Out[28]: [6, 69, 4, 1, 70, 85, 11, 84, 27, 4]
+
+In [29]: tri_fusion(tab)
+Out[29]: [1, 4, 4, 6, 11, 27, 69, 70, 84, 85]</pre>
+<dl class="footnote brackets">
+<dt class="label" id="tri-rapide-pythonesque"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>On peut également proposer une implémentation tirant partie des spécificités de Python (listes en compréhension).</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">choice</span>
+
+<span class="gp">In [31]: </span><span class="k">def</span> <span class="nf">tri_rapide</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="k">return</span> <span class="p">[]</span>
+<span class="gp">   ....: </span>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">tri_rapide</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tab</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">])</span> <span class="o">+</span>\
+<span class="gp">   ....: </span>        <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tab</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">]</span> <span class="o">+</span>\
+<span class="gp">   ....: </span>        <span class="n">tri_rapide</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tab</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">])</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<pre class="literal-block">In [32]: from numpy.random import randint
+
+In [33]: tab = randint(100, size=10)
+
+In [34]: tab
+Out[34]: array([20, 27, 45, 57, 92,  1,  6, 33, 72, 72])
+
+In [35]: tri_rapide(tab)
+Out[35]: [1, 6, 20, 27, 33, 45, 57, 72, 72, 92]</pre>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="matrices.html" class="btn btn-neutral float-left" title="7.5. Matrices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Laurent Garcin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

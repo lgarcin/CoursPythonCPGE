@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.5. Matrices &mdash; Documentation CoursPythonCPGE </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="7.6. Tris" href="tris.html" />
+    <link rel="prev" title="7.4. Probabilités" href="probabilites.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="recherche.html">7.1. Algorithmes de recherche</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html">7.2. Analyse numérique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetique.html">7.3. Arithmétique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="probabilites.html">7.4. Probabilités</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.5. Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tris.html">7.6. Tris</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CoursPythonCPGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="algoclassiques.html">7. Algorithmes classiques</a> &raquo;</li>
+        
+      <li>7.5. Matrices</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/matrices.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="matrices">
+<h1>7.5. Matrices<a class="headerlink" href="#matrices" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Dans ce paragraphe, les matrices seront représentées par des listes de listes. Par exemple, la matrice <span class="math notranslate nohighlight">\(\begin{pmatrix}1&amp;2&amp;3\\4&amp;5&amp;6\end{pmatrix}\)</span> sera représentée par la liste de listes <code class="code docutils literal notranslate"><span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]]</span></code> <a class="footnote-reference brackets" href="#numpy-matrices" id="id1">1</a>.</p>
+<div class="section" id="produit-matriciel">
+<h2>7.5.1. Produit matriciel<a class="headerlink" href="#produit-matriciel" title="Lien permanent vers ce titre">¶</a></h2>
+<pre class="literal-block">In [1]: def produit(A, B):
+   ...:     return [[sum(L[k] * B[k][j] for k in range(len(L))) for j in range(len(B[0]))] for L in A]
+   ...: 
+
+In [2]: A = [[1, 2, 3], [4, 5, 6]]
+
+In [3]: B = [[1, 2], [3, 4], [5,6]]
+
+In [4]: produit(A, B)
+Out[4]: [[22, 28], [49, 64]]
+
+In [5]: produit(B, A)
+Out[5]: [[9, 12, 15], [19, 26, 33], [29, 40, 51]]</pre>
+</div>
+<div class="section" id="operations-elementaires">
+<h2>7.5.2. Opérations élémentaires<a class="headerlink" href="#operations-elementaires" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On définit plusieurs opérations élémentaires sur les lignes d’une matrice.</p>
+<ul>
+<li><p>l’échange de lignes <span class="math notranslate nohighlight">\(L_i\leftrightarrow L_j\)</span></p>
+<blockquote>
+<div><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="k">def</span> <span class="nf">echange_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="n">M</span>
+<span class="gp">   ...: </span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>la transvection <span class="math notranslate nohighlight">\(L_i\leftarrow L_i+\lambda L_j\)</span></p>
+<blockquote>
+<div><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="k">def</span> <span class="nf">transvection_ligne</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">l</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]))]</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="n">M</span>
+<span class="gp">   ...: </span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>la dilatation <span class="math notranslate nohighlight">\(L_i\leftarrow\lambda L_i\)</span></p>
+<blockquote>
+<div><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="k">def</span> <span class="nf">dilatation_ligne</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">l</span> <span class="k">for</span> <span class="n">coeff</span> <span class="ow">in</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="n">M</span>
+<span class="gp">   ...: </span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Les fonctions précédentes, modifient la matrice donnée en argument puisqu’une liste est un objet mutable.</p>
+</div>
+</div>
+<div class="section" id="algorithme-du-pivot-de-gauss">
+<h2>7.5.3. Algorithme du pivot de Gauss<a class="headerlink" href="#algorithme-du-pivot-de-gauss" title="Lien permanent vers ce titre">¶</a></h2>
+<p>A l’aide des opérations élémentaires précédemment définies, on peut alors définir une fonction appliquant l’algorithme du pivot de Gauss à une matrice pour la mettre sous forme <em>échelonnée</em>.</p>
+<p>Pour des raisons de stabilité numérique, on recherche le pivot de valeur absolue maximale.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="k">def</span> <span class="nf">recherche_pivot_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="n">m</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="gp">   ...: </span>    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span>
+<span class="gp">   ...: </span>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)):</span>
+<span class="gp">   ...: </span>        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">m</span><span class="p">:</span>
+<span class="gp">   ...: </span>            <span class="n">j</span> <span class="o">=</span> <span class="n">k</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="n">j</span>
+<span class="gp">   ...: </span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="k">def</span> <span class="nf">pivot_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)):</span>
+<span class="gp">   ....: </span>        <span class="n">j</span> <span class="o">=</span> <span class="n">recherche_pivot_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+<span class="gp">   ....: </span>        <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span>
+<span class="gp">   ....: </span>            <span class="n">echange_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="gp">   ....: </span>        <span class="k">if</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ....: </span>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)):</span>
+<span class="gp">   ....: </span>                <span class="n">transvection_ligne</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">M</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le test <code class="code docutils literal notranslate"><span class="pre">if</span> <span class="pre">M[i][i]</span> <span class="pre">!=</span> <span class="pre">0:</span></code>, s’il est correct en théorie, est en fait ridicule en pratique. Puisque l’on ne travaille qu’avec des valeurs approchées, un pivot nul en théorie (si l’on effectuait des calculs exacts) ne sera jamais nul en pratique.</p>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+
+<span class="gp">In [12]: </span><span class="n">pivot_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="gh">Out[12]: </span><span class="go"></span>
+<span class="go">[[1, 2, 3, 4],</span>
+<span class="go"> [0.0, -4.0, -8.0, -12.0],</span>
+<span class="go"> [0.0, 0.0, 0.0, 0.0],</span>
+<span class="go"> [0.0, 0.0, 0.0, 0.0]]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On pourrait alors utiliser la forme échelonnée pour calculer le rang d’une matrice : il suffirait alors de compter le nombre de lignes non nulles. Mais à nouveau, il n’est pas évident de savoir en pratique si une ligne est réellement nulle puisqu’on a accès qu’à des valeurs approchées de ses coefficients.</p>
+</div>
+</div>
+<div class="section" id="resolution-de-systemes-lineaires">
+<h2>7.5.4. Résolution de systèmes linéaires<a class="headerlink" href="#resolution-de-systemes-lineaires" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On considère un <strong>système de Cramer</strong> sous forme matricielle <span class="math notranslate nohighlight">\(AX=B\)</span> où <span class="math notranslate nohighlight">\(A\)</span> est une matrice inversible, <span class="math notranslate nohighlight">\(B\)</span> une matrice colonne donnée et <span class="math notranslate nohighlight">\(X\)</span> une matrice colonne inconnue. Pour résoudre ce système, il suffit dans un premier temps de mettre la matrice <span class="math notranslate nohighlight">\(\begin{pmatrix}A\mid B\end{pmatrix}\)</span> sous forme échelonnée. On peut utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">pivot_lignes</span></code> précédemment définie mais on aura également besoin d’une fonction permettant de concaténer une matrice carrée (sous forme d’une liste de listes) et une matrice colonne (sous forme d’une liste).</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">def</span> <span class="nf">concatenation_vecteur</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="p">[</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">))]</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<p>Une fois que le pivot de Gauss a été effectué sur la matrice <span class="math notranslate nohighlight">\(\begin{pmatrix}A\mid B\end{pmatrix}\)</span>, il faut effectuer un pivot « à rebours » pour déterminer la solution du système <span class="math notranslate nohighlight">\(AX=B\)</span>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="k">def</span> <span class="nf">pivot_lignes_rebours</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">))):</span>
+<span class="gp">   ....: </span>        <span class="n">dilatation_ligne</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="gp">   ....: </span>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<span class="gp">   ....: </span>            <span class="n">transvection_ligne</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">M</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<p>La matrice colonne solution est alors la dernière colonne de la matrice obtenue, qu’il faut donc extraire.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="k">def</span> <span class="nf">extract_vecteur</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="n">M</span><span class="p">]</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<p>On peut alors définir une fonction d’arguments une matrice inversible <span class="math notranslate nohighlight">\(A\)</span> et une matrice colonne <span class="math notranslate nohighlight">\(B\)</span> renvoyant l’unique solution du système <span class="math notranslate nohighlight">\(AX=B\)</span>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="k">def</span> <span class="nf">resolution</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">M</span> <span class="o">=</span> <span class="n">concatenation_vecteur</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="n">pivot_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="n">pivot_lignes_rebours</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">extract_vecteur</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [17]: </span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]]</span>
+
+<span class="gp">In [18]: </span><span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="gp">In [19]: </span><span class="n">resolution</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="gh">Out[19]: </span><span class="go">[1.0, 2.0, 3.0]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inversion-d-une-matrice">
+<h2>7.5.5. Inversion d’une matrice<a class="headerlink" href="#inversion-d-une-matrice" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On peut également utiliser l’algorithme du pivot de Gauss pour inverser une matrice : on transforme une matrice inversible en la matrice identité en effectuant l’algorithme du pivot de Gauss puis l’algorithme du pivot de Gauss « à rebours ». On récpercute les opérations effectuées sur une matrice identité de même taille que <span class="math notranslate nohighlight">\(A\)</span>, qui est alors transformée en l’inverse de la matrice initiale. Pour effectuer aissément les mêmes opérations sur les lignes d’une matrice <span class="math notranslate nohighlight">\(A\)</span> et la matrice identité <span class="math notranslate nohighlight">\(I\)</span>, on forme la matrice <span class="math notranslate nohighlight">\(\begin{pmatrix}A\mid I\end{pmatrix}\)</span>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="k">def</span> <span class="nf">concat_identite</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="p">[</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">j</span><span class="o">==</span> <span class="n">i</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">))]</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<p>Après les pivots, il reste à extraire la matrice inverse.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="k">def</span> <span class="nf">extract_inverse</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">):]</span> <span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="n">M</span><span class="p">]</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<p>On peut alors proposer la fonction suivante.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">M</span> <span class="o">=</span> <span class="n">concat_identite</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="n">pivot_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="n">pivot_lignes_rebours</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">extract_inverse</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<pre class="literal-block">In [23]: A = [[1, 5, 6], [2, 11, 19], [3, 19, 47]]
+
+In [24]: B = inverse(A)
+
+In [25]: B
+Out[25]: [[156.0, -121.0, 29.0], [-37.0, 29.0, -7.0], [5.0, -4.0, 1.0]]
+
+In [26]: produit(A, B)
+Out[26]: [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
+
+In [27]: produit(B, A)
+Out[27]: [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]</pre>
+</div>
+<div class="section" id="calcul-du-determinant">
+<h2>7.5.6. Calcul du déterminant<a class="headerlink" href="#calcul-du-determinant" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On peut également se servir du pivot de Gauss pour calculer le déterminant d’une matrice carrée. En effet, le déterminant est invariant par transvection et échange de lignes et le déterminant d’une matrice triangulaire est le produit de ses coefficients diagonaux <a class="footnote-reference brackets" href="#determinant-idiot" id="id2">2</a>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="k">def</span> <span class="nf">determinant</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">pivot_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)):</span>
+<span class="gp">   ....: </span>        <span class="n">p</span> <span class="o">*=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">p</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [29]: </span><span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+
+<span class="gp">In [30]: </span><span class="n">determinant</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="gh">Out[30]: </span><span class="go">-0.0</span>
+</pre></div>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="numpy-matrices"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Le module <code class="code docutils literal notranslate"><span class="pre">numpy</span></code> possède un type <code class="code docutils literal notranslate"><span class="pre">matrix</span></code> permettant de simplifier grandement les fonctions suivantes. Il possède d’ailleurs également un sous module <code class="code docutils literal notranslate"><span class="pre">numpy.linalg</span></code> regroupant de nombreuses fonctions ayant trait à l’algèbre linéaire sur les matrices.</p>
+</dd>
+</dl>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">À faire</p>
+<p>mettre un lien vers chapitre numpy ?</p>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="determinant-idiot"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>On pourrait penser à calculer le déterminant via la formule qui l’exprime en fonction des coefficients de la matrice ou à l’aide d’un développement par rapport à une ligne ou une colonne mais on verra dans le chapitre ??? que c’est nettemment moins efficace que le pivot de Gauss</p>
+</dd>
+</dl>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">À faire</p>
+<p>Mettre référence vers le chapitre complexité</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tris.html" class="btn btn-neutral float-right" title="7.6. Tris" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="probabilites.html" class="btn btn-neutral float-left" title="7.4. Probabilités" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Laurent Garcin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

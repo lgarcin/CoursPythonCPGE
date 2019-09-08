@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.2. Tuples &mdash; Documentation CoursPythonCPGE </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="3.3. Chaînes de caractère" href="chaines.html" />
+    <link rel="prev" title="3.1. Listes" href="listes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="types_composes.html">3. Types composés</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="listes.html">3.1. Listes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaines.html">3.3. Chaînes de caractère</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutabilite.html">3.4. Mutabilité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionnaires.html">3.5. Dictionnaires</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CoursPythonCPGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="types_composes.html">3. Types composés</a> &raquo;</li>
+        
+      <li>3.2. Tuples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tuples.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tuples">
+<h1>3.2. Tuples<a class="headerlink" href="#tuples" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Un <em>tuple</em> est tout à fait similaire à une liste : il s’agit d’une collection d’objets <a class="footnote-reference brackets" href="#tuple" id="id1">1</a> . On crée un tuple en séparant les objets par des des virgules <code class="code docutils literal notranslate"><span class="pre">,</span></code> et en les encadrant <em>éventuellement</em> par des parenthèses <code class="code docutils literal notranslate"><span class="pre">(...)</span></code>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="nb">type</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="gh">Out[1]: </span><span class="go">tuple</span>
+
+<span class="gp">In [2]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+
+<span class="gp">In [3]: </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gh">Out[3]: </span><span class="go">tuple</span>
+</pre></div>
+</div>
+<p>Quand faut-il encadrer un tuple avec des parenthèses ? Par exemple si l’on crée une liste dont certains arguments sont des tuples.</p>
+<pre class="literal-block">In [4]: [(1, 2), (3, 4)]
+Out[4]: [(1, 2), (3, 4)]
+
+In [5]: [1, 2, 3, 4]
+Out[5]: [1, 2, 3, 4]
+
+In [6]: [(1, 2), (3, 4)] == [1, 2, 3, 4]
+Out[6]: False</pre>
+<p>Ou bien quand on on apelle une fonction dont un ou plusieurs arguments sont des tuples.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>   <span class="c1"># fonction de deux arguments (deux tuples)</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>       <span class="c1"># fonction de quatre arguments (quatre entiers)</span>
+</pre></div>
+</div>
+<p>Les opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> et <code class="code docutils literal notranslate"><span class="pre">+=</span></code> fonctionnent comme pour les listes.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gh">Out[7]: </span><span class="go">(1, 2, 3, 4)</span>
+
+<span class="gp">In [8]: </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="gp">In [9]: </span><span class="n">a</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="gp">In [10]: </span><span class="n">a</span>
+<span class="gh">Out[10]: </span><span class="go">(1, 2, 3, 4)</span>
+</pre></div>
+</div>
+<p>On peut <strong>accéder</strong> aux éléments d’un tuple de la même manière qu’on accède aux éléments d’une liste.</p>
+<pre class="literal-block">In [11]: a = (1, 'a', 2, 'b', 3, 'c', 4, 'd', 5, 'e', 6, 'f')
+
+In [12]: a[3]
+Out[12]: 'b'
+
+In [13]: a[2:]
+Out[13]: (2, 'b', 3, 'c', 4, 'd', 5, 'e', 6, 'f')
+
+In [14]: a[:5]
+Out[14]: (1, 'a', 2, 'b', 3)
+
+In [15]: a[-3]
+Out[15]: 'e'
+
+In [16]: a[2:9:2]
+Out[16]: (2, 3, 4, 5)
+
+In [17]: a[8:1:-3]
+Out[17]: (5, 'c', 2)</pre>
+<p>Par contre, on ne peut pas <strong>modifier</strong> un tuple : on ne peut ni modifier ses éléments, ni en ajouter, ni en enlever.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [18]: </span><span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="gp">In [19]: </span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mo">06</span><span class="n">ee6658ee71</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+<p>A nouveau, la fonction <code class="code docutils literal notranslate"><span class="pre">len</span></code> renvoie la longueur d’un tuple.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="nb">len</span><span class="p">((</span><span class="mf">1.23</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
+<span class="gh">Out[20]: </span><span class="go">3</span>
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title first">Affectations multiples</p>
+<p>Les tuples permettent d’affecter des valeurs à plusieurs variables en même temps <a class="footnote-reference brackets" href="#affmul" id="id2">2</a>.</p>
+<pre class="literal-block">In [21]: a, b, c = 1, 2, 3
+
+In [22]: a
+Out[22]: 1
+
+In [23]: b
+Out[23]: 2
+
+In [24]: c
+Out[24]: 3</pre>
+<p id="affectations-multiples">Cela permet notamment d’échanger élégamment les valeurs de deux variables <a class="footnote-reference brackets" href="#echange" id="id3">3</a>.</p>
+<pre class="literal-block">In [25]: a, b = 1, 2
+
+In [26]: a
+Out[26]: 1
+
+In [27]: b
+Out[27]: 2
+
+In [28]: a, b = b, a
+
+In [29]: a
+Out[29]: 2
+
+In [30]: b
+Out[30]: 1</pre>
+</div>
+<p class="rubric">Notes</p>
+<dl class="footnote brackets">
+<dt class="label" id="tuple"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Il s’agit exactement de la notion de <em>uplet</em> en mathématiques. L’appellation <em>tuple</em> provient en fait de l’anglais. En effet, en anglais, on parle de « quadruple », « quintuple », etc.. et plus généralement de <span class="math notranslate nohighlight">\(n\)</span>-<strong>tuple</strong> tandis qu’en français, on emploie les termes « quadruplet », « quintuplet », etc.. et de manière générale <span class="math notranslate nohighlight">\(n\)</span>-<strong>uplet</strong>. Néanmoins, la terminologie anglo-saxonne s’est imposée en ce qui concerne Python.</p>
+</dd>
+<dt class="label" id="affmul"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>On peut également procéder à des affectations multiples à l’aide de listes.</p>
+<pre class="literal-block">In [31]: [a, b, c] = [1, 2, 3]
+
+In [32]: a
+Out[32]: 1
+
+In [33]: b
+Out[33]: 2
+
+In [34]: c
+Out[34]: 3</pre>
+</dd>
+<dt class="label" id="echange"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>A nouveau, on peut également utiliser des listes pour échanger les valeurs de deux variables.</p>
+<pre class="literal-block">In [35]: [a, b] = [1, 2]
+
+In [36]: a
+Out[36]: 1
+
+In [37]: b
+Out[37]: 2
+
+In [38]: [a, b] = [b, a]
+
+In [39]: a
+Out[39]: 2
+
+In [40]: b
+Out[40]: 1</pre>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="chaines.html" class="btn btn-neutral float-right" title="3.3. Chaînes de caractère" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="listes.html" class="btn btn-neutral float-left" title="3.1. Listes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Laurent Garcin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

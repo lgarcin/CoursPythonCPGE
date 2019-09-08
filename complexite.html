@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.2. Complexité &mdash; Documentation CoursPythonCPGE </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="6. Récursivité" href="recursivite.html" />
+    <link rel="prev" title="5.1. Preuve d’un algorithme" href="preuve.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="preuve.html">5.1. Preuve d’un algorithme</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.2. Complexité</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CoursPythonCPGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="theorie.html">5. Un peu de théorie</a> &raquo;</li>
+        
+      <li>5.2. Complexité</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/complexite.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="complexite">
+<h1>5.2. Complexité<a class="headerlink" href="#complexite" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="definition-generale">
+<h2>5.2.1. Définition générale<a class="headerlink" href="#definition-generale" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’analyse de la complexité d’un algorithme consiste à étudier le temps (complexité <em>temporelle</em>) ou la mémoire (complexité <em>spatiale</em>) nécessaires à l’exécution d’un algorithme. En fait, ce qui nous permettra de mesurer réellement l’efficacité d’un algorithme est l’évolution de la complexité spatiale ou temporelle en fonction de la taille des données.</p>
+<p>On peut par exemple utiliser la <em>commande magique</em> <code class="code docutils literal notranslate"><span class="pre">%timeit</span></code> pour évaluer le temps nécessaire à l’exécution d’une instruction élémentaire dans la console IPython. On montre ci-dessous l’évolution du temps de calcul nécessaire au tri d’un tableau aléatoire dont la taille augmente géométriquement.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">random</span>
+
+<span class="gp">In [2]: </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="o">%</span><span class="k">timeit</span> sorted(random(10**n))
+<span class="gp">   ...: </span>
+<span class="go">1.91 us +- 42.6 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">3.4 us +- 73.2 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">19.6 us +- 112 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">239 us +- 6.55 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">3.02 ms +- 34.4 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
+</pre></div>
+</div>
+<p>Bien entendu, le temps ou la mémoire nécessaires à l’exécution d’un algorithme dépendent de nombreux facteurs indépendants de la conception de l’algorithme : machine utilisée, langage employé, … Cependant, pour comparer l’efficacité de deux algorithmes, il faut trouver un moyen de mesurer leur complexité <strong>intrinsèque</strong>.</p>
+<p>En ce qui concerne la complexité temporelle, on procède généralement de la manière suivante : on décompose l’algorithme en instructions élémentaires (affectations, opérations arithmétiques, accès à un élément d’une liste) et on suppose que chacune de ces instructions élémentaires consomme une unité de temps <a class="footnote-reference brackets" href="#elementaire" id="id1">1</a>. On peut alors évaluer la complexité temporelle de l’algorithme comme la somme de ces coûts élémentaires.</p>
+<p>Par exemple, l’algorithme suivant calcule la somme des éléments d’une liste.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">   ...: </span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+<span class="gp">   ...: </span>        <span class="n">s</span> <span class="o">+=</span> <span class="n">x</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="n">s</span>
+<span class="gp">   ...: </span>
+</pre></div>
+</div>
+<p>Si on considère l’affectation <code class="code docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">0</span></code> et les « additions/affectations » <code class="code docutils literal notranslate"><span class="pre">s</span> <span class="pre">+=</span> <span class="pre">x</span></code> comme des opérations élémentaires, la complexité de cet algorithme est <span class="math notranslate nohighlight">\(n+1\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne la taille de la liste. Autrement dit, le temps de calcul devrait varier quasi linéairement en fonction de la taille de la liste.</p>
+<p>Le test suivant semble corroborer ce résultat. A chaque fois que la taille de la liste est multipliée par 10, le temps de calcul est lui-même approximativement multiplié par 10, du moins lorsque la taille est grande.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="n">l</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="o">%</span><span class="k">timeit</span> somme(l)
+<span class="gp">   ...: </span>
+<span class="go">2.64 us +- 82 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">17 us +- 387 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">159 us +- 8.81 us per loop (mean +- std. dev. of 7 runs, 10000 loops each)</span>
+<span class="go">1.56 ms +- 69.4 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="differents-cas-de-complexite">
+<h2>5.2.2. Différents cas de complexité<a class="headerlink" href="#differents-cas-de-complexite" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La complexité peut dépendre de la taille des données mais elle peut également dépendre de la forme des données. On considère l’algorithme suivant qui recherche un élément à l’intérieur d’une liste.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">elt</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+<span class="gp">   ...: </span>        <span class="k">if</span> <span class="n">elt</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+<span class="gp">   ...: </span>            <span class="k">return</span> <span class="bp">True</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="bp">False</span>
+<span class="gp">   ...: </span>
+</pre></div>
+</div>
+<p>On attribue à chaque test <code class="code docutils literal notranslate"><span class="pre">elt</span> <span class="pre">==</span> <span class="pre">x</span></code> un coût élémentaire. <strong>Dans le meilleur des cas</strong>, l’élément recherché est le premier de la liste et la complexité vaut 1. <strong>Dans le pire des cas</strong>, l’élément recherché n’est pas présent dans la liste et la complexité est égale à la taille de la liste <a class="footnote-reference brackets" href="#complexite-moyenne" id="id2">2</a>.</p>
+</div>
+<div class="section" id="complexite-asymtotique">
+<h2>5.2.3. Complexité asymtotique<a class="headerlink" href="#complexite-asymtotique" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour décrire la complexité d’un algorithme, on utilise les notations de Landau et notamment le symbole <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> <a class="footnote-reference brackets" href="#grand-o" id="id3">3</a>. Considérons par exemple la fonction suivante.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="k">def</span> <span class="nf">bidon</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">   ...: </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="gp">   ...: </span>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<span class="gp">   ...: </span>            <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">j</span><span class="o">**</span><span class="mi">2</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="n">s</span>
+<span class="gp">   ...: </span>
+</pre></div>
+</div>
+<p>Si l’on considère les multiplications, les exponentiations et les sommes/affectations comme des opérations élémentaires, la complexité de cette fonction est</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=0}^{n-1}\sum_{j=0}^{i-1}4=2n(n-1)\]</div>
+<p>On pourra dire que la complexité de cette fonction est en <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> <a class="footnote-reference brackets" href="#le-plus-peut-le-moins" id="id4">4</a>.</p>
+<p>On peut employer les adjectifs suivants pour qualifier certains types de complexité.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 68%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Complexité</p></th>
+<th class="head"><p>Adjectif</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>constante</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathcal{O}(\log n)\)</span></p></td>
+<td><p>logarithmique</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span></p></td>
+<td><p>linéaire</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span></p></td>
+<td><p>quadratique</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathcal{O}(2^n)\)</span></p></td>
+<td><p>exponentielle</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="footnote brackets">
+<dt class="label" id="elementaire"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Bien entendu, cette hypothèse est fausse en pratique. Une affectation ne prend pas autant de temps qu’une addition.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="o">%</span><span class="k">timeit</span> a = 2
+<span class="gp">   ...: </span><span class="o">%</span><span class="k">timeit</span> 2 + 3
+<span class="gp">   ...: </span>
+<span class="go">10.7 ns +- 0.632 ns per loop (mean +- std. dev. of 7 runs, 100000000 loops each)</span>
+<span class="go">5.97 ns +- 0.282 ns per loop (mean +- std. dev. of 7 runs, 100000000 loops each)</span>
+</pre></div>
+</div>
+</dd>
+<dt class="label" id="complexite-moyenne"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Si l’on possède des informations statistiques sur les données d’entrée, on peut également tenter de calculer une <strong>complexité en moyenne</strong>.</p>
+</dd>
+<dt class="label" id="grand-o"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>On rappelle que si <span class="math notranslate nohighlight">\((u_n)\)</span> et <span class="math notranslate nohighlight">\((v_n)\)</span> sont deux suites, alors <span class="math notranslate nohighlight">\(u_n=\mathcal{O}(v_n)\)</span> s’il existe une <strong>constante</strong> <span class="math notranslate nohighlight">\(K\)</span> telle que <span class="math notranslate nohighlight">\(|u_n|\leq K|v_n|\)</span> à partir d’un certain rang.</p>
+</dd>
+<dt class="label" id="le-plus-peut-le-moins"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>Bien entendu, la complexité est également en <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span> ou encore en <span class="math notranslate nohighlight">\(\mathcal{O}(n^4)\)</span> mais ceci est moins précis que <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>. On peut également dire que la complexité est en <span class="math notranslate nohighlight">\(\mathcal{O}(2n^2)\)</span> mais cela n’apporte pas plus d’information que <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="recursivite.html" class="btn btn-neutral float-right" title="6. Récursivité" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="preuve.html" class="btn btn-neutral float-left" title="5.1. Preuve d’un algorithme" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Laurent Garcin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

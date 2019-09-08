@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.2. Analyse numérique &mdash; Documentation CoursPythonCPGE </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="7.3. Arithmétique" href="arithmetique.html" />
+    <link rel="prev" title="7.1. Algorithmes de recherche" href="recherche.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="recherche.html">7.1. Algorithmes de recherche</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.2. Analyse numérique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetique.html">7.3. Arithmétique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="probabilites.html">7.4. Probabilités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html">7.5. Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tris.html">7.6. Tris</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CoursPythonCPGE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="algoclassiques.html">7. Algorithmes classiques</a> &raquo;</li>
+        
+      <li>7.2. Analyse numérique</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/analysenumerique.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="analyse-numerique">
+<h1>7.2. Analyse numérique<a class="headerlink" href="#analyse-numerique" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="resolution-d-equations-par-dichotomie">
+<h2>7.2.1. Résolution d’équations par dichotomie<a class="headerlink" href="#resolution-d-equations-par-dichotomie" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il s’agit ici de calculer une <em>valeur approchée</em> d’une solution d’une équation du type <span class="math notranslate nohighlight">\(f(x)=0\)</span>. On ne cherche pas à obtenir une expression exacte d’une telle solution, ce qui est de toute façon évidemment impossible de manière générale.</p>
+<p>On suppose qu’on dispose d’une fonction <span class="math notranslate nohighlight">\(f\)</span> continue et strictement monotone sur un intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> vérifiant <span class="math notranslate nohighlight">\(f(a)f(b)\leq0\)</span>. Le théorème des valeurs intermédiaires garantit l’existence d’une unique solution à l’équation <span class="math notranslate nohighlight">\(f(x)=0\)</span> sur l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span>. Pour obtenir une <em>valeur approchée</em> de cette solution, on procède par <strong>dichotomie</strong> :</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>On calcule <span class="math notranslate nohighlight">\(c=(a+b)/2\)</span> et <span class="math notranslate nohighlight">\(f(c)\)</span>.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f(a)f(c)\leq0\)</span>, la solution appartient à l’intervalle <span class="math notranslate nohighlight">\([a,c]\)</span>. Sinon, elle appartient à l’intervalle <span class="math notranslate nohighlight">\([c,b]\)</span>.</p></li>
+<li><p>Dans le premier cas, on remplace <span class="math notranslate nohighlight">\(b\)</span> par <span class="math notranslate nohighlight">\(c\)</span> tandis que dans le second cas, on remplace <span class="math notranslate nohighlight">\(a\)</span> par <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+<li><p>On répète les étapes 1., 2. et 3. tant que la longeur de l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> est supérieur à une précision <span class="math notranslate nohighlight">\(\epsilon\)</span> donnée.</p></li>
+<li><p>La valeur de <span class="math notranslate nohighlight">\(c\)</span> est alors une valeur appochée de la solution de <span class="math notranslate nohighlight">\(f(x)=0\)</span> à <span class="math notranslate nohighlight">\(\epsilon/2\)</span> près.</p></li>
+</ol>
+</div></blockquote>
+
+<script src="bokeh-plot-7624e3bb94bb43e9a06439135ca80afe-external-analysenumerique.js" id="fc4dd58b-d2d8-43a9-bccd-e6d99a0b6728"></script><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">dicho</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">eps</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">eps</span><span class="p">:</span>
+<span class="gp">   ...: </span>        <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="gp">   ...: </span>        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ...: </span>            <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
+<span class="gp">   ...: </span>        <span class="k">else</span><span class="p">:</span>
+<span class="gp">   ...: </span>            <span class="n">a</span> <span class="o">=</span> <span class="n">c</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="gp">   ...: </span>
+
+<span class="gp">In [2]: </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span>
+
+<span class="gp">In [3]: </span><span class="n">dicho</span><span class="p">(</span><span class="n">sin</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mo">0001</span><span class="p">)</span>
+<span class="gh">Out[3]: </span><span class="go">3.141571044921875</span>
+</pre></div>
+</div>
+<p>Il est à remarquer que le module <code class="code docutils literal notranslate"><span class="pre">scipy</span></code> dispose déjà de fonctions pouvant résoudre de manière approchée des équations du type <span class="math notranslate nohighlight">\(f(x)=0\)</span>.</p>
+<pre class="literal-block">In [4]: from scipy.optimize import fsolve
+
+In [5]: from math import cos
+
+In [6]: f = lambda x: cos(x**2)
+
+In [7]: x0 = fsolve(f, 0)
+
+In [8]: x0
+Out[8]: array([-49.99136881])
+
+In [9]: f(*x0)
+Out[9]: -1.063024370691732e-13</pre>
+</div>
+<div class="section" id="calcul-d-integrales">
+<h2>7.2.2. Calcul d’intégrales<a class="headerlink" href="#calcul-d-integrales" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On expose ici des algorithmes de calcul <em>approché</em> d’intégrales <a class="footnote-reference brackets" href="#quad" id="id1">1</a>. A nouveau, on ne cherche pas à obtenir des expressions exactes de ces intégrales.</p>
+<div class="section" id="methode-des-rectangles">
+<h3>7.2.2.1. Méthode des rectangles<a class="headerlink" href="#methode-des-rectangles" title="Lien permanent vers ce titre">¶</a></h3>
+<p>On peut approcher une intégrale par une somme d’aire de rectangles comme l’indique la figure suivante.</p>
+
+<script src="bokeh-plot-231474622628439c8e90c2a846bf4216-external-analysenumerique.js" id="968398f9-8003-47ce-a051-006fc9aa2db8"></script><p>Plus précisément, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de rectangles :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+R_n&amp;=\frac{b-a}{n}\sum_{k=0}^{n-1}f(x_k)\approx\int_a^bf(t)\,\mathrm{dt}&amp;\text{(rectangles verts)}\\
+S_n&amp;=\frac{b-a}{n}\sum_{k=1}^nf(x_k)\approx\int_a^bf(t)\,\mathrm{dt}&amp;\text{(rectangles rouges)}
+\end{align*}\end{split}\]</div>
+<p>On peut alors proposer la fonction suivante pour approcher l’intégrale d’une fonction <span class="math notranslate nohighlight">\(f\)</span> sur un intervalle <span class="math notranslate nohighlight">\([a,b]\)</span>.</p>
+<pre class="literal-block">In [10]: def rectangles(f, a, b, N, side):
+   ....:     pas = (b-a) / N
+   ....:     x = a
+   ....:     somme = 0
+   ....:     for _ in range(N):
+   ....:         if side:
+   ....:             somme += f(x)
+   ....:         x += pas
+   ....:         if not side:
+   ....:             somme += f(x)
+   ....:     return somme / N
+   ....: 
+
+In [11]: rectangles(lambda x: x**2, 0, 1, 100, True)
+Out[11]: 0.3283500000000004
+
+In [12]: rectangles(lambda x: x**2, 0, 1, 100, False)
+Out[12]: 0.33835000000000043</pre>
+<p>Les sommes <span class="math notranslate nohighlight">\(R_n\)</span> et <span class="math notranslate nohighlight">\(S_n\)</span> sont appelées des <em>sommes de Riemann</em> et on peut même prouver que pour une fonction <span class="math notranslate nohighlight">\(f\)</span> continue,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{n\to+\infty}S_n=\lim_{n\to+\infty}T_n=\int_a^bf(t)\,\mathrm{dt}\]</div>
+<p>En particulier, l’appoximation de l’intégrale <span class="math notranslate nohighlight">\(\int_a^bf(t)\,\mathrm{dt}\)</span> est d’autant meilleure que le nombre <span class="math notranslate nohighlight">\(n\)</span> de rectangles est grand, ce qui se conçoit très bien géométriquement <a class="footnote-reference brackets" href="#erreur-arrondi-integrale" id="id2">2</a>.</p>
+</div>
+<div class="section" id="methode-des-trapezes">
+<h3>7.2.2.2. Méthode des trapèzes<a class="headerlink" href="#methode-des-trapezes" title="Lien permanent vers ce titre">¶</a></h3>
+<p>On peut également apporcher une intégrale comme une somme d’aires de trapèzes comme sur la figure suivante. Bien évidemment, l’approximation de l’intégrale est meilleure qu’avec des rectangles.</p>
+
+<script src="bokeh-plot-89cf8c94b4464210ab605cdf64399991-external-analysenumerique.js" id="ae366fae-9017-45cc-acca-13af92b92637"></script><p>A nouveau, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de trapèzes :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T_n=\frac{b-a}{n}\sum_{k=0}^{n-1}\frac{f(x_k)+f(x_{k+1})}{2}\approx\int_a^bf(t)\,\mathrm{dt}\\\end{split}\]</div>
+<p>On peut évidemment remarquer que <span class="math notranslate nohighlight">\(T_n=(R_n+S_n)/2\)</span>. En fait, la somme précédente peut se réécrire de manière différente :</p>
+<div class="math notranslate nohighlight">
+\[T_n=\frac{b-a}{n}\left(\frac{f(a)+f(b)}{2}+\sum_{k=1}^{n-1}f(x_k)\right)\]</div>
+<p>Cette nouvelle formule permet de calculer <span class="math notranslate nohighlight">\(T_n\)</span> en effectuant moins d’opérations qu’avec la formule précédente. On peut alors donner l’algorithme suivant.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">def</span> <span class="nf">trapezes</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">pas</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+<span class="gp">   ....: </span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
+<span class="gp">   ....: </span>    <span class="n">somme</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="gp">   ....: </span>        <span class="n">x</span> <span class="o">+=</span> <span class="n">pas</span>
+<span class="gp">   ....: </span>        <span class="n">somme</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">somme</span> <span class="o">/</span> <span class="n">N</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [14]: </span><span class="n">trapezes</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="gh">Out[14]: </span><span class="go">0.3333500000000004</span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">À faire</p>
+<p>Méthodes de quadrature</p>
+</div>
+</div>
+</div>
+<div class="section" id="resolution-d-equations-differentielles">
+<h2>7.2.3. Résolution d’équations différentielles<a class="headerlink" href="#resolution-d-equations-differentielles" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’objectif est de résoudre numériquement des équations différentielles : c’est-à-dire qu’on ne cherche pas des expressions explicites des solutions mais des valeurs approchées <a class="footnote-reference brackets" href="#odeint" id="id4">3</a>.</p>
+<p>Pour commencer, on traitera le cas de <em>problème de Cauchy</em> d’ordre 1.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{
+\begin{aligned}
+y'&amp;=f(t,y)\\
+y(t_0)&amp;=y_0
+\end{aligned}
+\right.\end{split}\]</div>
+<p>On rappelle qu’un tel problème consiste en la donnée d’une équation différentielle résolue d’ordre 1 <span class="math notranslate nohighlight">\(y'=f(t,y)\)</span> et d’une condition initiale <span class="math notranslate nohighlight">\(y(t_0)=y_0\)</span>. Le théorème de Cauchy-Lipschitz garantit l’existence et l’unicité d’une solution à ce problème lorsque <span class="math notranslate nohighlight">\(f\)</span> est suffisamment règulière.</p>
+<p>L’idée est d’utiliser une approximation affine de la fonction solution : <span class="math notranslate nohighlight">\(y(t+\Delta\!t)\approx y(t)+y'(t)\Delta\!t\)</span>. Le calcul de <span class="math notranslate nohighlight">\(y'(t)\)</span> est possible grâce à l’équation différentielle si l’on connaît <span class="math notranslate nohighlight">\(y(t)\)</span> puisque <span class="math notranslate nohighlight">\(y'(t)=f(t,y(t))\)</span>. On itère ce processus pour calculer des valeurs approchées à des intervalles de temps réguliers. Plus précisément, en posant <span class="math notranslate nohighlight">\(t_k=t_0+k\Delta\!t\)</span>, on a alors</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{alignat}{2}
+y(t_1) &amp; \approx y(t_0)+y'(t_0)\Delta\!t &amp; = y(t_0)+f(t_0,y_0)\Delta\!t &amp;= y_1\\
+y(t_2) &amp; \approx y(t_1)+y'(t_1)\Delta\!t &amp; \approx y(t_1)+f(t_1,y_1)\Delta\!t &amp;= y_2\\
+y(t_3) &amp; \approx y(t_2)+y'(t_2)\Delta\!t &amp; \approx y(t_2)+f(t_2,y_2)\Delta\!t &amp;= y_3\\
+\dots
+\end{alignat}\end{split}\]</div>
+<p>La méthode que l’on vient de décrire porte le nom de <strong>méthode d’Euler</strong>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">pas</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">t</span> <span class="o">=</span> <span class="n">t0</span>
+<span class="gp">   ....: </span>    <span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="gp">   ....: </span>    <span class="n">liste_t</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span>
+<span class="gp">   ....: </span>    <span class="n">liste_y</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="p">]</span>
+<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>
+<span class="gp">   ....: </span>        <span class="n">y</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">pas</span>
+<span class="gp">   ....: </span>        <span class="n">t</span> <span class="o">+=</span> <span class="n">pas</span>
+<span class="gp">   ....: </span>        <span class="n">liste_t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">   ....: </span>        <span class="n">liste_y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_y</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<p>Par exemple, on calcule ici une solution approchée du système de Cauchy</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{
+\begin{aligned}
+y'&amp;=\cos(t)y\\
+y(0)&amp;=1
+\end{aligned}
+\right.\end{split}\]</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span>
+
+<span class="gp">In [17]: </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="gp">In [18]: </span><span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_y</span> <span class="o">=</span> <span class="n">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mo">01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On peut tracer la courbe de la solution approchée que l’on peut comparer à la courbe de la solution exacte. En effet, on montre sans peine que l’unique solution de ce problème de Cauchy est la fonction <span class="math notranslate nohighlight">\(x\mapsto e^{\sin(x)}\)</span>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [19]: </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="gp">In [20]: </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">linspace</span>
+
+<span class="gp">In [21]: </span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+
+<span class="go"># Tracé de la solution approchée</span>
+<span class="gp">In [22]: </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution approchée&#39;</span><span class="p">);</span>
+
+<span class="go"># Tracé de la solution exacte</span>
+<span class="gp">In [23]: </span><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="gp">In [24]: </span><span class="n">y</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="gp">In [25]: </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution exacte&#39;</span><span class="p">);</span>
+
+<span class="gp">In [26]: </span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+
+<span class="go"># plt.show()</span>
+</pre></div>
+</div>
+<img alt="_images/euler.png" src="_images/euler.png" />
+<p>Bien entendu, l’approximation affine <span class="math notranslate nohighlight">\(y'(t+\Delta\!t)\approx f(t)+f'(t)\Delta\!t\)</span> est d’autant meilleure que <span class="math notranslate nohighlight">\(\Delta\!t\)</span> est petit.</p>
+
+<script src="bokeh-plot-dc433d8604674aaf92243dc654e9e7f1-external-analysenumerique.js" id="d34939fc-6851-498c-be75-078cafe5535b"></script><p>On peut adapter la méthode au cas d’un système différentiel d’ordre 1. Soit par exemple à résoudre le système différentiel suivant.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{
+\begin{aligned}
+x'&amp;=\cos(t)x+\sin(t)y\\
+y'&amp;=\sin(t)x+\cos(t)y\\
+(x(0),y(0))&amp;=(1,0)
+\end{aligned}
+\right.\end{split}\]</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [27]: </span><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">X0</span><span class="p">,</span> <span class="n">pas</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">t</span> <span class="o">=</span> <span class="n">t0</span>
+<span class="gp">   ....: </span>    <span class="n">X</span> <span class="o">=</span> <span class="n">X0</span>
+<span class="gp">   ....: </span>    <span class="n">liste_t</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span>
+<span class="gp">   ....: </span>    <span class="n">liste_X</span> <span class="o">=</span> <span class="p">[</span><span class="n">X</span><span class="p">]</span>
+<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>
+<span class="gp">   ....: </span>        <span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="n">u</span> <span class="o">*</span> <span class="n">pas</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">))]</span>
+<span class="gp">   ....: </span>        <span class="n">t</span> <span class="o">+=</span> <span class="n">pas</span>
+<span class="gp">   ....: </span>        <span class="n">liste_t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">   ....: </span>        <span class="n">liste_X</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_X</span>
+<span class="gp">   ....: </span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
+
+<span class="gp">In [29]: </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="p">[</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+
+<span class="gp">In [30]: </span><span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_X</span> <span class="o">=</span> <span class="n">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="o">.</span><span class="mo">01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [31]: </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="gp">In [32]: </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sinh</span><span class="p">,</span> <span class="n">cosh</span>
+
+<span class="gp">In [33]: </span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+
+<span class="go"># Tracé de la solution approchée</span>
+<span class="gp">In [34]: </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">liste_X</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution approchée&#39;</span><span class="p">);</span>
+
+<span class="go"># Tracé de la solution exacte</span>
+<span class="gp">In [35]: </span><span class="n">t</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="gp">In [36]: </span><span class="n">x</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="n">cosh</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+
+<span class="gp">In [37]: </span><span class="n">y</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="n">sinh</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+
+<span class="gp">In [38]: </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution exacte&#39;</span><span class="p">);</span>
+
+<span class="gp">In [39]: </span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+
+<span class="go">#plt.show()</span>
+</pre></div>
+</div>
+<img alt="_images/euler_syst.png" src="_images/euler_syst.png" />
+<p>On sait qu’il est toujours possible de ramener une équation différentielle scalaire d’ordre strictement supérieur à 1 à un système différentiel d’ordre 1.</p>
+<p>Par exemple, si l’on désire résoudre le problème de Cauchy</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{aligned}
+y''+\frac{2t}{1+t^2}y'+\frac{1}{(1+t^2)^2}y&amp;=0\\
+(y(0),y'(0))&amp;=(1,0)
+\end{aligned}\right.\end{split}\]</div>
+<p>on peut se ramener au système différentiel d’ordre 1 suivant</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{aligned}
+y'&amp;=z\\
+z'&amp;=-\frac{2t}{1+t^2}z-\frac{1}{(1+t^2)^2}y\\
+(y(0),z(0))&amp;=(1,0)
+\end{aligned}\right.\end{split}\]</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [40]: </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+
+<span class="gp">In [41]: </span><span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_X</span> <span class="o">=</span> <span class="n">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="o">.</span><span class="mo">01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [42]: </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="gp">In [43]: </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="gp">In [44]: </span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+
+<span class="go"># Tracé de la solution approchée</span>
+<span class="gp">In [45]: </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">liste_t</span><span class="p">,</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">X</span> <span class="ow">in</span> <span class="n">liste_X</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution approchée&#39;</span><span class="p">);</span>
+
+<span class="go"># Tracé de la solution exacte</span>
+<span class="gp">In [46]: </span><span class="n">t</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="gp">In [47]: </span><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="gp">In [48]: </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution exacte&#39;</span><span class="p">);</span>
+
+<span class="gp">In [49]: </span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+
+<span class="go">#plt.show()</span>
+</pre></div>
+</div>
+<img alt="_images/euler_edl2.png" src="_images/euler_edl2.png" />
+<dl class="footnote brackets">
+<dt class="label" id="quad"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Le module <code class="code docutils literal notranslate"><span class="pre">scipy.integrate</span></code> dispose déjà d’une fonction <code class="code docutils literal notranslate"><span class="pre">quad</span></code> à cet effet.</p>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">À faire</p>
+<p>Renvoyer vers le chapitre scipy/numpy</p>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [50]: </span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+
+<span class="gp">In [51]: </span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gh">Out[51]: </span><span class="go">(0.49999999999999994, 5.551115123125782e-15)</span>
+</pre></div>
+</div>
+<p>La fonction <code class="code docutils literal notranslate"><span class="pre">quad</span></code> renvoie un couple formé de l’approximation de l’intégrale et d’une majoration de l’erreur d’approximation.</p>
+</dd>
+<dt class="label" id="erreur-arrondi-integrale"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Il ne faut cependant pas crier victoire trop tôt. Tout d’abord, le temps de calcul augmente avec <span class="math notranslate nohighlight">\(n\)</span>. De plus, chaque opération dans l’algorithme entraîne une erreur d’arrondi minime mais, le nombre d’opérations augmentant avec <span class="math notranslate nohighlight">\(n\)</span>, le cumul de ces erreurs d’arrondi finit par dépasser le gain en précision lorsque <span class="math notranslate nohighlight">\(n\)</span> est très grand.</p>
+</dd>
+<dt class="label" id="odeint"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dd><p>Le module <code class="code docutils literal notranslate"><span class="pre">scipy.integrate</span></code> dispose déjà d’une fonction <code class="code docutils literal notranslate"><span class="pre">odeint</span></code> à cet effet.</p>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">À faire</p>
+<p>Renvoyer vers le chapitre scipy/numpy</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arithmetique.html" class="btn btn-neutral float-right" title="7.3. Arithmétique" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="recherche.html" class="btn btn-neutral float-left" title="7.1. Algorithmes de recherche" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Laurent Garcin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
