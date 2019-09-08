@@ -20,10 +20,11 @@ deploy:
 	make html &&\
 	git config user.email "laurent.garcin@gmail.com" &&\
 	git config user.name "lgarcin" &&\
+	cd build/html
 	git add -A &&\
 	git commit -a -m "Rebuilt docs" &&\
 	git push origin gh-pages
-	git worktree remove build/html
+	git worktree remove build/html --force
 
 livehtml: $(IMAGES)
 	@$(SPHINXAUTOBUILD) -B $(SOURCEDIR) $(SPHINXOPTS) $(BUILDDIR)/html
