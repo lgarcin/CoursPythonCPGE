@@ -215,12 +215,12 @@ Out[10]: ['foo', 2, 3]</pre>
 <span class="gp">In [17]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
 <span class="gp">In [18]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent vers le même emplacement en mémoire</span>
-<span class="gh">Out[18]: </span><span class="go">(1835800432136, 1835800432136)</span>
+<span class="gh">Out[18]: </span><span class="go">(2973043994504, 2973043994504)</span>
 
 <span class="gp">In [19]: </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>
 
 <span class="gp">In [20]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent toujours vers le même emplacement</span>
-<span class="gh">Out[20]: </span><span class="go">(1835800432136, 1835800432136)</span>
+<span class="gh">Out[20]: </span><span class="go">(2973043994504, 2973043994504)</span>
 </pre></div>
 </div>
 <p>Ici, l’instruction <code class="code docutils literal notranslate"><span class="pre">a[0]</span> <span class="pre">=</span> <span class="pre">'foo'</span></code> a modifié l’objet stocké à l’emplacement commun vers lequel pointent les variables <code class="code docutils literal notranslate"><span class="pre">a</span></code> et <code class="code docutils literal notranslate"><span class="pre">b</span></code>. Comme <code class="code docutils literal notranslate"><span class="pre">a</span></code> et <code class="code docutils literal notranslate"><span class="pre">b</span></code> pointent toujours le même emplacement en mémoire, la variable <code class="code docutils literal notranslate"><span class="pre">b</span></code> est maintenant associée à ce nouvel objet.</p>
@@ -258,7 +258,7 @@ Out[10]: ['foo', 2, 3]</pre>
 <span class="gp">In [24]: </span><span class="n">liste4</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">liste1</span><span class="p">)</span>
 
 <span class="gp">In [25]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste3</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste4</span><span class="p">)</span>  <span class="c1"># les objets sont bien distincts</span>
-<span class="gh">Out[25]: </span><span class="go">(1835801807624, 1835800088008, 1835799545480, 1835793375560)</span>
+<span class="gh">Out[25]: </span><span class="go">(2973051175240, 2973049226056, 2973049228616, 2973051172680)</span>
 
 <span class="gp">In [26]: </span><span class="n">liste1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;toto&#39;</span>
 
@@ -276,7 +276,7 @@ Out[10]: ['foo', 2, 3]</pre>
 <pre class="literal-block">In [28]: t = (1, 2, 3)
 
 In [29]: id(t)
-Out[29]: 1835793301936
+Out[29]: 2973047522288
 
 In [30]: t = t + (4, 5)
 
@@ -284,11 +284,11 @@ In [31]: t
 Out[31]: (1, 2, 3, 4, 5)
 
 In [32]: id(t)
-Out[32]: 1835794899808</pre>
+Out[32]: 2973042611920</pre>
 <pre class="literal-block">In [33]: t = (1, 2, 3)
 
 In [34]: id(t)
-Out[34]: 1835793105256
+Out[34]: 2973047020568
 
 In [35]: t += (4, 5)
 
@@ -296,7 +296,7 @@ In [36]: t
 Out[36]: (1, 2, 3, 4, 5)
 
 In [37]: id(t)
-Out[37]: 1835740050800</pre>
+Out[37]: 2972989291072</pre>
 <p>Pour les objets mutables tels que les listes, les opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> et <code class="code docutils literal notranslate"><span class="pre">+=</span></code> se comportent de manières différentes : l’opérateur <code class="code docutils literal notranslate"><span class="pre">+</span></code> crée un nouvel objet tandis que l’opérateur <code class="code docutils literal notranslate"><span class="pre">+=</span></code> modifie l’objet initial.</p>
 <pre class="literal-block">In [38]: liste1 = [1, 2, 3]
 
@@ -308,7 +308,7 @@ In [41]: liste1, liste2          # seule liste1 a ete modifiée
 Out[41]: ([1, 2, 3, 4, 5], [1, 2, 3])
 
 In [42]: id(liste1), id(liste2)  # c'est normal : liste1 et liste2 pointent vers des objets distincts
-Out[42]: (1835800996040, 1835802065608)</pre>
+Out[42]: (2973050944840, 2973051369096)</pre>
 <pre class="literal-block">In [43]: liste1 = [1, 2, 3]
 
 In [44]: liste2 = liste1
@@ -319,7 +319,7 @@ In [46]: liste1, liste2          # liste1 et liste2 ont ete modifiées
 Out[46]: ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
 
 In [47]: id(liste1), id(liste2)  # c'est normal : liste1 et liste2 pointent vers le même objet
-Out[47]: (1835802016904, 1835802016904)</pre>
+Out[47]: (2973051328648, 2973051328648)</pre>
 <p class="rubric">Egalité structurelle ou physique</p>
 <p>On a vu que l’opérateur <code class="code docutils literal notranslate"><span class="pre">==</span></code> permettait de tester si deux objets étaient égaux. Mais de quel type d’égalité parle-t-on alors ? L’opérateur <code class="code docutils literal notranslate"><span class="pre">==</span></code> teste si deux objets ont la même <strong>valeur</strong> sans pour autant qu’il partage le même emplacement en mémoire. On parle alors d'<strong>égalité structurelle</strong>.</p>
 <p>Lorsque « deux » objets sont en fait identiques (c’est-à-dire lorsqu’ils ont le même emplacement en mémoire), on parle d'<strong>égalité physique</strong>. Pour tester l’égalité physique, on peut comparer les emplacements en mémoire à l’aide de la fonction <code class="code docutils literal notranslate"><span class="pre">id</span></code> ou plus simplement utiliser l’opérateur <code class="code docutils literal notranslate"><span class="pre">is</span></code>.</p>
@@ -333,7 +333,7 @@ In [51]: liste1, liste2, liste3
 Out[51]: ([1, 2, 3], [1, 2, 3], [1, 2, 3])
 
 In [52]: id(liste1), id(liste2), id(liste3)
-Out[52]: (1835802108296, 1835802108296, 1835802108936)
+Out[52]: (2973051391240, 2973051391240, 2973051391944)
 
 In [53]: liste2 == liste1, liste3 == liste1
 Out[53]: (True, True)
@@ -377,7 +377,7 @@ In [65]: b                   # b a egalement ete modifié
 Out[65]: ([1, 1000, 3], 'toto', 'tata')
 
 In [66]: id(a[0]), id(b[0])  # le premier élément du tuple est toujours le même
-Out[66]: (1835802183112, 1835802183112)</pre>
+Out[66]: (2973051466056, 2973051466056)</pre>
 </dd>
 </dl>
 </div>

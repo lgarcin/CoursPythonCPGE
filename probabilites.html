@@ -224,16 +224,16 @@
 
 <span class="gp">In [10]: </span><span class="p">[</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 <span class="gh">Out[10]: </span><span class="go"></span>
-<span class="go">[0.8360878483891534,</span>
-<span class="go"> 0.8425493873179194,</span>
-<span class="go"> 0.5084872596024754,</span>
-<span class="go"> 0.47665143090105144,</span>
-<span class="go"> 0.06751823895405462,</span>
-<span class="go"> 0.9240868823784895,</span>
-<span class="go"> 0.7558822004423265,</span>
-<span class="go"> 0.5806742900671008,</span>
-<span class="go"> 0.9949114941162,</span>
-<span class="go"> 0.5538302668087699]</span>
+<span class="go">[0.8741629139211476,</span>
+<span class="go"> 0.8327846555747423,</span>
+<span class="go"> 0.5234704634002064,</span>
+<span class="go"> 0.4415078782002012,</span>
+<span class="go"> 0.4022960121213941,</span>
+<span class="go"> 0.029849695566607104,</span>
+<span class="go"> 0.14568710130977924,</span>
+<span class="go"> 0.8681495012304536,</span>
+<span class="go"> 0.9175699752419721,</span>
+<span class="go"> 0.7289650481331209]</span>
 </pre></div>
 </div>
 <p>Cela nous permettra de simuler des variables aléatoires connaissant leurs lois <a class="footnote-reference brackets" href="#numpy-random" id="id3">3</a>.</p>
@@ -252,7 +252,7 @@
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="p">[</span><span class="n">simul</span><span class="p">([</span><span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">])</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[12]: </span><span class="go">[2, 0, 1, 1, 1, 2, 2, 0, 2, 1, 1, 0, 1, 0, 1, 0, 0, 2, 0, 0]</span>
+<span class="gh">Out[12]: </span><span class="go">[2, 1, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 0, 1, 1, 2, 2, 1, 0, 1]</span>
 </pre></div>
 </div>
 <p>On pourrait par exemple utiliser la méthode précédente pour simuler une <strong>loi binomiale</strong>.</p>
@@ -261,10 +261,10 @@
 In [14]: binomiale = lambda n,p: simul([binom(n, k) * p**k * (1-p)**(n-k) for k in range(n+1)])
 
 In [15]: [binomiale(5, .8) for _ in range(20)]
-Out[15]: [4, 3, 2, 4, 3, 4, 5, 5, 3, 2, 3, 5, 5, 4, 4, 5, 2, 3, 5, 5]
+Out[15]: [5, 3, 2, 5, 4, 4, 4, 4, 5, 4, 4, 4, 3, 5, 4, 5, 5, 5, 4, 2]
 
 In [16]: [binomiale(5, .2) for _ in range(20)]
-Out[16]: [3, 1, 2, 1, 3, 1, 1, 1, 1, 3, 0, 1, 3, 1, 2, 1, 0, 0, 1, 1]</pre>
+Out[16]: [0, 1, 0, 1, 0, 0, 2, 1, 0, 1, 0, 0, 0, 0, 0, 2, 1, 0, 1, 1]</pre>
 <p>Evidemment, il existe un méthode plus simple pour simuler une variable suivant une <strong>loi binomiale</strong> puisque l’on sait qu’elle est de même loi qu’une somme de variables de Bernoulli indépendantes.</p>
 <pre class="literal-block">In [17]: def bernoulli(p):
    ....:     return 1 if random() &lt; p else 0
@@ -275,10 +275,10 @@ In [18]: def binomiale(n, p):
    ....: 
 
 In [19]: [binomiale(5, .8) for _ in range(20)]
-Out[19]: [4, 5, 5, 2, 5, 4, 4, 4, 4, 4, 3, 5, 4, 5, 2, 4, 5, 5, 4, 4]
+Out[19]: [4, 4, 5, 4, 2, 4, 4, 3, 5, 4, 4, 5, 5, 3, 4, 3, 4, 4, 5, 5]
 
 In [20]: [binomiale(5, .2) for _ in range(20)]
-Out[20]: [0, 1, 1, 0, 0, 0, 2, 3, 0, 0, 1, 2, 2, 0, 0, 0, 1, 2, 3, 2]</pre>
+Out[20]: [1, 1, 1, 0, 2, 0, 1, 1, 0, 1, 1, 2, 3, 2, 0, 0, 2, 1, 1, 0]</pre>
 </div>
 <div class="section" id="variables-aleatoires-denombrables">
 <h3>7.4.2.2. Variables aléatoires dénombrables<a class="headerlink" href="#variables-aleatoires-denombrables" title="Lien permanent vers ce titre">¶</a></h3>
@@ -302,7 +302,7 @@ Out[20]: [0, 1, 1, 0, 0, 0, 2, 3, 0, 0, 1, 2, 2, 0, 0, 0, 1, 2, 3, 2]</pre>
 <span class="gp">In [23]: </span><span class="n">poisson</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">simul</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">l</span><span class="p">)</span> <span class="o">*</span> <span class="n">l</span><span class="o">**</span><span class="n">n</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
 <span class="gp">In [24]: </span><span class="p">[</span><span class="n">poisson</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[24]: </span><span class="go">[5, 4, 3, 4, 0, 2, 2, 4, 1, 1, 1, 2, 1, 2, 1, 1, 2, 0, 2, 3]</span>
+<span class="gh">Out[24]: </span><span class="go">[1, 2, 0, 1, 0, 1, 1, 4, 3, 3, 2, 1, 4, 3, 3, 1, 0, 1, 4, 1]</span>
 </pre></div>
 </div>
 <p>De la même manière, on peut simuler une loi géométrique.</p>
@@ -312,7 +312,7 @@ Out[20]: [0, 1, 1, 0, 0, 0, 2, 3, 0, 0, 1, 2, 2, 0, 0, 0, 1, 2, 3, 2]</pre>
 <span class="gp">In [26]: </span><span class="n">geometrique</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">simul</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span>
 
 <span class="gp">In [27]: </span><span class="p">[</span><span class="n">geometrique</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[27]: </span><span class="go">[1, 3, 4, 11, 12, 4, 5, 3, 7, 17, 2, 8, 1, 9, 4, 7, 1, 2, 6, 7]</span>
+<span class="gh">Out[27]: </span><span class="go">[2, 2, 5, 7, 9, 7, 21, 2, 16, 8, 1, 3, 7, 7, 1, 5, 3, 4, 4, 1]</span>
 </pre></div>
 </div>
 <p>Bien entendu, il est plus facile d’utiliser l’interprétation de la loi géométrique comme le numéro d’un premier succès.</p>
@@ -324,7 +324,7 @@ Out[20]: [0, 1, 1, 0, 0, 0, 2, 3, 0, 0, 1, 2, 2, 0, 0, 0, 1, 2, 3, 2]</pre>
 <span class="gp">   ....: </span>
 
 <span class="gp">In [29]: </span><span class="p">[</span><span class="n">geometrique</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[29]: </span><span class="go">[2, 4, 3, 3, 6, 8, 18, 2, 10, 3, 5, 3, 1, 4, 1, 3, 1, 5, 7, 2]</span>
+<span class="gh">Out[29]: </span><span class="go">[2, 21, 1, 3, 1, 1, 16, 13, 8, 2, 2, 6, 1, 5, 11, 6, 1, 3, 3, 2]</span>
 </pre></div>
 </div>
 <dl class="footnote brackets">

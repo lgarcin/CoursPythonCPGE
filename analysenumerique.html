@@ -180,7 +180,7 @@
 </ol>
 </div></blockquote>
 
-<script src="bokeh-plot-3e0a7d3f5ba4481a8461bb7583bdd70a-external-analysenumerique.js" id="e680a2d4-2ca9-4720-a5f7-128eef73253c"></script><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">dicho</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">eps</span><span class="p">):</span>
+<script src="bokeh-plot-a7cf44700bcf405ca111d8fc3c7e0872-external-analysenumerique.js" id="1de971ba-b454-4fb9-8a7e-47270e95976d"></script><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">dicho</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">eps</span><span class="p">):</span>
 <span class="gp">   ...: </span>    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">eps</span><span class="p">:</span>
 <span class="gp">   ...: </span>        <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="gp">   ...: </span>        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
@@ -218,7 +218,7 @@ Out[9]: -1.063024370691732e-13</pre>
 <h3>7.2.2.1. Méthode des rectangles<a class="headerlink" href="#methode-des-rectangles" title="Lien permanent vers ce titre">¶</a></h3>
 <p>On peut approcher une intégrale par une somme d’aire de rectangles comme l’indique la figure suivante.</p>
 
-<script src="bokeh-plot-02d4d4e89bbc4438b99e9f019b80b0ab-external-analysenumerique.js" id="85e089d2-fa48-493e-960a-ce6c321d654e"></script><p>Plus précisément, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de rectangles :</p>
+<script src="bokeh-plot-40ff51fdd6ac45a7aa44a2f95c252584-external-analysenumerique.js" id="19fe7ced-9d39-4e69-a866-0c2e6ddd0a66"></script><p>Plus précisément, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de rectangles :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 R_n&amp;=\frac{b-a}{n}\sum_{k=0}^{n-1}f(x_k)\approx\int_a^bf(t)\,\mathrm{dt}&amp;\text{(rectangles verts)}\\
@@ -252,7 +252,7 @@ Out[12]: 0.33835000000000043</pre>
 <h3>7.2.2.2. Méthode des trapèzes<a class="headerlink" href="#methode-des-trapezes" title="Lien permanent vers ce titre">¶</a></h3>
 <p>On peut également apporcher une intégrale comme une somme d’aires de trapèzes comme sur la figure suivante. Bien évidemment, l’approximation de l’intégrale est meilleure qu’avec des rectangles.</p>
 
-<script src="bokeh-plot-70ff768f88c74220ac6b932d5ac0c275-external-analysenumerique.js" id="17bb0639-024e-4079-9bda-bc68089598f3"></script><p>A nouveau, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de trapèzes :</p>
+<script src="bokeh-plot-08285175d0ae4844af9df9c7c8324558-external-analysenumerique.js" id="5da964a4-ea58-454f-8998-ca5f4639833a"></script><p>A nouveau, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de trapèzes :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}T_n=\frac{b-a}{n}\sum_{k=0}^{n-1}\frac{f(x_k)+f(x_{k+1})}{2}\approx\int_a^bf(t)\,\mathrm{dt}\\\end{split}\]</div>
 <p>On peut évidemment remarquer que <span class="math notranslate nohighlight">\(T_n=(R_n+S_n)/2\)</span>. En fait, la somme précédente peut se réécrire de manière différente :</p>
@@ -354,7 +354,7 @@ y(0)&amp;=1
 <img alt="_images/euler.png" src="_images/euler.png" />
 <p>Bien entendu, l’approximation affine <span class="math notranslate nohighlight">\(y'(t+\Delta\!t)\approx f(t)+f'(t)\Delta\!t\)</span> est d’autant meilleure que <span class="math notranslate nohighlight">\(\Delta\!t\)</span> est petit.</p>
 
-<script src="bokeh-plot-eb2149e899924629bfe2c4296600b23e-external-analysenumerique.js" id="e3187db5-20d1-4a94-bb49-1c99bd856820"></script><p>On peut adapter la méthode au cas d’un système différentiel d’ordre 1. Soit par exemple à résoudre le système différentiel suivant.</p>
+<script src="bokeh-plot-2299be5203be4476b07c7eb3399b8743-external-analysenumerique.js" id="da1fcdc8-f012-4af2-8165-c941b47e9f89"></script><p>On peut adapter la méthode au cas d’un système différentiel d’ordre 1. Soit par exemple à résoudre le système différentiel suivant.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left\{
 \begin{aligned}
