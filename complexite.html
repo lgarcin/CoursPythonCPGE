@@ -171,11 +171,11 @@
 <span class="gp">In [2]: </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
 <span class="gp">   ...: </span>    <span class="o">%</span><span class="k">timeit</span> sorted(random(10**n))
 <span class="gp">   ...: </span>
-<span class="go">1.91 us +- 42.6 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">3.4 us +- 73.2 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">19.6 us +- 112 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">239 us +- 6.55 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
-<span class="go">3.02 ms +- 34.4 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
+<span class="go">1.96 us +- 10.8 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
+<span class="go">3.38 us +- 59.8 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">19.8 us +- 166 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">236 us +- 2.03 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">3.04 ms +- 70.2 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
 </pre></div>
 </div>
 <p>Bien entendu, le temps ou la mémoire nécessaires à l’exécution d’un algorithme dépendent de nombreux facteurs indépendants de la conception de l’algorithme : machine utilisée, langage employé, … Cependant, pour comparer l’efficacité de deux algorithmes, il faut trouver un moyen de mesurer leur complexité <strong>intrinsèque</strong>.</p>
@@ -195,10 +195,10 @@
 <span class="gp">   ...: </span>    <span class="n">l</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
 <span class="gp">   ...: </span>    <span class="o">%</span><span class="k">timeit</span> somme(l)
 <span class="gp">   ...: </span>
-<span class="go">2.64 us +- 82 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">17 us +- 387 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">159 us +- 8.81 us per loop (mean +- std. dev. of 7 runs, 10000 loops each)</span>
-<span class="go">1.56 ms +- 69.4 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">2.45 us +- 53.7 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">16.9 us +- 90.4 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">159 us +- 5.08 us per loop (mean +- std. dev. of 7 runs, 10000 loops each)</span>
+<span class="go">1.61 ms +- 45 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
 </pre></div>
 </div>
 </div>
@@ -266,8 +266,8 @@
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="o">%</span><span class="k">timeit</span> a = 2
 <span class="gp">   ...: </span><span class="o">%</span><span class="k">timeit</span> 2 + 3
 <span class="gp">   ...: </span>
-<span class="go">10.7 ns +- 0.632 ns per loop (mean +- std. dev. of 7 runs, 100000000 loops each)</span>
-<span class="go">5.97 ns +- 0.282 ns per loop (mean +- std. dev. of 7 runs, 100000000 loops each)</span>
+<span class="go">10.9 ns +- 0.828 ns per loop (mean +- std. dev. of 7 runs, 100000000 loops each)</span>
+<span class="go">6.28 ns +- 0.134 ns per loop (mean +- std. dev. of 7 runs, 100000000 loops each)</span>
 </pre></div>
 </div>
 </dd>
