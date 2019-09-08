@@ -141,7 +141,7 @@ gca().axis('equal')
 gca().axis([0, len(chaine) * 10, 0, 30])
 recherche_chaine(chaine, motif)
 ani = ArtistAnimation(fig, frames, interval=100, repeat_delay=3000)
-ani.save('_images/recherche_chaine_win.gif',
+ani.save('source/_images/recherche_chaine_win.gif',
          dpi=80, writer='imagemagick')
 
 frames = []
@@ -153,5 +153,5 @@ gca().axis('equal')
 gca().axis([0, len(chaine) * 10, 0, 30])
 recherche_chaine(chaine, motif)
 ani = ArtistAnimation(fig, frames, interval=100, repeat_delay=3000)
-ani.save('_images/recherche_chaine_lose.gif',
+ani.save('source/_images/recherche_chaine_lose.gif',
          dpi=80, writer='imagemagick')

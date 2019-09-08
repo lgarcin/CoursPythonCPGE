@@ -59,4 +59,4 @@ def hanoi(n, A, B, C):
 
 hanoi(N, Piquet.A, Piquet.B, Piquet.C)
 im_ani = ArtistAnimation(fig, ims, interval=200, repeat_delay=1000, blit=True)
-im_ani.save('_images/hanoi.gif', writer='imagemagick', fps=1)
+im_ani.save('source/_images/hanoi.gif', writer='imagemagick', fps=1)

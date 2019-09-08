@@ -192,7 +192,7 @@ os.environ["GOOGLE_API_KEY"] = "AIzaSyDDqERR0JGYccAP_vlLzaKRPxrngg-xTew"
 #exclude_patterns = ['conf.py']
 
 
-import _scripts.recherche_chaine
-import _scripts.tri_insertion
-import _scripts.tri_rapide
-import _scripts.hanoi
+# import _scripts.recherche_chaine
+# import _scripts.tri_insertion
+# import _scripts.tri_rapide
+# import _scripts.hanoi
