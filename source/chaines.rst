@@ -2,14 +2,12 @@
 Chaînes de caractère
 ====================
 
-Une chaîne de caractères n'est autre qu'une liste de caractères. Les caractères sont juxtaposés et encadrés par des guillemets simples :code:`'...'` ou doubles :code:`"..."`.
+Une chaîne de caractères n'est autre qu'une liste de caractères. Les caractères sont juxtaposés et encadrés par des guillemets simples :code:`'...'` ou doubles :code:`"..."` [#entrelace]_.
 
 .. ipython:: python
 
     type('abcdef')
     "abcdef" == 'abcdef'
-
-.. todo:: Imbriquer guillemets simples et doubles
 
 A nouveau, les opérateurs :code:`+` et :code:`+=` fonctionnent comme pour les listes.
 
@@ -56,3 +54,32 @@ Les chaînes possèdent de nombreuses méthodes : ces méthodes ne modifient jam
     ma_chaine
 
 .. todo:: mettre méthode dans glossaire
+
+.. [#entrelace] Comment définir alors des chaînes de caractère comportant des guillements (simples ou doubles) ?
+
+    .. ipython:: python
+        :okexcept:
+
+        'Ca n'est pas possible'
+
+    .. ipython:: python
+        :okexcept:
+
+        "Il a dit : "pas possible" ! "
+
+    En fait, il suffit de tirer parti du fait qu'une chaîne de caractères peut être définie avec des guillemets simples **ou** doubles.
+
+    .. ipython:: python
+
+        "C'est possible"
+        'Il a dit : "possible" !'
+
+    Il existe une manière encore plus expéditive qui consiste à employer des *triples* guillemets.
+
+    .. ipython:: python
+
+        """Il a dit que c'était : "possible" """
+
+        """On peut même utiliser cette méthode
+        pour déclarer des chaînes de caractères
+        sur plusieurs lignes"""

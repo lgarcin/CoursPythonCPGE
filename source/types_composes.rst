@@ -3,7 +3,6 @@ Types composés
 ==============
 
 .. toctree::
-    :caption: Contenu:
 
     listes
     tuples

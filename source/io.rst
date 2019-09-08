@@ -51,7 +51,6 @@ Pour ouvrir un fichier, on utilise la fonction :code:`open` en donnant en argume
 :code:`encoding`
     **Encodage** [#encodage]_ du fichier : de nombreux encodages sont disponibles comme :code:`'utf8'` (à privilégier) ou :code:`'ascii'`.
 
-
 .. ipython:: python
 
     @suppress
@@ -81,7 +80,6 @@ On utilisera pour les exemples le fichier :file:`test.txt` suivant.
     :language: text
 
 Dans les exemples suivants, le caractère :code:`\n` désigne un *retour à la ligne*.
-
 
 .. ipython:: python
 

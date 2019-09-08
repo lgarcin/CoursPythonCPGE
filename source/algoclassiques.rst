@@ -6,7 +6,6 @@ On détaille dans ce chapitre quelques algorithmes classiques dont certains figu
 
 
 .. toctree::
-    :caption: Contenu:
 
     recherche
     analysenumerique

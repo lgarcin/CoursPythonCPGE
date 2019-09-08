@@ -299,13 +299,13 @@ On présente ici un algorithme naïf qui est assez peu efficace mais qui a le m�
     recherche_chaine("patapipapa", "tapa")
 
 
-.. todo:: A débuguer, la directive `figure` ne semble pas fonctionner.
-
 .. figure:: _images/recherche_chaine_win.gif
+    :align: center
 
     Succès
 
 .. figure:: _images/recherche_chaine_lose.gif
+    :align: center
 
     Echec
 

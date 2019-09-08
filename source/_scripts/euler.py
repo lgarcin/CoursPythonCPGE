@@ -20,7 +20,7 @@ for _ in range(nb):
 
 source = ColumnDataSource(dict(x=xx, y=yy))
 
-p = figure(title="Méthode d'Euler", plot_width=700, plot_height=500)
+p = figure(title="MÃ©thode d'Euler", plot_width=700, plot_height=500)
 p.x_range = Range1d(a, b)
 p.y_range = Range1d(0, 3)
 p.title.align = 'center'

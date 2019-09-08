@@ -200,7 +200,7 @@ Par exemple, on calcule ici une solution approchée du système de Cauchy
     f = lambda t, y: cos(t) * y
     liste_t, liste_y = euler(f, 0, 1, .01, 1000)
 
-On peut tracer la courbe de la solution apporchée que l'on peut comparer à la courbe de la solution exacte. En effet, on montre sans peine que l'unique solution de ce problème de Cauchy est la fonction :math:`x\mapsto e^{\sin(x)}`.
+On peut tracer la courbe de la solution approchée que l'on peut comparer à la courbe de la solution exacte. En effet, on montre sans peine que l'unique solution de ce problème de Cauchy est la fonction :math:`x\mapsto e^{\sin(x)}`.
 
 .. ipython:: python
 
@@ -225,7 +225,7 @@ On peut tracer la courbe de la solution apporchée que l'on peut comparer à la 
 
 .. image:: _images/euler.png
 
-Bien entendu, l'approximation affine :math:`y'(t+\Delta\!t)\approx f(t)+f'(t)\Delta\!t` est d'autant meilleur que :math:`\Delta\!t` est petit.
+Bien entendu, l'approximation affine :math:`y'(t+\Delta\!t)\approx f(t)+f'(t)\Delta\!t` est d'autant meilleure que :math:`\Delta\!t` est petit.
 
 .. bokeh-plot:: _scripts/euler.py
     :source-position: none

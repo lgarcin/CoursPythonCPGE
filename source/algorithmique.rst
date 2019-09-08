@@ -11,7 +11,6 @@ Jusqu'à maintenant, les exemples donnés dans le langage Python consistaient en
     * les appels de fonctions (exécution d'un bloc d'instructions prédéfini).
 
 .. toctree::
-    :caption: Contenu:
 
     indentation
     tests

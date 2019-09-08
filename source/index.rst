@@ -9,7 +9,6 @@ Python pour les CPGE scientifiques
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Contenu:
     :titlesonly:
 
     io
@@ -17,6 +16,7 @@ Python pour les CPGE scientifiques
     types_composes
     algorithmique
     theorie
+    recursivite
     algoclassiques
 
 Index et tables
@@ -31,8 +31,6 @@ Index et tables
 .. todo:: blabla sur l'interpréteur qui affiche et pas l'éditeur
 .. todo:: problème retour ligne dans tests
 .. todo:: mettre factorielle quelque part (comme mauvais exemple de récursivité)
-.. todo:: Attendre mise à jour bokeh pour chemin relatifs des scripts -> revenir alors à des directives bokeh-plot
 .. todo:: opérateur * (unpacking)
-.. todo:: Gérer l'intégration des scripts bokeh interactifs
 .. todo:: des trucs sur assert
 .. todo:: la récursivité, c'est le mal

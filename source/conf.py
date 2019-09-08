@@ -12,6 +12,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+import sphinx_rtd_theme
 import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
@@ -83,10 +84,8 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-# html_theme = 'alabaster'
+#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -188,11 +187,12 @@ latex_elements = {
 
 
 # Google API key (for bokeh)
-import os
 os.environ["GOOGLE_API_KEY"] = "AIzaSyDDqERR0JGYccAP_vlLzaKRPxrngg-xTew"
 #bokeh_plot_pyfile_include_dirs = ["_scripts"]
 #exclude_patterns = ['conf.py']
 
 
-# import _scripts.recherche_chaine
-# import _scripts.tri_insertion
+import _scripts.recherche_chaine
+import _scripts.tri_insertion
+import _scripts.tri_rapide
+import _scripts.hanoi
