@@ -14,6 +14,7 @@ SCRIPTSDIR		= $(SOURCEDIR)/_scripts
 
 deploy:
 	make clean &&\
+	git worktree remove build/html --force
 	git worktree prune &&\
 	git worktree add build/html gh-pages &&\
 	make html &&\
