@@ -22,6 +22,7 @@ deploy:
 	git add -A &&\
 	git commit -a -m "Rebuilt docs" &&\
 	git push origin gh-pages
+	git worktree remove build/html
 
 livehtml: $(IMAGES)
 	@$(SPHINXAUTOBUILD) -B $(SOURCEDIR) $(SPHINXOPTS) $(BUILDDIR)/html
