@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -135,7 +135,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>6. Récursivité</li>
+      <li><span class="section-number">6. </span>Récursivité</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -155,7 +155,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="recursivite">
-<h1>6. Récursivité<a class="headerlink" href="#recursivite" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">6. </span>Récursivité<a class="headerlink" href="#recursivite" title="Lien permanent vers ce titre">¶</a></h1>
 <p>On appelle fonction <strong>récursive</strong> une fonction qui s’appelle elle-même. Ceci est très lié à la notion de <strong>récurrence</strong> en mathématiques.</p>
 <p>Par exemple, la factorielle en mathématiques est définie par la condition intiale <span class="math notranslate nohighlight">\(0!=1\)</span> et par la relation de récurrence <span class="math notranslate nohighlight">\(n!=n\cdot(n-1)!\)</span> lorsque <span class="math notranslate nohighlight">\(n\geq1\)</span>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">factorielle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -187,7 +187,7 @@
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">factorielle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">factorielle</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="o">...</span> <span class="n">last</span> <span class="mi">1</span> <span class="n">frames</span> <span class="n">repeated</span><span class="p">,</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nn">frame</span> <span class="nn">below</span> <span class="nn">...</span>
+<span class="o">...</span> <span class="n">last</span> <span class="mi">1</span> <span class="n">frames</span> <span class="n">repeated</span><span class="p">,</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">frame</span> <span class="n">below</span> <span class="o">...</span>
 
 <span class="nn">&lt;ipython-input-3-1e53f1d97989&gt;</span> in <span class="ni">factorielle</span><span class="nt">(n)</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">factorielle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>

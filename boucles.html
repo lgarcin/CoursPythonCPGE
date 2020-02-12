@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -141,9 +141,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="algorithmique.html">4. Rudiments d’algorithmique</a> &raquo;</li>
+          <li><a href="algorithmique.html"><span class="section-number">4. </span>Rudiments d’algorithmique</a> &raquo;</li>
         
-      <li>4.3. Boucles</li>
+      <li><span class="section-number">4.3. </span>Boucles</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -163,7 +163,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="boucles">
-<h1>4.3. Boucles<a class="headerlink" href="#boucles" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">4.3. </span>Boucles<a class="headerlink" href="#boucles" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Comme dans beaucoup de langages de programmation, il existe deux types de boucles en Python :</p>
 <blockquote>
 <div><ul class="simple">
@@ -172,7 +172,7 @@
 </ul>
 </div></blockquote>
 <div class="section" id="boucles-inconditionnelles">
-<h2>4.3.1. Boucles inconditionnelles<a class="headerlink" href="#boucles-inconditionnelles" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.3.1. </span>Boucles inconditionnelles<a class="headerlink" href="#boucles-inconditionnelles" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les boucles inconditionnelles en Python permettent de parcourir un objet de type <em>itérable</em> <a class="footnote-reference brackets" href="#iterable" id="id1">3</a> (comme une liste, un tuple ou une chaîne de caractères) élément par élément.</p>
 <p>De manière générale, on utilise les mots-clés <code class="code docutils literal notranslate"><span class="pre">for</span></code> et <code class="code docutils literal notranslate"><span class="pre">in</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">&lt;</span><span class="n">element</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">iterable</span><span class="o">&gt;</span><span class="p">:</span>
@@ -183,7 +183,7 @@
 </div>
 <p>On peut itérer aussi bien sur des listes</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;toto&#39;</span><span class="p">,</span> <span class="mf">2.34</span><span class="p">]:</span>
-<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 <span class="go">1</span>
 <span class="go">toto</span>
@@ -192,7 +192,7 @@
 </div>
 <p>que sur des tuples</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;tata&#39;</span><span class="p">:</span>    <span class="c1"># pas besoin de parenthèses pour le tuple dans ce cas</span>
-<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 <span class="go">5</span>
 <span class="go">6</span>
@@ -201,7 +201,7 @@
 </div>
 <p>et même sur des chaînes de caractère.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="s1">&#39;blabla&#39;</span><span class="p">:</span>
-<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 <span class="go">b</span>
 <span class="go">l</span>
@@ -218,7 +218,7 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">range(a)</span></code> contient les entiers <code class="code docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">...,</span> <span class="pre">a-2,</span> <span class="pre">a-1</span></code> (aucun si <code class="code docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">0</span></code>) ;</p></li>
 </ul>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 <span class="go">0</span>
 <span class="go">1</span>
@@ -228,7 +228,7 @@
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 </pre></div>
 </div>
@@ -236,7 +236,7 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">range(a,</span> <span class="pre">b)</span></code> contient les entiers <code class="code docutils literal notranslate"><span class="pre">a,</span> <span class="pre">a+1,</span> <span class="pre">a+2,</span> <span class="pre">...,</span> <span class="pre">b-2,</span> <span class="pre">b-1</span></code> (aucun si <code class="code docutils literal notranslate"><span class="pre">b</span> <span class="pre">&lt;=</span> <span class="pre">a</span></code>) ;</p></li>
 </ul>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 <span class="go">3</span>
 <span class="go">4</span>
@@ -246,7 +246,7 @@
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 </pre></div>
 </div>
@@ -254,7 +254,7 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">range(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code> contient les entiers <code class="code docutils literal notranslate"><span class="pre">a,</span> <span class="pre">a+c,</span> <span class="pre">a+2c,</span> <span class="pre">...</span></code> jusqu’à atteindre <code class="code docutils literal notranslate"><span class="pre">b</span></code> exclu (aucun si <code class="code docutils literal notranslate"><span class="pre">c*(b-a)&lt;=0</span></code>).</p></li>
 </ul>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 <span class="go">4</span>
 <span class="go">6</span>
@@ -262,12 +262,12 @@
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ....: </span>
 <span class="go">9</span>
 <span class="go">7</span>
@@ -275,14 +275,14 @@
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ....: </span>
 </pre></div>
 </div>
 </div></blockquote>
 </div>
 <div class="section" id="listes-en-comprehension">
-<h2>4.3.2. Listes en compréhension<a class="headerlink" href="#listes-en-comprehension" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.3.2. </span>Listes en compréhension<a class="headerlink" href="#listes-en-comprehension" title="Lien permanent vers ce titre">¶</a></h2>
 <p>En mathématiques, il existe plusieurs manières de décrire un même ensemble. L’ensemble <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> des entiers pairs compris entre 0 et 19 peut être défini en <em>extension</em> :</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{A}=\{0,2,4,6,8,10,12,14,16,18\}\]</div>
@@ -315,7 +315,7 @@
 </div>
 </div>
 <div class="section" id="boucles-conditionnelles">
-<h2>4.3.3. Boucles conditionnelles<a class="headerlink" href="#boucles-conditionnelles" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.3.3. </span>Boucles conditionnelles<a class="headerlink" href="#boucles-conditionnelles" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une boucle conditionnelle consiste à répéter un bloc d’instructions <strong>tant qu’une condition est vraie</strong>. On emploie pour cela le mot-clé <code class="code docutils literal notranslate"><span class="pre">while</span></code>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">6</span>
 
@@ -326,7 +326,7 @@
 <span class="gp">   ....: </span>    <span class="n">r</span> <span class="o">-=</span> <span class="n">b</span>
 <span class="gp">   ....: </span>
 
-<span class="gp">In [19]: </span><span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="gp">In [19]: </span><span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 <span class="go">2 3</span>
 </pre></div>
 </div>
@@ -341,29 +341,29 @@
 <span class="k">while</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">:</span>
     <span class="n">q</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="n">r</span> <span class="o">-=</span> <span class="n">b</span>
-<span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="les-instructions-break-et-continue">
-<h2>4.3.4. Les instructions <code class="code docutils literal notranslate"><span class="pre">break</span></code> et <code class="code docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#les-instructions-break-et-continue" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.3.4. </span>Les instructions <code class="code docutils literal notranslate"><span class="pre">break</span></code> et <code class="code docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#les-instructions-break-et-continue" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Ces deux instructions permettent d’altérer le cours normal d’une boucle.</p>
 <p>L’instruction <code class="code docutils literal notranslate"><span class="pre">break</span></code> permet de sortir d’une boucle sans avoir effectué toutes les itérations.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="gp">In [21]: </span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
 <span class="gp">   ....: </span>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ....: </span>    <span class="k">break</span>
 <span class="gp">   ....: </span>
 <span class="go">1</span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ....: </span>    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="gp">   ....: </span>        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;sortie&quot;</span><span class="p">)</span>
+<span class="gp">   ....: </span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sortie&quot;</span><span class="p">)</span>
 <span class="gp">   ....: </span>        <span class="k">break</span>
 <span class="gp">   ....: </span>
 <span class="go">0</span>
@@ -378,11 +378,11 @@
 </div>
 <p>En cas de boucles <em>imbriquées</em>, l’instruction <code class="code docutils literal notranslate"><span class="pre">break</span></code> permet de quitter la boucle la plus <em>interne</em> dans laquelle elle figure.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [23]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;i =&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;i =&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
 <span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
 <span class="gp">   ....: </span>        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
 <span class="gp">   ....: </span>            <span class="k">break</span>
-<span class="gp">   ....: </span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1"> j =&#39;</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="gp">   ....: </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1"> j =&#39;</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
 <span class="gp">   ....: </span>
 <span class="go">i = 0</span>
 <span class="go">	 j = 0</span>
@@ -415,7 +415,7 @@
 <span class="gp">   ....: </span>    <span class="n">s</span> <span class="o">+=</span> <span class="n">c</span>
 <span class="gp">   ....: </span>
 
-<span class="gp">In [26]: </span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">In [26]: </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="go">anticonstitutionnllmnt</span>
 </pre></div>
 </div>
@@ -425,7 +425,7 @@
 <span class="gp">   ....: </span>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="gp">   ....: </span>    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
 <span class="gp">   ....: </span>        <span class="k">continue</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ....: </span>
 <span class="go">1</span>
 <span class="go">2</span>
@@ -441,13 +441,15 @@
 <dl class="footnote brackets">
 <dt class="label" id="listcomp"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>Les listes en compréhension peuvent être utilisées pour effectuer des actions plutôt que de calculer des valeurs.</p>
-<pre class="literal-block">In [29]: s = ([], [1, 2], ['titi', 'tata'])
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [29]: </span><span class="n">s</span> <span class="o">=</span> <span class="p">([],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;titi&#39;</span><span class="p">,</span> <span class="s1">&#39;tata&#39;</span><span class="p">])</span>
 
-In [30]: [li.append('toto') for li in s]
-Out[30]: [None, None, None]
+<span class="gp">In [30]: </span><span class="p">[</span><span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;toto&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">li</span> <span class="ow">in</span> <span class="n">s</span><span class="p">]</span>
+<span class="gh">Out[30]: </span><span class="go">[None, None, None]</span>
 
-In [31]: s
-Out[31]: (['toto'], [1, 2, 'toto'], ['titi', 'tata', 'toto'])</pre>
+<span class="gp">In [31]: </span><span class="n">s</span>
+<span class="gh">Out[31]: </span><span class="go">([&#39;toto&#39;], [1, 2, &#39;toto&#39;], [&#39;titi&#39;, &#39;tata&#39;, &#39;toto&#39;])</span>
+</pre></div>
+</div>
 </dd>
 <dt class="label" id="generateur"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
 <dd><p>Techniquement, il est possible en Python de créer des boucles <code class="code docutils literal notranslate"><span class="pre">for</span></code> infinies en utilisant des objets spéciaux nommés <em>générateurs</em>.</p>

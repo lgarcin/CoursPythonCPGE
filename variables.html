@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -141,9 +141,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="types_operateurs_variables.html">2. Types, opérateurs et variables</a> &raquo;</li>
+          <li><a href="types_operateurs_variables.html"><span class="section-number">2. </span>Types, opérateurs et variables</a> &raquo;</li>
         
-      <li>2.1. Variables</li>
+      <li><span class="section-number">2.1. </span>Variables</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -163,9 +163,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="variables">
-<h1>2.1. Variables<a class="headerlink" href="#variables" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">2.1. </span>Variables<a class="headerlink" href="#variables" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="variable-et-affectation">
-<h2>2.1.1. Variable et affectation<a class="headerlink" href="#variable-et-affectation" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.1.1. </span>Variable et affectation<a class="headerlink" href="#variable-et-affectation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une <em>variable</em> est un objet qui associe un nom (<em>identifiant</em>) à un objet stocké en mémoire. Concrètement, une variable permet de conserver un objet en vue d’une utilisation ultérieure.</p>
 <p>Pour stocker un objet dans une variable, on utilise l’opérateur d’affectation <code class="code docutils literal notranslate"><span class="pre">=</span></code>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -193,42 +193,46 @@
 </pre></div>
 </div>
 <div class="topic">
-<p class="topic-title first">Echange de deux variables</p>
+<p class="topic-title">Echange de deux variables</p>
 <p>On est souvent amené à échanger les valeurs de deux variables. La méthode naïve ne fonctionne pas.</p>
-<pre class="literal-block">In [8]: a = 1
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 
-In [9]: b = 2
+<span class="gp">In [9]: </span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 
-In [10]: a = b # Les deux variables valent 2 !
+<span class="gp">In [10]: </span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="c1"># Les deux variables valent 2 !</span>
 
-In [11]: b = a
+<span class="gp">In [11]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
-In [12]: a
-Out[12]: 2
+<span class="gp">In [12]: </span><span class="n">a</span>
+<span class="gh">Out[12]: </span><span class="go">2</span>
 
-In [13]: b
-Out[13]: 2</pre>
+<span class="gp">In [13]: </span><span class="n">b</span>
+<span class="gh">Out[13]: </span><span class="go">2</span>
+</pre></div>
+</div>
 <p>L’idée est alors d’employer une variable auxiliaire.</p>
-<pre class="literal-block">In [14]: a = 1
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 
-In [15]: b = 2
+<span class="gp">In [15]: </span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 
-In [16]: aux = a
+<span class="gp">In [16]: </span><span class="n">aux</span> <span class="o">=</span> <span class="n">a</span>
 
-In [17]: a = b
+<span class="gp">In [17]: </span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
 
-In [18]: b = aux
+<span class="gp">In [18]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">aux</span>
 
-In [19]: a
-Out[19]: 2
+<span class="gp">In [19]: </span><span class="n">a</span>
+<span class="gh">Out[19]: </span><span class="go">2</span>
 
-In [20]: b
-Out[20]: 1</pre>
+<span class="gp">In [20]: </span><span class="n">b</span>
+<span class="gh">Out[20]: </span><span class="go">1</span>
+</pre></div>
+</div>
 <p>On peut également utiliser des <a class="reference internal" href="tuples.html#affectations-multiples"><span class="std std-ref">affectations multiples</span></a> à l’aide de tuples ou de listes.</p>
 </div>
 </div>
 <div class="section" id="identifiant-d-une-variable">
-<h2>2.1.2. Identifiant d’une variable<a class="headerlink" href="#identifiant-d-une-variable" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.1.2. </span>Identifiant d’une variable<a class="headerlink" href="#identifiant-d-une-variable" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Bien que cela n’ait rien d’obligatoire, il est judicieux que l’identifiant d’une variable donne une indication quant à l’utilisation de cette variable. Par exemple, une variable devant contenir la
 <em>moyenne</em> de plusieurs nombres sera plus judicieusement nommée <code class="code docutils literal notranslate"><span class="pre">moyenne</span></code> ou même <code class="code docutils literal notranslate"><span class="pre">moy</span></code> plutôt que <code class="code docutils literal notranslate"><span class="pre">x</span></code> ou <code class="code docutils literal notranslate"><span class="pre">toto</span></code>.</p>
 <div class="admonition note">

@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -141,9 +141,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="types_operateurs_variables.html">2. Types, opérateurs et variables</a> &raquo;</li>
+          <li><a href="types_operateurs_variables.html"><span class="section-number">2. </span>Types, opérateurs et variables</a> &raquo;</li>
         
-      <li>2.2. Types</li>
+      <li><span class="section-number">2.2. </span>Types</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -163,41 +163,47 @@
            <div itemprop="articleBody">
             
   <div class="section" id="types">
-<h1>2.2. Types<a class="headerlink" href="#types" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">2.2. </span>Types<a class="headerlink" href="#types" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">À faire</p>
 <p>Expliquer ce qu’est un type. En fait, on devrait parler de classe.</p>
 </div>
 <p>On décrit dans ce paragraphe les types de base utilisés par Python.</p>
 <div class="section" id="booleen">
-<h2>2.2.1. Booléen<a class="headerlink" href="#booleen" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.2.1. </span>Booléen<a class="headerlink" href="#booleen" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Un objet de type <em>booléen</em> peut prendre les valeurs logiques <strong>vrai</strong> (<code class="code docutils literal notranslate"><span class="pre">True</span></code>) ou <strong>faux</strong> (<code class="code docutils literal notranslate"><span class="pre">False</span></code>).</p>
-<pre class="literal-block">In [1]: type(True)
-Out[1]: bool
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="gh">Out[1]: </span><span class="go">bool</span>
 
-In [2]: type(False)
-Out[2]: bool</pre>
+<span class="gp">In [2]: </span><span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="gh">Out[2]: </span><span class="go">bool</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="entier">
-<h2>2.2.2. Entier<a class="headerlink" href="#entier" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.2.2. </span>Entier<a class="headerlink" href="#entier" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les entiers Python ne sont théoriquement pas limités en taille même si, en pratique, on est limité par la mémoire de la machine.</p>
-<pre class="literal-block">In [3]: type(12)
-Out[3]: int
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="nb">type</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="gh">Out[3]: </span><span class="go">int</span>
 
-In [4]: type(-34)
-Out[4]: int</pre>
+<span class="gp">In [4]: </span><span class="nb">type</span><span class="p">(</span><span class="o">-</span><span class="mi">34</span><span class="p">)</span>
+<span class="gh">Out[4]: </span><span class="go">int</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="flottant">
-<h2>2.2.3. Flottant<a class="headerlink" href="#flottant" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.2.3. </span>Flottant<a class="headerlink" href="#flottant" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les nombres non entiers (nombres « à virgule ») sont stockés sous la forme de nombres <em>flottants</em>. La virgule est notée à l’anglo-saxonne à l’aide du caractère <code class="code docutils literal notranslate"><span class="pre">.</span></code>. On peut également utiliser la notation scientifique : <code class="code docutils literal notranslate"><span class="pre">1.23e45</span></code> signifie <span class="math notranslate nohighlight">\(1,23\times10^{45}\)</span>.</p>
-<pre class="literal-block">In [5]: type(1.23)
-Out[5]: float
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.23</span><span class="p">)</span>
+<span class="gh">Out[5]: </span><span class="go">float</span>
 
-In [6]: type(1.)
-Out[6]: float
+<span class="gp">In [6]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
+<span class="gh">Out[6]: </span><span class="go">float</span>
 
-In [7]: type(1.23e45)
-Out[7]: float</pre>
+<span class="gp">In [7]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.23e45</span><span class="p">)</span>
+<span class="gh">Out[7]: </span><span class="go">float</span>
+</pre></div>
+</div>
 <p>Les nombres flottants sont en fait de la forme <span class="math notranslate nohighlight">\(\pm m.2^e\)</span> où <span class="math notranslate nohighlight">\(m\)</span> est un réel de l’intervalle <span class="math notranslate nohighlight">\([1,2[\)</span> appelé mantisse et <span class="math notranslate nohighlight">\(e\)</span> est un entier. Les nombres <span class="math notranslate nohighlight">\(m\)</span> et <span class="math notranslate nohighlight">\(e\)</span> sont stockés sur un nombre fixé de bits <a class="footnote-reference brackets" href="#ieee754" id="id2">1</a> : il n’existe par conséquent qu’un nombre <strong>fini</strong> de nombres flottants.</p>
 <p>Il faut bien comprendre que les nombres flottants ne sont en fait que des <strong>approximations</strong> des nombres réels que l’on considère, ce qui peut parfois créer des surprises.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="mf">2.3</span><span class="o">-</span><span class="mf">1.5</span>
@@ -206,9 +212,9 @@ Out[7]: float</pre>
 </div>
 </div>
 <div class="section" id="complexe">
-<h2>2.2.4. Complexe<a class="headerlink" href="#complexe" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.2.4. </span>Complexe<a class="headerlink" href="#complexe" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les nombres complexes se notent à l’aide de la lettre <code class="code docutils literal notranslate"><span class="pre">j</span></code> qui indique la partie imaginaire. Par exemple, le complexe <span class="math notranslate nohighlight">\(1+2i\)</span> s’écrit <code class="code docutils literal notranslate"><span class="pre">1+2j</span></code>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.2</span><span class="o">+</span><span class="mf">3.4j</span><span class="p">)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.2</span><span class="o">+</span><span class="mf">3.4</span><span class="n">j</span><span class="p">)</span>
 <span class="gh">Out[9]: </span><span class="go">complex</span>
 </pre></div>
 </div>
@@ -217,16 +223,18 @@ Out[7]: float</pre>
 <p>Pour représenter un complexe la lettre <code class="code docutils literal notranslate"><span class="pre">j</span></code> doit toujours être précédée d’un caractère numérique. Le complexe <span class="math notranslate nohighlight">\(i\)</span> sera donc représenté par <code class="code docutils literal notranslate"><span class="pre">1j</span></code>.</p>
 </div>
 <p>On peut accéder aux parties réelle et imaginaire d’un nombre complexe grâce aux attributs <code class="code docutils literal notranslate"><span class="pre">real</span></code> et <code class="code docutils literal notranslate"><span class="pre">imag</span></code>.</p>
-<pre class="literal-block">In [10]: z = 3 + 4j
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">z</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="n">j</span>
 
-In [11]: z.real
-Out[11]: 3.0
+<span class="gp">In [11]: </span><span class="n">z</span><span class="o">.</span><span class="n">real</span>
+<span class="gh">Out[11]: </span><span class="go">3.0</span>
 
-In [12]: z.imag
-Out[12]: 4.0</pre>
+<span class="gp">In [12]: </span><span class="n">z</span><span class="o">.</span><span class="n">imag</span>
+<span class="gh">Out[12]: </span><span class="go">4.0</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="dictionnaire-hors-programme">
-<h2>2.2.5. Dictionnaire (hors programme)<a class="headerlink" href="#dictionnaire-hors-programme" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.2.5. </span>Dictionnaire (hors programme)<a class="headerlink" href="#dictionnaire-hors-programme" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="nb">type</span><span class="p">({</span><span class="s1">&#39;toto&#39;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;titi&#39;</span><span class="p">:</span> <span class="mf">4.56</span><span class="p">,</span> <span class="s1">&#39;tata&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">})</span>
 <span class="gh">Out[13]: </span><span class="go">dict</span>
 </pre></div>

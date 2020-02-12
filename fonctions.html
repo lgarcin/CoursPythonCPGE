@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -141,9 +141,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="algorithmique.html">4. Rudiments d’algorithmique</a> &raquo;</li>
+          <li><a href="algorithmique.html"><span class="section-number">4. </span>Rudiments d’algorithmique</a> &raquo;</li>
         
-      <li>4.4. Fonctions</li>
+      <li><span class="section-number">4.4. </span>Fonctions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -163,7 +163,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fonctions">
-<h1>4.4. Fonctions<a class="headerlink" href="#fonctions" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">4.4. </span>Fonctions<a class="headerlink" href="#fonctions" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Une fonction est un bloc d’instructions que l’on peut appeler à tout moment d’un programme. Les fonctions ont plusieurs intérêts, notamment :</p>
 <blockquote>
 <div><ul class="simple">
@@ -172,14 +172,14 @@
 </ul>
 </div></blockquote>
 <div class="section" id="definir-une-fonction">
-<h2>4.4.1. Définir une fonction<a class="headerlink" href="#definir-une-fonction" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.4.1. </span>Définir une fonction<a class="headerlink" href="#definir-une-fonction" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Au cours des chapitres précédents, on a déjà rencontré de nombreuses fonctions telles que <code class="code docutils literal notranslate"><span class="pre">print</span></code> ou <code class="code docutils literal notranslate"><span class="pre">len</span></code>. Chacune de ces fonctions reçoit un argument et effectue une action (la fonction <code class="code docutils literal notranslate"><span class="pre">print</span></code> affiche un objet à l’écran) ou renvoie une valeur (la fonction <code class="code docutils literal notranslate"><span class="pre">len</span></code> renvoie la taille d’un itérable).</p>
 <p>Jusqu’à maintenant, on s’est contenté de faire appel à des fonctions prédéfinies. Mais on peut également définir ses propres fonctions : il faut alors <strong>déclarer</strong> ces fonctions avant de les utiliser. De manière générale, la syntaxe d’une déclaration de fonctions est la suivante.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def &lt;nom_fonction&gt;(&lt;paramètres&gt;):   # En-tête de la fonction
-    &lt;instruction1&gt;
-    &lt;instruction2&gt;                  # Corps de la fonction
-    ...
-    return &lt;valeur&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="o">&lt;</span><span class="n">nom_fonction</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">paramètres</span><span class="o">&gt;</span><span class="p">):</span>   <span class="c1"># En-tête de la fonction</span>
+    <span class="o">&lt;</span><span class="n">instruction1</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">instruction2</span><span class="o">&gt;</span>                  <span class="c1"># Corps de la fonction</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="n">valeur</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>On décrit dans le <em>corps</em> de la fonction les traitements à effectuer sur les paramètres et on spécifie la valeur que doit renvoyer la fonction.</p>
@@ -194,51 +194,55 @@
 </div>
 <p>La fonction <code class="code docutils literal notranslate"><span class="pre">factorielle</span></code> prend en argument un objet <code class="code docutils literal notranslate"><span class="pre">n</span></code> (que l’on supposera être un entier naturel), calcule la factorielle de <code class="code docutils literal notranslate"><span class="pre">n</span></code> à l’aide d’une variable <code class="code docutils literal notranslate"><span class="pre">a</span></code> et renvoie cette valeur.</p>
 <p>On constate que rien ne se passe lorsque la fonction est déclarée. Il faut <strong>appeler</strong> la fonction en fournissant une valeur à l’entier <code class="code docutils literal notranslate"><span class="pre">n</span></code> pour que le code soit exécuté.</p>
-<pre class="literal-block">In [2]: factorielle(5)
-Out[2]: 120
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="n">factorielle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gh">Out[2]: </span><span class="go">120</span>
 
-In [3]: factorielle(7)
-Out[3]: 5040</pre>
+<span class="gp">In [3]: </span><span class="n">factorielle</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="gh">Out[3]: </span><span class="go">5040</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Il faut bien faire la différence entre <strong>la déclaration</strong> et <strong>l’appel</strong> de la fonction. Lorsqu’une fonction est <strong>déclarée</strong>, aucun code n’est exécuté. Il faut <strong>appeler</strong> la fonction pour que le code soit exécuté.</p>
 </div>
 </div>
 <div class="section" id="l-instruction-return">
-<h2>4.4.2. L’instruction <code class="code docutils literal notranslate"><span class="pre">return</span></code><a class="headerlink" href="#l-instruction-return" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.4.2. </span>L’instruction <code class="code docutils literal notranslate"><span class="pre">return</span></code><a class="headerlink" href="#l-instruction-return" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On « sort » de la fonction dès qu’on recontre une instruction <code class="code docutils literal notranslate"><span class="pre">return</span></code> : en particulier, les instructions suivant un <code class="code docutils literal notranslate"><span class="pre">return</span></code> ne sont pas exécutées.</p>
-<pre class="literal-block">In [4]: def test(n):
-   ...:     if n % 2 == 0:
-   ...:         return &quot;n est un multiple de 2&quot;
-   ...:     if n % 3 ==0:
-   ...:         return &quot;n est un multiple de 3&quot;
-   ...:     return &quot;Bidon&quot;
-   ...: 
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ...: </span>        <span class="k">return</span> <span class="s2">&quot;n est un multiple de 2&quot;</span>
+<span class="gp">   ...: </span>    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ...: </span>        <span class="k">return</span> <span class="s2">&quot;n est un multiple de 3&quot;</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="s2">&quot;Bidon&quot;</span>
+<span class="gp">   ...: </span>
 
-In [5]: test(4)
-Out[5]: 'n est un multiple de 2'
+<span class="gp">In [5]: </span><span class="n">test</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gh">Out[5]: </span><span class="go">&#39;n est un multiple de 2&#39;</span>
 
-In [6]: test(9)
-Out[6]: 'n est un multiple de 3'
+<span class="gp">In [6]: </span><span class="n">test</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="gh">Out[6]: </span><span class="go">&#39;n est un multiple de 3&#39;</span>
 
-In [7]: test(6)
-Out[7]: 'n est un multiple de 2'
+<span class="gp">In [7]: </span><span class="n">test</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="gh">Out[7]: </span><span class="go">&#39;n est un multiple de 2&#39;</span>
 
-In [8]: test(11)
-Out[8]: 'Bidon'</pre>
+<span class="gp">In [8]: </span><span class="n">test</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="gh">Out[8]: </span><span class="go">&#39;Bidon&#39;</span>
+</pre></div>
+</div>
 <p>On peut cependant utiliser ceci à notre avantage : par exemple, pour sortir d’une boucle <code class="code docutils literal notranslate"><span class="pre">for</span></code> avant d’avoir accompli toutes les itérations.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">floor</span>
 
 <span class="gp">In [10]: </span><span class="k">def</span> <span class="nf">est_premier</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-<span class="gp">   ....: </span>        <span class="k">return</span> <span class="bp">False</span>
+<span class="gp">   ....: </span>        <span class="k">return</span> <span class="kc">False</span>
 <span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">floor</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
 <span class="gp">   ....: </span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ....: </span>            <span class="k">return</span> <span class="bp">False</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="bp">True</span>
+<span class="gp">   ....: </span>            <span class="k">return</span> <span class="kc">False</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="kc">True</span>
 <span class="gp">   ....: </span>
 
-<span class="gp">In [11]: </span><span class="k">print</span><span class="p">([(</span><span class="n">n</span><span class="p">,</span> <span class="n">est_premier</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+<span class="gp">In [11]: </span><span class="nb">print</span><span class="p">([(</span><span class="n">n</span><span class="p">,</span> <span class="n">est_premier</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
 <span class="go">[(0, False), (1, False), (2, True), (3, True), (4, False), (5, True), (6, False), (7, True), (8, False), (9, False)]</span>
 </pre></div>
 </div>
@@ -248,7 +252,7 @@ Out[8]: 'Bidon'</pre>
 <span class="gp">   ....: </span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">None</span>
 </pre></div>
 </div>
@@ -258,27 +262,29 @@ Out[8]: 'Bidon'</pre>
 <span class="gp">   ....: </span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="k">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">None</span>
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
 <p>Une erreur de débutant consiste à confondre les utilisations de <code class="code docutils literal notranslate"><span class="pre">print</span></code> et <code class="code docutils literal notranslate"><span class="pre">return</span></code> : une fonction ne comportant qu’un <code class="code docutils literal notranslate"><span class="pre">print</span></code> et pas de <code class="code docutils literal notranslate"><span class="pre">return</span></code> ne fera qu’afficher un résultat à l’écran mais ne renverra aucune valeur.</p>
-<pre class="literal-block">In [16]: def bidon():
-   ....:     print(1)
-   ....:     return 2
-   ....: 
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="k">def</span> <span class="nf">bidon</span><span class="p">():</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="mi">2</span>
+<span class="gp">   ....: </span>
 
-In [17]: a = bidon() # La fonction bidon affiche bien 1
-1
+<span class="gp">In [17]: </span><span class="n">a</span> <span class="o">=</span> <span class="n">bidon</span><span class="p">()</span> <span class="c1"># La fonction bidon affiche bien 1</span>
+<span class="go">1</span>
 
-In [18]: a           # Mais elle a renvoyé la valeur 2
-Out[18]: 2</pre>
+<span class="gp">In [18]: </span><span class="n">a</span>           <span class="c1"># Mais elle a renvoyé la valeur 2</span>
+<span class="gh">Out[18]: </span><span class="go">2</span>
+</pre></div>
+</div>
 </div>
 <p>La plupart du temps, on préfèrera utiliser utiliser <code class="code docutils literal notranslate"><span class="pre">return</span></code> plutôt que <code class="code docutils literal notranslate"><span class="pre">print</span></code> : l’objet affiché par <code class="code docutils literal notranslate"><span class="pre">print</span></code> est en quelque sorte « perdu » pour le reste du programme s’il n’a pas été renvoyé via <code class="code docutils literal notranslate"><span class="pre">return</span></code>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [19]: </span><span class="k">def</span> <span class="nf">liste_carres1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">([</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">([</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
 <span class="gp">   ....: </span>
 </pre></div>
 </div>
@@ -287,21 +293,23 @@ Out[18]: 2</pre>
 <span class="gp">   ....: </span>
 </pre></div>
 </div>
-<pre class="literal-block"># Avec la première version, la liste des carrés est affichée mais on ne peut plus rien en faire
-In [21]: liste_carres1(10)
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go"># Avec la première version, la liste des carrés est affichée mais on ne peut plus rien en faire</span>
+<span class="gp">In [21]: </span><span class="n">liste_carres1</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</span>
 
-# En effet, la fonction renvoie None
-In [22]: print(liste_carres1(10))
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-None
+<span class="go"># En effet, la fonction renvoie None</span>
+<span class="gp">In [22]: </span><span class="nb">print</span><span class="p">(</span><span class="n">liste_carres1</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</span>
+<span class="go">None</span>
 
-# Avec la deuxième version, on peut par exemple calculer la somme des carrés des premiers entiers
-In [23]: sum(liste_carres2(10))
-Out[23]: 385</pre>
+<span class="go"># Avec la deuxième version, on peut par exemple calculer la somme des carrés des premiers entiers</span>
+<span class="gp">In [23]: </span><span class="nb">sum</span><span class="p">(</span><span class="n">liste_carres2</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="gh">Out[23]: </span><span class="go">385</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="parametres-et-arguments">
-<h2>4.4.3. Paramètres et arguments<a class="headerlink" href="#parametres-et-arguments" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.4.3. </span>Paramètres et arguments<a class="headerlink" href="#parametres-et-arguments" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une fonction peut avoir zéro, un ou plusieurs paramètres <a class="footnote-reference brackets" href="#zeroparametre" id="id1">1</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -330,18 +338,20 @@ Out[23]: 385</pre>
 </pre></div>
 </div>
 <p>Il est possible de donner des valeurs par défaut aux paramètres d’une fonction : les arguments correspondants ne sont plus alors requis lors de l’appel de la fonction.</p>
-<pre class="literal-block">In [29]: def nom_complet(prenom='Joe', nom='Bob'):
-   ....:     return prenom[0].upper() + prenom[1:].lower() + ' ' + nom.upper()
-   ....: 
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [29]: </span><span class="k">def</span> <span class="nf">nom_complet</span><span class="p">(</span><span class="n">prenom</span><span class="o">=</span><span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s1">&#39;Bob&#39;</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">prenom</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">prenom</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">nom</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="gp">   ....: </span>
 
-In [30]: nom_complet()
-Out[30]: 'Joe BOB'
+<span class="gp">In [30]: </span><span class="n">nom_complet</span><span class="p">()</span>
+<span class="gh">Out[30]: </span><span class="go">&#39;Joe BOB&#39;</span>
 
-In [31]: nom_complet('ulysse')
-Out[31]: 'Ulysse BOB'
+<span class="gp">In [31]: </span><span class="n">nom_complet</span><span class="p">(</span><span class="s1">&#39;ulysse&#39;</span><span class="p">)</span>
+<span class="gh">Out[31]: </span><span class="go">&#39;Ulysse BOB&#39;</span>
 
-In [32]: nom_complet(nom='capet')
-Out[32]: 'Joe CAPET'</pre>
+<span class="gp">In [32]: </span><span class="n">nom_complet</span><span class="p">(</span><span class="n">nom</span><span class="o">=</span><span class="s1">&#39;capet&#39;</span><span class="p">)</span>
+<span class="gh">Out[32]: </span><span class="go">&#39;Joe CAPET&#39;</span>
+</pre></div>
+</div>
 <p>Dans l’en-tête d’une fonction les paramètres avec des valeurs par défaut doivent toujours <em>suivre</em> les paramètres sans valeurs par défaut sous peine de déclencher une erreur de syntaxe.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [33]: </span><span class="k">def</span> <span class="nf">toto</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="k">pass</span>
@@ -355,7 +365,7 @@ Out[32]: 'Joe CAPET'</pre>
 <p>Le but est d’éviter toute ambiguïté. En effet, quels seraient les arguments passés lors de l’appel de fonction <code class="code docutils literal notranslate"><span class="pre">toto(5,</span> <span class="pre">6)</span></code> ? <code class="code docutils literal notranslate"><span class="pre">a=1</span></code>, <code class="code docutils literal notranslate"><span class="pre">b=5</span></code> et <code class="code docutils literal notranslate"><span class="pre">c=6</span></code> ou bien <code class="code docutils literal notranslate"><span class="pre">a=5</span></code>, <code class="code docutils literal notranslate"><span class="pre">b=6</span></code> et <code class="code docutils literal notranslate"><span class="pre">c=2</span></code> ?</p>
 </div>
 <div class="section" id="portee-des-variables">
-<h2>4.4.4. Portée des variables<a class="headerlink" href="#portee-des-variables" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.4.4. </span>Portée des variables<a class="headerlink" href="#portee-des-variables" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une fonction peut utiliser des variables définies <strong>à l’extérieur</strong> de cette fonction.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [34]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 
@@ -391,7 +401,7 @@ Out[32]: 'Joe CAPET'</pre>
 
 <span class="gp">In [41]: </span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
 <span class="gp">   ....: </span>    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="bp">None</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="kc">None</span>
 <span class="gp">   ....: </span>
 
 <span class="gp">In [42]: </span><span class="n">a</span>
@@ -423,7 +433,7 @@ Out[32]: 'Joe CAPET'</pre>
 <p>On ne peut pas accéder à des variables locales à l’extérieur de la fonction où elles sont définies.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [48]: </span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
 <span class="gp">   ....: </span>    <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="bp">None</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="kc">None</span>
 <span class="gp">   ....: </span>
 
 <span class="gp">In [49]: </span><span class="n">f</span><span class="p">()</span>
@@ -439,7 +449,7 @@ Out[32]: 'Joe CAPET'</pre>
 <span class="gp">In [52]: </span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
 <span class="gp">   ....: </span>    <span class="k">global</span> <span class="n">a</span>
 <span class="gp">   ....: </span>    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="bp">None</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="kc">None</span>
 <span class="gp">   ....: </span>
 
 <span class="gp">In [53]: </span><span class="n">a</span>
@@ -470,7 +480,7 @@ Out[32]: 'Joe CAPET'</pre>
 </div>
 </div>
 <div class="section" id="fonctions-et-mutabilite">
-<h2>4.4.5. Fonctions et mutabilité<a class="headerlink" href="#fonctions-et-mutabilite" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.4.5. </span>Fonctions et mutabilité<a class="headerlink" href="#fonctions-et-mutabilite" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Considérons ce premier exemple où l’argument est un entier.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [59]: </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -526,79 +536,85 @@ Out[32]: 'Joe CAPET'</pre>
 \draw[-fast cap,shorten &lt;=10pt,shorten &gt;=10pt,&gt;=latex, blue!20!white, line width=10pt](endfunc) --node[midway,above]{Sortie de g} (final);" /></p>
 </div><p>On se convaincra plus facilement en utilisant la fonction <code class="code docutils literal notranslate"><span class="pre">id</span></code> qui renvoie l’emplacement où est stocké un objet en mémoire et l’opérateur <code class="code docutils literal notranslate"><span class="pre">is</span></code> qui teste si deux objets sont physiquement égaux (c’est-à-dire s’ils occupent le même emplacement en mémoire).</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [67]: </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;x début fonction f&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">a</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x début fonction f&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">a</span><span class="p">)</span>
 <span class="gp">   ....: </span>    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;x fin fonction f&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">a</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x fin fonction f&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">a</span><span class="p">)</span>
 <span class="gp">   ....: </span>
 </pre></div>
 </div>
-<pre class="literal-block">In [68]: a = 2
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [68]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 
-In [69]: print('a avant appel fonction f', id(a))
-a avant appel fonction f 140716654813872
+<span class="gp">In [69]: </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a avant appel fonction f&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="go">a avant appel fonction f 140721392087344</span>
 
-In [70]: f(a)
-x début fonction f 140716654813872 True
-x fin fonction f 140716654813904 False
+<span class="gp">In [70]: </span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">x début fonction f 140721392087344 True</span>
+<span class="go">x fin fonction f 140721392087376 False</span>
 
-In [71]: print('a après appel fonction f', id(a))
-a après appel fonction f 140716654813872
+<span class="gp">In [71]: </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a après appel fonction f&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="go">a après appel fonction f 140721392087344</span>
 
-In [72]: a
-Out[72]: 2</pre>
+<span class="gp">In [72]: </span><span class="n">a</span>
+<span class="gh">Out[72]: </span><span class="go">2</span>
+</pre></div>
+</div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [73]: </span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">li</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;li début fonction g&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">li</span><span class="p">),</span> <span class="n">lst</span> <span class="ow">is</span> <span class="n">li</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;li début fonction g&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">li</span><span class="p">),</span> <span class="n">lst</span> <span class="ow">is</span> <span class="n">li</span><span class="p">)</span>
 <span class="gp">   ....: </span>    <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;toto&#39;</span><span class="p">)</span>
-<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;li fin fonction g&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">li</span><span class="p">),</span> <span class="n">lst</span> <span class="ow">is</span> <span class="n">li</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;li fin fonction g&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">li</span><span class="p">),</span> <span class="n">lst</span> <span class="ow">is</span> <span class="n">li</span><span class="p">)</span>
 <span class="gp">   ....: </span>
 </pre></div>
 </div>
-<pre class="literal-block">In [74]: lst = [1, 2, 3]
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [74]: </span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-In [75]: print('lst avant appel fonction g', id(lst))
-lst avant appel fonction g 2242652786312
+<span class="gp">In [75]: </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lst avant appel fonction g&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+<span class="go">lst avant appel fonction g 2837368454984</span>
 
-In [76]: g(lst)
-li début fonction g 2242652786312 True
-li fin fonction g 2242652786312 True
+<span class="gp">In [76]: </span><span class="n">g</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="go">li début fonction g 2837368454984 True</span>
+<span class="go">li fin fonction g 2837368454984 True</span>
 
-In [77]: print('lst après appel fonction g', id(lst))
-lst après appel fonction g 2242652786312
+<span class="gp">In [77]: </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lst après appel fonction g&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+<span class="go">lst après appel fonction g 2837368454984</span>
 
-In [78]: lst
-Out[78]: [1, 2, 3, 'toto']</pre>
+<span class="gp">In [78]: </span><span class="n">lst</span>
+<span class="gh">Out[78]: </span><span class="go">[1, 2, 3, &#39;toto&#39;]</span>
+</pre></div>
+</div>
 <p>Finalement, on peut résumer les choses de la manière suivante.</p>
 <div class="admonition tip">
 <p class="admonition-title">Astuce</p>
 <p>Un objet mutable peut-être modifé s’il est passé en argument à une fonction alors que ce ne sera jamais le cas pour un objet immutable.</p>
 </div>
 <p>Enfin, soulignons qu’il peut se passer des choses étranges lorsque l’on utilise des <em>arguments par défaut mutables</em>.</p>
-<pre class="literal-block">In [79]: def pizza(supplements, base=['jambon', 'fromage']):
-   ....:     base.extend(supplements)
-   ....:     return base
-   ....: 
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [79]: </span><span class="k">def</span> <span class="nf">pizza</span><span class="p">(</span><span class="n">supplements</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;jambon&#39;</span><span class="p">,</span> <span class="s1">&#39;fromage&#39;</span><span class="p">]):</span>
+<span class="gp">   ....: </span>    <span class="n">base</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">supplements</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">base</span>
+<span class="gp">   ....: </span>
 
-# Jusqu'ici tout va bien
-In [80]: print(pizza(['pepperoni', 'poivrons']))
-['jambon', 'fromage', 'pepperoni', 'poivrons']
+<span class="go"># Jusqu&#39;ici tout va bien</span>
+<span class="gp">In [80]: </span><span class="nb">print</span><span class="p">(</span><span class="n">pizza</span><span class="p">([</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span> <span class="s1">&#39;poivrons&#39;</span><span class="p">]))</span>
+<span class="go">[&#39;jambon&#39;, &#39;fromage&#39;, &#39;pepperoni&#39;, &#39;poivrons&#39;]</span>
 
-In [81]: print(pizza(['champignons'], ['jambon']))
-['jambon', 'champignons']
+<span class="gp">In [81]: </span><span class="nb">print</span><span class="p">(</span><span class="n">pizza</span><span class="p">([</span><span class="s1">&#39;champignons&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;jambon&#39;</span><span class="p">]))</span>
+<span class="go">[&#39;jambon&#39;, &#39;champignons&#39;]</span>
 
-# Ca devient bizarre
-In [82]: print(pizza(['anchois', 'olives']))
-['jambon', 'fromage', 'pepperoni', 'poivrons', 'anchois', 'olives']
+<span class="go"># Ca devient bizarre</span>
+<span class="gp">In [82]: </span><span class="nb">print</span><span class="p">(</span><span class="n">pizza</span><span class="p">([</span><span class="s1">&#39;anchois&#39;</span><span class="p">,</span> <span class="s1">&#39;olives&#39;</span><span class="p">]))</span>
+<span class="go">[&#39;jambon&#39;, &#39;fromage&#39;, &#39;pepperoni&#39;, &#39;poivrons&#39;, &#39;anchois&#39;, &#39;olives&#39;]</span>
 
-In [83]: print(pizza(['champignons']))
-['jambon', 'fromage', 'pepperoni', 'poivrons', 'anchois', 'olives', 'champignons']
+<span class="gp">In [83]: </span><span class="nb">print</span><span class="p">(</span><span class="n">pizza</span><span class="p">([</span><span class="s1">&#39;champignons&#39;</span><span class="p">]))</span>
+<span class="go">[&#39;jambon&#39;, &#39;fromage&#39;, &#39;pepperoni&#39;, &#39;poivrons&#39;, &#39;anchois&#39;, &#39;olives&#39;, &#39;champignons&#39;]</span>
 
-# Ca redevient normal
-In [84]: print(pizza(['anchois', 'olives'], ['jambon', 'oeuf', 'fromage']))
-['jambon', 'oeuf', 'fromage', 'anchois', 'olives']</pre>
+<span class="go"># Ca redevient normal</span>
+<span class="gp">In [84]: </span><span class="nb">print</span><span class="p">(</span><span class="n">pizza</span><span class="p">([</span><span class="s1">&#39;anchois&#39;</span><span class="p">,</span> <span class="s1">&#39;olives&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;jambon&#39;</span><span class="p">,</span> <span class="s1">&#39;oeuf&#39;</span><span class="p">,</span> <span class="s1">&#39;fromage&#39;</span><span class="p">]))</span>
+<span class="go">[&#39;jambon&#39;, &#39;oeuf&#39;, &#39;fromage&#39;, &#39;anchois&#39;, &#39;olives&#39;]</span>
+</pre></div>
+</div>
 <p>Il faut comprendre que la liste servant d’argument par défaut est créée une fois pour toute <em>à la déclaration de la fonction</em> et non à chaque appel de la fonction. Comme il s’agit d’un objet mutable, chaque appel de la fonction modifie cette liste. A chaque appel de la fonction, c’est donc cette nouvelle liste qui sert d’argument par défaut et non celle définie dans l’en-tête de la fonction.</p>
 </div>
 <div class="section" id="effets-de-bord">
-<h2>4.4.6. Effets de bord<a class="headerlink" href="#effets-de-bord" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.4.6. </span>Effets de bord<a class="headerlink" href="#effets-de-bord" title="Lien permanent vers ce titre">¶</a></h2>
 <p>En plus de renvoyer une valeur, une fonction peut entraîner des modifications au-delà de sa portée comme :</p>
 <ul class="simple">
 <li><p>modifier des variables globales ;</p></li>
@@ -609,7 +625,7 @@ In [84]: print(pizza(['anchois', 'olives'], ['jambon', 'oeuf', 'fromage']))
 <p>On parle alors d'<strong>effet de bord</strong>. Les effets de bord sont à utiliser avec parcimonie : en effet,</p>
 </div>
 <div class="section" id="une-fonction-est-un-objet">
-<h2>4.4.7. Une fonction est un objet<a class="headerlink" href="#une-fonction-est-un-objet" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.4.7. </span>Une fonction est un objet<a class="headerlink" href="#une-fonction-est-un-objet" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il est important de noter qu’en Python, les fonctions sont des objets commes les autres (entiers, tuples, …). Notamment, une fonction possède un type.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [85]: </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
@@ -645,7 +661,7 @@ In [84]: print(pizza(['anchois', 'olives'], ['jambon', 'oeuf', 'fromage']))
 </div>
 </div>
 <div class="section" id="fonctions-anonymes">
-<h2>4.4.8. Fonctions anonymes<a class="headerlink" href="#fonctions-anonymes" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.4.8. </span>Fonctions anonymes<a class="headerlink" href="#fonctions-anonymes" title="Lien permanent vers ce titre">¶</a></h2>
 <p>En mathématiques, on peut parler d’une fonction de plusieurs manières.</p>
 <blockquote>
 <div><ul class="simple">
@@ -707,17 +723,19 @@ In [84]: print(pizza(['anchois', 'olives'], ['jambon', 'oeuf', 'fromage']))
 </dd>
 <dt class="label" id="fctanonyme"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Une fonction anonyme peut également avoir des effets de bord.</p>
-<pre class="literal-block">In [101]: f = lambda li: li.append('toto')
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [101]: </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">li</span><span class="p">:</span> <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;toto&#39;</span><span class="p">)</span>
 
-In [102]: a = [1, 2]
+<span class="gp">In [102]: </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 
-In [103]: f(a)
+<span class="gp">In [103]: </span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
-In [104]: a               # La fonction anonyme f a modifié la liste a
-Out[104]: [1, 2, 'toto']
+<span class="gp">In [104]: </span><span class="n">a</span>               <span class="c1"># La fonction anonyme f a modifié la liste a</span>
+<span class="gh">Out[104]: </span><span class="go">[1, 2, &#39;toto&#39;]</span>
 
-In [105]: print(f(a))     # Par contre, la fonction ne renvoie rien (en fait, renvoie None)
-None</pre>
+<span class="gp">In [105]: </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>     <span class="c1"># Par contre, la fonction ne renvoie rien (en fait, renvoie None)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
 </dd>
 </dl>
 <div class="admonition-todo admonition" id="id3">

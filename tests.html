@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -141,9 +141,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="algorithmique.html">4. Rudiments d’algorithmique</a> &raquo;</li>
+          <li><a href="algorithmique.html"><span class="section-number">4. </span>Rudiments d’algorithmique</a> &raquo;</li>
         
-      <li>4.2. Tests</li>
+      <li><span class="section-number">4.2. </span>Tests</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -163,14 +163,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="tests">
-<h1>4.2. Tests<a class="headerlink" href="#tests" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">4.2. </span>Tests<a class="headerlink" href="#tests" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="branchements-conditionnels">
-<h2>4.2.1. Branchements conditionnels<a class="headerlink" href="#branchements-conditionnels" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.2.1. </span>Branchements conditionnels<a class="headerlink" href="#branchements-conditionnels" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On souhaite exécuter un bloc d’instructions uniquement si une condition est remplie. On emploie pour cela le mot-clé <code class="code docutils literal notranslate"><span class="pre">if</span></code> suivie d’une expression à valeur booléenne.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>       <span class="c1"># Changer la valeur de a pour comprendre ce qui se passe</span>
 
 <span class="gp">In [2]: </span><span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
-<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a est pair&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a est pair&#39;</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 <span class="go">a est pair</span>
 </pre></div>
@@ -179,9 +179,9 @@
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="gp">In [4]: </span><span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ...: </span><span class="o">...</span>  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a est pair&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="o">...</span>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a est pair&#39;</span><span class="p">)</span>
 <span class="gp">   ...: </span><span class="k">else</span><span class="p">:</span>
-<span class="gp">   ...: </span><span class="o">...</span>  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a est impair&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="o">...</span>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a est impair&#39;</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 <span class="go">a est impair</span>
 </pre></div>
@@ -190,9 +190,9 @@
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="gp">In [6]: </span><span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ...: </span><span class="o">...</span>  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a est pair&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="o">...</span>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a est pair&#39;</span><span class="p">)</span>
 <span class="gp">   ...: </span><span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
-<span class="gp">   ...: </span><span class="o">...</span>  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a est impair et strictement supérieur à 3&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="o">...</span>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a est impair et strictement supérieur à 3&#39;</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 <span class="go">a est impair et strictement supérieur à 3</span>
 </pre></div>
@@ -201,46 +201,50 @@
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="gp">In [8]: </span><span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ...: </span><span class="o">...</span>  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a est pair&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="o">...</span>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a est pair&#39;</span><span class="p">)</span>
 <span class="gp">   ...: </span><span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
-<span class="gp">   ...: </span><span class="o">...</span>  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a est impair et strictement supérieur à 3&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="o">...</span>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a est impair et strictement supérieur à 3&#39;</span><span class="p">)</span>
 <span class="gp">   ...: </span><span class="k">else</span><span class="p">:</span>
-<span class="gp">   ...: </span><span class="o">...</span>  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a est impair et inférieur ou égal à 3&#39;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="o">...</span>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a est impair et inférieur ou égal à 3&#39;</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 <span class="go">a est impair et inférieur ou égal à 3</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="expression-conditionnelle">
-<h2>4.2.2. Expression conditionnelle<a class="headerlink" href="#expression-conditionnelle" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.2.2. </span>Expression conditionnelle<a class="headerlink" href="#expression-conditionnelle" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On appelle <em>expression conditionnelle</em> une expression de la forme suivante.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">expression1</span><span class="o">&gt;</span> <span class="k">if</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span> <span class="k">else</span> <span class="o">&lt;</span><span class="n">expression2</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Cette expression est évaluée comme <code class="code docutils literal notranslate"><span class="pre">&lt;expression1&gt;</span></code> si <code class="code docutils literal notranslate"><span class="pre">&lt;condition&gt;</span></code> est vraie et comme <code class="code docutils literal notranslate"><span class="pre">&lt;expression2&gt;</span></code> sinon <a class="footnote-reference brackets" href="#operateur-ternaire" id="id1">1</a>.</p>
-<pre class="literal-block">In [9]: a = 0
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
 
-In [10]: 'papa' if a == 0 else 'maman'
-Out[10]: 'papa'
+<span class="gp">In [10]: </span><span class="s1">&#39;papa&#39;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;maman&#39;</span>
+<span class="gh">Out[10]: </span><span class="go">&#39;papa&#39;</span>
 
-In [11]: 'papa' if a == 1 else 'maman'
-Out[11]: 'maman'</pre>
+<span class="gp">In [11]: </span><span class="s1">&#39;papa&#39;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s1">&#39;maman&#39;</span>
+<span class="gh">Out[11]: </span><span class="go">&#39;maman&#39;</span>
+</pre></div>
+</div>
 <p>Ce type d’expression peut également accomplir une action plutôt que de renvoyer un objet.</p>
-<pre class="literal-block">In [12]: li = [1, 2, 3]
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="n">li</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-In [13]: a = 0
+<span class="gp">In [13]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
 
-In [14]: li.append('toto') if a == 0 else li.append('titi')
+<span class="gp">In [14]: </span><span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;toto&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;titi&#39;</span><span class="p">)</span>
 
-In [15]: li
-Out[15]: [1, 2, 3, 'toto']
+<span class="gp">In [15]: </span><span class="n">li</span>
+<span class="gh">Out[15]: </span><span class="go">[1, 2, 3, &#39;toto&#39;]</span>
 
-# En fait, l'expression est évaluée à None
-In [16]: print(li.append('toto') if a == 1 else li.append('titi'))
-None
+<span class="go"># En fait, l&#39;expression est évaluée à None</span>
+<span class="gp">In [16]: </span><span class="nb">print</span><span class="p">(</span><span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;toto&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;titi&#39;</span><span class="p">))</span>
+<span class="go">None</span>
 
-In [17]: li
-Out[17]: [1, 2, 3, 'toto', 'titi']</pre>
+<span class="gp">In [17]: </span><span class="n">li</span>
+<span class="gh">Out[17]: </span><span class="go">[1, 2, 3, &#39;toto&#39;, &#39;titi&#39;]</span>
+</pre></div>
+</div>
 <dl class="footnote brackets">
 <dt class="label" id="operateur-ternaire"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>On dit également que <code class="code docutils literal notranslate"><span class="pre">...</span> <span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> est un opérateur <em>ternaire</em>. En effet, une expression conditionnelle prend <em>trois</em> arguments et renvoie une valeur.</p>

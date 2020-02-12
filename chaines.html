@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -142,9 +142,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="types_composes.html">3. Types composés</a> &raquo;</li>
+          <li><a href="types_composes.html"><span class="section-number">3. </span>Types composés</a> &raquo;</li>
         
-      <li>3.3. Chaînes de caractère</li>
+      <li><span class="section-number">3.3. </span>Chaînes de caractère</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -164,13 +164,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="chaines-de-caractere">
-<h1>3.3. Chaînes de caractère<a class="headerlink" href="#chaines-de-caractere" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">3.3. </span>Chaînes de caractère<a class="headerlink" href="#chaines-de-caractere" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Une chaîne de caractères n’est autre qu’une liste de caractères. Les caractères sont juxtaposés et encadrés par des guillemets simples <code class="code docutils literal notranslate"><span class="pre">'...'</span></code> ou doubles <code class="code docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code> <a class="footnote-reference brackets" href="#entrelace" id="id1">1</a>.</p>
-<pre class="literal-block">In [1]: type('abcdef')
-Out[1]: str
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">)</span>
+<span class="gh">Out[1]: </span><span class="go">str</span>
 
-In [2]: &quot;abcdef&quot; == 'abcdef'
-Out[2]: True</pre>
+<span class="gp">In [2]: </span><span class="s2">&quot;abcdef&quot;</span> <span class="o">==</span> <span class="s1">&#39;abcdef&#39;</span>
+<span class="gh">Out[2]: </span><span class="go">True</span>
+</pre></div>
+</div>
 <p>A nouveau, les opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> et <code class="code docutils literal notranslate"><span class="pre">+=</span></code> fonctionnent comme pour les listes.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="s1">&#39;abc&#39;</span> <span class="o">+</span> <span class="s2">&quot;def&quot;</span>
 <span class="gh">Out[3]: </span><span class="go">&#39;abcdef&#39;</span>
@@ -181,25 +183,27 @@ Out[2]: True</pre>
 </pre></div>
 </div>
 <p>On peut <strong>accéder</strong> de la même manière aux caractères d’une chaîne qu’aux éléments d’une liste.</p>
-<pre class="literal-block">In [6]: ma_chaine = &quot;Bonjour Python&quot;
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">ma_chaine</span> <span class="o">=</span> <span class="s2">&quot;Bonjour Python&quot;</span>
 
-In [7]: ma_chaine[3]
-Out[7]: 'j'
+<span class="gp">In [7]: </span><span class="n">ma_chaine</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="gh">Out[7]: </span><span class="go">&#39;j&#39;</span>
 
-In [8]: ma_chaine[2:]
-Out[8]: 'njour Python'
+<span class="gp">In [8]: </span><span class="n">ma_chaine</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="gh">Out[8]: </span><span class="go">&#39;njour Python&#39;</span>
 
-In [9]: ma_chaine[:5]
-Out[9]: 'Bonjo'
+<span class="gp">In [9]: </span><span class="n">ma_chaine</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<span class="gh">Out[9]: </span><span class="go">&#39;Bonjo&#39;</span>
 
-In [10]: ma_chaine[-3]
-Out[10]: 'h'
+<span class="gp">In [10]: </span><span class="n">ma_chaine</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="gh">Out[10]: </span><span class="go">&#39;h&#39;</span>
 
-In [11]: ma_chaine[2:9:2]
-Out[11]: 'norP'
+<span class="gp">In [11]: </span><span class="n">ma_chaine</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="gh">Out[11]: </span><span class="go">&#39;norP&#39;</span>
 
-In [12]: ma_chaine[8:1:-3]
-Out[12]: 'Pun'</pre>
+<span class="gp">In [12]: </span><span class="n">ma_chaine</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="gh">Out[12]: </span><span class="go">&#39;Pun&#39;</span>
+</pre></div>
+</div>
 <p>Par contre, on ne peut pas <strong>modifier</strong> une chaîne.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
 
@@ -218,19 +222,21 @@ Out[12]: 'Pun'</pre>
 </pre></div>
 </div>
 <p>Les chaînes possèdent de nombreuses méthodes : ces méthodes ne modifient jamais la chaîne de caractère mais renvoient une <em>autre</em> chaîne de caractère.</p>
-<pre class="literal-block">In [16]: ma_chaine = 'Mon nom est Bond. James Bond.'
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">ma_chaine</span> <span class="o">=</span> <span class="s1">&#39;Mon nom est Bond. James Bond.&#39;</span>
 
-In [17]: ma_chaine.replace('Bond', 'Toto')
-Out[17]: 'Mon nom est Toto. James Toto.'
+<span class="gp">In [17]: </span><span class="n">ma_chaine</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Bond&#39;</span><span class="p">,</span> <span class="s1">&#39;Toto&#39;</span><span class="p">)</span>
+<span class="gh">Out[17]: </span><span class="go">&#39;Mon nom est Toto. James Toto.&#39;</span>
 
-In [18]: ma_chaine
-Out[18]: 'Mon nom est Bond. James Bond.'
+<span class="gp">In [18]: </span><span class="n">ma_chaine</span>
+<span class="gh">Out[18]: </span><span class="go">&#39;Mon nom est Bond. James Bond.&#39;</span>
 
-In [19]: ma_chaine.upper()
-Out[19]: 'MON NOM EST BOND. JAMES BOND.'
+<span class="gp">In [19]: </span><span class="n">ma_chaine</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="gh">Out[19]: </span><span class="go">&#39;MON NOM EST BOND. JAMES BOND.&#39;</span>
 
-In [20]: ma_chaine
-Out[20]: 'Mon nom est Bond. James Bond.'</pre>
+<span class="gp">In [20]: </span><span class="n">ma_chaine</span>
+<span class="gh">Out[20]: </span><span class="go">&#39;Mon nom est Bond. James Bond.&#39;</span>
+</pre></div>
+</div>
 <div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">À faire</p>
 <p>mettre méthode dans glossaire</p>
@@ -253,20 +259,24 @@ Out[20]: 'Mon nom est Bond. James Bond.'</pre>
 </pre></div>
 </div>
 <p>En fait, il suffit de tirer parti du fait qu’une chaîne de caractères peut être définie avec des guillemets simples <strong>ou</strong> doubles.</p>
-<pre class="literal-block">In [23]: &quot;C'est possible&quot;
-Out[23]: &quot;C'est possible&quot;
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [23]: </span><span class="s2">&quot;C&#39;est possible&quot;</span>
+<span class="gh">Out[23]: </span><span class="go">&quot;C&#39;est possible&quot;</span>
 
-In [24]: 'Il a dit : &quot;possible&quot; !'
-Out[24]: 'Il a dit : &quot;possible&quot; !'</pre>
+<span class="gp">In [24]: </span><span class="s1">&#39;Il a dit : &quot;possible&quot; !&#39;</span>
+<span class="gh">Out[24]: </span><span class="go">&#39;Il a dit : &quot;possible&quot; !&#39;</span>
+</pre></div>
+</div>
 <p>Il existe une manière encore plus expéditive qui consiste à employer des <em>triples</em> guillemets.</p>
-<pre class="literal-block">In [25]: &quot;&quot;&quot;Il a dit que c'était : &quot;possible&quot; &quot;&quot;&quot;
-Out[25]: 'Il a dit que c\'était : &quot;possible&quot; '
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="sd">&quot;&quot;&quot;Il a dit que c&#39;était : &quot;possible&quot; &quot;&quot;&quot;</span>
+<span class="gh">Out[25]: </span><span class="go">&#39;Il a dit que c\&#39;était : &quot;possible&quot; &#39;</span>
 
-In [26]: &quot;&quot;&quot;On peut même utiliser cette méthode
-   ....: pour déclarer des chaînes de caractères
-   ....: sur plusieurs lignes&quot;&quot;&quot;
-   ....: 
-Out[26]: 'On peut même utiliser cette méthode\npour déclarer des chaînes de caractères\nsur plusieurs lignes'</pre>
+<span class="gp">In [26]: </span><span class="sd">&quot;&quot;&quot;On peut même utiliser cette méthode</span>
+<span class="gp">   ....: </span><span class="sd">pour déclarer des chaînes de caractères</span>
+<span class="gp">   ....: </span><span class="sd">sur plusieurs lignes&quot;&quot;&quot;</span>
+<span class="gp">   ....: </span>
+<span class="gh">Out[26]: </span><span class="go">&#39;On peut même utiliser cette méthode\npour déclarer des chaînes de caractères\nsur plusieurs lignes&#39;</span>
+</pre></div>
+</div>
 </dd>
 </dl>
 </div>

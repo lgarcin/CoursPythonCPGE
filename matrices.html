@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -143,9 +143,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="algoclassiques.html">7. Algorithmes classiques</a> &raquo;</li>
+          <li><a href="algoclassiques.html"><span class="section-number">7. </span>Algorithmes classiques</a> &raquo;</li>
         
-      <li>7.5. Matrices</li>
+      <li><span class="section-number">7.5. </span>Matrices</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -165,26 +165,28 @@
            <div itemprop="articleBody">
             
   <div class="section" id="matrices">
-<h1>7.5. Matrices<a class="headerlink" href="#matrices" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">7.5. </span>Matrices<a class="headerlink" href="#matrices" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Dans ce paragraphe, les matrices seront représentées par des listes de listes. Par exemple, la matrice <span class="math notranslate nohighlight">\(\begin{pmatrix}1&amp;2&amp;3\\4&amp;5&amp;6\end{pmatrix}\)</span> sera représentée par la liste de listes <code class="code docutils literal notranslate"><span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]]</span></code> <a class="footnote-reference brackets" href="#numpy-matrices" id="id1">1</a>.</p>
 <div class="section" id="produit-matriciel">
-<h2>7.5.1. Produit matriciel<a class="headerlink" href="#produit-matriciel" title="Lien permanent vers ce titre">¶</a></h2>
-<pre class="literal-block">In [1]: def produit(A, B):
-   ...:     return [[sum(L[k] * B[k][j] for k in range(len(L))) for j in range(len(B[0]))] for L in A]
-   ...: 
+<h2><span class="section-number">7.5.1. </span>Produit matriciel<a class="headerlink" href="#produit-matriciel" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">produit</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="p">[[</span><span class="nb">sum</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="n">A</span><span class="p">]</span>
+<span class="gp">   ...: </span>
 
-In [2]: A = [[1, 2, 3], [4, 5, 6]]
+<span class="gp">In [2]: </span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
 
-In [3]: B = [[1, 2], [3, 4], [5,6]]
+<span class="gp">In [3]: </span><span class="n">B</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
 
-In [4]: produit(A, B)
-Out[4]: [[22, 28], [49, 64]]
+<span class="gp">In [4]: </span><span class="n">produit</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="gh">Out[4]: </span><span class="go">[[22, 28], [49, 64]]</span>
 
-In [5]: produit(B, A)
-Out[5]: [[9, 12, 15], [19, 26, 33], [29, 40, 51]]</pre>
+<span class="gp">In [5]: </span><span class="n">produit</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="gh">Out[5]: </span><span class="go">[[9, 12, 15], [19, 26, 33], [29, 40, 51]]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="operations-elementaires">
-<h2>7.5.2. Opérations élémentaires<a class="headerlink" href="#operations-elementaires" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.5.2. </span>Opérations élémentaires<a class="headerlink" href="#operations-elementaires" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On définit plusieurs opérations élémentaires sur les lignes d’une matrice.</p>
 <ul>
 <li><p>l’échange de lignes <span class="math notranslate nohighlight">\(L_i\leftrightarrow L_j\)</span></p>
@@ -224,7 +226,7 @@ Out[5]: [[9, 12, 15], [19, 26, 33], [29, 40, 51]]</pre>
 </div>
 </div>
 <div class="section" id="algorithme-du-pivot-de-gauss">
-<h2>7.5.3. Algorithme du pivot de Gauss<a class="headerlink" href="#algorithme-du-pivot-de-gauss" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.5.3. </span>Algorithme du pivot de Gauss<a class="headerlink" href="#algorithme-du-pivot-de-gauss" title="Lien permanent vers ce titre">¶</a></h2>
 <p>A l’aide des opérations élémentaires précédemment définies, on peut alors définir une fonction appliquant l’algorithme du pivot de Gauss à une matrice pour la mettre sous forme <em>échelonnée</em>.</p>
 <p>Pour des raisons de stabilité numérique, on recherche le pivot de valeur absolue maximale.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="k">def</span> <span class="nf">recherche_pivot_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
@@ -269,7 +271,7 @@ Out[5]: [[9, 12, 15], [19, 26, 33], [29, 40, 51]]</pre>
 </div>
 </div>
 <div class="section" id="resolution-de-systemes-lineaires">
-<h2>7.5.4. Résolution de systèmes linéaires<a class="headerlink" href="#resolution-de-systemes-lineaires" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.5.4. </span>Résolution de systèmes linéaires<a class="headerlink" href="#resolution-de-systemes-lineaires" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On considère un <strong>système de Cramer</strong> sous forme matricielle <span class="math notranslate nohighlight">\(AX=B\)</span> où <span class="math notranslate nohighlight">\(A\)</span> est une matrice inversible, <span class="math notranslate nohighlight">\(B\)</span> une matrice colonne donnée et <span class="math notranslate nohighlight">\(X\)</span> une matrice colonne inconnue. Pour résoudre ce système, il suffit dans un premier temps de mettre la matrice <span class="math notranslate nohighlight">\(\begin{pmatrix}A\mid B\end{pmatrix}\)</span> sous forme échelonnée. On peut utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">pivot_lignes</span></code> précédemment définie mais on aura également besoin d’une fonction permettant de concaténer une matrice carrée (sous forme d’une liste de listes) et une matrice colonne (sous forme d’une liste).</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">def</span> <span class="nf">concatenation_vecteur</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="k">return</span> <span class="p">[</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">))]</span>
@@ -311,7 +313,7 @@ Out[5]: [[9, 12, 15], [19, 26, 33], [29, 40, 51]]</pre>
 </div>
 </div>
 <div class="section" id="inversion-d-une-matrice">
-<h2>7.5.5. Inversion d’une matrice<a class="headerlink" href="#inversion-d-une-matrice" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.5.5. </span>Inversion d’une matrice<a class="headerlink" href="#inversion-d-une-matrice" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On peut également utiliser l’algorithme du pivot de Gauss pour inverser une matrice : on transforme une matrice inversible en la matrice identité en effectuant l’algorithme du pivot de Gauss puis l’algorithme du pivot de Gauss « à rebours ». On récpercute les opérations effectuées sur une matrice identité de même taille que <span class="math notranslate nohighlight">\(A\)</span>, qui est alors transformée en l’inverse de la matrice initiale. Pour effectuer aissément les mêmes opérations sur les lignes d’une matrice <span class="math notranslate nohighlight">\(A\)</span> et la matrice identité <span class="math notranslate nohighlight">\(I\)</span>, on forme la matrice <span class="math notranslate nohighlight">\(\begin{pmatrix}A\mid I\end{pmatrix}\)</span>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="k">def</span> <span class="nf">concat_identite</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="k">return</span> <span class="p">[</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">j</span><span class="o">==</span> <span class="n">i</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">))]</span>
@@ -333,21 +335,23 @@ Out[5]: [[9, 12, 15], [19, 26, 33], [29, 40, 51]]</pre>
 <span class="gp">   ....: </span>
 </pre></div>
 </div>
-<pre class="literal-block">In [23]: A = [[1, 5, 6], [2, 11, 19], [3, 19, 47]]
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [23]: </span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">47</span><span class="p">]]</span>
 
-In [24]: B = inverse(A)
+<span class="gp">In [24]: </span><span class="n">B</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
-In [25]: B
-Out[25]: [[156.0, -121.0, 29.0], [-37.0, 29.0, -7.0], [5.0, -4.0, 1.0]]
+<span class="gp">In [25]: </span><span class="n">B</span>
+<span class="gh">Out[25]: </span><span class="go">[[156.0, -121.0, 29.0], [-37.0, 29.0, -7.0], [5.0, -4.0, 1.0]]</span>
 
-In [26]: produit(A, B)
-Out[26]: [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
+<span class="gp">In [26]: </span><span class="n">produit</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="gh">Out[26]: </span><span class="go">[[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]</span>
 
-In [27]: produit(B, A)
-Out[27]: [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]</pre>
+<span class="gp">In [27]: </span><span class="n">produit</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="gh">Out[27]: </span><span class="go">[[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="calcul-du-determinant">
-<h2>7.5.6. Calcul du déterminant<a class="headerlink" href="#calcul-du-determinant" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.5.6. </span>Calcul du déterminant<a class="headerlink" href="#calcul-du-determinant" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On peut également se servir du pivot de Gauss pour calculer le déterminant d’une matrice carrée. En effet, le déterminant est invariant par transvection et échange de lignes et le déterminant d’une matrice triangulaire est le produit de ses coefficients diagonaux <a class="footnote-reference brackets" href="#determinant-idiot" id="id2">2</a>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="k">def</span> <span class="nf">determinant</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="n">pivot_lignes</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>

@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -139,9 +139,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="theorie.html">5. Un peu de théorie</a> &raquo;</li>
+          <li><a href="theorie.html"><span class="section-number">5. </span>Un peu de théorie</a> &raquo;</li>
         
-      <li>5.1. Preuve d’un algorithme</li>
+      <li><span class="section-number">5.1. </span>Preuve d’un algorithme</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -161,10 +161,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="preuve-d-un-algorithme">
-<h1>5.1. Preuve d’un algorithme<a class="headerlink" href="#preuve-d-un-algorithme" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">5.1. </span>Preuve d’un algorithme<a class="headerlink" href="#preuve-d-un-algorithme" title="Lien permanent vers ce titre">¶</a></h1>
 <p><em>Prouver</em> un algorithme signifie démontrer qu’un algorithme effectue bien la tâche qui lui est demandée.</p>
 <div class="section" id="terminaison">
-<h2>5.1.1. Terminaison<a class="headerlink" href="#terminaison" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">5.1.1. </span>Terminaison<a class="headerlink" href="#terminaison" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il s’agit de montrer que l’algorithme se termine bien. La question se pose notamment lorsque l’algorithme comporte une boucle conditionnelle <code class="code docutils literal notranslate"><span class="pre">while</span></code>. La plupart du temps, cela revient à montrer qu’une quantité entière positive décroît strictement à chaque itération de la boucle (une suite d’entiers naturels strictement décroissante est nécessairement <em>finie</em>). Cette quantité est généralement appelé le <strong>variant</strong>.</p>
 <p>On peut par exemple étudier l’algorithme d’Euclide pour le calcul du pgcd.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -176,7 +176,7 @@
 <p>On suppose que l’argument <code class="code docutils literal notranslate"><span class="pre">b</span></code> est un entier naturel. En notant <span class="math notranslate nohighlight">\(b_k\)</span> la valeur de <code class="code docutils literal notranslate"><span class="pre">b</span></code> à la fin de la <span class="math notranslate nohighlight">\(k^\text{ème}\)</span> itération (<span class="math notranslate nohighlight">\(b_0\)</span> désigne la valeur de <code class="code docutils literal notranslate"><span class="pre">b</span></code> avant d’entrer dans la boucle), on a <span class="math notranslate nohighlight">\(0\leq b_{k+1}&lt;b_k\)</span> si <span class="math notranslate nohighlight">\(b_k&gt;0\)</span>. La suite <span class="math notranslate nohighlight">\((b_k)\)</span> est donc une suite strictement décroissante d’entiers naturels : elle est finie et la boucle se termine.</p>
 </div>
 <div class="section" id="correction">
-<h2>5.1.2. Correction<a class="headerlink" href="#correction" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">5.1.2. </span>Correction<a class="headerlink" href="#correction" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il s’agit de savoir si l’algorithme fournit bien la réponse attendue. Si l’algorithme comporte une boucle, on recherche généralement une quantité ou une propriété qui ne change pas au cours des itérations : on parle d'<strong>invariant de boucle</strong>.</p>
 <p>A nouveau, on peut étudier l’algorithme d’Euclide.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>

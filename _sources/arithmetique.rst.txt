@@ -88,7 +88,6 @@ De même, on peut implémenter l'algorithme d'Euclide étendu qui, en plus du pg
     bezout(30, -12)
 
 .. todo:: se reporter au chapitre preuve pour comment ça marche.
-.. todo:: peut-être un exemple quand même
 
 
 Exponentiation rapide

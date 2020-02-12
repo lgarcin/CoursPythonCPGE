@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -141,9 +141,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="types_operateurs_variables.html">2. Types, opérateurs et variables</a> &raquo;</li>
+          <li><a href="types_operateurs_variables.html"><span class="section-number">2. </span>Types, opérateurs et variables</a> &raquo;</li>
         
-      <li>2.4. Conversions de types</li>
+      <li><span class="section-number">2.4. </span>Conversions de types</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -163,19 +163,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="conversions-de-types">
-<h1>2.4. Conversions de types<a class="headerlink" href="#conversions-de-types" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">2.4. </span>Conversions de types<a class="headerlink" href="#conversions-de-types" title="Lien permanent vers ce titre">¶</a></h1>
 <p>On peut convertir un objet d’un type vers un autre type : il suffit pour cela d’utiliser le nom du type vers lequel on veut convertir. On parle alors de <em>conversion explicite</em>.</p>
-<pre class="literal-block">In [1]: int('42')
-Out[1]: 42
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">)</span>
+<span class="gh">Out[1]: </span><span class="go">42</span>
 
-In [2]: type(int('42'))
-Out[2]: int
+<span class="gp">In [2]: </span><span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">))</span>
+<span class="gh">Out[2]: </span><span class="go">int</span>
 
-In [3]: str(25)
-Out[3]: '25'
+<span class="gp">In [3]: </span><span class="nb">str</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="gh">Out[3]: </span><span class="go">&#39;25&#39;</span>
 
-In [4]: type(str(25))
-Out[4]: str</pre>
+<span class="gp">In [4]: </span><span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+<span class="gh">Out[4]: </span><span class="go">str</span>
+</pre></div>
+</div>
 <p>Il se peut que certaines conversions soient impossibles.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;45f6&#39;</span><span class="p">)</span>
 <span class="gt">---------------------------------------------------------------------------</span>
@@ -188,7 +190,7 @@ Out[4]: str</pre>
 </div>
 <p>L’utilisation d’opérateurs pour des objets dont le type n’est pas approprié peut donner lieu à des <em>conversions implicites</em>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go"># Le booléen True est automatiquement converti en l&#39;entier 1 pour pouvoir l&#39;ajouter à l&#39;entier 2</span>
-<span class="gp">In [6]: </span><span class="bp">True</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="gp">In [6]: </span><span class="kc">True</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="gh">Out[6]: </span><span class="go">3</span>
 </pre></div>
 </div>

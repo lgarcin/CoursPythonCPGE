@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -135,7 +135,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>1. Entrée/sortie</li>
+      <li><span class="section-number">1. </span>Entrée/sortie</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -155,14 +155,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="entree-sortie">
-<h1>1. Entrée/sortie<a class="headerlink" href="#entree-sortie" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">1. </span>Entrée/sortie<a class="headerlink" href="#entree-sortie" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Un programme informatique doit souvent pouvoir interagir avec l’extérieur. Il existe plusieurs manières de faire cela :</p>
 <ul class="simple">
 <li><p>soit en interagissant directement avec l’utilisateur : celui-ci peut rentrer des données grâce au clavier ou voir le résultat du programme s’afficher à l’écran ;</p></li>
 <li><p>soit au moyen de fichiers : le programme peut lire des informations dans des fichiers ou au contraire écrire des résultats dans des fichiers.</p></li>
 </ul>
 <div class="section" id="interaction-directe-avec-l-utilisateur">
-<h2>1.1. Interaction directe avec l’utilisateur<a class="headerlink" href="#interaction-directe-avec-l-utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">1.1. </span>Interaction directe avec l’utilisateur<a class="headerlink" href="#interaction-directe-avec-l-utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’interpéteur <strong>IPython</strong> affiche par défaut le résultat d’une expression non évaluée à <code class="code docutils literal notranslate"><span class="pre">None</span></code>. Ce n’est pas le cas lorsque l’on exécute un script Python. Si l’on veut afficher des résultats à l’écran, il faut explicitement utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">print</span></code>.</p>
 <p>Dans cet exemple, on exécute le script stocké dans le fichier <code class="file docutils literal notranslate"><span class="pre">script_print.py</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;titi&#39;</span>          <span class="c1"># Cette ligne n&#39;affiche rien</span>
@@ -183,7 +183,7 @@ toto
 </div>
 </div>
 <div class="section" id="fichiers">
-<h2>1.2. Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour ouvrir un fichier, on utilise la fonction <code class="code docutils literal notranslate"><span class="pre">open</span></code> en donnant en argument le chemin du fichier. On peut préciser plusieurs paramètres optionnels.</p>
 <dl class="simple">
 <dt><code class="code docutils literal notranslate"><span class="pre">mode</span></code></dt><dd><p><strong>Mode d’ouverture</strong> du fichier : essentiellement <code class="code docutils literal notranslate"><span class="pre">'r'</span></code> pour lecture, <code class="code docutils literal notranslate"><span class="pre">'w'</span></code> pour écriture et <code class="code docutils literal notranslate"><span class="pre">'r+'</span></code> pour lecture/écriture. Par défaut, un fichier est ouvert en lecture seulement.</p>
@@ -191,13 +191,15 @@ toto
 <dt><code class="code docutils literal notranslate"><span class="pre">encoding</span></code></dt><dd><p><strong>Encodage</strong> <a class="footnote-reference brackets" href="#encodage" id="id1">1</a> du fichier : de nombreux encodages sont disponibles comme <code class="code docutils literal notranslate"><span class="pre">'utf8'</span></code> (à privilégier) ou <code class="code docutils literal notranslate"><span class="pre">'ascii'</span></code>.</p>
 </dd>
 </dl>
-<pre class="literal-block">In [3]: f = open('test.txt', mode='r', encoding='utf8')
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 
-In [4]: f
-Out[4]: &lt;_io.TextIOWrapper name='test.txt' mode='r' encoding='utf8'&gt;
+<span class="gp">In [4]: </span><span class="n">f</span>
+<span class="gh">Out[4]: </span><span class="go">&lt;_io.TextIOWrapper name=&#39;test.txt&#39; mode=&#39;r&#39; encoding=&#39;utf8&#39;&gt;</span>
 
-In [5]: type(f)
-Out[5]: _io.TextIOWrapper</pre>
+<span class="gp">In [5]: </span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gh">Out[5]: </span><span class="go">_io.TextIOWrapper</span>
+</pre></div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
 <p>Le mode d’écriture <code class="code docutils literal notranslate"><span class="pre">'w'</span></code> crée un nouveau fichier si un fichier du même nom n’existe pas mais « écrase » un fichier existant dans le cas contraire.</p>
@@ -214,31 +216,33 @@ Troisième ligne
 </pre></div>
 </div>
 <p>Dans les exemples suivants, le caractère <code class="code docutils literal notranslate"><span class="pre">\n</span></code> désigne un <em>retour à la ligne</em>.</p>
-<pre class="literal-block">In [7]: f = open('test.txt', mode='r', encoding='utf8')
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 
-# Renvoie l'intégralité d'un fichier
-In [8]: f.read()
-Out[8]: 'Première ligne\nDeuxième ligne\nTroisième ligne\n'
+<span class="go"># Renvoie l&#39;intégralité d&#39;un fichier</span>
+<span class="gp">In [8]: </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gh">Out[8]: </span><span class="go">&#39;Première ligne\nDeuxième ligne\nTroisième ligne\n&#39;</span>
 
-In [9]: f.close()
+<span class="gp">In [9]: </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-In [10]: f = open('test.txt', mode='r', encoding='utf8')
+<span class="gp">In [10]: </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 
-# Renvoie la liste des lignes
-In [11]: f.readlines()
-Out[11]: ['Première ligne\n', 'Deuxième ligne\n', 'Troisième ligne\n']
+<span class="go"># Renvoie la liste des lignes</span>
+<span class="gp">In [11]: </span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="gh">Out[11]: </span><span class="go">[&#39;Première ligne\n&#39;, &#39;Deuxième ligne\n&#39;, &#39;Troisième ligne\n&#39;]</span>
 
-In [12]: f.close()
+<span class="gp">In [12]: </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-In [13]: f = open('toto.txt', mode='w', encoding='utf8')
+<span class="gp">In [13]: </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;toto.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 
-In [14]: f.write(&quot;Ce qui se conçoit bien s'énonce clairement\n&quot;)
-Out[14]: 43
+<span class="gp">In [14]: </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Ce qui se conçoit bien s&#39;énonce clairement</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gh">Out[14]: </span><span class="go">43</span>
 
-In [15]: f.write(&quot;Et les mots pour le dire viennent aisément.\n&quot;)
-Out[15]: 44
+<span class="gp">In [15]: </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Et les mots pour le dire viennent aisément.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gh">Out[15]: </span><span class="go">44</span>
 
-In [16]: f.close()</pre>
+<span class="gp">In [16]: </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
 <p>On vérifie que le fichier <code class="file docutils literal notranslate"><span class="pre">toto.txt</span></code> a bien été créé et que son contenu correspond bien à ce qu’on y a écrit.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Ce qui se conçoit bien s&#39;énonce clairement
 Et les mots pour le dire viennent aisément.

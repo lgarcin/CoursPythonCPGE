@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -141,9 +141,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="types_operateurs_variables.html">2. Types, opérateurs et variables</a> &raquo;</li>
+          <li><a href="types_operateurs_variables.html"><span class="section-number">2. </span>Types, opérateurs et variables</a> &raquo;</li>
         
-      <li>2.3. Opérateurs</li>
+      <li><span class="section-number">2.3. </span>Opérateurs</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -163,9 +163,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="operateurs">
-<h1>2.3. Opérateurs<a class="headerlink" href="#operateurs" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">2.3. </span>Opérateurs<a class="headerlink" href="#operateurs" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="operateurs-arithmetiques">
-<h2>2.3.1. Opérateurs arithmétiques<a class="headerlink" href="#operateurs-arithmetiques" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.3.1. </span>Opérateurs arithmétiques<a class="headerlink" href="#operateurs-arithmetiques" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Python dispose des opérateurs arithmétiques de base <code class="code docutils literal notranslate"><span class="pre">+</span></code> (addition), <code class="code docutils literal notranslate"><span class="pre">-</span></code> (soustraction), <code class="code docutils literal notranslate"><span class="pre">*</span></code> (multiplication) et <code class="code docutils literal notranslate"><span class="pre">/</span></code> (division).</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="mi">1</span> <span class="o">+</span> <span class="mf">2.3</span> <span class="o">*</span> <span class="p">(</span><span class="mf">4.5</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="mf">7.8</span>
 <span class="gh">Out[1]: </span><span class="go">0.5576923076923077</span>
@@ -177,45 +177,51 @@
 </pre></div>
 </div>
 <p>Par ailleurs, les opérateurs <code class="code docutils literal notranslate"><span class="pre">%</span></code> et <code class="code docutils literal notranslate"><span class="pre">//</span></code> calculent respectivement le quotient et le reste d’une division euclidienne.</p>
-<pre class="literal-block">In [3]: 20%6
-Out[3]: 2
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="mi">20</span><span class="o">%</span><span class="k">6</span>
+<span class="gh">Out[3]: </span><span class="go">2</span>
 
-In [4]: 20//6
-Out[4]: 3</pre>
+<span class="gp">In [4]: </span><span class="mi">20</span><span class="o">//</span><span class="mi">6</span>
+<span class="gh">Out[4]: </span><span class="go">3</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="operateurs-de-comparaison">
-<h2>2.3.2. Opérateurs de comparaison<a class="headerlink" href="#operateurs-de-comparaison" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.3.2. </span>Opérateurs de comparaison<a class="headerlink" href="#operateurs-de-comparaison" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le résultat d’une comparaison est un booléen. Python dispose des opérateurs de comparaison <code class="code docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="code docutils literal notranslate"><span class="pre">==</span></code> (égalité), <code class="code docutils literal notranslate"><span class="pre">!=</span></code> (différence).</p>
-<pre class="literal-block">In [5]: 1 + 2 &lt; 3.4
-Out[5]: True
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mf">3.4</span>
+<span class="gh">Out[5]: </span><span class="go">True</span>
 
-In [6]: 5.6 &gt;= 7
-Out[6]: False
+<span class="gp">In [6]: </span><span class="mf">5.6</span> <span class="o">&gt;=</span> <span class="mi">7</span>
+<span class="gh">Out[6]: </span><span class="go">False</span>
 
-In [7]: 1 + 1 == 2
-Out[7]: True
+<span class="gp">In [7]: </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="gh">Out[7]: </span><span class="go">True</span>
 
-In [8]: &quot;abc&quot; != &quot;def&quot;
-Out[8]: True</pre>
+<span class="gp">In [8]: </span><span class="s2">&quot;abc&quot;</span> <span class="o">!=</span> <span class="s2">&quot;def&quot;</span>
+<span class="gh">Out[8]: </span><span class="go">True</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Il faut prendre garde de ne pas confondre l’opérateur d”<strong>égalité</strong> <code class="code docutils literal notranslate"><span class="pre">==</span></code> avec l’opérateur d”<strong>affectation</strong> <code class="code docutils literal notranslate"><span class="pre">=</span></code>.</p>
 </div>
 </div>
 <div class="section" id="operateurs-logiques">
-<h2>2.3.3. Opérateurs logiques<a class="headerlink" href="#operateurs-logiques" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.3.3. </span>Opérateurs logiques<a class="headerlink" href="#operateurs-logiques" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On dispose des opérateurs logique classiques : <code class="code docutils literal notranslate"><span class="pre">not</span></code> (négation), <code class="code docutils literal notranslate"><span class="pre">and</span></code> (conjonction) et <code class="code docutils literal notranslate"><span class="pre">or</span></code> (disjonction).</p>
-<pre class="literal-block">In [9]: not False
-Out[9]: True
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="ow">not</span> <span class="kc">False</span>
+<span class="gh">Out[9]: </span><span class="go">True</span>
 
-In [10]: 1+2&lt;3 and 4.5==6
-Out[10]: False
+<span class="gp">In [10]: </span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">&lt;</span><span class="mi">3</span> <span class="ow">and</span> <span class="mf">4.5</span><span class="o">==</span><span class="mi">6</span>
+<span class="gh">Out[10]: </span><span class="go">False</span>
 
-In [11]: 7&lt;=8 or &quot;abc&quot;==&quot;def&quot;
-Out[11]: True</pre>
+<span class="gp">In [11]: </span><span class="mi">7</span><span class="o">&lt;=</span><span class="mi">8</span> <span class="ow">or</span> <span class="s2">&quot;abc&quot;</span><span class="o">==</span><span class="s2">&quot;def&quot;</span>
+<span class="gh">Out[11]: </span><span class="go">True</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="operation-affectation">
-<h2>2.3.4. Opération/affectation<a class="headerlink" href="#operation-affectation" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">2.3.4. </span>Opération/affectation<a class="headerlink" href="#operation-affectation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les opérateurs binaires peuvent être suivis du symbole <code class="code docutils literal notranslate"><span class="pre">=</span></code> pour effectuer simultanément une opération et une affectation. Ainsi <code class="code docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code> équivaut à <code class="code docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code></p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 

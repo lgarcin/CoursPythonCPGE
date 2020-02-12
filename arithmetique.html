@@ -21,12 +21,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -143,9 +143,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="algoclassiques.html">7. Algorithmes classiques</a> &raquo;</li>
+          <li><a href="algoclassiques.html"><span class="section-number">7. </span>Algorithmes classiques</a> &raquo;</li>
         
-      <li>7.3. Arithmétique</li>
+      <li><span class="section-number">7.3. </span>Arithmétique</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -165,9 +165,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="arithmetique">
-<h1>7.3. Arithmétique<a class="headerlink" href="#arithmetique" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">7.3. </span>Arithmétique<a class="headerlink" href="#arithmetique" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="decomposition-d-un-entier-dans-une-base">
-<h2>7.3.1. Décomposition d’un entier dans une base<a class="headerlink" href="#decomposition-d-un-entier-dans-une-base" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.3.1. </span>Décomposition d’un entier dans une base<a class="headerlink" href="#decomposition-d-un-entier-dans-une-base" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’écriture d’un entier <span class="math notranslate nohighlight">\(n\in\mathbb{N}^*\)</span> dans une base <span class="math notranslate nohighlight">\(b\)</span> où <span class="math notranslate nohighlight">\(b\)</span> est un entier supérieur ou égal à <span class="math notranslate nohighlight">\(2\)</span> est une écriture de la forme</p>
 <div class="math notranslate nohighlight">
 \[n=\sum_{k=0}^pa_kb^k\]</div>
@@ -184,58 +184,64 @@
 <p>donc</p>
 <div class="math notranslate nohighlight">
 \[1455= 7 + 8 \times (5 + 8 \times (6 + 8 \times 2)) = 7 + 5 \times 8 + 6 \times 8^2 + 2 \times 8^3\]</div>
-<pre class="literal-block">In [1]: def decomp(n, b):
-   ...:     l = []
-   ...:     while n != 0:
-   ...:         l.append(n % b)
-   ...:         n //= b
-   ...:     return l
-   ...: 
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">decomp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">   ...: </span>    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ...: </span>        <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+<span class="gp">   ...: </span>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="n">l</span>
+<span class="gp">   ...: </span>
 
-In [2]: decomp(24189, 10 )
-Out[2]: [9, 8, 1, 4, 2]
+<span class="gp">In [2]: </span><span class="n">decomp</span><span class="p">(</span><span class="mi">24189</span><span class="p">,</span> <span class="mi">10</span> <span class="p">)</span>
+<span class="gh">Out[2]: </span><span class="go">[9, 8, 1, 4, 2]</span>
 
-In [3]: n, b = 3678, 7
+<span class="gp">In [3]: </span><span class="n">n</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3678</span><span class="p">,</span> <span class="mi">7</span>
 
-In [4]: l = decomp(n, b)
+<span class="gp">In [4]: </span><span class="n">l</span> <span class="o">=</span> <span class="n">decomp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
-In [5]: l
-Out[5]: [3, 0, 5, 3, 1]
+<span class="gp">In [5]: </span><span class="n">l</span>
+<span class="gh">Out[5]: </span><span class="go">[3, 0, 5, 3, 1]</span>
 
-# On vérifie que la liste convient effectivement
-In [6]: sum(a * b ** i for i, a in enumerate(l))
-Out[6]: 3678</pre>
+<span class="go"># On vérifie que la liste convient effectivement</span>
+<span class="gp">In [6]: </span><span class="nb">sum</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+<span class="gh">Out[6]: </span><span class="go">3678</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="calcul-de-pgcd">
-<h2>7.3.2. Calcul de PGCD<a class="headerlink" href="#calcul-de-pgcd" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.3.2. </span>Calcul de PGCD<a class="headerlink" href="#calcul-de-pgcd" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On peut implémenter l’algorithme d’Euclide en Python.</p>
-<pre class="literal-block">In [7]: def pgcd(a, b):
-   ...:     while b!= 0:
-   ...:         a, b = b, a % b
-   ...:     return abs(a)   # Le pgcd doit être positif
-   ...: 
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="k">while</span> <span class="n">b</span><span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ...: </span>        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>   <span class="c1"># Le pgcd doit être positif</span>
+<span class="gp">   ...: </span>
 
-In [8]: pgcd(30, 12)
-Out[8]: 6
+<span class="gp">In [8]: </span><span class="n">pgcd</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="gh">Out[8]: </span><span class="go">6</span>
 
-In [9]: pgcd(30, -12)
-Out[9]: 6</pre>
+<span class="gp">In [9]: </span><span class="n">pgcd</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)</span>
+<span class="gh">Out[9]: </span><span class="go">6</span>
+</pre></div>
+</div>
 <p>De même, on peut implémenter l’algorithme d’Euclide étendu qui, en plus du pgcd, donne des coefficients d’une relation de Bézout, c’est-à-dire des entiers <span class="math notranslate nohighlight">\(u\)</span> et <span class="math notranslate nohighlight">\(v\)</span> tels que</p>
 <div class="math notranslate nohighlight">
 \[au+bv=\mathrm{pgcd}(a,b)\]</div>
-<pre class="literal-block">In [10]: def bezout(a, b):
-   ....:     s, t, u, v = 1, 0, 0, 1
-   ....:     while b != 0:
-   ....:         q = a // b
-   ....:         a, s, t, b, u, v = b, u, v, a - q * b, s - q * u, t - q * v
-   ....:     return (a, s, t) if a &gt; 0 else (-a, -s, -t)     # Le pgcd doit être positif
-   ....: 
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="k">def</span> <span class="nf">bezout</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="gp">   ....: </span>    <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="n">q</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
+<span class="gp">   ....: </span>        <span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">s</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">u</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">v</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">t</span><span class="p">)</span>     <span class="c1"># Le pgcd doit être positif</span>
+<span class="gp">   ....: </span>
 
-In [11]: bezout(30, 12)
-Out[11]: (6, 1, -2)
+<span class="gp">In [11]: </span><span class="n">bezout</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="gh">Out[11]: </span><span class="go">(6, 1, -2)</span>
 
-In [12]: bezout(30, -12)
-Out[12]: (6, -1, -3)</pre>
+<span class="gp">In [12]: </span><span class="n">bezout</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)</span>
+<span class="gh">Out[12]: </span><span class="go">(6, -1, -3)</span>
+</pre></div>
+</div>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">À faire</p>
 <p>se reporter au chapitre preuve pour comment ça marche.</p>
@@ -246,7 +252,7 @@ Out[12]: (6, -1, -3)</pre>
 </div>
 </div>
 <div class="section" id="exponentiation-rapide">
-<h2>7.3.3. Exponentiation rapide<a class="headerlink" href="#exponentiation-rapide" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.3.3. </span>Exponentiation rapide<a class="headerlink" href="#exponentiation-rapide" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il s’agit ici de calculer efficacement une puissance entière d’un objet mathématique (nombre ou matrice par exemple). Un algorithme naïf serait le suivant.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">def</span> <span class="nf">exponentiation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -328,10 +334,10 @@ Out[12]: (6, -1, -3)</pre>
 <span class="gp">   ....: </span><span class="o">%</span><span class="k">timeit</span> 3**100
 <span class="gp">   ....: </span><span class="o">%</span><span class="k">timeit</span> pow(3, 100)
 <span class="gp">   ....: </span>
-<span class="go">5.51 us +- 301 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">1.08 us +- 52 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
-<span class="go">346 ns +- 12.1 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
-<span class="go">390 ns +- 23.4 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
+<span class="go">4.92 us +- 257 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">994 ns +- 79 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
+<span class="go">381 ns +- 19.9 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
+<span class="go">382 ns +- 4.87 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
 </pre></div>
 </div>
 <p>On constate en effet que l’algorithme d’exponentiation rapide est plus efficace que l’algorithme naïf mais il y a encore des progrès à faire pour égaler l’exponentiation intégrée par défaut dans le langage Python.</p>
@@ -341,7 +347,7 @@ Out[12]: (6, -1, -3)</pre>
 </div>
 </div>
 <div class="section" id="evaluation-de-polynomes">
-<h2>7.3.4. Evaluation de polynômes<a class="headerlink" href="#evaluation-de-polynomes" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.3.4. </span>Evaluation de polynômes<a class="headerlink" href="#evaluation-de-polynomes" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La méthode naïve pour évaluer un polynôme <span class="math notranslate nohighlight">\(P\)</span> en un scalaire <span class="math notranslate nohighlight">\(x\)</span> consiste à calculer les différentes puissances de <span class="math notranslate nohighlight">\(x\)</span> puis à les multiplier par les coefficients de <span class="math notranslate nohighlight">\(P\)</span> correspondant puis à effectuer la somme de ces produits.</p>
 <p>Par exemple, pour évaluer <span class="math notranslate nohighlight">\(5X^3+4X^2-3X+7\)</span> en un scalaire <span class="math notranslate nohighlight">\(x\)</span>, on calcule successivement :</p>
 <ul class="simple">
