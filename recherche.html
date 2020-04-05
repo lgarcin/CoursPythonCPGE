@@ -98,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tris.html">7.6. Tris</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
 </ul>
 
             
@@ -219,8 +220,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="recherche-d-un-element-dans-une-liste-triee">
-<h2><span class="section-number">7.1.2. </span>Recherche d’un élément dans une liste triée<a class="headerlink" href="#recherche-d-un-element-dans-une-liste-triee" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="recherche-par-dichotomie-dans-une-liste-triee">
+<h2><span class="section-number">7.1.2. </span>Recherche par dichotomie dans une liste triée<a class="headerlink" href="#recherche-par-dichotomie-dans-une-liste-triee" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Lorsque l’on dispose d’une liste triée par ordre croissant, on peut grandement améliorer notre algorithme en utilisant le principe de <strong>dichotomie</strong>.</p>
 <ul class="simple">
 <li><p>On recherche tout d’abord l’élément central de la liste.</p></li>
@@ -335,23 +336,58 @@
 </div>
 <p class="rubric">Comparaison de l’efficacité des deux algorithmes</p>
 <p>On peut comparer les temps de calcul des deux versions de l’algorithme de recherche d’un élément grâce à la <em>commande magique</em> <code class="code docutils literal notranslate"><span class="pre">%timeit</span></code> : celle-ci permet d’exécuter un grand nombre de fois la même instruction et de mesurer le temps d’exécution moyen de cette instruction.</p>
-<p>On remarque en particulier que le temps de calcul avec l’algorithme standard augmente à peu près proportionnellement à la taille de la liste tandis que le temps de calcul avec l’algorithme par dichotomie augmente très peu avec la taille de la liste. Le gain de temps de calcul est donc d’autant plus grand que la liste est grande <a class="footnote-reference brackets" href="#pasdemiracle" id="id1">1</a>. On donnera une comparaison quantitative de ces deux temps de calcul dans le chapitre sur la complexité.</p>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">À faire</p>
-<p>mettre un lien vers complexité</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [17]: </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randint</span>    <span class="c1"># La fonction randint permet de générer des entiers de manière aléatoire</span>
+
+<span class="gp">In [18]: </span><span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">100000</span><span class="p">:</span>
+<span class="gp">   ....: </span>    <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>     <span class="c1"># On crée une liste d&#39;entiers triée par ordre croissant</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="s2">&quot;éléments&quot;</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recherche standard&quot;</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="o">%</span><span class="k">timeit</span> appartient(randint(N), lst)
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recherche par dichotomie&quot;</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="o">%</span><span class="k">timeit</span> appartient_dicho(randint(N), lst)
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">   ....: </span>
+<span class="go">100 éléments</span>
+<span class="go">Recherche standard</span>
+<span class="go">3.5 us +- 414 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">Recherche par dichotomie</span>
+<span class="go">3.05 us +- 221 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+
+
+<span class="go">1000 éléments</span>
+<span class="go">Recherche standard</span>
+<span class="go">14 us +- 1.43 us per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">Recherche par dichotomie</span>
+<span class="go">3.7 us +- 132 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+
+
+<span class="go">10000 éléments</span>
+<span class="go">Recherche standard</span>
+<span class="go">111 us +- 3.18 us per loop (mean +- std. dev. of 7 runs, 10000 loops each)</span>
+<span class="go">Recherche par dichotomie</span>
+<span class="go">4.25 us +- 79.2 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+
+
+<span class="go">100000 éléments</span>
+<span class="go">Recherche standard</span>
+<span class="go">1.14 ms +- 92.1 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">Recherche par dichotomie</span>
+<span class="go">5.05 us +- 177 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+</pre></div>
 </div>
+<p>On remarque en particulier que le temps de calcul avec l’algorithme standard augmente à peu près proportionnellement à la taille de la liste tandis que le temps de calcul avec l’algorithme par dichotomie augmente très peu avec la taille de la liste. Le gain de temps de calcul est donc d’autant plus grand que la liste est grande <a class="footnote-reference brackets" href="#pasdemiracle" id="id1">1</a>. On donnera une évaluation de la complexité de cet algorithme en <a class="reference internal" href="appendice_preuves_complexites.html#recherche-par-dichotomie"><span class="std std-ref">annexe</span></a>.</p>
 </div>
 <div class="section" id="recherche-du-maximum-ou-du-minimim-d-une-liste">
 <h2><span class="section-number">7.1.3. </span>Recherche du maximum ou du minimim d’une liste<a class="headerlink" href="#recherche-du-maximum-ou-du-minimim-d-une-liste" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On suppose qu’on dispose d’une liste d’éléments que l’on peut comparer les uns aux autres et on cherche à déterminer le plus grand ou le plus petit élément. Python dispose déjà de deux fonctions <code class="code docutils literal notranslate"><span class="pre">min</span></code> et <code class="code docutils literal notranslate"><span class="pre">max</span></code> pour effectuer cette tâche.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [17]: </span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [19]: </span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
-<span class="gp">In [18]: </span><span class="nb">min</span><span class="p">(</span><span class="n">lst</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
-<span class="gh">Out[18]: </span><span class="go">(-7, 10)</span>
+<span class="gp">In [20]: </span><span class="nb">min</span><span class="p">(</span><span class="n">lst</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="gh">Out[20]: </span><span class="go">(-7, 10)</span>
 </pre></div>
 </div>
 <p>On peut également proposer notre algorithme. Rien de bien difficile, il suffit de parcourir un à un les éléments de la liste et de comparer chaque élément au minimum ou maximum des éléments précédents.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [19]: </span><span class="k">def</span> <span class="nf">minmax</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="k">def</span> <span class="nf">minmax</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="n">m</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
 <span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
 <span class="gp">   ....: </span>        <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="n">elt</span><span class="p">:</span>
@@ -361,36 +397,36 @@
 <span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span>
 <span class="gp">   ....: </span>
 
-<span class="gp">In [20]: </span><span class="n">minmax</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
-<span class="gh">Out[20]: </span><span class="go">(-7, 10)</span>
+<span class="gp">In [22]: </span><span class="n">minmax</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="gh">Out[22]: </span><span class="go">(-7, 10)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="recherche-d-une-sous-chaine-dans-une-chaine-de-caracteres">
 <h2><span class="section-number">7.1.4. </span>Recherche d’une sous-chaîne dans une chaîne de caractères<a class="headerlink" href="#recherche-d-une-sous-chaine-dans-une-chaine-de-caracteres" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’objectif est de retrouver une sous-chaîne (qu’on appellera <em>motif</em>) dans une chaîne de caractères. Par exemple, la chaîne <code class="code docutils literal notranslate"><span class="pre">&quot;pitapipapa&quot;</span></code> contient le motif <code class="code docutils literal notranslate"><span class="pre">&quot;pipa&quot;</span></code> mais pas le motif <code class="code docutils literal notranslate"><span class="pre">&quot;tapi&quot;</span></code>. Python propose déjà cette fonctionnalité à l’aide de l’opérateur <code class="code docutils literal notranslate"><span class="pre">in</span></code>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="s2">&quot;pipa&quot;</span> <span class="ow">in</span> <span class="s2">&quot;pitapipapa&quot;</span>
-<span class="gh">Out[21]: </span><span class="go">True</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [23]: </span><span class="s2">&quot;pipa&quot;</span> <span class="ow">in</span> <span class="s2">&quot;pitapipapa&quot;</span>
+<span class="gh">Out[23]: </span><span class="go">True</span>
 
-<span class="gp">In [22]: </span><span class="s2">&quot;tapa&quot;</span> <span class="ow">in</span> <span class="s2">&quot;pitapipapa&quot;</span>
-<span class="gh">Out[22]: </span><span class="go">False</span>
+<span class="gp">In [24]: </span><span class="s2">&quot;tapa&quot;</span> <span class="ow">in</span> <span class="s2">&quot;pitapipapa&quot;</span>
+<span class="gh">Out[24]: </span><span class="go">False</span>
 </pre></div>
 </div>
 <p>La méthode <code class="code docutils literal notranslate"><span class="pre">index</span></code> permet de renvoyer l’indice du caractère où a été trouvé le motif le cas échéant.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [23]: </span><span class="s2">&quot;pitapipapa&quot;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;pipa&quot;</span><span class="p">)</span>
-<span class="gh">Out[23]: </span><span class="go">4</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="s2">&quot;pitapipapa&quot;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;pipa&quot;</span><span class="p">)</span>
+<span class="gh">Out[25]: </span><span class="go">4</span>
 
-<span class="gp">In [24]: </span><span class="s2">&quot;pitapipapa&quot;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;tapa&quot;</span><span class="p">)</span>
+<span class="gp">In [26]: </span><span class="s2">&quot;pitapipapa&quot;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;tapa&quot;</span><span class="p">)</span>
 <span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">3</span><span class="n">adb3dc6f3c0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">26</span><span class="o">-</span><span class="mi">3</span><span class="n">adb3dc6f3c0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s2">&quot;pitapipapa&quot;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;tapa&quot;</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: substring not found
 </pre></div>
 </div>
 <p>On présente ici un algorithme naïf qui est assez peu efficace mais qui a le mérite d’être très facile à comprendre : on prend successivement chaque caractère de la chaîne comme point de départ et on compare les caractères de la chaîne et les caractères du motif à partir de ce point de départ.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="k">def</span> <span class="nf">recherche_chaine</span><span class="p">(</span><span class="n">chaine</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [27]: </span><span class="k">def</span> <span class="nf">recherche_chaine</span><span class="p">(</span><span class="n">chaine</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chaine</span><span class="p">)</span>
 <span class="gp">   ....: </span>    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>
 <span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
@@ -402,23 +438,23 @@
 <span class="gp">   ....: </span>    <span class="k">return</span> <span class="kc">False</span>
 <span class="gp">   ....: </span>
 
-<span class="gp">In [26]: </span><span class="n">recherche_chaine</span><span class="p">(</span><span class="s2">&quot;pitapipapa&quot;</span><span class="p">,</span> <span class="s2">&quot;pipa&quot;</span><span class="p">)</span>
-<span class="gh">Out[26]: </span><span class="go">True</span>
+<span class="gp">In [28]: </span><span class="n">recherche_chaine</span><span class="p">(</span><span class="s2">&quot;pitapipapa&quot;</span><span class="p">,</span> <span class="s2">&quot;pipa&quot;</span><span class="p">)</span>
+<span class="gh">Out[28]: </span><span class="go">True</span>
 
-<span class="gp">In [27]: </span><span class="n">recherche_chaine</span><span class="p">(</span><span class="s2">&quot;patapipapa&quot;</span><span class="p">,</span> <span class="s2">&quot;tapa&quot;</span><span class="p">)</span>
-<span class="gh">Out[27]: </span><span class="go">False</span>
+<span class="gp">In [29]: </span><span class="n">recherche_chaine</span><span class="p">(</span><span class="s2">&quot;patapipapa&quot;</span><span class="p">,</span> <span class="s2">&quot;tapa&quot;</span><span class="p">)</span>
+<span class="gh">Out[29]: </span><span class="go">False</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id2">
 <img alt="_images/recherche_chaine_win.gif" src="_images/recherche_chaine_win.gif" />
-<p class="caption"><span class="caption-text">Succès</span><a class="headerlink" href="#id3" title="Lien permanent vers cette image">¶</a></p>
+<p class="caption"><span class="caption-text">Succès</span><a class="headerlink" href="#id2" title="Lien permanent vers cette image">¶</a></p>
 </div>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id3">
 <img alt="_images/recherche_chaine_lose.gif" src="_images/recherche_chaine_lose.gif" />
-<p class="caption"><span class="caption-text">Echec</span><a class="headerlink" href="#id4" title="Lien permanent vers cette image">¶</a></p>
+<p class="caption"><span class="caption-text">Echec</span><a class="headerlink" href="#id3" title="Lien permanent vers cette image">¶</a></p>
 </div>
 <p>On peut à nouveau proposer une version de l’algorithme qui renvoie l’indice de la <em>première occurence</em> rencontrée.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="k">def</span> <span class="nf">indice_chaine</span><span class="p">(</span><span class="n">chaine</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="k">def</span> <span class="nf">indice_chaine</span><span class="p">(</span><span class="n">chaine</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chaine</span><span class="p">)</span>
 <span class="gp">   ....: </span>    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>
 <span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="p">):</span>
@@ -430,10 +466,10 @@
 <span class="gp">   ....: </span>    <span class="k">return</span> <span class="kc">None</span>
 <span class="gp">   ....: </span>
 
-<span class="gp">In [29]: </span><span class="n">indice_chaine</span><span class="p">(</span><span class="s2">&quot;pitapipapa&quot;</span><span class="p">,</span> <span class="s2">&quot;pipa&quot;</span><span class="p">)</span>
-<span class="gh">Out[29]: </span><span class="go">4</span>
+<span class="gp">In [31]: </span><span class="n">indice_chaine</span><span class="p">(</span><span class="s2">&quot;pitapipapa&quot;</span><span class="p">,</span> <span class="s2">&quot;pipa&quot;</span><span class="p">)</span>
+<span class="gh">Out[31]: </span><span class="go">4</span>
 
-<span class="gp">In [30]: </span><span class="n">indice_chaine</span><span class="p">(</span><span class="s2">&quot;patapipapa&quot;</span><span class="p">,</span> <span class="s2">&quot;tapa&quot;</span><span class="p">)</span>     <span class="c1"># L&#39;interpréteur IPython n&#39;affiche pas None</span>
+<span class="gp">In [32]: </span><span class="n">indice_chaine</span><span class="p">(</span><span class="s2">&quot;patapipapa&quot;</span><span class="p">,</span> <span class="s2">&quot;tapa&quot;</span><span class="p">)</span>     <span class="c1"># L&#39;interpréteur IPython n&#39;affiche pas None</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>

@@ -18,6 +18,7 @@ Python pour les CPGE scientifiques
     theorie
     recursivite
     algoclassiques
+    appendice_preuves_complexites
 
 Index et tables
 ===============

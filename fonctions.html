@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
 </ul>
 
             
@@ -358,7 +359,7 @@
 <span class="gp">   ....: </span>
 <span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-33-ff9b54c14016&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="k">def</span> <span class="nf">toto</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-            <span class="o">^</span>
+             <span class="o">^</span>
 <span class="ne">SyntaxError</span>: non-default argument follows default argument
 </pre></div>
 </div>
@@ -474,7 +475,9 @@
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [58]: </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
 <span class="gp">   ....: </span>     <span class="k">global</span> <span class="n">g</span>
 <span class="gp">   ....: </span>
-<span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-58-c03bf47315f9&gt;&quot;</span><span class="gt">, line </span><span class="mi">5</span>
+<span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-58-c03bf47315f9&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="k">global</span> <span class="n">g</span>
+    <span class="o">^</span>
 <span class="ne">SyntaxError</span>: name &#39;g&#39; is parameter and global
 </pre></div>
 </div>
@@ -545,14 +548,14 @@
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [68]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="gp">In [69]: </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a avant appel fonction f&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="go">a avant appel fonction f 140721392087344</span>
+<span class="go">a avant appel fonction f 140723175872192</span>
 
 <span class="gp">In [70]: </span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="go">x début fonction f 140721392087344 True</span>
-<span class="go">x fin fonction f 140721392087376 False</span>
+<span class="go">x début fonction f 140723175872192 True</span>
+<span class="go">x fin fonction f 140723175872224 False</span>
 
 <span class="gp">In [71]: </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a après appel fonction f&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="go">a après appel fonction f 140721392087344</span>
+<span class="go">a après appel fonction f 140723175872192</span>
 
 <span class="gp">In [72]: </span><span class="n">a</span>
 <span class="gh">Out[72]: </span><span class="go">2</span>
@@ -568,14 +571,14 @@
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [74]: </span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
 <span class="gp">In [75]: </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lst avant appel fonction g&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
-<span class="go">lst avant appel fonction g 2837368454984</span>
+<span class="go">lst avant appel fonction g 2339441847488</span>
 
 <span class="gp">In [76]: </span><span class="n">g</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
-<span class="go">li début fonction g 2837368454984 True</span>
-<span class="go">li fin fonction g 2837368454984 True</span>
+<span class="go">li début fonction g 2339441847488 True</span>
+<span class="go">li fin fonction g 2339441847488 True</span>
 
 <span class="gp">In [77]: </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lst après appel fonction g&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
-<span class="go">lst après appel fonction g 2837368454984</span>
+<span class="go">lst après appel fonction g 2339441847488</span>
 
 <span class="gp">In [78]: </span><span class="n">lst</span>
 <span class="gh">Out[78]: </span><span class="go">[1, 2, 3, &#39;toto&#39;]</span>

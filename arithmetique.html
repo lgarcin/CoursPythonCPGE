@@ -98,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tris.html">7.6. Tris</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
 </ul>
 
             
@@ -212,7 +213,7 @@
 <h2><span class="section-number">7.3.2. </span>Calcul de PGCD<a class="headerlink" href="#calcul-de-pgcd" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On peut implémenter l’algorithme d’Euclide en Python.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="k">while</span> <span class="n">b</span><span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ...: </span>    <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
 <span class="gp">   ...: </span>        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
 <span class="gp">   ...: </span>    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>   <span class="c1"># Le pgcd doit être positif</span>
 <span class="gp">   ...: </span>
@@ -242,14 +243,7 @@
 <span class="gh">Out[12]: </span><span class="go">(6, -1, -3)</span>
 </pre></div>
 </div>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">À faire</p>
-<p>se reporter au chapitre preuve pour comment ça marche.</p>
-</div>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">À faire</p>
-<p>peut-être un exemple quand même</p>
-</div>
+<p>La preuve de l’algorithme est donnée en <a class="reference internal" href="appendice_preuves_complexites.html#algorithme-d-euclide-etendu"><span class="std std-ref">annexe</span></a>.</p>
 </div>
 <div class="section" id="exponentiation-rapide">
 <h2><span class="section-number">7.3.3. </span>Exponentiation rapide<a class="headerlink" href="#exponentiation-rapide" title="Lien permanent vers ce titre">¶</a></h2>
@@ -334,14 +328,14 @@
 <span class="gp">   ....: </span><span class="o">%</span><span class="k">timeit</span> 3**100
 <span class="gp">   ....: </span><span class="o">%</span><span class="k">timeit</span> pow(3, 100)
 <span class="gp">   ....: </span>
-<span class="go">4.92 us +- 257 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">994 ns +- 79 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
-<span class="go">381 ns +- 19.9 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
-<span class="go">382 ns +- 4.87 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
+<span class="go">5.76 us +- 282 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">1.11 us +- 51.2 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
+<span class="go">276 ns +- 11.4 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
+<span class="go">312 ns +- 5.92 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
 </pre></div>
 </div>
 <p>On constate en effet que l’algorithme d’exponentiation rapide est plus efficace que l’algorithme naïf mais il y a encore des progrès à faire pour égaler l’exponentiation intégrée par défaut dans le langage Python.</p>
-<div class="admonition-todo admonition" id="id3">
+<div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">À faire</p>
 <p>preuve + complexité</p>
 </div>
@@ -352,7 +346,7 @@
 <p>Par exemple, pour évaluer <span class="math notranslate nohighlight">\(5X^3+4X^2-3X+7\)</span> en un scalaire <span class="math notranslate nohighlight">\(x\)</span>, on calcule successivement :</p>
 <ul class="simple">
 <li><p>les puissances de <span class="math notranslate nohighlight">\(x\)</span>, à savoir <span class="math notranslate nohighlight">\(x^2\)</span> et <span class="math notranslate nohighlight">\(x^3\)</span> (2 multiplications) ;</p></li>
-<li><p>mes produits <span class="math notranslate nohighlight">\(-3x\)</span>, <span class="math notranslate nohighlight">\(4x^2\)</span> et <span class="math notranslate nohighlight">\(5x^3\)</span> (3 multiplications) ;</p></li>
+<li><p>les produits <span class="math notranslate nohighlight">\(-3x\)</span>, <span class="math notranslate nohighlight">\(4x^2\)</span> et <span class="math notranslate nohighlight">\(5x^3\)</span> (3 multiplications) ;</p></li>
 <li><p>la somme de <span class="math notranslate nohighlight">\(7\)</span>, <span class="math notranslate nohighlight">\(-3x\)</span>, <span class="math notranslate nohighlight">\(4x^2\)</span> et <span class="math notranslate nohighlight">\(5x^3\)</span> (3 additions).</p></li>
 </ul>
 <p>Mais les calculs peuvent être menés plus astucieusement en remarquant que :</p>
@@ -378,7 +372,7 @@
 <span class="gh">Out[23]: </span><span class="go">27</span>
 </pre></div>
 </div>
-<p>Si l’on préfère représenter un polynôme par la liste de ses coefficients par ordre de degré <em>croissant</em>, on peut toujours utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">reversed</span></code> qui fait ce que son nom indique <a class="footnote-reference brackets" href="#reverse-sclicing" id="id4">1</a>.</p>
+<p>Si l’on préfère représenter un polynôme par la liste de ses coefficients par ordre de degré <em>croissant</em>, on peut toujours utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">reversed</span></code> qui fait ce que son nom indique <a class="footnote-reference brackets" href="#reverse-sclicing" id="id2">1</a>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [24]: </span><span class="k">def</span> <span class="nf">horner</span><span class="p">(</span><span class="n">poly</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">poly</span><span class="p">):</span>
@@ -392,7 +386,7 @@
 </pre></div>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="reverse-sclicing"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dt class="label" id="reverse-sclicing"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>On peut également utiliser du slicing : <code class="code docutils literal notranslate"><span class="pre">lst[::-1]</span></code> est également la liste <code class="code docutils literal notranslate"><span class="pre">lst</span></code> « renversée ».</p>
 </dd>
 </dl>

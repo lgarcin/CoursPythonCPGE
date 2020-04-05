@@ -98,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tris.html">7.6. Tris</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
 </ul>
 
             
@@ -224,16 +225,16 @@
 
 <span class="gp">In [10]: </span><span class="p">[</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 <span class="gh">Out[10]: </span><span class="go"></span>
-<span class="go">[0.5845252492572304,</span>
-<span class="go"> 0.06361343642942041,</span>
-<span class="go"> 0.7194155246151616,</span>
-<span class="go"> 0.8534067696570394,</span>
-<span class="go"> 0.9060664985961764,</span>
-<span class="go"> 0.9131492384341706,</span>
-<span class="go"> 0.28864739839274534,</span>
-<span class="go"> 0.49404745316440724,</span>
-<span class="go"> 0.7706095097209249,</span>
-<span class="go"> 0.5886998822722004]</span>
+<span class="go">[0.14405656686442525,</span>
+<span class="go"> 0.8237737329602879,</span>
+<span class="go"> 0.6407074458443373,</span>
+<span class="go"> 0.21685744265449225,</span>
+<span class="go"> 0.20782718805532374,</span>
+<span class="go"> 0.27130548842202684,</span>
+<span class="go"> 0.17160789022312184,</span>
+<span class="go"> 0.24422811717789839,</span>
+<span class="go"> 0.9387076104003322,</span>
+<span class="go"> 0.02026879472893761]</span>
 </pre></div>
 </div>
 <p>Cela nous permettra de simuler des variables aléatoires connaissant leurs lois <a class="footnote-reference brackets" href="#numpy-random" id="id3">3</a>.</p>
@@ -252,7 +253,7 @@
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="p">[</span><span class="n">simul</span><span class="p">([</span><span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">])</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[12]: </span><span class="go">[1, 1, 2, 0, 0, 0, 1, 2, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1]</span>
+<span class="gh">Out[12]: </span><span class="go">[1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 2, 1, 0, 1, 2, 1, 1, 0, 1, 2]</span>
 </pre></div>
 </div>
 <p>On pourrait par exemple utiliser la méthode précédente pour simuler une <strong>loi binomiale</strong>.</p>
@@ -261,10 +262,10 @@
 <span class="gp">In [14]: </span><span class="n">binomiale</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">:</span> <span class="n">simul</span><span class="p">([</span><span class="n">binom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
 
 <span class="gp">In [15]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">8</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[15]: </span><span class="go">[5, 3, 5, 2, 4, 4, 3, 5, 5, 4, 5, 2, 5, 3, 4, 3, 3, 4, 5, 5]</span>
+<span class="gh">Out[15]: </span><span class="go">[5, 4, 4, 4, 4, 5, 5, 4, 3, 3, 3, 3, 4, 3, 5, 5, 3, 5, 3, 5]</span>
 
 <span class="gp">In [16]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[16]: </span><span class="go">[2, 2, 0, 1, 1, 1, 2, 1, 0, 1, 1, 2, 0, 2, 1, 2, 0, 1, 1, 1]</span>
+<span class="gh">Out[16]: </span><span class="go">[0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 2, 1, 0, 2, 2, 1, 5, 1, 0, 2]</span>
 </pre></div>
 </div>
 <p>Evidemment, il existe un méthode plus simple pour simuler une variable suivant une <strong>loi binomiale</strong> puisque l’on sait qu’elle est de même loi qu’une somme de variables de Bernoulli indépendantes.</p>
@@ -277,10 +278,10 @@
 <span class="gp">   ....: </span>
 
 <span class="gp">In [19]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">8</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[19]: </span><span class="go">[4, 4, 4, 4, 5, 4, 4, 5, 5, 4, 5, 4, 4, 3, 5, 5, 4, 4, 3, 5]</span>
+<span class="gh">Out[19]: </span><span class="go">[4, 4, 4, 3, 5, 5, 5, 4, 4, 4, 3, 4, 5, 2, 3, 4, 4, 4, 2, 2]</span>
 
 <span class="gp">In [20]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[20]: </span><span class="go">[1, 1, 0, 1, 1, 2, 2, 0, 1, 1, 2, 0, 0, 2, 1, 0, 1, 1, 2, 0]</span>
+<span class="gh">Out[20]: </span><span class="go">[0, 0, 1, 0, 1, 0, 0, 2, 1, 1, 0, 2, 3, 1, 1, 2, 2, 1, 2, 0]</span>
 </pre></div>
 </div>
 </div>
@@ -306,7 +307,7 @@
 <span class="gp">In [23]: </span><span class="n">poisson</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">simul</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">l</span><span class="p">)</span> <span class="o">*</span> <span class="n">l</span><span class="o">**</span><span class="n">n</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
 <span class="gp">In [24]: </span><span class="p">[</span><span class="n">poisson</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[24]: </span><span class="go">[4, 1, 2, 2, 1, 2, 0, 3, 2, 0, 4, 0, 3, 3, 2, 5, 4, 2, 2, 1]</span>
+<span class="gh">Out[24]: </span><span class="go">[3, 3, 0, 1, 2, 1, 3, 1, 1, 1, 1, 3, 2, 4, 4, 0, 0, 0, 1, 0]</span>
 </pre></div>
 </div>
 <p>De la même manière, on peut simuler une loi géométrique.</p>
@@ -316,7 +317,7 @@
 <span class="gp">In [26]: </span><span class="n">geometrique</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">simul</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span>
 
 <span class="gp">In [27]: </span><span class="p">[</span><span class="n">geometrique</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[27]: </span><span class="go">[1, 1, 5, 6, 20, 6, 10, 4, 4, 4, 1, 4, 12, 19, 1, 2, 2, 21, 3, 11]</span>
+<span class="gh">Out[27]: </span><span class="go">[12, 1, 1, 1, 6, 3, 2, 2, 4, 3, 4, 1, 6, 3, 4, 7, 2, 2, 5, 2]</span>
 </pre></div>
 </div>
 <p>Bien entendu, il est plus facile d’utiliser l’interprétation de la loi géométrique comme le numéro d’un premier succès.</p>
@@ -328,7 +329,7 @@
 <span class="gp">   ....: </span>
 
 <span class="gp">In [29]: </span><span class="p">[</span><span class="n">geometrique</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[29]: </span><span class="go">[2, 10, 2, 1, 4, 1, 4, 5, 1, 3, 3, 3, 4, 5, 3, 1, 1, 2, 6, 3]</span>
+<span class="gh">Out[29]: </span><span class="go">[10, 5, 8, 1, 8, 3, 2, 2, 1, 1, 12, 9, 2, 2, 5, 2, 15, 2, 3, 5]</span>
 </pre></div>
 </div>
 <dl class="footnote brackets">

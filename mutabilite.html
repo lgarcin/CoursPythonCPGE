@@ -97,6 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
 </ul>
 
             
@@ -200,12 +201,12 @@
 <span class="gp">In [12]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
 <span class="gp">In [13]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent vers le même emplacement en mémoire</span>
-<span class="gh">Out[13]: </span><span class="go">(140721392087312, 140721392087312)</span>
+<span class="gh">Out[13]: </span><span class="go">(140723175872160, 140723175872160)</span>
 
 <span class="gp">In [14]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="gp">In [15]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># la variable b pointe toujours vers le même emplacement mais plus la variable b</span>
-<span class="gh">Out[15]: </span><span class="go">(140721392087344, 140721392087312)</span>
+<span class="gh">Out[15]: </span><span class="go">(140723175872192, 140723175872160)</span>
 </pre></div>
 </div>
 <p>L’instruction <code class="code docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">2</span></code> a fait pointer la variable <code class="code docutils literal notranslate"><span class="pre">a</span></code> vers un autre emplacement en mémoire où est stocké l’entier <code class="code docutils literal notranslate"><span class="pre">2</span></code>.</p>
@@ -219,12 +220,12 @@
 <span class="gp">In [17]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
 <span class="gp">In [18]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent vers le même emplacement en mémoire</span>
-<span class="gh">Out[18]: </span><span class="go">(2837369776072, 2837369776072)</span>
+<span class="gh">Out[18]: </span><span class="go">(2339443486976, 2339443486976)</span>
 
 <span class="gp">In [19]: </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>
 
 <span class="gp">In [20]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent toujours vers le même emplacement</span>
-<span class="gh">Out[20]: </span><span class="go">(2837369776072, 2837369776072)</span>
+<span class="gh">Out[20]: </span><span class="go">(2339443486976, 2339443486976)</span>
 </pre></div>
 </div>
 <p>Ici, l’instruction <code class="code docutils literal notranslate"><span class="pre">a[0]</span> <span class="pre">=</span> <span class="pre">'foo'</span></code> a modifié l’objet stocké à l’emplacement commun vers lequel pointent les variables <code class="code docutils literal notranslate"><span class="pre">a</span></code> et <code class="code docutils literal notranslate"><span class="pre">b</span></code>. Comme <code class="code docutils literal notranslate"><span class="pre">a</span></code> et <code class="code docutils literal notranslate"><span class="pre">b</span></code> pointent toujours le même emplacement en mémoire, la variable <code class="code docutils literal notranslate"><span class="pre">b</span></code> est maintenant associée à ce nouvel objet.</p>
@@ -262,7 +263,7 @@
 <span class="gp">In [24]: </span><span class="n">liste4</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">liste1</span><span class="p">)</span>
 
 <span class="gp">In [25]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste3</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste4</span><span class="p">)</span>  <span class="c1"># les objets sont bien distincts</span>
-<span class="gh">Out[25]: </span><span class="go">(2837368949960, 2837369766216, 2837369768456, 2837369768392)</span>
+<span class="gh">Out[25]: </span><span class="go">(2339443585664, 2339443587776, 2339443587264, 2339443587520)</span>
 
 <span class="gp">In [26]: </span><span class="n">liste1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;toto&#39;</span>
 
@@ -280,7 +281,7 @@
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="gp">In [29]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[29]: </span><span class="go">2837306344856</span>
+<span class="gh">Out[29]: </span><span class="go">2339441514880</span>
 
 <span class="gp">In [30]: </span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
@@ -288,13 +289,13 @@
 <span class="gh">Out[31]: </span><span class="go">(1, 2, 3, 4, 5)</span>
 
 <span class="gp">In [32]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[32]: </span><span class="go">2837362119592</span>
+<span class="gh">Out[32]: </span><span class="go">2339422912320</span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [33]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="gp">In [34]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[34]: </span><span class="go">2837368899928</span>
+<span class="gh">Out[34]: </span><span class="go">2339441268224</span>
 
 <span class="gp">In [35]: </span><span class="n">t</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
@@ -302,7 +303,7 @@
 <span class="gh">Out[36]: </span><span class="go">(1, 2, 3, 4, 5)</span>
 
 <span class="gp">In [37]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[37]: </span><span class="go">2837362120264</span>
+<span class="gh">Out[37]: </span><span class="go">2339422437680</span>
 </pre></div>
 </div>
 <p>Pour les objets mutables tels que les listes, les opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> et <code class="code docutils literal notranslate"><span class="pre">+=</span></code> se comportent de manières différentes : l’opérateur <code class="code docutils literal notranslate"><span class="pre">+</span></code> crée un nouvel objet tandis que l’opérateur <code class="code docutils literal notranslate"><span class="pre">+=</span></code> modifie l’objet initial.</p>
@@ -316,7 +317,7 @@
 <span class="gh">Out[41]: </span><span class="go">([1, 2, 3, 4, 5], [1, 2, 3])</span>
 
 <span class="gp">In [42]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">)</span>  <span class="c1"># c&#39;est normal : liste1 et liste2 pointent vers des objets distincts</span>
-<span class="gh">Out[42]: </span><span class="go">(2837369864520, 2837369863944)</span>
+<span class="gh">Out[42]: </span><span class="go">(2339443171648, 2339443175104)</span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [43]: </span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -329,7 +330,7 @@
 <span class="gh">Out[46]: </span><span class="go">([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])</span>
 
 <span class="gp">In [47]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">)</span>  <span class="c1"># c&#39;est normal : liste1 et liste2 pointent vers le même objet</span>
-<span class="gh">Out[47]: </span><span class="go">(2837369878408, 2837369878408)</span>
+<span class="gh">Out[47]: </span><span class="go">(2339443621376, 2339443621376)</span>
 </pre></div>
 </div>
 <p class="rubric">Egalité structurelle ou physique</p>
@@ -345,7 +346,7 @@
 <span class="gh">Out[51]: </span><span class="go">([1, 2, 3], [1, 2, 3], [1, 2, 3])</span>
 
 <span class="gp">In [52]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste3</span><span class="p">)</span>
-<span class="gh">Out[52]: </span><span class="go">(2837369769224, 2837369769224, 2837369654280)</span>
+<span class="gh">Out[52]: </span><span class="go">(2339443169152, 2339443169152, 2339443076352)</span>
 
 <span class="gp">In [53]: </span><span class="n">liste2</span> <span class="o">==</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste3</span> <span class="o">==</span> <span class="n">liste1</span>
 <span class="gh">Out[53]: </span><span class="go">(True, True)</span>
@@ -393,7 +394,7 @@
 <span class="gh">Out[65]: </span><span class="go">([1, 1000, 3], &#39;toto&#39;, &#39;tata&#39;)</span>
 
 <span class="gp">In [66]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># le premier élément du tuple est toujours le même</span>
-<span class="gh">Out[66]: </span><span class="go">(2837369999816, 2837369999816)</span>
+<span class="gh">Out[66]: </span><span class="go">(2339443720960, 2339443720960)</span>
 </pre></div>
 </div>
 </dd>

@@ -90,7 +90,7 @@ Complexité                  Adjectif
 :math:`\mathcal{O}(2^n)`    exponentielle
 =========================== =============
 
-
+On emploiera également le symbole :math:`\Theta`. Si :math:`(u_n)` et :math:`(v_n)` sont deux suites, on dit que :math:`u_n=\Theta(v_n)` si :math:`u_n=\mathcal{O}(v_n)` et :math:`v_n=\mathcal{O}(u_n)`.
 
 .. [#elementaire] Bien entendu, cette hypothèse est fausse en pratique. Une affectation ne prend pas autant de temps qu'une addition.
 
@@ -101,6 +101,6 @@ Complexité                  Adjectif
 
 .. [#complexite_moyenne] Si l'on possède des informations statistiques sur les données d'entrée, on peut également tenter de calculer une **complexité en moyenne**.
 
-.. [#grand_o] On rappelle que si :math:`(u_n)` et :math:`(v_n)` sont deux suites, alors :math:`u_n=\mathcal{O}(v_n)` s'il existe une **constante** :math:`K` telle que :math:`|u_n|\leq K|v_n|` à partir d'un certain rang.
+.. [#grand_o] On rappelle que si :math:`(u_n)` et :math:`(v_n)` sont deux suites, alors :math:`u_n=\mathcal{O}(v_n)` s'il existe une **constante** :math:`K` telle que :math:`|u_n|\leq K|v_n|` à partir d'un certain rang. En pratique, :math:`u_n` et :math:`v_n` désignent des complexités donc ce sont des nombres positifs : on peut donc se dispenser des valeurs absolues.
 
 .. [#le_plus_peut_le_moins] Bien entendu, la complexité est également en :math:`\mathcal{O}(n^3)` ou encore en :math:`\mathcal{O}(n^4)` mais ceci est moins précis que :math:`\mathcal{O}(n^2)`. On peut également dire que la complexité est en :math:`\mathcal{O}(2n^2)` mais cela n'apporte pas plus d'information que :math:`\mathcal{O}(n^2)`.

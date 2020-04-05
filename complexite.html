@@ -94,6 +94,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
 </ul>
 
             
@@ -171,11 +172,11 @@
 <span class="gp">In [2]: </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
 <span class="gp">   ...: </span>    <span class="o">%</span><span class="k">timeit</span> sorted(random(10**n))
 <span class="gp">   ...: </span>
-<span class="go">1.87 us +- 31.9 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
-<span class="go">3.15 us +- 23.6 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">18.9 us +- 279 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">237 us +- 6.96 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
-<span class="go">2.98 ms +- 40.4 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
+<span class="go">1.78 us +- 18.4 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
+<span class="go">3.1 us +- 85.9 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">19.1 us +- 33.4 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">230 us +- 644 ns per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">2.98 ms +- 15.2 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
 </pre></div>
 </div>
 <p>Bien entendu, le temps ou la mémoire nécessaires à l’exécution d’un algorithme dépendent de nombreux facteurs indépendants de la conception de l’algorithme : machine utilisée, langage employé, … Cependant, pour comparer l’efficacité de deux algorithmes, il faut trouver un moyen de mesurer leur complexité <strong>intrinsèque</strong>.</p>
@@ -195,10 +196,10 @@
 <span class="gp">   ...: </span>    <span class="n">l</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
 <span class="gp">   ...: </span>    <span class="o">%</span><span class="k">timeit</span> somme(l)
 <span class="gp">   ...: </span>
-<span class="go">2.31 us +- 20.6 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">15.8 us +- 381 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">149 us +- 5.03 us per loop (mean +- std. dev. of 7 runs, 10000 loops each)</span>
-<span class="go">1.4 ms +- 40.7 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">2.47 us +- 67.8 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">17.6 us +- 567 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">155 us +- 3.52 us per loop (mean +- std. dev. of 7 runs, 10000 loops each)</span>
+<span class="go">1.55 ms +- 82.3 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
 </pre></div>
 </div>
 </div>
@@ -260,14 +261,15 @@
 </tr>
 </tbody>
 </table>
+<p>On emploiera également le symbole <span class="math notranslate nohighlight">\(\Theta\)</span>. Si <span class="math notranslate nohighlight">\((u_n)\)</span> et <span class="math notranslate nohighlight">\((v_n)\)</span> sont deux suites, on dit que <span class="math notranslate nohighlight">\(u_n=\Theta(v_n)\)</span> si <span class="math notranslate nohighlight">\(u_n=\mathcal{O}(v_n)\)</span> et <span class="math notranslate nohighlight">\(v_n=\mathcal{O}(u_n)\)</span>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="elementaire"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Bien entendu, cette hypothèse est fausse en pratique. Une affectation ne prend pas autant de temps qu’une addition.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="o">%</span><span class="k">timeit</span> a = 2
 <span class="gp">   ...: </span><span class="o">%</span><span class="k">timeit</span> 2 + 3
 <span class="gp">   ...: </span>
-<span class="go">9.3 ns +- 0.592 ns per loop (mean +- std. dev. of 7 runs, 100000000 loops each)</span>
-<span class="go">5.6 ns +- 0.186 ns per loop (mean +- std. dev. of 7 runs, 100000000 loops each)</span>
+<span class="go">12.4 ns +- 0.801 ns per loop (mean +- std. dev. of 7 runs, 100000000 loops each)</span>
+<span class="go">7.25 ns +- 0.255 ns per loop (mean +- std. dev. of 7 runs, 100000000 loops each)</span>
 </pre></div>
 </div>
 </dd>
@@ -275,7 +277,7 @@
 <dd><p>Si l’on possède des informations statistiques sur les données d’entrée, on peut également tenter de calculer une <strong>complexité en moyenne</strong>.</p>
 </dd>
 <dt class="label" id="grand-o"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>On rappelle que si <span class="math notranslate nohighlight">\((u_n)\)</span> et <span class="math notranslate nohighlight">\((v_n)\)</span> sont deux suites, alors <span class="math notranslate nohighlight">\(u_n=\mathcal{O}(v_n)\)</span> s’il existe une <strong>constante</strong> <span class="math notranslate nohighlight">\(K\)</span> telle que <span class="math notranslate nohighlight">\(|u_n|\leq K|v_n|\)</span> à partir d’un certain rang.</p>
+<dd><p>On rappelle que si <span class="math notranslate nohighlight">\((u_n)\)</span> et <span class="math notranslate nohighlight">\((v_n)\)</span> sont deux suites, alors <span class="math notranslate nohighlight">\(u_n=\mathcal{O}(v_n)\)</span> s’il existe une <strong>constante</strong> <span class="math notranslate nohighlight">\(K\)</span> telle que <span class="math notranslate nohighlight">\(|u_n|\leq K|v_n|\)</span> à partir d’un certain rang. En pratique, <span class="math notranslate nohighlight">\(u_n\)</span> et <span class="math notranslate nohighlight">\(v_n\)</span> désignent des complexités donc ce sont des nombres positifs : on peut donc se dispenser des valeurs absolues.</p>
 </dd>
 <dt class="label" id="le-plus-peut-le-moins"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
 <dd><p>Bien entendu, la complexité est également en <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span> ou encore en <span class="math notranslate nohighlight">\(\mathcal{O}(n^4)\)</span> mais ceci est moins précis que <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>. On peut également dire que la complexité est en <span class="math notranslate nohighlight">\(\mathcal{O}(2n^2)\)</span> mais cela n’apporte pas plus d’information que <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>.</p>
