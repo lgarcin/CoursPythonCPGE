@@ -43,7 +43,7 @@ Encore une fois, la fonction :code:`len` renvoie la longueur d'une chaîne de ca
 
     len('Anticonstitutionnellement')
 
-Les chaînes possèdent de nombreuses méthodes : ces méthodes ne modifient jamais la chaîne de caractère mais renvoient une *autre* chaîne de caractère.
+Les chaînes possèdent de nombreuses :term:`méthodes<méthode>` : ces méthodes ne modifient jamais la chaîne de caractère mais renvoient une *autre* chaîne de caractère.
 
 .. ipython:: python
 
@@ -53,7 +53,6 @@ Les chaînes possèdent de nombreuses méthodes : ces méthodes ne modifient jam
     ma_chaine.upper()
     ma_chaine
 
-.. todo:: mettre méthode dans glossaire
 
 .. [#entrelace] Comment définir alors des chaînes de caractère comportant des guillements (simples ou doubles) ?
 

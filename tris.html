@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="8. Preuves et complexités" href="appendice_preuves_complexites.html" />
+    <link rel="next" title="Preuves et complexités" href="appendice_preuves_complexites.html" />
     <link rel="prev" title="7.5. Matrices" href="matrices.html" /> 
 </head>
 
@@ -83,9 +83,9 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
@@ -98,7 +98,10 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">7.6. Tris</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
 </ul>
 
             
@@ -193,15 +196,15 @@
 
 <span class="gp">In [4]: </span><span class="n">tab</span>
 <span class="gh">Out[4]: </span><span class="go"></span>
-<span class="go">array([92, 89,  4, 51,  3, 27, 63, 38, 50, 60, 75, 53, 68, 67, 42, 45, 98,</span>
-<span class="go">       38, 44, 22])</span>
+<span class="go">array([19, 16, 91, 46, 55, 10, 88, 69, 46, 28, 76,  3, 33, 12, 70, 98,  5,</span>
+<span class="go">       63, 88, 82])</span>
 
 <span class="gp">In [5]: </span><span class="n">tri_insertion</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
 
 <span class="gp">In [6]: </span><span class="n">tab</span>
 <span class="gh">Out[6]: </span><span class="go"></span>
-<span class="go">array([ 3,  4, 22, 27, 38, 38, 42, 44, 45, 50, 51, 53, 60, 63, 67, 68, 75,</span>
-<span class="go">       89, 92, 98])</span>
+<span class="go">array([ 3,  5, 10, 12, 16, 19, 28, 33, 46, 46, 55, 63, 69, 70, 76, 82, 88,</span>
+<span class="go">       88, 91, 98])</span>
 </pre></div>
 </div>
 <div class="admonition-todo admonition" id="id1">
@@ -240,10 +243,10 @@
 <span class="gp">In [10]: </span><span class="n">tab</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="gp">In [11]: </span><span class="n">tab</span>
-<span class="gh">Out[11]: </span><span class="go">array([91, 44, 52, 18, 49, 91, 37, 61, 78, 71])</span>
+<span class="gh">Out[11]: </span><span class="go">array([29, 56,  8, 55, 43, 83, 60, 68, 98, 33])</span>
 
 <span class="gp">In [12]: </span><span class="n">tri_rapide</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
-<span class="gh">Out[12]: </span><span class="go">[18, 37, 37, 44, 61, 71, 78, 78, 91, 91]</span>
+<span class="gh">Out[12]: </span><span class="go">[8, 33, 33, 33, 43, 60, 60, 68, 98, 98]</span>
 </pre></div>
 </div>
 <p>L’algorithme précédent crée une nouvelle liste à chaque appel de la fonction <code class="code docutils literal notranslate"><span class="pre">tri_rapide</span></code>. D’un point de vue de l’utilisation de la mémoire, on peut préférer effectuer un tri <em>en place</em> : on modifie le tableau au cours de l’algorithme de tri.</p>
@@ -272,12 +275,12 @@
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="n">tab</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="gp">In [16]: </span><span class="n">tab</span>
-<span class="gh">Out[16]: </span><span class="go">array([38, 36, 59, 91, 84, 20, 77, 25, 58, 39])</span>
+<span class="gh">Out[16]: </span><span class="go">array([39, 86, 74,  6, 10, 14, 96, 23, 75, 42])</span>
 
 <span class="gp">In [17]: </span><span class="n">tri_rapide</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
 
 <span class="gp">In [18]: </span><span class="n">tab</span>
-<span class="gh">Out[18]: </span><span class="go">array([20, 25, 36, 38, 39, 58, 59, 77, 84, 91])</span>
+<span class="gh">Out[18]: </span><span class="go">array([ 6, 10, 14, 23, 39, 42, 74, 75, 86, 96])</span>
 </pre></div>
 </div>
 </div>
@@ -326,10 +329,10 @@
 <span class="gp">In [22]: </span><span class="n">tab</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>
 
 <span class="gp">In [23]: </span><span class="n">tab</span>
-<span class="gh">Out[23]: </span><span class="go">[0, 55, 0, 75, 96, 61, 25, 81, 60, 92, 96, 99, 73, 82, 75, 92, 43, 88, 34, 13]</span>
+<span class="gh">Out[23]: </span><span class="go">[52, 40, 49, 72, 22, 82, 31, 55, 1, 24, 62, 41, 93, 72, 22, 80, 78, 77, 18, 61]</span>
 
 <span class="gp">In [24]: </span><span class="n">tri_fusion</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
-<span class="gh">Out[24]: </span><span class="go">[0, 0, 13, 25, 34, 43, 55, 60, 61, 73, 75, 75, 81, 82, 88, 92, 92, 96, 96, 99]</span>
+<span class="gh">Out[24]: </span><span class="go">[1, 18, 22, 22, 24, 31, 40, 41, 49, 52, 55, 61, 62, 72, 72, 77, 78, 80, 82, 93]</span>
 </pre></div>
 </div>
 <p>On peut également donner une implémentation récursive de l’lagorithme de fusion.</p>
@@ -350,10 +353,10 @@
 <span class="gp">In [27]: </span><span class="n">tab</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 
 <span class="gp">In [28]: </span><span class="n">tab</span>
-<span class="gh">Out[28]: </span><span class="go">[89, 19, 77, 91, 49, 76, 28, 12, 67, 73]</span>
+<span class="gh">Out[28]: </span><span class="go">[16, 98, 42, 21, 58, 40, 78, 53, 74, 73]</span>
 
 <span class="gp">In [29]: </span><span class="n">tri_fusion</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
-<span class="gh">Out[29]: </span><span class="go">[12, 19, 28, 49, 67, 73, 76, 77, 89, 91]</span>
+<span class="gh">Out[29]: </span><span class="go">[16, 21, 40, 42, 53, 58, 73, 74, 78, 98]</span>
 </pre></div>
 </div>
 <dl class="footnote brackets">
@@ -376,10 +379,10 @@
 <span class="gp">In [33]: </span><span class="n">tab</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="gp">In [34]: </span><span class="n">tab</span>
-<span class="gh">Out[34]: </span><span class="go">array([45, 20, 18, 50, 78, 57, 49, 58, 44, 40])</span>
+<span class="gh">Out[34]: </span><span class="go">array([28, 94, 68, 63,  0, 89, 30, 46, 62, 98])</span>
 
 <span class="gp">In [35]: </span><span class="n">tri_rapide</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
-<span class="gh">Out[35]: </span><span class="go">[18, 20, 40, 44, 45, 49, 50, 57, 58, 78]</span>
+<span class="gh">Out[35]: </span><span class="go">[0, 28, 30, 46, 62, 63, 68, 89, 94, 98]</span>
 </pre></div>
 </div>
 </dd>
@@ -395,7 +398,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="appendice_preuves_complexites.html" class="btn btn-neutral float-right" title="8. Preuves et complexités" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="appendice_preuves_complexites.html" class="btn btn-neutral float-right" title="Preuves et complexités" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="matrices.html" class="btn btn-neutral float-left" title="7.5. Matrices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

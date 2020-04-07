@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8. Preuves et complexités &mdash; Documentation CoursPythonCPGE </title>
+  <title>Preuves et complexités &mdash; Documentation CoursPythonCPGE </title>
   
 
   
@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Glossaire" href="glossaire.html" />
     <link rel="prev" title="7.6. Tris" href="tris.html" /> 
 </head>
 
@@ -81,15 +82,22 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Preuves et complexités</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Preuves et complexités</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#algorithme-d-euclide-etendu">Algorithme d’Euclide étendu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recherche-par-dichotomie">Recherche par dichotomie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
 </ul>
 
             
@@ -135,7 +143,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">8. </span>Preuves et complexités</li>
+      <li>Preuves et complexités</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -155,9 +163,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="preuves-et-complexites">
-<h1><span class="section-number">8. </span>Preuves et complexités<a class="headerlink" href="#preuves-et-complexites" title="Lien permanent vers ce titre">¶</a></h1>
+<h1>Preuves et complexités<a class="headerlink" href="#preuves-et-complexites" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="algorithme-d-euclide-etendu">
-<h2><span class="section-number">8.1. </span>Algorithme d’Euclide étendu<a class="headerlink" href="#algorithme-d-euclide-etendu" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Algorithme d’Euclide étendu<a class="headerlink" href="#algorithme-d-euclide-etendu" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On rappelle la définition de l’algorithme en Python.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">bezout</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="gp">   ...: </span>    <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
@@ -173,7 +181,7 @@
 <p>Comme à la fin de l’algorithme, <span class="math notranslate nohighlight">\(b\)</span> vaut le pgcd de <span class="math notranslate nohighlight">\(a_0\)</span> et <span class="math notranslate nohighlight">\(b_0\)</span> (cf. <a class="reference internal" href="preuve.html#preuve-d-un-algorithme"><span class="std std-ref">Preuve d’un algorithme</span></a>), l’algorithme fournit bien le résultat attendu.</p>
 </div>
 <div class="section" id="recherche-par-dichotomie">
-<h2><span class="section-number">8.2. </span>Recherche par dichotomie<a class="headerlink" href="#recherche-par-dichotomie" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Recherche par dichotomie<a class="headerlink" href="#recherche-par-dichotomie" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On rappelle l’algorithme en Python.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="k">def</span> <span class="nf">appartient_dicho</span><span class="p">(</span><span class="n">elt</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="gp">   ...: </span>    <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span>
@@ -201,6 +209,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="glossaire.html" class="btn btn-neutral float-right" title="Glossaire" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="tris.html" class="btn btn-neutral float-left" title="7.6. Tris" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

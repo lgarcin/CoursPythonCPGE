@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. Types, opérateurs et variables &mdash; Documentation CoursPythonCPGE </title>
+  <title>1. Types, opérateurs et variables &mdash; Documentation CoursPythonCPGE </title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="2.1. Variables" href="variables.html" />
-    <link rel="prev" title="1. Entrée/sortie" href="io.html" /> 
+    <link rel="next" title="1.1. Variables" href="variables.html" />
+    <link rel="prev" title="Python pour les CPGE scientifiques" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,20 +83,23 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Types, opérateurs et variables</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="variables.html">2.1. Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html">2.2. Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operateurs.html">2.3. Opérateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conversions.html">2.4. Conversions de types</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Types, opérateurs et variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">1.1. Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">1.2. Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operateurs.html">1.3. Opérateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conversions.html">1.4. Conversions de types</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
 </ul>
 
             
@@ -142,7 +145,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">2. </span>Types, opérateurs et variables</li>
+      <li><span class="section-number">1. </span>Types, opérateurs et variables</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -162,30 +165,30 @@
            <div itemprop="articleBody">
             
   <div class="section" id="types-operateurs-et-variables">
-<h1><span class="section-number">2. </span>Types, opérateurs et variables<a class="headerlink" href="#types-operateurs-et-variables" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">1. </span>Types, opérateurs et variables<a class="headerlink" href="#types-operateurs-et-variables" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="variables.html">2.1. Variables</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="variables.html#variable-et-affectation">2.1.1. Variable et affectation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variables.html#identifiant-d-une-variable">2.1.2. Identifiant d’une variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variables.html">1.1. Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#variable-et-affectation">1.1.1. Variable et affectation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#identifiant-d-une-variable">1.1.2. Identifiant d’une variable</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="types.html">2.2. Types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="types.html#booleen">2.2.1. Booléen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html#entier">2.2.2. Entier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html#flottant">2.2.3. Flottant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html#complexe">2.2.4. Complexe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html#dictionnaire-hors-programme">2.2.5. Dictionnaire (hors programme)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types.html">1.2. Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="types.html#booleen">1.2.1. Booléen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#entier">1.2.2. Entier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#flottant">1.2.3. Flottant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#complexe">1.2.4. Complexe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#dictionnaire-hors-programme">1.2.5. Dictionnaire (hors programme)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="operateurs.html">2.3. Opérateurs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="operateurs.html#operateurs-arithmetiques">2.3.1. Opérateurs arithmétiques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operateurs.html#operateurs-de-comparaison">2.3.2. Opérateurs de comparaison</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operateurs.html#operateurs-logiques">2.3.3. Opérateurs logiques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operateurs.html#operation-affectation">2.3.4. Opération/affectation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">1.3. Opérateurs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="operateurs.html#operateurs-arithmetiques">1.3.1. Opérateurs arithmétiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operateurs.html#operateurs-de-comparaison">1.3.2. Opérateurs de comparaison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operateurs.html#operateurs-logiques">1.3.3. Opérateurs logiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operateurs.html#operation-affectation">1.3.4. Opération/affectation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="conversions.html">2.4. Conversions de types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conversions.html">1.4. Conversions de types</a></li>
 </ul>
 </div>
 </div>
@@ -198,10 +201,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="variables.html" class="btn btn-neutral float-right" title="2.1. Variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="variables.html" class="btn btn-neutral float-right" title="1.1. Variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="io.html" class="btn btn-neutral float-left" title="1. Entrée/sortie" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Python pour les CPGE scientifiques" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3. Chaînes de caractère &mdash; Documentation CoursPythonCPGE </title>
+  <title>2.3. Chaînes de caractère &mdash; Documentation CoursPythonCPGE </title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="3.4. Mutabilité" href="mutabilite.html" />
-    <link rel="prev" title="3.2. Tuples" href="tuples.html" /> 
+    <link rel="next" title="2.4. Mutabilité" href="mutabilite.html" />
+    <link rel="prev" title="2.2. Tuples" href="tuples.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,21 +83,24 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="types_composes.html">3. Types composés</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="listes.html">3.1. Listes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tuples.html">3.2. Tuples</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Chaînes de caractère</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mutabilite.html">3.4. Mutabilité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionnaires.html">3.5. Dictionnaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="types_composes.html">2. Types composés</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="listes.html">2.1. Listes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tuples.html">2.2. Tuples</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. Chaînes de caractère</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutabilite.html">2.4. Mutabilité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionnaires.html">2.5. Dictionnaires</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
 </ul>
 
             
@@ -143,9 +146,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="types_composes.html"><span class="section-number">3. </span>Types composés</a> &raquo;</li>
+          <li><a href="types_composes.html"><span class="section-number">2. </span>Types composés</a> &raquo;</li>
         
-      <li><span class="section-number">3.3. </span>Chaînes de caractère</li>
+      <li><span class="section-number">2.3. </span>Chaînes de caractère</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -165,7 +168,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="chaines-de-caractere">
-<h1><span class="section-number">3.3. </span>Chaînes de caractère<a class="headerlink" href="#chaines-de-caractere" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">2.3. </span>Chaînes de caractère<a class="headerlink" href="#chaines-de-caractere" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Une chaîne de caractères n’est autre qu’une liste de caractères. Les caractères sont juxtaposés et encadrés par des guillemets simples <code class="code docutils literal notranslate"><span class="pre">'...'</span></code> ou doubles <code class="code docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code> <a class="footnote-reference brackets" href="#entrelace" id="id1">1</a>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">)</span>
 <span class="gh">Out[1]: </span><span class="go">str</span>
@@ -222,7 +225,7 @@
 <span class="gh">Out[15]: </span><span class="go">25</span>
 </pre></div>
 </div>
-<p>Les chaînes possèdent de nombreuses méthodes : ces méthodes ne modifient jamais la chaîne de caractère mais renvoient une <em>autre</em> chaîne de caractère.</p>
+<p>Les chaînes possèdent de nombreuses <a class="reference internal" href="glossaire.html#term-methode"><span class="xref std std-term">méthodes</span></a> : ces méthodes ne modifient jamais la chaîne de caractère mais renvoient une <em>autre</em> chaîne de caractère.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">ma_chaine</span> <span class="o">=</span> <span class="s1">&#39;Mon nom est Bond. James Bond.&#39;</span>
 
 <span class="gp">In [17]: </span><span class="n">ma_chaine</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Bond&#39;</span><span class="p">,</span> <span class="s1">&#39;Toto&#39;</span><span class="p">)</span>
@@ -237,10 +240,6 @@
 <span class="gp">In [20]: </span><span class="n">ma_chaine</span>
 <span class="gh">Out[20]: </span><span class="go">&#39;Mon nom est Bond. James Bond.&#39;</span>
 </pre></div>
-</div>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">À faire</p>
-<p>mettre méthode dans glossaire</p>
 </div>
 <dl class="footnote brackets">
 <dt class="label" id="entrelace"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -290,10 +289,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mutabilite.html" class="btn btn-neutral float-right" title="3.4. Mutabilité" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mutabilite.html" class="btn btn-neutral float-right" title="2.4. Mutabilité" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tuples.html" class="btn btn-neutral float-left" title="3.2. Tuples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tuples.html" class="btn btn-neutral float-left" title="2.2. Tuples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

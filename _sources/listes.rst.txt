@@ -131,9 +131,7 @@ La première méthode est de les ajouter un par un grâce aux méthodes :code:`a
     ma_liste
 
 
-Pour ajouter plusieurs éléments d'affilée, on peut utiliser l'opérateur de concaténation :code:`+` ou de concaténation/affectation :code:`+=` ou encore la méthode :code:`append`.
-
-.. todo:: mettre méthode dans glossaire
+Pour ajouter plusieurs éléments d'affilée, on peut utiliser l'opérateur de concaténation :code:`+` ou de concaténation/affectation :code:`+=` ou encore la :term:`méthode` :code:`append`.
 
 .. ipython:: python
 
@@ -147,10 +145,7 @@ Pour ajouter plusieurs éléments d'affilée, on peut utiliser l'opérateur de c
 
 De même, il existe plusieurs façons de supprimer des éléments d'une liste.
 
-Pour supprimer des éléments, on peut utiliser les méthodes :code:`pop` (renvoie le dernier élément et le supprime de la liste) ou :code:`remove` (supprime un élément de valeur donnée).
-
-.. todo:: mettre méthode dans glossaire
-
+Pour supprimer des éléments, on peut utiliser les :term:`méthodes<méthode>` :code:`pop` (renvoie le dernier élément et le supprime de la liste) ou :code:`remove` (supprime un élément de valeur donnée).
 
 .. ipython:: python
 
@@ -163,7 +158,7 @@ Pour supprimer des éléments, on peut utiliser les méthodes :code:`pop` (renvo
 
 .. note::
 
-    La méthode :code:`remove` ne supprime que la *première* occurence d'une valeur donnée.
+    La :term:`méthode` :code:`remove` ne supprime que la *première* occurence d'une valeur donnée.
 
 
     .. ipython:: python

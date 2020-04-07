@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Entrée/sortie &mdash; Documentation CoursPythonCPGE </title>
+  <title>3. Entrée/sortie &mdash; Documentation CoursPythonCPGE </title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="2. Types, opérateurs et variables" href="types_operateurs_variables.html" />
-    <link rel="prev" title="Python pour les CPGE scientifiques" href="index.html" /> 
+    <link rel="next" title="4. Rudiments d’algorithmique" href="algorithmique.html" />
+    <link rel="prev" title="2.5. Dictionnaires" href="dictionnaires.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,14 +83,17 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Entrée/sortie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
 </ul>
 
             
@@ -136,7 +139,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>Entrée/sortie</li>
+      <li><span class="section-number">3. </span>Entrée/sortie</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -156,14 +159,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="entree-sortie">
-<h1><span class="section-number">1. </span>Entrée/sortie<a class="headerlink" href="#entree-sortie" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">3. </span>Entrée/sortie<a class="headerlink" href="#entree-sortie" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Un programme informatique doit souvent pouvoir interagir avec l’extérieur. Il existe plusieurs manières de faire cela :</p>
 <ul class="simple">
 <li><p>soit en interagissant directement avec l’utilisateur : celui-ci peut rentrer des données grâce au clavier ou voir le résultat du programme s’afficher à l’écran ;</p></li>
 <li><p>soit au moyen de fichiers : le programme peut lire des informations dans des fichiers ou au contraire écrire des résultats dans des fichiers.</p></li>
 </ul>
 <div class="section" id="interaction-directe-avec-l-utilisateur">
-<h2><span class="section-number">1.1. </span>Interaction directe avec l’utilisateur<a class="headerlink" href="#interaction-directe-avec-l-utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Interaction directe avec l’utilisateur<a class="headerlink" href="#interaction-directe-avec-l-utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’interpéteur <strong>IPython</strong> affiche par défaut le résultat d’une expression non évaluée à <code class="code docutils literal notranslate"><span class="pre">None</span></code>. Ce n’est pas le cas lorsque l’on exécute un script Python. Si l’on veut afficher des résultats à l’écran, il faut explicitement utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">print</span></code>.</p>
 <p>Dans cet exemple, on exécute le script stocké dans le fichier <code class="file docutils literal notranslate"><span class="pre">script_print.py</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;titi&#39;</span>          <span class="c1"># Cette ligne n&#39;affiche rien</span>
@@ -184,7 +187,7 @@ toto
 </div>
 </div>
 <div class="section" id="fichiers">
-<h2><span class="section-number">1.2. </span>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour ouvrir un fichier, on utilise la fonction <code class="code docutils literal notranslate"><span class="pre">open</span></code> en donnant en argument le chemin du fichier. On peut préciser plusieurs paramètres optionnels.</p>
 <dl class="simple">
 <dt><code class="code docutils literal notranslate"><span class="pre">mode</span></code></dt><dd><p><strong>Mode d’ouverture</strong> du fichier : essentiellement <code class="code docutils literal notranslate"><span class="pre">'r'</span></code> pour lecture, <code class="code docutils literal notranslate"><span class="pre">'w'</span></code> pour écriture et <code class="code docutils literal notranslate"><span class="pre">'r+'</span></code> pour lecture/écriture. Par défaut, un fichier est ouvert en lecture seulement.</p>
@@ -265,10 +268,10 @@ Et les mots pour le dire viennent aisément.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="types_operateurs_variables.html" class="btn btn-neutral float-right" title="2. Types, opérateurs et variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="algorithmique.html" class="btn btn-neutral float-right" title="4. Rudiments d’algorithmique" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Python pour les CPGE scientifiques" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dictionnaires.html" class="btn btn-neutral float-left" title="2.5. Dictionnaires" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

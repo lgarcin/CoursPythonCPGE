@@ -83,9 +83,9 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="indentation.html">4.1. Indentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tests.html">4.2. Tests</a></li>
@@ -96,7 +96,10 @@
 <li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
 </ul>
 
             
@@ -571,14 +574,14 @@
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [74]: </span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
 <span class="gp">In [75]: </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lst avant appel fonction g&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
-<span class="go">lst avant appel fonction g 2339441847488</span>
+<span class="go">lst avant appel fonction g 1943389400832</span>
 
 <span class="gp">In [76]: </span><span class="n">g</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
-<span class="go">li début fonction g 2339441847488 True</span>
-<span class="go">li fin fonction g 2339441847488 True</span>
+<span class="go">li début fonction g 1943389400832 True</span>
+<span class="go">li fin fonction g 1943389400832 True</span>
 
 <span class="gp">In [77]: </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lst après appel fonction g&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
-<span class="go">lst après appel fonction g 2339441847488</span>
+<span class="go">lst après appel fonction g 1943389400832</span>
 
 <span class="gp">In [78]: </span><span class="n">lst</span>
 <span class="gh">Out[78]: </span><span class="go">[1, 2, 3, &#39;toto&#39;]</span>
@@ -616,19 +619,8 @@
 </div>
 <p>Il faut comprendre que la liste servant d’argument par défaut est créée une fois pour toute <em>à la déclaration de la fonction</em> et non à chaque appel de la fonction. Comme il s’agit d’un objet mutable, chaque appel de la fonction modifie cette liste. A chaque appel de la fonction, c’est donc cette nouvelle liste qui sert d’argument par défaut et non celle définie dans l’en-tête de la fonction.</p>
 </div>
-<div class="section" id="effets-de-bord">
-<h2><span class="section-number">4.4.6. </span>Effets de bord<a class="headerlink" href="#effets-de-bord" title="Lien permanent vers ce titre">¶</a></h2>
-<p>En plus de renvoyer une valeur, une fonction peut entraîner des modifications au-delà de sa portée comme :</p>
-<ul class="simple">
-<li><p>modifier des variables globales ;</p></li>
-<li><p>modifier des arguments mutables ;</p></li>
-<li><p>afficher des informations à l’écran ;</p></li>
-<li><p>enregistrer des données dans un fichier.</p></li>
-</ul>
-<p>On parle alors d'<strong>effet de bord</strong>. Les effets de bord sont à utiliser avec parcimonie : en effet,</p>
-</div>
 <div class="section" id="une-fonction-est-un-objet">
-<h2><span class="section-number">4.4.7. </span>Une fonction est un objet<a class="headerlink" href="#une-fonction-est-un-objet" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.4.6. </span>Une fonction est un objet<a class="headerlink" href="#une-fonction-est-un-objet" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il est important de noter qu’en Python, les fonctions sont des objets commes les autres (entiers, tuples, …). Notamment, une fonction possède un type.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [85]: </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
@@ -663,8 +655,109 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="documentation-d-une-fonction">
+<h2><span class="section-number">4.4.7. </span>Documentation d’une fonction<a class="headerlink" href="#documentation-d-une-fonction" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La plupart des fonctions disponibles de manière standard dans Python ou dans des modules « officiels » sont documentées. On accède à la documentation d’une fonction via la fonction <code class="code docutils literal notranslate"><span class="pre">help</span></code>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [92]: </span><span class="n">help</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="go">Help on built-in function len in module builtins:</span>
+
+<span class="go">len(obj, /)</span>
+<span class="go">    Return the number of items in a container.</span>
+
+
+<span class="gp">In [93]: </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span>
+
+<span class="gp">In [94]: </span><span class="n">help</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+<span class="go">Help on built-in function exp in module math:</span>
+
+<span class="go">exp(x, /)</span>
+<span class="go">    Return e raised to the power of x.</span>
+</pre></div>
+</div>
+<p>Quand on définit ses propres fonctions, il faut prendre également prendre l’habitude de les documenter. Il s’agit :</p>
+<ul class="simple">
+<li><p>de définir l’action de la fonction;</p></li>
+<li><p>de préciser le type des paramètres ;</p></li>
+<li><p>de spécifier le cas échéant la valeur de retour et son type.</p></li>
+</ul>
+<p>On documente une fonction à l’aide d’une chaîne de caractère spéciale appelée <strong>docstring</strong> placée directement sous l’entête de la fonction. Comme pour les fonctions prédéfinies, on peut accéder à la documentation de ses propres fonctions via la fonction <code class="code docutils literal notranslate"><span class="pre">help</span></code>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [95]: </span><span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="gp">   ....: </span><span class="sd">    Calcule le minimum de a et b</span>
+<span class="gp">   ....: </span><span class="sd">    Paramètres : deux valeurs numériques a et b</span>
+<span class="gp">   ....: </span><span class="sd">    Revoie : le plus petit des deux entiers a et b</span>
+<span class="gp">   ....: </span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="gp">   ....: </span>    <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="k">return</span> <span class="n">a</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">b</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [96]: </span><span class="n">help</span><span class="p">(</span><span class="n">minimum</span><span class="p">)</span>
+<span class="go">Help on function minimum in module __main__:</span>
+
+<span class="go">minimum(a, b)</span>
+<span class="go">    Calcule le minimum de a et b</span>
+<span class="go">    Paramètres : deux valeurs numériques a et b</span>
+<span class="go">    Revoie : le plus petit des deux entiers a et b</span>
+</pre></div>
+</div>
+<p>Le fait de documenter ses fonctions peut sembler être une perte de temps au premier abord. Mais la documentation est essentielle pour au moins deux raisons.</p>
+<ul class="simple">
+<li><p>Il faut penser que d’autres personnes voudront utiliser votre code : elles ne sont pas censées se plonger dans votre code pour deviner à quoi servent vos fonction et comment les utiliser.</p></li>
+<li><p>Si vous vous replongez quelques mois après dans votre code pour débugger ou améliorer vos fonctions, il y a de fortes chances que vous ne vous vous souveniez plus de vos intentions au moment où vous les avez écrites.</p></li>
+</ul>
+<p>En plus de la docstring, il peut être utile de documenter une fonction à l’aide de commentaires.</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">À faire</p>
+<p>renvoyer vers commentaires</p>
+</div>
+</div>
+<div class="section" id="effets-de-bord">
+<h2><span class="section-number">4.4.8. </span>Effets de bord<a class="headerlink" href="#effets-de-bord" title="Lien permanent vers ce titre">¶</a></h2>
+<p>En plus de renvoyer une valeur, une fonction peut entraîner des modifications au-delà de sa portée comme :</p>
+<ul class="simple">
+<li><p>modifier des variables globales ;</p></li>
+<li><p>modifier des arguments mutables ;</p></li>
+<li><p>afficher des informations à l’écran ;</p></li>
+<li><p>enregistrer des données dans un fichier.</p></li>
+</ul>
+<p>On parle alors d'<strong>effet de bord</strong>.</p>
+<p>Voici une fonction avec effet de bord. Elle modifie en effet la variable globale <code class="code docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [97]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="gp">In [98]: </span><span class="k">def</span> <span class="nf">add</span><span class="p">():</span>
+<span class="gp">   ....: </span>    <span class="k">global</span> <span class="n">x</span>
+<span class="gp">   ....: </span>    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="mi">3</span>
+<span class="gp">   ....: </span>
+
+<span class="gp">In [99]: </span><span class="n">add</span><span class="p">()</span>
+<span class="gh">Out[99]: </span><span class="go">3</span>
+
+<span class="gp">In [100]: </span><span class="n">x</span>
+<span class="gh">Out[100]: </span><span class="go">2</span>
+</pre></div>
+</div>
+<p>Voici une fonction sans effet de bord.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [101]: </span><span class="n">x</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="gp">In [102]: </span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+<span class="gp">   .....: </span>    <span class="k">return</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">   .....: </span>
+
+<span class="gp">In [103]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="gp">In [104]: </span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gh">Out[104]: </span><span class="go">2</span>
+
+<span class="gp">In [105]: </span><span class="n">x</span>
+<span class="gh">Out[105]: </span><span class="go">1</span>
+</pre></div>
+</div>
+<p>Les effets de bord sont à utiliser avec parcimonie : en effet, une fonction sans effet de bord aura toujours le même comportement si on lui fournit les mêmes arguments alors que ce n’est pas forcément le cas pour une fonction avec effet de bord. Lorsque l’on manipule des fonctions avec effets de bord, il peut être difficile de deviner quels sont leurs effects exacts sur l’état du programme.</p>
+</div>
 <div class="section" id="fonctions-anonymes">
-<h2><span class="section-number">4.4.8. </span>Fonctions anonymes<a class="headerlink" href="#fonctions-anonymes" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.4.9. </span>Fonctions anonymes<a class="headerlink" href="#fonctions-anonymes" title="Lien permanent vers ce titre">¶</a></h2>
 <p>En mathématiques, on peut parler d’une fonction de plusieurs manières.</p>
 <blockquote>
 <div><ul class="simple">
@@ -681,70 +774,66 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [92]: </span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)(</span><span class="mi">4</span><span class="p">)</span>
-<span class="gh">Out[92]: </span><span class="go">16</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [106]: </span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gh">Out[106]: </span><span class="go">16</span>
 
-<span class="gp">In [93]: </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>              <span class="c1"># On peut bien sûr donner un nom à une fonction anonyme</span>
+<span class="gp">In [107]: </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>              <span class="c1"># On peut bien sûr donner un nom à une fonction anonyme</span>
 
-<span class="gp">In [94]: </span><span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="gh">Out[94]: </span><span class="go">16</span>
+<span class="gp">In [108]: </span><span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gh">Out[108]: </span><span class="go">16</span>
 
-<span class="gp">In [95]: </span><span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>    <span class="c1"># Une fonction anonyme peut avoir plus d&#39;un argument</span>
+<span class="gp">In [109]: </span><span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>    <span class="c1"># Une fonction anonyme peut avoir plus d&#39;un argument</span>
 
-<span class="gp">In [96]: </span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="gh">Out[96]: </span><span class="go">5</span>
+<span class="gp">In [110]: </span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gh">Out[110]: </span><span class="go">5</span>
 </pre></div>
 </div>
 <p>De manière générale, la syntaxe d’une fonction anonyme est la suivante.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="o">&lt;</span><span class="n">paramètres</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>A la différence d’une fonction classique, une fonction anonyme ne nécessite pas d’instruction <code class="code docutils literal notranslate"><span class="pre">return</span></code> : l’expression suivant <code class="code docutils literal notranslate"><span class="pre">:</span></code> est renvoyée <a class="footnote-reference brackets" href="#fctanonyme" id="id2">2</a>.</p>
+<p>A la différence d’une fonction classique, une fonction anonyme ne nécessite pas d’instruction <code class="code docutils literal notranslate"><span class="pre">return</span></code> : l’expression suivant <code class="code docutils literal notranslate"><span class="pre">:</span></code> est renvoyée <a class="footnote-reference brackets" href="#fctanonyme" id="id3">2</a>.</p>
 <p>Les fonctions anonymes sont limitées par rapport aux fonctions classiques : elles ne peuvent pas exécuter plusieurs instructions puisque seule <strong>une</strong> expression est renvoyée. Quel est alors l’intérêt des fonctions anonymes ? Il s’agit de créer des fonctions à usage unique qui peuvent notamment servir d’arguments dans d’autres fonctions.</p>
 <p>Par exemple, Python dispose d’une fonction <code class="code docutils literal notranslate"><span class="pre">map</span></code> qui permet d’appliquer une fonction à chaque élément d’un objet de type itérable.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [97]: </span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>   <span class="c1"># la fonction map renvoie un objet de type map qu&#39;on convertit en liste</span>
-<span class="gh">Out[97]: </span><span class="go">[2, 4, 6]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [111]: </span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>   <span class="c1"># la fonction map renvoie un objet de type map qu&#39;on convertit en liste</span>
+<span class="gh">Out[111]: </span><span class="go">[2, 4, 6]</span>
 </pre></div>
 </div>
 <p>Bien entendu, on arriverait plus aisément au même résultat grâce à une liste en compréhension.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [98]: </span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
-<span class="gh">Out[98]: </span><span class="go">[2, 4, 6]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [112]: </span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gh">Out[112]: </span><span class="go">[2, 4, 6]</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
 <dl class="footnote brackets">
 <dt class="label" id="zeroparametre"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Une fonction sans paramètre nécessite quand même des parenthèses dans son en-tête.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [99]: </span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="mi">1</span>
-<span class="gp">   ....: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [113]: </span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+<span class="gp">   .....: </span>    <span class="k">return</span> <span class="mi">1</span>
+<span class="gp">   .....: </span>
 
-<span class="gp">In [100]: </span><span class="n">f</span><span class="p">()</span>
-<span class="gh">Out[100]: </span><span class="go">1</span>
+<span class="gp">In [114]: </span><span class="n">f</span><span class="p">()</span>
+<span class="gh">Out[114]: </span><span class="go">1</span>
 </pre></div>
 </div>
 </dd>
-<dt class="label" id="fctanonyme"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="fctanonyme"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
 <dd><p>Une fonction anonyme peut également avoir des effets de bord.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [101]: </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">li</span><span class="p">:</span> <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;toto&#39;</span><span class="p">)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [115]: </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">li</span><span class="p">:</span> <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;toto&#39;</span><span class="p">)</span>
 
-<span class="gp">In [102]: </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">In [116]: </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 
-<span class="gp">In [103]: </span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">In [117]: </span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
-<span class="gp">In [104]: </span><span class="n">a</span>               <span class="c1"># La fonction anonyme f a modifié la liste a</span>
-<span class="gh">Out[104]: </span><span class="go">[1, 2, &#39;toto&#39;]</span>
+<span class="gp">In [118]: </span><span class="n">a</span>               <span class="c1"># La fonction anonyme f a modifié la liste a</span>
+<span class="gh">Out[118]: </span><span class="go">[1, 2, &#39;toto&#39;]</span>
 
-<span class="gp">In [105]: </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>     <span class="c1"># Par contre, la fonction ne renvoie rien (en fait, renvoie None)</span>
+<span class="gp">In [119]: </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>     <span class="c1"># Par contre, la fonction ne renvoie rien (en fait, renvoie None)</span>
 <span class="go">None</span>
 </pre></div>
 </div>
 </dd>
 </dl>
-<div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">À faire</p>
-<p>Documentation d’une fonction</p>
-</div>
 </div>
 </div>
 

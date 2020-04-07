@@ -83,9 +83,9 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="io.html">1. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
@@ -98,7 +98,10 @@
 <li class="toctree-l2"><a class="reference internal" href="tris.html">7.6. Tris</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">8. Preuves et complexités</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
 </ul>
 
             
@@ -349,30 +352,30 @@
 <span class="gp">   ....: </span>
 <span class="go">100 éléments</span>
 <span class="go">Recherche standard</span>
-<span class="go">3.5 us +- 414 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">3.91 us +- 344 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
 <span class="go">Recherche par dichotomie</span>
-<span class="go">3.05 us +- 221 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">3.13 us +- 124 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
 
 
 <span class="go">1000 éléments</span>
 <span class="go">Recherche standard</span>
-<span class="go">14 us +- 1.43 us per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">15.2 us +- 907 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
 <span class="go">Recherche par dichotomie</span>
-<span class="go">3.7 us +- 132 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">3.94 us +- 268 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
 
 
 <span class="go">10000 éléments</span>
 <span class="go">Recherche standard</span>
-<span class="go">111 us +- 3.18 us per loop (mean +- std. dev. of 7 runs, 10000 loops each)</span>
+<span class="go">124 us +- 6.27 us per loop (mean +- std. dev. of 7 runs, 10000 loops each)</span>
 <span class="go">Recherche par dichotomie</span>
-<span class="go">4.25 us +- 79.2 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">4.8 us +- 352 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
 
 
 <span class="go">100000 éléments</span>
 <span class="go">Recherche standard</span>
-<span class="go">1.14 ms +- 92.1 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">1.27 ms +- 41 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
 <span class="go">Recherche par dichotomie</span>
-<span class="go">5.05 us +- 177 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">6.65 us +- 625 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
 </pre></div>
 </div>
 <p>On remarque en particulier que le temps de calcul avec l’algorithme standard augmente à peu près proportionnellement à la taille de la liste tandis que le temps de calcul avec l’algorithme par dichotomie augmente très peu avec la taille de la liste. Le gain de temps de calcul est donc d’autant plus grand que la liste est grande <a class="footnote-reference brackets" href="#pasdemiracle" id="id1">1</a>. On donnera une évaluation de la complexité de cet algorithme en <a class="reference internal" href="appendice_preuves_complexites.html#recherche-par-dichotomie"><span class="std std-ref">annexe</span></a>.</p>
