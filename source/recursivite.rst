@@ -31,4 +31,7 @@ A noter que le case de base doit être impérativement défini sinon l'algorithm
     
     factorielle(3)
 
+
+.. todo:: baratin sur la tour de Hanoï
+
 .. image:: _images/hanoi.gif

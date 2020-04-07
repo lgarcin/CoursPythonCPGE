@@ -83,7 +83,7 @@ Voilà la solution du mystère : toutes les variables pointant vers un même obj
 
         * l'utilisation de la méthode :code:`copy` ;
 
-        * l'utilisation du constructeur :code:`list`.
+        * l'utilisation du :term:`constructeur` :code:`list`.
 
     .. ipython:: python
 
@@ -94,8 +94,6 @@ Voilà la solution du mystère : toutes les variables pointant vers un même obj
         id(liste1), id(liste2), id(liste3), id(liste4)  # les objets sont bien distincts
         liste1[0] = 'toto'
         liste1, liste2, liste3, liste4                  # liste1 a ete modifiée mais pas les autres listes
-
-    .. todo:: constructeur dans glossaire
 
 
 .. rubric:: Les opérateurs :code:`+` et :code:`+=`

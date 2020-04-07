@@ -1,9 +1,7 @@
-# -*- coding: latin1 -*-
-
 import numpy as np
 from bokeh.plotting import figure, show, ColumnDataSource
 from bokeh.models import CustomJS, Slider, Span, Label
-from bokeh.layouts import column, widgetbox
+from bokeh.layouts import column
 
 f = np.sin
 
@@ -26,11 +24,11 @@ for _ in range(N + 1):
 
 source = ColumnDataSource(data=dict(la=la, lb=lb, lc=lc))
 
-p = figure(title='Résolution par dichotomie', plot_width=700, plot_height=500)
+p = figure(title='R\u00e9solution par dichotomie', plot_width=700, plot_height=500)
 p.title.align = 'center'
 p.line(x, y, line_width=2)
 
-slider = Slider(start=0, end=N, value=0, step=1, title="Itérations")
+slider = Slider(start=0, end=N, value=0, step=1, title="It\u00e9rations")
 spa = Span(location=la[slider.value], dimension='height',
            line_color='red', line_dash='dashed', line_width=3)
 p.add_layout(spa)
@@ -41,11 +39,14 @@ spc = Span(location=lc[slider.value], dimension='height',
            line_color='orange', line_dash='dashed', line_width=3)
 p.add_layout(spc)
 
-slider.callback = CustomJS(args=dict(spa=spa, spb=spb, spc=spc, source=source, slider=slider), code="""
+callback = CustomJS(args=dict(spa=spa, spb=spb, spc=spc, source=source, slider=slider), code="""
     var n = slider.value;
     spa.location = source.data['la'][n];
     spb.location = source.data['lb'][n];
     spc.location = source.data['lc'][n];
+    source.change.emit();
 """)
 
-show(column(p, widgetbox(slider)))
+slider.js_on_change('value', callback)
+
+show(column(p, slider))

@@ -17,7 +17,6 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
 
-
 # -- Project information -----------------------------------------------------
 
 project = 'CoursPythonCPGE'
@@ -44,6 +43,7 @@ extensions = ['sphinx.ext.mathjax',
               'sphinx.ext.githubpages',
               'sphinx.ext.doctest',
               'sphinx.ext.todo',
+              'sphinx.ext.autosectionlabel',
               'IPython.sphinxext.ipython_console_highlighting',
               'IPython.sphinxext.ipython_directive',
               'matplotlib.sphinxext.plot_directive',

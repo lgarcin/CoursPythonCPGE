@@ -11,13 +11,17 @@ Python pour les CPGE scientifiques
     :numbered:
     :titlesonly:
 
-    io
     types_operateurs_variables
     types_composes
+    io
     algorithmique
     theorie
     recursivite
     algoclassiques
+
+.. toctree::
+    appendice_preuves_complexites
+    glossaire
 
 Index et tables
 ===============
@@ -29,8 +33,8 @@ Index et tables
 .. todo:: Installation Python + comment taper les exemples du bouquin
 .. todo:: directive exercice https://stackoverflow.com/questions/2454577/sphinx-restructuredtext-show-hide-code-snippets
 .. todo:: blabla sur l'interpréteur qui affiche et pas l'éditeur
-.. todo:: problème retour ligne dans tests
 .. todo:: mettre factorielle quelque part (comme mauvais exemple de récursivité)
 .. todo:: opérateur * (unpacking)
 .. todo:: des trucs sur assert
 .. todo:: la récursivité, c'est le mal
+.. todo:: ajouter des trucs sur commentaires

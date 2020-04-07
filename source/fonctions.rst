@@ -428,19 +428,6 @@ Enfin, soulignons qu'il peut se passer des choses étranges lorsque l'on utilise
 Il faut comprendre que la liste servant d'argument par défaut est créée une fois pour toute *à la déclaration de la fonction* et non à chaque appel de la fonction. Comme il s'agit d'un objet mutable, chaque appel de la fonction modifie cette liste. A chaque appel de la fonction, c'est donc cette nouvelle liste qui sert d'argument par défaut et non celle définie dans l'en-tête de la fonction.
 
 
-Effets de bord
-==============
-
-En plus de renvoyer une valeur, une fonction peut entraîner des modifications au-delà de sa portée comme :
-
-* modifier des variables globales ;
-* modifier des arguments mutables ;
-* afficher des informations à l'écran ;
-* enregistrer des données dans un fichier.
-
-On parle alors d\\'**effet de bord**. Les effets de bord sont à utiliser avec parcimonie : en effet,
-
-
 Une fonction est un objet
 =========================
 
@@ -475,6 +462,91 @@ On peut également créer une fonction qui renvoie une autre fonction.
         return f
 
     multiplier_par(2)(5)
+
+
+Documentation d'une fonction
+============================
+
+La plupart des fonctions disponibles de manière standard dans Python ou dans des modules "officiels" sont documentées. On accède à la documentation d'une fonction via la fonction :code:`help`.
+
+.. ipython:: python
+
+    help(len)
+    
+    from math import exp
+    help(exp)
+
+Quand on définit ses propres fonctions, il faut prendre également prendre l'habitude de les documenter. Il s'agit :
+
+* de définir l'action de la fonction;
+* de préciser le type des paramètres ;
+* de spécifier le cas échéant la valeur de retour et son type.
+
+On documente une fonction à l'aide d'une chaîne de caractère spéciale appelée **docstring** placée directement sous l'entête de la fonction. Comme pour les fonctions prédéfinies, on peut accéder à la documentation de ses propres fonctions via la fonction :code:`help`.
+
+.. ipython:: python
+
+    def minimum(a, b):
+        """
+        Calcule le minimum de a et b
+        Paramètres : deux valeurs numériques a et b
+        Revoie : le plus petit des deux entiers a et b
+        """
+        if a < b:
+            return a
+        return b
+
+    help(minimum)
+
+Le fait de documenter ses fonctions peut sembler être une perte de temps au premier abord. Mais la documentation est essentielle pour au moins deux raisons.
+
+* Il faut penser que d'autres personnes voudront utiliser votre code : elles ne sont pas censées se plonger dans votre code pour deviner à quoi servent vos fonction et comment les utiliser.
+
+* Si vous vous replongez quelques mois après dans votre code pour débugger ou améliorer vos fonctions, il y a de fortes chances que vous ne vous vous souveniez plus de vos intentions au moment où vous les avez écrites.
+
+En plus de la docstring, il peut être utile de documenter une fonction à l'aide de commentaires.
+
+.. todo:: renvoyer vers commentaires
+
+Effets de bord
+==============
+
+En plus de renvoyer une valeur, une fonction peut entraîner des modifications au-delà de sa portée comme :
+
+* modifier des variables globales ;
+* modifier des arguments mutables ;
+* afficher des informations à l'écran ;
+* enregistrer des données dans un fichier.
+
+On parle alors d\\'**effet de bord**.
+
+Voici une fonction avec effet de bord. Elle modifie en effet la variable globale :code:`x`.
+
+.. ipython:: python
+
+    x = 1
+    def add():
+        global x
+        x += 1
+        return 3
+    
+    add()
+    x
+
+Voici une fonction sans effet de bord.
+
+.. ipython:: python
+
+    x=1
+    def add(y):
+        return y + 1
+    
+    x = 1
+    add(x)
+    x
+
+
+Les effets de bord sont à utiliser avec parcimonie : en effet, une fonction sans effet de bord aura toujours le même comportement si on lui fournit les mêmes arguments alors que ce n'est pas forcément le cas pour une fonction avec effet de bord. Lorsque l'on manipule des fonctions avec effets de bord, il peut être difficile de deviner quels sont leurs effects exacts sur l'état du programme.
 
 
 Fonctions anonymes
@@ -552,5 +624,3 @@ Bien entendu, on arriverait plus aisément au même résultat grâce à une list
         a               # La fonction anonyme f a modifié la liste a
         print(f(a))     # Par contre, la fonction ne renvoie rien (en fait, renvoie None)
 
-
-.. todo:: Documentation d'une fonction

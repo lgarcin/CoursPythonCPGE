@@ -53,8 +53,8 @@ On peut également proposer une version qui renvoie l'indice la première occure
 
 
 
-Recherche d'un élément dans une liste triée
-===========================================
+Recherche par dichotomie dans une liste triée
+=============================================
 
 Lorsque l'on dispose d'une liste triée par ordre croissant, on peut grandement améliorer notre algorithme en utilisant le principe de **dichotomie**.
 
@@ -181,57 +181,19 @@ A nouveau, on peut proposer une version qui renvoie l'indice de la première occ
 
 On peut comparer les temps de calcul des deux versions de l'algorithme de recherche d'un élément grâce à la *commande magique* :code:`%timeit` : celle-ci permet d'exécuter un grand nombre de fois la même instruction et de mesurer le temps d'exécution moyen de cette instruction.
 
-.. .. ipython:: python
-..
-..     from numpy.random import randint    # La fonction randint permet de générer des entiers de manière aléatoire
-..     for N in 100, 1000, 10000, 100000:
-..         lst = [k for k in range(N)]     # On crée une liste d'entiers triée par ordre croissant
-..         print(N,"éléments")
-..         print("Recherche standard")
-..         %timeit appartient(randint(N), lst)
-..         print("Recherche par dichotomie")
-..         %timeit appartient_dicho(randint(N), lst)
-..         print("\n")
+.. ipython:: python
 
-On remarque en particulier que le temps de calcul avec l'algorithme standard augmente à peu près proportionnellement à la taille de la liste tandis que le temps de calcul avec l'algorithme par dichotomie augmente très peu avec la taille de la liste. Le gain de temps de calcul est donc d'autant plus grand que la liste est grande [#pasdemiracle]_. On donnera une comparaison quantitative de ces deux temps de calcul dans le chapitre sur la complexité.
+    from numpy.random import randint    # La fonction randint permet de générer des entiers de manière aléatoire
+    for N in 100, 1000, 10000, 100000:
+        lst = [k for k in range(N)]     # On crée une liste d'entiers triée par ordre croissant
+        print(N,"éléments")
+        print("Recherche standard")
+        %timeit appartient(randint(N), lst)
+        print("Recherche par dichotomie")
+        %timeit appartient_dicho(randint(N), lst)
+        print("\n")
 
-.. todo:: mettre un lien vers complexité
-
-
-.. .. ipython:: python
-..
-..     val = []
-..     lst = [k for k in range(N)]
-..     for n in range(1, N, 10000):
-..         print(n)
-..         a = %timeit -o appartient(randint(n), lst[:n])
-..         val.append(a.average)
-..
-.. .. ipython:: python
-..
-..     from matplotlib.pyplot import plot
-..     val
-..     @savefig recherche.png width=4in
-..     plot(val)
-..
-..
-..
-.. .. ipython:: python
-..
-..     val = []
-..     lst = [k for k in range(N)]
-..     for n in range(1, N, 10000):
-..         print(n)
-..         a = %timeit -o appartient_dicho(randint(n), lst[:n])
-..         val.append(a.average)
-..
-.. .. ipython:: python
-..
-..     from matplotlib.pyplot import plot
-..     val
-..     @savefig recherche_dicho.png width=4in
-..     plot(val)
-
+On remarque en particulier que le temps de calcul avec l'algorithme standard augmente à peu près proportionnellement à la taille de la liste tandis que le temps de calcul avec l'algorithme par dichotomie augmente très peu avec la taille de la liste. Le gain de temps de calcul est donc d'autant plus grand que la liste est grande [#pasdemiracle]_. On donnera une évaluation de la complexité de cet algorithme en :ref:`annexe <Recherche par dichotomie>`.
 
 Recherche du maximum ou du minimim d'une liste
 ==============================================

@@ -5,6 +5,7 @@ Preuve d'un algorithme
 
 *Prouver* un algorithme signifie démontrer qu'un algorithme effectue bien la tâche qui lui est demandée.
 
+
 Terminaison
 ===========
 
