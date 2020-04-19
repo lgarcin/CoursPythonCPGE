@@ -154,9 +154,6 @@ Comme souvent, un dessin vaut mieux qu'un long discours. On donne deux exemples 
     \node[above of=recherche-4-7](m4){\tt m};
     \draw[->](m4)--(recherche-4-7);
 
-
-
-
 A nouveau, on peut proposer une version qui renvoie l'indice de la première occurence de l'élément recherché plutôt qu'un booléen.
 
 .. ipython:: python
@@ -177,23 +174,26 @@ A nouveau, on peut proposer une version qui renvoie l'indice de la première occ
     indice_dicho(13, [1, 3, 7, 8, 10, 13, 14, 17, 19])
     indice_dicho(18, [1, 3, 7, 8, 10, 13, 14, 17, 19])  # L'interpréteur IPython n'affiche pas None
 
-.. rubric:: Comparaison de l'efficacité des deux algorithmes
 
-On peut comparer les temps de calcul des deux versions de l'algorithme de recherche d'un élément grâce à la *commande magique* :code:`%timeit` : celle-ci permet d'exécuter un grand nombre de fois la même instruction et de mesurer le temps d'exécution moyen de cette instruction.
+On peut également proposer une version **récursive**.
 
 .. ipython:: python
 
-    from numpy.random import randint    # La fonction randint permet de générer des entiers de manière aléatoire
-    for N in 100, 1000, 10000, 100000:
-        lst = [k for k in range(N)]     # On crée une liste d'entiers triée par ordre croissant
-        print(N,"éléments")
-        print("Recherche standard")
-        %timeit appartient(randint(N), lst)
-        print("Recherche par dichotomie")
-        %timeit appartient_dicho(randint(N), lst)
-        print("\n")
+    def appartient_dicho_recursif(elt, lst):
+        if len(lst) == 1:
+            return elt == lst[0]
+        m = len(lst)//2
+        if elt == lst[m]:
+            return True
+        if elt < lst[m]:
+            return appartient_dicho_recursif(elt, lst[:m-1])
+        else:
+            return appartient_dicho_recursif(elt, lst[m+1:])
+        return False
 
-On remarque en particulier que le temps de calcul avec l'algorithme standard augmente à peu près proportionnellement à la taille de la liste tandis que le temps de calcul avec l'algorithme par dichotomie augmente très peu avec la taille de la liste. Le gain de temps de calcul est donc d'autant plus grand que la liste est grande [#pasdemiracle]_. On donnera une évaluation de la complexité de cet algorithme en :ref:`annexe <Recherche par dichotomie>`.
+    appartient_dicho_recursif(13, [1, 3, 5, 7, 8, 10, 13, 14, 17, 19])
+    appartient_dicho_recursif(18, [1, 3, 5, 7, 8, 10, 13, 14, 17, 19])
+
 
 Recherche du maximum ou du minimim d'une liste
 ==============================================
@@ -292,5 +292,3 @@ On peut à nouveau proposer une version de l'algorithme qui renvoie l'indice de 
 
 
 .. rubric:: Notes
-
-.. [#pasdemiracle] Il ne faut cependant pas crier tout de suite au miracle. L'algorithme de recherche par dichotomie nécessite que la liste traitée soit auparavant triée. Et le tri est une opération qui nécessite un certain temps de calcul (plus élevé que celui de l'algorithme de recherche standard).

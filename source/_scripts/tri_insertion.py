@@ -1,105 +1,79 @@
-from matplotlib.patches import Rectangle
-from matplotlib.collections import PatchCollection
-from matplotlib.pyplot import gca, figure, axis
-from matplotlib.animation import ArtistAnimation
+from matplotlib import rc
+from matplotlib.pyplot import gca, figure, axis, close, Rectangle, grid
+from matplotlib.animation import FuncAnimation
 from numpy.random import permutation
+from numpy import array
+
+rc('animation', html='jshtml')
 
 
-def tri_insertion(tab):
+def move_horizontal(j, i):
+    for _ in range(width):
+        positions[i] -= array([1, 0])
+        positions[j] += array([1, 0])
+        yield i
+
+
+def move_up(i):
+    for _ in range(width):
+        positions[i] += array([0, 1])
+        yield i
+
+
+def move_down(i):
+    for _ in range(width):
+        positions[i] -= array([0, 1])
+        yield i
+
+
+def tri():
+    global positions, annotations
+    yield -1
     for i in range(1, len(tab)):
+        p = positions[:]
+        a = annotations[:]
         val = tab[i]
-        pos = i
-        move_up(tab, i)
-        while pos > 0 and tab[pos - 1] > val:
-            pos -= 1
-            move_right(tab, i, pos, val)
-            tab[pos + 1] = tab[pos]
-        tab[pos] = val
-        move_down(tab, pos)
-    draw_tab(tab)
+        j = i
+        yield from move_up(i)
+        while j > 0 and tab[j - 1] > val:
+            j -= 1
+            yield from move_horizontal(j, i)
+            tab[j + 1] = tab[j]
+            p[j+1] = p[j]
+            a[j+1] = a[j]
+        yield from move_down(i)
+        tab[j] = val
+        p[j] = positions[i]
+        a[j] = annotations[i]
+        positions = p
+        annotations = a
 
 
-def draw_tab(tab):
-    for j in range(10):
-        patches = []
-        annotations = []
-        for i, v in enumerate(tab):
-            x, y = i * 10, 0
-            patches.append(Rectangle((x, y), 9, 9))
-            annotations.append(
-                gca().annotate(v, (x, y), (x + 4.5, y + 4.5), color='w', weight='bold', fontsize=20, ha='center',
-                               va='center'))
-        collection = gca().add_collection(PatchCollection(patches))
-        collection.set_color((['green'] if j % 2 == 0 else ['orange']) * len(tab))
-        frames.append((collection, *annotations))
+def trace(i):
+    for j in range(N):
+        rectangles[j].set_color('b' if j != i else 'r')
+        rectangles[j].set_xy(positions[j])
+        annotations[j].set_position(
+            positions[j]+array([(width-1)*.5, (width-1)*.5]))
 
 
-def move_up(tab, pos):
-    for j in range(10):
-        patches = []
-        annotations = []
-        gca().axis('equal')
-        gca().axis([0, len(tab) * 10, 0, 10])
-        for i, v in enumerate(tab):
-            x, y = i * 10, j if i == pos else 0
-            patches.append(Rectangle((x, y), 9, 9))
-            annotations.append(
-                gca().annotate(v, (x, y), (x + 4.5, y + 4.5), color='w', weight='bold', fontsize=20, ha='center',
-                               va='center'))
-        collection = gca().add_collection(PatchCollection(patches))
-        colors = ['red' if i == pos else 'blue' for i in range(len(tab))]
-        collection.set_color(colors)
-        frames.append((collection, *annotations))
+N = 10
+width = 10
+tab = permutation(N)
 
-
-def move_down(tab, pos):
-    for j in range(10):
-        patches = []
-        annotations = []
-        for i, v in enumerate(tab):
-            x, y = i * 10, 10 - j if i == pos else 0
-            patches.append(Rectangle((x, y), 9, 9))
-            annotations.append(
-                gca().annotate(v, (x, y), (x + 4.5, y + 4.5), color='w', weight='bold', fontsize=20, ha='center',
-                               va='center'))
-        collection = gca().add_collection(PatchCollection(patches))
-        colors = ['red' if i == pos else 'blue' for i in range(len(tab))]
-        collection.set_color(colors)
-        frames.append((collection, *annotations))
-
-
-def move_right(tab, i, pos, val):
-    for j in range(10):
-        patches = []
-        annotations = []
-        for k, v in enumerate(tab):
-            if k == pos:
-                x, y = k * 10 + j, 0
-            elif pos < k < i:
-                x, y = k * 10 + 10, 0
-            elif k == i:
-                x, y = pos * 10 + 10 - j, 10
-            else:
-                x, y = k * 10, 0
-            patches.append(Rectangle((x, y), 9, 9))
-            annotations.append(
-                gca().annotate(val if k == i else (tab[k + 1] if pos < k < i else v), (x, y), (x + 4.5, y + 4.5),
-                               color='w',
-                               weight='bold', fontsize=20,
-                               ha='center',
-                               va='center'))
-        collection = gca().add_collection(PatchCollection(patches))
-        colors = ['red' if k == i else 'blue' for k in range(len(tab))]
-        collection.set_color(colors)
-        frames.append((collection, *annotations))
-
-
-tab = permutation(10)
-frames = []
 fig = figure(figsize=(len(tab), 3))
 axis('off')
-gca().axis('equal')
-gca().axis([0, len(tab) * 10, 0, 10])
-tri_insertion(tab)
-ani = ArtistAnimation(fig, frames, interval=100, repeat_delay=3000)
-ani.save('source/_images/tri_insertion.gif', dpi=80, writer='imagemagick')
+axis('equal')
+axis([0, len(tab) * width, 0, width])
+
+positions = [array([i*width, 0]) for i in range(N)]
+rectangles = [gca().add_patch(Rectangle(p, width-1, width-1, fc='b'))
+              for p in positions]
+annotations = [gca().annotate(tab[i], positions[i]+array([(width-1)*.5, (width-1)*.5]), color='w',
+                              weight='bold', fontsize=20,
+                              ha='center',
+                              va='center') for i in range(N)]
+
+ani = FuncAnimation(fig, trace, frames=tri, save_count=N*(N-1)/2*width*3)
+close()
+ani

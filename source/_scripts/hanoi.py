@@ -1,8 +1,11 @@
+from matplotlib import rc
+from matplotlib.collections import PatchCollection
+from matplotlib.animation import ArtistAnimation
+import matplotlib.pyplot as plt
 from enum import Enum
 
-import matplotlib.pyplot as plt
-from matplotlib.animation import ArtistAnimation
-from matplotlib.collections import PatchCollection
+
+rc('animation', html='jshtml')
 
 ims = []
 
@@ -24,7 +27,7 @@ def plot_config(config):
             y += 1
     ims.append(
         (plt.gca().add_collection(PatchCollection(patches, edgecolors='red', facecolors='blue', linewidths=5)),
-         plt.text(-N + 1, N + 1, 'Itération ' + ' ' + str(config['iter']))))
+         plt.text(-N + 1, N + 1, 'It\u00e9ration ' + ' ' + str(config['iter']))))
 
 
 class Piquet(Enum):
@@ -58,5 +61,6 @@ def hanoi(n, A, B, C):
 
 
 hanoi(N, Piquet.A, Piquet.B, Piquet.C)
-im_ani = ArtistAnimation(fig, ims, interval=200, repeat_delay=1000, blit=True)
-im_ani.save('source/_images/hanoi.gif', writer='imagemagick', fps=1)
+plt.close()
+anim = ArtistAnimation(fig, ims, interval=200, repeat_delay=1000, blit=True)
+anim

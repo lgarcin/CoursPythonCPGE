@@ -43,4 +43,4 @@ On rappelle l'algorithme en Python.
                 g = m + 1
         return False
 
-Notons :math:`n` la taille de la liste à trier.
+Notons :math:`n` la taille de la liste où on recherche l'élément. 
