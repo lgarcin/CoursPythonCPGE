@@ -66,13 +66,15 @@ Comme tout algorithme du type *diviser pour régner*, le tri rapide se prête bi
         if len(tab) == 0:
             return []
         pivot = choice(tab)     # Choix aléatoire d'un élément comme pivot
-        t1, t2 = [], []
-        for x in tab[1:]:
+        t1, t2, t3 = [], [], []
+        for x in tab:
             if x < pivot:
                 t1.append(x)
-            else:
+            elif x > pivot:
                 t2.append(x)
-        return tri_rapide(t1) + [pivot] + tri_rapide(t2)
+            else:
+                t3.append(x)
+        return tri_rapide(t1) + t3 + tri_rapide(t2)
 
 .. ipython:: python
 

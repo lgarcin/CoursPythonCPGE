@@ -9,7 +9,7 @@ SPHINXPROJ    	= CoursPythonCPGE
 SOURCEDIR     	= source
 BUILDDIR      	= build
 IMAGEDIR 		= $(SOURCEDIR)/_images
-IMAGES 			= $(addprefix $(IMAGEDIR)/,hanoi.gif recherche_chaine_lose.gif recherche_chaine_win.gif tri_insertion.gif tri_rapide.png)
+IMAGES 			= $(addprefix $(IMAGEDIR)/,tri_rapide.png)
 SCRIPTSDIR		= $(SOURCEDIR)/_scripts
 
 deploy:
@@ -31,15 +31,6 @@ livehtml: $(IMAGES)
 
 html: $(IMAGES)
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
-
-$(IMAGEDIR)/hanoi.gif: $(SCRIPTSDIR)/hanoi.py
-	@python $<
-
-$(IMAGEDIR)/recherche_chaine_lose.gif $(IMAGEDIR)/recherche_chaine_win.gif: $(SCRIPTSDIR)/recherche_chaine.py
-	@python $<
-
-$(IMAGEDIR)/tri_insertion.gif: $(SCRIPTSDIR)/tri_insertion.py
-	@python $<
 
 $(IMAGEDIR)/tri_rapide.png: $(SCRIPTSDIR)/tri_rapide.py
 	@python $<

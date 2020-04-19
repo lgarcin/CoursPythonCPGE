@@ -169,7 +169,7 @@ L'idée est d'utiliser une approximation affine de la fonction solution : :math:
 
 La méthode que l'on vient de décrire porte le nom de **méthode d'Euler**.
 
-.. ipython:: python
+.. jupyter-execute::
 
     def euler(f, t0, y0, pas, nb):
         t = t0
@@ -194,7 +194,7 @@ Par exemple, on calcule ici une solution approchée du système de Cauchy
     \end{aligned}
     \right.
 
-.. ipython:: python
+.. jupyter-execute::
 
     from math import cos
     f = lambda t, y: cos(t) * y
@@ -202,28 +202,21 @@ Par exemple, on calcule ici une solution approchée du système de Cauchy
 
 On peut tracer la courbe de la solution approchée que l'on peut comparer à la courbe de la solution exacte. En effet, on montre sans peine que l'unique solution de ce problème de Cauchy est la fonction :math:`x\mapsto e^{\sin(x)}`.
 
-.. ipython:: python
+.. jupyter-execute::
 
     import matplotlib.pyplot as plt
-    from numpy import exp, sin, linspace
-
-    plt.figure();
+    import numpy as np
 
     # Tracé de la solution approchée
     plt.plot(liste_t, liste_y, color='red', label='Solution approchée');
-
+    
     # Tracé de la solution exacte
-    x = linspace(0, 10, 1000)
-    y = exp(sin(x))
+    x = np.linspace(0, 10, 1000)
+    y = np.exp(np.sin(x))
     plt.plot(x, y, '--', color='blue', label='Solution exacte');
-
+    
     plt.legend();
 
-    @suppress
-    plt.savefig('source/_images/euler.png', width=10)
-    # plt.show()
-
-.. image:: _images/euler.png
 
 Bien entendu, l'approximation affine :math:`y'(t+\Delta\!t)\approx f(t)+f'(t)\Delta\!t` est d'autant meilleure que :math:`\Delta\!t` est petit.
 
@@ -243,7 +236,7 @@ On peut adapter la méthode au cas d'un système différentiel d'ordre 1. Soit p
     \end{aligned}
     \right.
 
-.. ipython:: python
+.. jupyter-execute::
 
     def euler(f, t0, X0, pas, nb):
         t = t0
@@ -257,16 +250,16 @@ On peut adapter la méthode au cas d'un système différentiel d'ordre 1. Soit p
             liste_X.append(X)
         return liste_t, liste_X
 
-.. ipython:: python
+.. jupyter-execute::
 
     from math import cos, sin
     f = lambda t, X: [cos(t) * X[0] + sin(t) * X[1], sin(t) * X[0] + cos(t) * X[1]]
     liste_t, liste_X = euler(f, 0, [1, 0], .01, 1000)
 
-.. ipython:: python
+.. jupyter-execute::
 
     import matplotlib.pyplot as plt
-    from numpy import exp, sin, cos, sinh, cosh
+    import numpy as np
 
     plt.figure();
 
@@ -274,19 +267,12 @@ On peut adapter la méthode au cas d'un système différentiel d'ordre 1. Soit p
     plt.plot(*zip(*liste_X), color='red', label='Solution approchée');
 
     # Tracé de la solution exacte
-    t = linspace(0, 10, 1000)
-    x = exp(sin(t)) * cosh(1 - cos(t))
-    y = exp(sin(t)) * sinh(1 - cos(t))
+    t = np.linspace(0, 10, 1000)
+    x = np.exp(np.sin(t)) * np.cosh(1 - np.cos(t))
+    y = np.exp(np.sin(t)) * np.sinh(1 - np.cos(t))
     plt.plot(x, y, '--', color='blue', label='Solution exacte');
 
     plt.legend();
-
-    @suppress
-    plt.savefig('source/_images/euler_syst.png', width=10)
-    #plt.show()
-
-.. image:: _images/euler_syst.png
-
 
 On sait qu'il est toujours possible de ramener une équation différentielle scalaire d'ordre strictement supérieur à 1 à un système différentiel d'ordre 1.
 
@@ -310,33 +296,26 @@ on peut se ramener au système différentiel d'ordre 1 suivant
     \end{aligned}\right.
 
 
-.. ipython:: python
+.. jupyter-execute::
 
     f = lambda t, X: [X[1], -X[0] / (1 + t**2)**2 - 2 * t / (1 + t**2) *X[1]]
     liste_t, liste_X = euler(f, 0, [1, 0], .01, 1000)
 
-.. ipython:: python
+.. jupyter-execute::
 
     import matplotlib.pyplot as plt
-    from numpy import sqrt
-
-    plt.figure();
+    import numpy as np
 
     # Tracé de la solution approchée
     plt.plot(liste_t, [X[0] for X in liste_X], color='red', label='Solution approchée');
 
     # Tracé de la solution exacte
-    t = linspace(0, 10, 1000)
-    y = 1/sqrt(1 + t**2)
+    t = np.linspace(0, 10, 1000)
+    y = 1/np.sqrt(1 + t**2)
     plt.plot(t, y, '--', color='blue', label='Solution exacte');
 
     plt.legend();
 
-    @suppress
-    plt.savefig('source/_images/euler_edl2.png', width=10)
-    #plt.show()
-
-.. image:: _images/euler_edl2.png
 
 .. [#quad] Le module :code:`scipy.integrate` dispose déjà d'une fonction :code:`quad` à cet effet.
 

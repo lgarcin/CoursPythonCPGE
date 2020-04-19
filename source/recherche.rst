@@ -261,16 +261,18 @@ On présente ici un algorithme naïf qui est assez peu efficace mais qui a le m�
     recherche_chaine("patapipapa", "tapa")
 
 
-.. figure:: _images/recherche_chaine_win.gif
-    :align: center
+.. jupyter-execute:: _scripts/recherche.py
+    :hide-code:
 
-    Succès
+**Succès**
 
-.. figure:: _images/recherche_chaine_lose.gif
-    :align: center
+.. jupyter-execute:: _scripts/recherche_win.py
+    :hide-code:
 
-    Echec
+**Echec**
 
+.. jupyter-execute:: _scripts/recherche_lose.py
+    :hide-code:
 
 On peut à nouveau proposer une version de l'algorithme qui renvoie l'indice de la *première occurence* rencontrée.
 

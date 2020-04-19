@@ -27,32 +27,31 @@ def move_down(i):
 
 
 def tri():
-    global positions, annotations
+    global positions, tab
     yield -1
     for i in range(1, len(tab)):
         p = positions[:]
-        a = annotations[:]
-        val = tab[i]
+        t = tab.copy()
+        val = t[i]
         j = i
         yield from move_up(i)
-        while j > 0 and tab[j - 1] > val:
+        while j > 0 and t[j - 1] > val:
             j -= 1
             yield from move_horizontal(j, i)
-            tab[j + 1] = tab[j]
+            t[j+1] = t[j]
             p[j+1] = p[j]
-            a[j+1] = a[j]
         yield from move_down(i)
-        tab[j] = val
+        t[j] = val
         p[j] = positions[i]
-        a[j] = annotations[i]
         positions = p
-        annotations = a
+        tab = t
 
 
 def trace(i):
     for j in range(N):
         rectangles[j].set_color('b' if j != i else 'r')
         rectangles[j].set_xy(positions[j])
+        annotations[j].set_text(tab[j])
         annotations[j].set_position(
             positions[j]+array([(width-1)*.5, (width-1)*.5]))
 
