@@ -26,6 +26,8 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -35,6 +37,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="7.4. Probabilités" href="probabilites.html" />
@@ -188,62 +191,62 @@
 <p>donc</p>
 <div class="math notranslate nohighlight">
 \[1455= 7 + 8 \times (5 + 8 \times (6 + 8 \times 2)) = 7 + 5 \times 8 + 6 \times 8^2 + 2 \times 8^3\]</div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">decomp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="gp">   ...: </span>    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ...: </span>        <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
-<span class="gp">   ...: </span>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
-<span class="gp">   ...: </span>    <span class="k">return</span> <span class="n">l</span>
-<span class="gp">   ...: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">decomp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="o">...</span><span class="p">:</span>         <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+   <span class="o">...</span><span class="p">:</span>         <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="k">return</span> <span class="n">l</span>
+   <span class="o">...</span><span class="p">:</span> 
 
-<span class="gp">In [2]: </span><span class="n">decomp</span><span class="p">(</span><span class="mi">24189</span><span class="p">,</span> <span class="mi">10</span> <span class="p">)</span>
-<span class="gh">Out[2]: </span><span class="go">[9, 8, 1, 4, 2]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">decomp</span><span class="p">(</span><span class="mi">24189</span><span class="p">,</span> <span class="mi">10</span> <span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 
-<span class="gp">In [3]: </span><span class="n">n</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3678</span><span class="p">,</span> <span class="mi">7</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">n</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3678</span><span class="p">,</span> <span class="mi">7</span>
 
-<span class="gp">In [4]: </span><span class="n">l</span> <span class="o">=</span> <span class="n">decomp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">l</span> <span class="o">=</span> <span class="n">decomp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
-<span class="gp">In [5]: </span><span class="n">l</span>
-<span class="gh">Out[5]: </span><span class="go">[3, 0, 5, 3, 1]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">l</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 
-<span class="go"># On vérifie que la liste convient effectivement</span>
-<span class="gp">In [6]: </span><span class="nb">sum</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
-<span class="gh">Out[6]: </span><span class="go">3678</span>
+<span class="c1"># On vérifie que la liste convient effectivement</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="mi">3678</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="calcul-de-pgcd">
 <h2><span class="section-number">7.3.2. </span>Calcul de PGCD<a class="headerlink" href="#calcul-de-pgcd" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On peut implémenter l’algorithme d’Euclide en Python.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ...: </span>        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
-<span class="gp">   ...: </span>    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>   <span class="c1"># Le pgcd doit être positif</span>
-<span class="gp">   ...: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="o">...</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>   <span class="c1"># Le pgcd doit être positif</span>
+   <span class="o">...</span><span class="p">:</span> 
 
-<span class="gp">In [8]: </span><span class="n">pgcd</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
-<span class="gh">Out[8]: </span><span class="go">6</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">pgcd</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="mi">6</span>
 
-<span class="gp">In [9]: </span><span class="n">pgcd</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)</span>
-<span class="gh">Out[9]: </span><span class="go">6</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">pgcd</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="mi">6</span>
 </pre></div>
 </div>
 <p>De même, on peut implémenter l’algorithme d’Euclide étendu qui, en plus du pgcd, donne des coefficients d’une relation de Bézout, c’est-à-dire des entiers <span class="math notranslate nohighlight">\(u\)</span> et <span class="math notranslate nohighlight">\(v\)</span> tels que</p>
 <div class="math notranslate nohighlight">
 \[au+bv=\mathrm{pgcd}(a,b)\]</div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="k">def</span> <span class="nf">bezout</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-<span class="gp">   ....: </span>    <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ....: </span>        <span class="n">q</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
-<span class="gp">   ....: </span>        <span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">s</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">u</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">v</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">t</span><span class="p">)</span>     <span class="c1"># Le pgcd doit être positif</span>
-<span class="gp">   ....: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">bezout</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="n">q</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">s</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">u</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">v</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">t</span><span class="p">)</span>     <span class="c1"># Le pgcd doit être positif</span>
+   <span class="o">....</span><span class="p">:</span> 
 
-<span class="gp">In [11]: </span><span class="n">bezout</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
-<span class="gh">Out[11]: </span><span class="go">(6, 1, -2)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">bezout</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="gp">In [12]: </span><span class="n">bezout</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)</span>
-<span class="gh">Out[12]: </span><span class="go">(6, -1, -3)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">bezout</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>La preuve de l’algorithme est donnée en <a class="reference internal" href="appendice_preuves_complexites.html#algorithme-d-euclide-etendu"><span class="std std-ref">annexe</span></a>.</p>
@@ -251,30 +254,30 @@
 <div class="section" id="exponentiation-rapide">
 <h2><span class="section-number">7.3.3. </span>Exponentiation rapide<a class="headerlink" href="#exponentiation-rapide" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il s’agit ici de calculer efficacement une puissance entière d’un objet mathématique (nombre ou matrice par exemple). Un algorithme naïf serait le suivant.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">def</span> <span class="nf">exponentiation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="gp">   ....: </span>        <span class="n">a</span> <span class="o">*=</span> <span class="n">x</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">a</span>
-<span class="gp">   ....: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">exponentiation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="n">a</span> <span class="o">*=</span> <span class="n">x</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="n">a</span>
+   <span class="o">....</span><span class="p">:</span> 
 
-<span class="gp">In [14]: </span><span class="n">exponentiation</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="gh">Out[14]: </span><span class="go">243</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">exponentiation</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="mi">243</span>
 </pre></div>
 </div>
 <p>Il est clair que cet algorithme nécessite <span class="math notranslate nohighlight">\(n\)</span> multiplications pour calculer une puissance <span class="math notranslate nohighlight">\(n^\text{ème}\)</span>.</p>
 <p>On peut proposer un léger raffinement pour éviter une multiplication.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="k">def</span> <span class="nf">exponentiation2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ....: </span>        <span class="k">return</span> <span class="mi">1</span>
-<span class="gp">   ....: </span>    <span class="n">a</span> <span class="o">=</span> <span class="n">x</span>
-<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-<span class="gp">   ....: </span>        <span class="n">a</span> <span class="o">*=</span> <span class="n">x</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">a</span>
-<span class="gp">   ....: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">exponentiation2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="k">return</span> <span class="mi">1</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="n">a</span> <span class="o">=</span> <span class="n">x</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="n">a</span> <span class="o">*=</span> <span class="n">x</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="n">a</span>
+   <span class="o">....</span><span class="p">:</span> 
 
-<span class="gp">In [16]: </span><span class="n">exponentiation2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="gh">Out[16]: </span><span class="go">243</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">exponentiation2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="mi">243</span>
 </pre></div>
 </div>
 <p>Mais on peut être beaucoup plus efficace. On remarque que toute puissance <span class="math notranslate nohighlight">\(x^n\)</span> peut en fait s’écrire comme un produit de puissances de la forme <span class="math notranslate nohighlight">\(x^{2^k}\)</span> : en effet, <span class="math notranslate nohighlight">\(n\)</span> peut s’écrire comme une somme d’entiers de la forme <span class="math notranslate nohighlight">\(2^k\)</span>.</p>
@@ -292,55 +295,38 @@
     \left(x^2\right)^q&amp;\text{ si } r=0\\
     x\times\left(x^2\right)^q&amp;\text{ si } r=1
 \end{aligned}\right.\end{split}\]</div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [17]: </span><span class="k">def</span> <span class="nf">exponentiation_rapide</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">   ....: </span>    <span class="n">p</span> <span class="o">=</span> <span class="n">x</span>
-<span class="gp">   ....: </span>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ....: </span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="gp">   ....: </span>            <span class="n">a</span> <span class="o">*=</span> <span class="n">p</span>
-<span class="gp">   ....: </span>        <span class="n">p</span> <span class="o">*=</span> <span class="n">p</span>
-<span class="gp">   ....: </span>        <span class="n">n</span> <span class="o">//=</span> <span class="mi">2</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">a</span>
-<span class="gp">   ....: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">exponentiation_rapide</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="n">p</span> <span class="o">=</span> <span class="n">x</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+   <span class="o">....</span><span class="p">:</span>             <span class="n">a</span> <span class="o">*=</span> <span class="n">p</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="n">p</span> <span class="o">*=</span> <span class="n">p</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="n">n</span> <span class="o">//=</span> <span class="mi">2</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="n">a</span>
+   <span class="o">....</span><span class="p">:</span> 
 
-<span class="gp">In [18]: </span><span class="n">exponentiation_rapide</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="gh">Out[18]: </span><span class="go">243</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">exponentiation_rapide</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="mi">243</span>
 </pre></div>
 </div>
 <p>On peut également proposer un raffinement pour gagner une multiplication. En effet, à la dernière itération, l’instruction <code class="code docutils literal notranslate"><span class="pre">p</span> <span class="pre">*=</span> <span class="pre">p</span></code> est inutile puisque cette dernière valeur de <code class="code docutils literal notranslate"><span class="pre">p</span></code> ne sera pas utilisée. De plus, à la dernière itération, <code class="code docutils literal notranslate"><span class="pre">n</span></code> vaut <code class="code docutils literal notranslate"><span class="pre">1</span></code> qui est impair donc l’instruction <code class="code docutils literal notranslate"><span class="pre">a</span> <span class="pre">*=</span> <span class="pre">p</span></code> sera obligatoirement effectuée.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [19]: </span><span class="k">def</span> <span class="nf">exponentiation_rapide2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ....: </span>        <span class="k">return</span> <span class="mi">1</span>
-<span class="gp">   ....: </span>    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">   ....: </span>    <span class="n">p</span> <span class="o">=</span> <span class="n">x</span>
-<span class="gp">   ....: </span>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="gp">   ....: </span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="gp">   ....: </span>            <span class="n">a</span> <span class="o">*=</span> <span class="n">p</span>
-<span class="gp">   ....: </span>        <span class="n">p</span> <span class="o">*=</span> <span class="n">p</span>
-<span class="gp">   ....: </span>        <span class="n">n</span> <span class="o">//=</span> <span class="mi">2</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">p</span>
-<span class="gp">   ....: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">exponentiation_rapide2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="k">return</span> <span class="mi">1</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="n">p</span> <span class="o">=</span> <span class="n">x</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+   <span class="o">....</span><span class="p">:</span>             <span class="n">a</span> <span class="o">*=</span> <span class="n">p</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="n">p</span> <span class="o">*=</span> <span class="n">p</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="n">n</span> <span class="o">//=</span> <span class="mi">2</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">p</span>
+   <span class="o">....</span><span class="p">:</span> 
 
-<span class="gp">In [20]: </span><span class="n">exponentiation_rapide2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="gh">Out[20]: </span><span class="go">243</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">exponentiation_rapide2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="mi">243</span>
 </pre></div>
-</div>
-<p>On peut comparer les temps de calcul pour différentes types d’exponentiation via la <em>commande magique</em> <code class="code docutils literal notranslate"><span class="pre">%timeit</span></code>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="o">%</span><span class="k">timeit</span> exponentiation(3, 100)
-<span class="gp">   ....: </span><span class="o">%</span><span class="k">timeit</span> exponentiation_rapide(3, 100)
-<span class="gp">   ....: </span><span class="o">%</span><span class="k">timeit</span> 3**100
-<span class="gp">   ....: </span><span class="o">%</span><span class="k">timeit</span> pow(3, 100)
-<span class="gp">   ....: </span>
-<span class="go">6.14 us +- 366 ns per loop (mean +- std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">1.26 us +- 83.6 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
-<span class="go">284 ns +- 7.27 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
-<span class="go">326 ns +- 11.8 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)</span>
-</pre></div>
-</div>
-<p>On constate en effet que l’algorithme d’exponentiation rapide est plus efficace que l’algorithme naïf mais il y a encore des progrès à faire pour égaler l’exponentiation intégrée par défaut dans le langage Python.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">À faire</p>
-<p>preuve + complexité</p>
 </div>
 </div>
 <div class="section" id="evaluation-de-polynomes">
@@ -363,33 +349,33 @@
 </ul>
 <p>On a gagné deux multiplications par rapport à la méthode précédente et on comprend bien que le gain sera d’autant plus grand que le polynôme est de degré élevé.</p>
 <p>L’algorithme décrit dans l’exemple précédent s’appelle la <strong>méthode de Hörner</strong>. Pour implémenter cet algorithme, on représente un polynôme par la liste de ses coefficients rangés par ordre décroissant de degré. Par exemple, la liste <code class="code docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> représente le polynôme <span class="math notranslate nohighlight">\(X^2+2X+3\)</span>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="k">def</span> <span class="nf">horner</span><span class="p">(</span><span class="n">poly</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">poly</span><span class="p">:</span>
-<span class="gp">   ....: </span>        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">s</span>
-<span class="gp">   ....: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">horner</span><span class="p">(</span><span class="n">poly</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">poly</span><span class="p">:</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="n">s</span>
+   <span class="o">....</span><span class="p">:</span> 
 
-<span class="go"># On évalue le polynôme X²+2X+3 en 4</span>
-<span class="gp">In [23]: </span><span class="n">horner</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
-<span class="gh">Out[23]: </span><span class="go">27</span>
+<span class="c1"># On évalue le polynôme X²+2X+3 en 4</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">horner</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="mi">27</span>
 </pre></div>
 </div>
-<p>Si l’on préfère représenter un polynôme par la liste de ses coefficients par ordre de degré <em>croissant</em>, on peut toujours utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">reversed</span></code> qui fait ce que son nom indique <a class="footnote-reference brackets" href="#reverse-sclicing" id="id2">1</a>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [24]: </span><span class="k">def</span> <span class="nf">horner</span><span class="p">(</span><span class="n">poly</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">poly</span><span class="p">):</span>
-<span class="gp">   ....: </span>        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
-<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">s</span>
-<span class="gp">   ....: </span>
+<p>Si l’on préfère représenter un polynôme par la liste de ses coefficients par ordre de degré <em>croissant</em>, on peut toujours utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">reversed</span></code> qui fait ce que son nom indique <a class="footnote-reference brackets" href="#reverse-sclicing" id="id1">1</a>.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">horner</span><span class="p">(</span><span class="n">poly</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">poly</span><span class="p">):</span>
+   <span class="o">....</span><span class="p">:</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
+   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="n">s</span>
+   <span class="o">....</span><span class="p">:</span> 
 
-<span class="go"># On évalue le polynôme 1+2X+3X² en 4</span>
-<span class="gp">In [25]: </span><span class="n">horner</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
-<span class="gh">Out[25]: </span><span class="go">57</span>
+<span class="c1"># On évalue le polynôme 1+2X+3X² en 4</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">horner</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="mi">57</span>
 </pre></div>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="reverse-sclicing"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dt class="label" id="reverse-sclicing"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>On peut également utiliser du slicing : <code class="code docutils literal notranslate"><span class="pre">lst[::-1]</span></code> est également la liste <code class="code docutils literal notranslate"><span class="pre">lst</span></code> « renversée ».</p>
 </dd>
 </dl>

@@ -26,6 +26,8 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -35,6 +37,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="1.3. Opérateurs" href="operateurs.html" />
@@ -176,50 +179,50 @@
 <div class="section" id="booleen">
 <h2><span class="section-number">1.2.1. </span>Booléen<a class="headerlink" href="#booleen" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Un objet de type <em>booléen</em> peut prendre les valeurs logiques <strong>vrai</strong> (<code class="code docutils literal notranslate"><span class="pre">True</span></code>) ou <strong>faux</strong> (<code class="code docutils literal notranslate"><span class="pre">False</span></code>).</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="gh">Out[1]: </span><span class="go">bool</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nb">bool</span>
 
-<span class="gp">In [2]: </span><span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="gh">Out[2]: </span><span class="go">bool</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">bool</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="entier">
 <h2><span class="section-number">1.2.2. </span>Entier<a class="headerlink" href="#entier" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les entiers Python ne sont théoriquement pas limités en taille même si, en pratique, on est limité par la mémoire de la machine.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="nb">type</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-<span class="gh">Out[3]: </span><span class="go">int</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="nb">int</span>
 
-<span class="gp">In [4]: </span><span class="nb">type</span><span class="p">(</span><span class="o">-</span><span class="mi">34</span><span class="p">)</span>
-<span class="gh">Out[4]: </span><span class="go">int</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="o">-</span><span class="mi">34</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="nb">int</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="flottant">
 <h2><span class="section-number">1.2.3. </span>Flottant<a class="headerlink" href="#flottant" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les nombres non entiers (nombres « à virgule ») sont stockés sous la forme de nombres <em>flottants</em>. La virgule est notée à l’anglo-saxonne à l’aide du caractère <code class="code docutils literal notranslate"><span class="pre">.</span></code>. On peut également utiliser la notation scientifique : <code class="code docutils literal notranslate"><span class="pre">1.23e45</span></code> signifie <span class="math notranslate nohighlight">\(1,23\times10^{45}\)</span>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.23</span><span class="p">)</span>
-<span class="gh">Out[5]: </span><span class="go">float</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="mf">1.23</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="nb">float</span>
 
-<span class="gp">In [6]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
-<span class="gh">Out[6]: </span><span class="go">float</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="nb">float</span>
 
-<span class="gp">In [7]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.23e45</span><span class="p">)</span>
-<span class="gh">Out[7]: </span><span class="go">float</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="mf">1.23e45</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="nb">float</span>
 </pre></div>
 </div>
 <p>Les nombres flottants sont en fait de la forme <span class="math notranslate nohighlight">\(\pm m.2^e\)</span> où <span class="math notranslate nohighlight">\(m\)</span> est un réel de l’intervalle <span class="math notranslate nohighlight">\([1,2[\)</span> appelé mantisse et <span class="math notranslate nohighlight">\(e\)</span> est un entier. Les nombres <span class="math notranslate nohighlight">\(m\)</span> et <span class="math notranslate nohighlight">\(e\)</span> sont stockés sur un nombre fixé de bits <a class="footnote-reference brackets" href="#ieee754" id="id2">1</a> : il n’existe par conséquent qu’un nombre <strong>fini</strong> de nombres flottants.</p>
 <p>Il faut bien comprendre que les nombres flottants ne sont en fait que des <strong>approximations</strong> des nombres réels que l’on considère, ce qui peut parfois créer des surprises.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="mf">2.3</span><span class="o">-</span><span class="mf">1.5</span>
-<span class="gh">Out[8]: </span><span class="go">0.7999999999999998</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="mf">2.3</span><span class="o">-</span><span class="mf">1.5</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="mf">0.7999999999999998</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="complexe">
 <h2><span class="section-number">1.2.4. </span>Complexe<a class="headerlink" href="#complexe" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les nombres complexes se notent à l’aide de la lettre <code class="code docutils literal notranslate"><span class="pre">j</span></code> qui indique la partie imaginaire. Par exemple, le complexe <span class="math notranslate nohighlight">\(1+2i\)</span> s’écrit <code class="code docutils literal notranslate"><span class="pre">1+2j</span></code>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.2</span><span class="o">+</span><span class="mf">3.4</span><span class="n">j</span><span class="p">)</span>
-<span class="gh">Out[9]: </span><span class="go">complex</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="mf">1.2</span><span class="o">+</span><span class="mf">3.4</span><span class="n">j</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="nb">complex</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -227,20 +230,20 @@
 <p>Pour représenter un complexe la lettre <code class="code docutils literal notranslate"><span class="pre">j</span></code> doit toujours être précédée d’un caractère numérique. Le complexe <span class="math notranslate nohighlight">\(i\)</span> sera donc représenté par <code class="code docutils literal notranslate"><span class="pre">1j</span></code>.</p>
 </div>
 <p>On peut accéder aux parties réelle et imaginaire d’un nombre complexe grâce aux attributs <code class="code docutils literal notranslate"><span class="pre">real</span></code> et <code class="code docutils literal notranslate"><span class="pre">imag</span></code>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">z</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="n">j</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="n">j</span>
 
-<span class="gp">In [11]: </span><span class="n">z</span><span class="o">.</span><span class="n">real</span>
-<span class="gh">Out[11]: </span><span class="go">3.0</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">z</span><span class="o">.</span><span class="n">real</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="mf">3.0</span>
 
-<span class="gp">In [12]: </span><span class="n">z</span><span class="o">.</span><span class="n">imag</span>
-<span class="gh">Out[12]: </span><span class="go">4.0</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">z</span><span class="o">.</span><span class="n">imag</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="mf">4.0</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="dictionnaire-hors-programme">
 <h2><span class="section-number">1.2.5. </span>Dictionnaire (hors programme)<a class="headerlink" href="#dictionnaire-hors-programme" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="nb">type</span><span class="p">({</span><span class="s1">&#39;toto&#39;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;titi&#39;</span><span class="p">:</span> <span class="mf">4.56</span><span class="p">,</span> <span class="s1">&#39;tata&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">})</span>
-<span class="gh">Out[13]: </span><span class="go">dict</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="nb">type</span><span class="p">({</span><span class="s1">&#39;toto&#39;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;titi&#39;</span><span class="p">:</span> <span class="mf">4.56</span><span class="p">,</span> <span class="s1">&#39;tata&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">})</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="nb">dict</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>

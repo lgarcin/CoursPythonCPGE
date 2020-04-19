@@ -13,7 +13,8 @@ On procède en plusieurs étapes. On suppose qu'à l'étape :math:`i`, les élé
 
 Un dessin vaut probablement mieux qu'un long discours.
 
-.. image:: _images/tri_insertion.gif
+.. jupyter-execute:: _scripts/tri_insertion.py
+    :hide-code:
 
 On peut alors proposer la fonction Python suivante.
 
@@ -49,6 +50,8 @@ Le **tri rapide** est une application du principe *diviser pour régner*. Il con
 * à séparer le tableau à trier en deux sous-tableaux contenant respectivement les éléments inférieurs et supérieurs au pivot ;
 * et à répéter le processus sur les deux sous-tableaux.
 
+Dans l'image suivante, le tableau initial est en vert, les pivots choisis sont indiqués en orange et les deux sous-tableaux respectivement en bleu et en rouge.
+
 .. image:: _images/tri_rapide.png
 
 
@@ -63,13 +66,15 @@ Comme tout algorithme du type *diviser pour régner*, le tri rapide se prête bi
         if len(tab) == 0:
             return []
         pivot = choice(tab)     # Choix aléatoire d'un élément comme pivot
-        t1, t2 = [], []
-        for x in tab[1:]:
+        t1, t2, t3 = [], [], []
+        for x in tab:
             if x < pivot:
                 t1.append(x)
-            else:
+            elif x > pivot:
                 t2.append(x)
-        return tri_rapide(t1) + [pivot] + tri_rapide(t2)
+            else:
+                t3.append(x)
+        return tri_rapide(t1) + t3 + tri_rapide(t2)
 
 .. ipython:: python
 

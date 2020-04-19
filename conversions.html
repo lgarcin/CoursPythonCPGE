@@ -26,6 +26,8 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -35,6 +37,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="2. Types composés" href="types_composes.html" />
@@ -169,43 +172,43 @@
   <div class="section" id="conversions-de-types">
 <h1><span class="section-number">1.4. </span>Conversions de types<a class="headerlink" href="#conversions-de-types" title="Lien permanent vers ce titre">¶</a></h1>
 <p>On peut convertir un objet d’un type vers un autre type : il suffit pour cela d’utiliser le nom du type vers lequel on veut convertir. On parle alors de <em>conversion explicite</em>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">)</span>
-<span class="gh">Out[1]: </span><span class="go">42</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">42</span>
 
-<span class="gp">In [2]: </span><span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">))</span>
-<span class="gh">Out[2]: </span><span class="go">int</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nb">int</span>
 
-<span class="gp">In [3]: </span><span class="nb">str</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
-<span class="gh">Out[3]: </span><span class="go">&#39;25&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="nb">str</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s1">&#39;25&#39;</span>
 
-<span class="gp">In [4]: </span><span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
-<span class="gh">Out[4]: </span><span class="go">str</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="nb">str</span>
 </pre></div>
 </div>
 <p>Il se peut que certaines conversions soient impossibles.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;45f6&#39;</span><span class="p">)</span>
-<span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;45f6&#39;</span><span class="p">)</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">b58d830d7e7d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;45f6&#39;</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;45f6&#39;</span><span class="p">)</span>
 
-<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;45f6&#39;
+<span class="ne">ValueError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;45f6&#39;</span>
 </pre></div>
 </div>
 <p>L’utilisation d’opérateurs pour des objets dont le type n’est pas approprié peut donner lieu à des <em>conversions implicites</em>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go"># Le booléen True est automatiquement converti en l&#39;entier 1 pour pouvoir l&#39;ajouter à l&#39;entier 2</span>
-<span class="gp">In [6]: </span><span class="kc">True</span> <span class="o">+</span> <span class="mi">2</span>
-<span class="gh">Out[6]: </span><span class="go">3</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Le booléen True est automatiquement converti en l&#39;entier 1 pour pouvoir l&#39;ajouter à l&#39;entier 2</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="kc">True</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="mi">3</span>
 </pre></div>
 </div>
 <p>Mais il se peut qu’aucune conversion implicite ne puisse avoir lieu, ce qui conduit alors à une erreur.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="s1">&#39;a&#39;</span> <span class="o">+</span> <span class="mf">1.23</span>
-<span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="s1">&#39;a&#39;</span> <span class="o">+</span> <span class="mf">1.23</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">56</span><span class="n">a632500eb2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;a&#39;</span> <span class="o">+</span> <span class="mf">1.23</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="s1">&#39;a&#39;</span> <span class="o">+</span> <span class="mf">1.23</span>
 
-<span class="ne">TypeError</span>: can only concatenate str (not &quot;float&quot;) to str
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">can</span> <span class="n">only</span> <span class="n">concatenate</span> <span class="nb">str</span> <span class="p">(</span><span class="ow">not</span> <span class="s2">&quot;float&quot;</span><span class="p">)</span> <span class="n">to</span> <span class="nb">str</span>
 </pre></div>
 </div>
 </div>

@@ -177,19 +177,6 @@ On peut également proposer un raffinement pour gagner une multiplication. En ef
 
     exponentiation_rapide2(3, 5)
 
-On peut comparer les temps de calcul pour différentes types d'exponentiation via la *commande magique* :code:`%timeit`.
-
-.. ipython:: python
-
-    %timeit exponentiation(3, 100)
-    %timeit exponentiation_rapide(3, 100)
-    %timeit 3**100
-    %timeit pow(3, 100)
-
-On constate en effet que l'algorithme d'exponentiation rapide est plus efficace que l'algorithme naïf mais il y a encore des progrès à faire pour égaler l'exponentiation intégrée par défaut dans le langage Python.
-
-.. todo:: preuve + complexité
-
 Evaluation de polynômes
 =======================
 

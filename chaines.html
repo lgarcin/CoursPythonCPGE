@@ -26,6 +26,8 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -35,6 +37,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="2.4. Mutabilité" href="mutabilite.html" />
@@ -170,111 +173,111 @@
   <div class="section" id="chaines-de-caractere">
 <h1><span class="section-number">2.3. </span>Chaînes de caractère<a class="headerlink" href="#chaines-de-caractere" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Une chaîne de caractères n’est autre qu’une liste de caractères. Les caractères sont juxtaposés et encadrés par des guillemets simples <code class="code docutils literal notranslate"><span class="pre">'...'</span></code> ou doubles <code class="code docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code> <a class="footnote-reference brackets" href="#entrelace" id="id1">1</a>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">)</span>
-<span class="gh">Out[1]: </span><span class="go">str</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nb">str</span>
 
-<span class="gp">In [2]: </span><span class="s2">&quot;abcdef&quot;</span> <span class="o">==</span> <span class="s1">&#39;abcdef&#39;</span>
-<span class="gh">Out[2]: </span><span class="go">True</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s2">&quot;abcdef&quot;</span> <span class="o">==</span> <span class="s1">&#39;abcdef&#39;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kc">True</span>
 </pre></div>
 </div>
 <p>A nouveau, les opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> et <code class="code docutils literal notranslate"><span class="pre">+=</span></code> fonctionnent comme pour les listes.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="s1">&#39;abc&#39;</span> <span class="o">+</span> <span class="s2">&quot;def&quot;</span>
-<span class="gh">Out[3]: </span><span class="go">&#39;abcdef&#39;</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s1">&#39;abc&#39;</span> <span class="o">+</span> <span class="s2">&quot;def&quot;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s1">&#39;abcdef&#39;</span>
 
-<span class="gp">In [4]: </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
 
-<span class="gp">In [5]: </span><span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;def&quot;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;def&quot;</span>
 </pre></div>
 </div>
 <p>On peut <strong>accéder</strong> de la même manière aux caractères d’une chaîne qu’aux éléments d’une liste.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">ma_chaine</span> <span class="o">=</span> <span class="s2">&quot;Bonjour Python&quot;</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">ma_chaine</span> <span class="o">=</span> <span class="s2">&quot;Bonjour Python&quot;</span>
 
-<span class="gp">In [7]: </span><span class="n">ma_chaine</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="gh">Out[7]: </span><span class="go">&#39;j&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">ma_chaine</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="s1">&#39;j&#39;</span>
 
-<span class="gp">In [8]: </span><span class="n">ma_chaine</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
-<span class="gh">Out[8]: </span><span class="go">&#39;njour Python&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">ma_chaine</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="s1">&#39;njour Python&#39;</span>
 
-<span class="gp">In [9]: </span><span class="n">ma_chaine</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
-<span class="gh">Out[9]: </span><span class="go">&#39;Bonjo&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">ma_chaine</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="s1">&#39;Bonjo&#39;</span>
 
-<span class="gp">In [10]: </span><span class="n">ma_chaine</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
-<span class="gh">Out[10]: </span><span class="go">&#39;h&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">ma_chaine</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="s1">&#39;h&#39;</span>
 
-<span class="gp">In [11]: </span><span class="n">ma_chaine</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
-<span class="gh">Out[11]: </span><span class="go">&#39;norP&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">ma_chaine</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="s1">&#39;norP&#39;</span>
 
-<span class="gp">In [12]: </span><span class="n">ma_chaine</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
-<span class="gh">Out[12]: </span><span class="go">&#39;Pun&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">ma_chaine</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="s1">&#39;Pun&#39;</span>
 </pre></div>
 </div>
 <p>Par contre, on ne peut pas <strong>modifier</strong> une chaîne.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
 
-<span class="gp">In [14]: </span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span>
-<span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mf">5994e1</span><span class="n">a74598</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span>
 
-<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
 </pre></div>
 </div>
 <p>Encore une fois, la fonction <code class="code docutils literal notranslate"><span class="pre">len</span></code> renvoie la longueur d’une chaîne de caractères.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Anticonstitutionnellement&#39;</span><span class="p">)</span>
-<span class="gh">Out[15]: </span><span class="go">25</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Anticonstitutionnellement&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="mi">25</span>
 </pre></div>
 </div>
 <p>Les chaînes possèdent de nombreuses <a class="reference internal" href="glossaire.html#term-methode"><span class="xref std std-term">méthodes</span></a> : ces méthodes ne modifient jamais la chaîne de caractère mais renvoient une <em>autre</em> chaîne de caractère.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">ma_chaine</span> <span class="o">=</span> <span class="s1">&#39;Mon nom est Bond. James Bond.&#39;</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">ma_chaine</span> <span class="o">=</span> <span class="s1">&#39;Mon nom est Bond. James Bond.&#39;</span>
 
-<span class="gp">In [17]: </span><span class="n">ma_chaine</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Bond&#39;</span><span class="p">,</span> <span class="s1">&#39;Toto&#39;</span><span class="p">)</span>
-<span class="gh">Out[17]: </span><span class="go">&#39;Mon nom est Toto. James Toto.&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">ma_chaine</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Bond&#39;</span><span class="p">,</span> <span class="s1">&#39;Toto&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="s1">&#39;Mon nom est Toto. James Toto.&#39;</span>
 
-<span class="gp">In [18]: </span><span class="n">ma_chaine</span>
-<span class="gh">Out[18]: </span><span class="go">&#39;Mon nom est Bond. James Bond.&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">ma_chaine</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="s1">&#39;Mon nom est Bond. James Bond.&#39;</span>
 
-<span class="gp">In [19]: </span><span class="n">ma_chaine</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-<span class="gh">Out[19]: </span><span class="go">&#39;MON NOM EST BOND. JAMES BOND.&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">ma_chaine</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="s1">&#39;MON NOM EST BOND. JAMES BOND.&#39;</span>
 
-<span class="gp">In [20]: </span><span class="n">ma_chaine</span>
-<span class="gh">Out[20]: </span><span class="go">&#39;Mon nom est Bond. James Bond.&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">ma_chaine</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="s1">&#39;Mon nom est Bond. James Bond.&#39;</span>
 </pre></div>
 </div>
 <dl class="footnote brackets">
 <dt class="label" id="entrelace"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Comment définir alors des chaînes de caractère comportant des guillements (simples ou doubles) ?</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="s1">&#39;Ca n&#39;</span><span class="n">est</span> <span class="n">pas</span> <span class="n">possible</span><span class="s1">&#39;</span>
-<span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-21-1474dd26405e&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="s1">&#39;Ca n&#39;</span><span class="n">est</span> <span class="n">pas</span> <span class="n">possible</span><span class="s1">&#39;</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-21-1474dd26405e&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="s1">&#39;Ca n&#39;</span><span class="n">est</span> <span class="n">pas</span> <span class="n">possible</span><span class="s1">&#39;</span>
           <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="s2">&quot;Il a dit : &quot;</span><span class="n">pas</span> <span class="n">possible</span><span class="s2">&quot; ! &quot;</span>
-<span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-22-87fd0fc9645e&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="s2">&quot;Il a dit : &quot;</span><span class="n">pas</span> <span class="n">possible</span><span class="s2">&quot; ! &quot;</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-22-87fd0fc9645e&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="s2">&quot;Il a dit : &quot;</span><span class="n">pas</span> <span class="n">possible</span><span class="s2">&quot; ! &quot;</span>
                  <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
 </pre></div>
 </div>
 <p>En fait, il suffit de tirer parti du fait qu’une chaîne de caractères peut être définie avec des guillemets simples <strong>ou</strong> doubles.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [23]: </span><span class="s2">&quot;C&#39;est possible&quot;</span>
-<span class="gh">Out[23]: </span><span class="go">&quot;C&#39;est possible&quot;</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="s2">&quot;C&#39;est possible&quot;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="s2">&quot;C&#39;est possible&quot;</span>
 
-<span class="gp">In [24]: </span><span class="s1">&#39;Il a dit : &quot;possible&quot; !&#39;</span>
-<span class="gh">Out[24]: </span><span class="go">&#39;Il a dit : &quot;possible&quot; !&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="s1">&#39;Il a dit : &quot;possible&quot; !&#39;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="s1">&#39;Il a dit : &quot;possible&quot; !&#39;</span>
 </pre></div>
 </div>
 <p>Il existe une manière encore plus expéditive qui consiste à employer des <em>triples</em> guillemets.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="sd">&quot;&quot;&quot;Il a dit que c&#39;était : &quot;possible&quot; &quot;&quot;&quot;</span>
-<span class="gh">Out[25]: </span><span class="go">&#39;Il a dit que c\&#39;était : &quot;possible&quot; &#39;</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="s2">&quot;&quot;&quot;Il a dit que c&#39;était : &quot;possible&quot; &quot;&quot;&quot;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="s1">&#39;Il a dit que c</span><span class="se">\&#39;</span><span class="s1">était : &quot;possible&quot; &#39;</span>
 
-<span class="gp">In [26]: </span><span class="sd">&quot;&quot;&quot;On peut même utiliser cette méthode</span>
-<span class="gp">   ....: </span><span class="sd">pour déclarer des chaînes de caractères</span>
-<span class="gp">   ....: </span><span class="sd">sur plusieurs lignes&quot;&quot;&quot;</span>
-<span class="gp">   ....: </span>
-<span class="gh">Out[26]: </span><span class="go">&#39;On peut même utiliser cette méthode\npour déclarer des chaînes de caractères\nsur plusieurs lignes&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="s2">&quot;&quot;&quot;On peut même utiliser cette méthode</span>
+<span class="s2">   ....: pour déclarer des chaînes de caractères</span>
+<span class="s2">   ....: sur plusieurs lignes&quot;&quot;&quot;</span>
+   <span class="o">....</span><span class="p">:</span> 
+<span class="n">Out</span><span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="s1">&#39;On peut même utiliser cette méthode</span><span class="se">\n</span><span class="s1">pour déclarer des chaînes de caractères</span><span class="se">\n</span><span class="s1">sur plusieurs lignes&#39;</span>
 </pre></div>
 </div>
 </dd>

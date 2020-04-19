@@ -26,6 +26,8 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -35,6 +37,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="2.5. Dictionnaires" href="dictionnaires.html" />
@@ -171,45 +174,45 @@
 <h1><span class="section-number">2.4. </span>Mutabilité<a class="headerlink" href="#mutabilite" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Il s’agit d’un paragraphe un peu subtil : il s’agit d’expliquer la différence fondamentale qu’il existe en Python entre les objets que l’on peut modifier (listes) ou que l’on ne peut modifier (tuples ou chaînes de caractère).</p>
 <p>Considérons ce premier exemple où les variables sont des entiers.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="gp">In [2]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
-<span class="gp">In [3]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>           <span class="c1"># on modifie a</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>           <span class="c1"># on modifie a</span>
 
-<span class="gp">In [4]: </span><span class="n">a</span>
-<span class="gh">Out[4]: </span><span class="go">2</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="mi">2</span>
 
-<span class="gp">In [5]: </span><span class="n">b</span>               <span class="c1"># b n&#39;a pas ete modifiée</span>
-<span class="gh">Out[5]: </span><span class="go">1</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">b</span>               <span class="c1"># b n&#39;a pas ete modifiée</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>Considérons maintenant l’exemple suivant où les variables sont des listes.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="gp">In [7]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
-<span class="gp">In [8]: </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>    <span class="c1"># on modifie la liste a</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>    <span class="c1"># on modifie la liste a</span>
 
-<span class="gp">In [9]: </span><span class="n">a</span>
-<span class="gh">Out[9]: </span><span class="go">[&#39;foo&#39;, 2, 3]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="gp">In [10]: </span><span class="n">b</span>               <span class="c1"># la liste b a aussi ete modifiée !</span>
-<span class="gh">Out[10]: </span><span class="go">[&#39;foo&#39;, 2, 3]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">b</span>               <span class="c1"># la liste b a aussi ete modifiée !</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Pour expliquer la différence entre ces deux exemples, il faut comprendre la représentation des objets Python en mémoire. Pour cela, on va utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">id</span></code>. Pour schématiser, celle-ci renvoie l’emplacement en mémoire d’un objet.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="gp">In [12]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
-<span class="gp">In [13]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent vers le même emplacement en mémoire</span>
-<span class="gh">Out[13]: </span><span class="go">(140723175872160, 140723175872160)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent vers le même emplacement en mémoire</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="p">(</span><span class="mi">140720452916896</span><span class="p">,</span> <span class="mi">140720452916896</span><span class="p">)</span>
 
-<span class="gp">In [14]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 
-<span class="gp">In [15]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># la variable b pointe toujours vers le même emplacement mais plus la variable b</span>
-<span class="gh">Out[15]: </span><span class="go">(140723175872192, 140723175872160)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># la variable b pointe toujours vers le même emplacement mais plus la variable b</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="p">(</span><span class="mi">140720452916928</span><span class="p">,</span> <span class="mi">140720452916896</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>L’instruction <code class="code docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">2</span></code> a fait pointer la variable <code class="code docutils literal notranslate"><span class="pre">a</span></code> vers un autre emplacement en mémoire où est stocké l’entier <code class="code docutils literal notranslate"><span class="pre">2</span></code>.</p>
@@ -218,17 +221,17 @@
 \node[rectangle,draw,pin={[draw,circle]60:b}](b after)[right=5cm of before]{1};
 \node[rectangle,draw,pin={[draw,circle]-60:a}](a after)[below=1cm of b after]{2};
 \draw[-fast cap,shorten &lt;=10pt,shorten &gt;=10pt,&gt;=latex, blue!20!white, line width=10pt](before) -- (b after);" /></p>
-</div><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</div><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="gp">In [17]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
-<span class="gp">In [18]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent vers le même emplacement en mémoire</span>
-<span class="gh">Out[18]: </span><span class="go">(1943408563328, 1943408563328)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent vers le même emplacement en mémoire</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="p">(</span><span class="mi">2325457637760</span><span class="p">,</span> <span class="mi">2325457637760</span><span class="p">)</span>
 
-<span class="gp">In [19]: </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>
 
-<span class="gp">In [20]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent toujours vers le même emplacement</span>
-<span class="gh">Out[20]: </span><span class="go">(1943408563328, 1943408563328)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent toujours vers le même emplacement</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="p">(</span><span class="mi">2325457637760</span><span class="p">,</span> <span class="mi">2325457637760</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Ici, l’instruction <code class="code docutils literal notranslate"><span class="pre">a[0]</span> <span class="pre">=</span> <span class="pre">'foo'</span></code> a modifié l’objet stocké à l’emplacement commun vers lequel pointent les variables <code class="code docutils literal notranslate"><span class="pre">a</span></code> et <code class="code docutils literal notranslate"><span class="pre">b</span></code>. Comme <code class="code docutils literal notranslate"><span class="pre">a</span></code> et <code class="code docutils literal notranslate"><span class="pre">b</span></code> pointent toujours le même emplacement en mémoire, la variable <code class="code docutils literal notranslate"><span class="pre">b</span></code> est maintenant associée à ce nouvel objet.</p>
@@ -257,143 +260,143 @@
 <li><p>l’utilisation du <a class="reference internal" href="glossaire.html#term-constructeur"><span class="xref std std-term">constructeur</span></a> <code class="code docutils literal notranslate"><span class="pre">list</span></code>.</p></li>
 </ul>
 </div></blockquote>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="gp">In [22]: </span><span class="n">liste2</span> <span class="o">=</span> <span class="n">liste1</span><span class="p">[:]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">liste2</span> <span class="o">=</span> <span class="n">liste1</span><span class="p">[:]</span>
 
-<span class="gp">In [23]: </span><span class="n">liste3</span> <span class="o">=</span> <span class="n">liste1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">liste3</span> <span class="o">=</span> <span class="n">liste1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-<span class="gp">In [24]: </span><span class="n">liste4</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">liste1</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">liste4</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">liste1</span><span class="p">)</span>
 
-<span class="gp">In [25]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste3</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste4</span><span class="p">)</span>  <span class="c1"># les objets sont bien distincts</span>
-<span class="gh">Out[25]: </span><span class="go">(1943408618688, 1943408624512, 1943408626048, 1943408613312)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste3</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste4</span><span class="p">)</span>  <span class="c1"># les objets sont bien distincts</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="p">(</span><span class="mi">2325457785408</span><span class="p">,</span> <span class="mi">2325457802176</span><span class="p">,</span> <span class="mi">2325457803840</span><span class="p">,</span> <span class="mi">2325457803008</span><span class="p">)</span>
 
-<span class="gp">In [26]: </span><span class="n">liste1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;toto&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="n">liste1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;toto&#39;</span>
 
-<span class="gp">In [27]: </span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">,</span> <span class="n">liste3</span><span class="p">,</span> <span class="n">liste4</span>                  <span class="c1"># liste1 a ete modifiée mais pas les autres listes</span>
-<span class="gh">Out[27]: </span><span class="go">([&#39;toto&#39;, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3])</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">,</span> <span class="n">liste3</span><span class="p">,</span> <span class="n">liste4</span>                  <span class="c1"># liste1 a ete modifiée mais pas les autres listes</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="p">([</span><span class="s1">&#39;toto&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <p class="rubric">Les opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> et <code class="code docutils literal notranslate"><span class="pre">+=</span></code></p>
 <p>Le lecteur attentif aura remarqué qu’on semblerait pouvoir modifier un objet immutable telle qu’une chaîne de caractères ou une liste à l’aide des opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> ou <code class="code docutils literal notranslate"><span class="pre">+=</span></code>. Mais ces opérateurs ne modifient pas l’objet en question ; ils créent en fait un <strong>nouvel</strong> objet. On peut s’en convaincre à l’aide de la fonction <code class="code docutils literal notranslate"><span class="pre">id</span></code>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="gp">In [29]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[29]: </span><span class="go">1943408613376</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="mi">2325457795712</span>
 
-<span class="gp">In [30]: </span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="gp">In [31]: </span><span class="n">t</span>
-<span class="gh">Out[31]: </span><span class="go">(1, 2, 3, 4, 5)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">t</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="gp">In [32]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[32]: </span><span class="go">1943389189920</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="mi">2325453398880</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [33]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="gp">In [34]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[34]: </span><span class="go">1943386669952</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="mi">2325457920832</span>
 
-<span class="gp">In [35]: </span><span class="n">t</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">t</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="gp">In [36]: </span><span class="n">t</span>
-<span class="gh">Out[36]: </span><span class="go">(1, 2, 3, 4, 5)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">t</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="gp">In [37]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[37]: </span><span class="go">1943389190960</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="mi">2325182308816</span>
 </pre></div>
 </div>
 <p>Pour les objets mutables tels que les listes, les opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> et <code class="code docutils literal notranslate"><span class="pre">+=</span></code> se comportent de manières différentes : l’opérateur <code class="code docutils literal notranslate"><span class="pre">+</span></code> crée un nouvel objet tandis que l’opérateur <code class="code docutils literal notranslate"><span class="pre">+=</span></code> modifie l’objet initial.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [38]: </span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="gp">In [39]: </span><span class="n">liste2</span> <span class="o">=</span> <span class="n">liste1</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">liste2</span> <span class="o">=</span> <span class="n">liste1</span>
 
-<span class="gp">In [40]: </span><span class="n">liste1</span> <span class="o">=</span> <span class="n">liste1</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">liste1</span> <span class="o">=</span> <span class="n">liste1</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
-<span class="gp">In [41]: </span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span>          <span class="c1"># seule liste1 a ete modifiée</span>
-<span class="gh">Out[41]: </span><span class="go">([1, 2, 3, 4, 5], [1, 2, 3])</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span>          <span class="c1"># seule liste1 a ete modifiée</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
-<span class="gp">In [42]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">)</span>  <span class="c1"># c&#39;est normal : liste1 et liste2 pointent vers des objets distincts</span>
-<span class="gh">Out[42]: </span><span class="go">(1943391186752, 1943408749056)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">)</span>  <span class="c1"># c&#39;est normal : liste1 et liste2 pointent vers des objets distincts</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="p">(</span><span class="mi">2325458249088</span><span class="p">,</span> <span class="mi">2325458249600</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [43]: </span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="gp">In [44]: </span><span class="n">liste2</span> <span class="o">=</span> <span class="n">liste1</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="n">liste2</span> <span class="o">=</span> <span class="n">liste1</span>
 
-<span class="gp">In [45]: </span><span class="n">liste1</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="n">liste1</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
-<span class="gp">In [46]: </span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span>          <span class="c1"># liste1 et liste2 ont ete modifiées</span>
-<span class="gh">Out[46]: </span><span class="go">([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span>          <span class="c1"># liste1 et liste2 ont ete modifiées</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 
-<span class="gp">In [47]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">)</span>  <span class="c1"># c&#39;est normal : liste1 et liste2 pointent vers le même objet</span>
-<span class="gh">Out[47]: </span><span class="go">(1943408740864, 1943408740864)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">)</span>  <span class="c1"># c&#39;est normal : liste1 et liste2 pointent vers le même objet</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="p">(</span><span class="mi">2325457732160</span><span class="p">,</span> <span class="mi">2325457732160</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Egalité structurelle ou physique</p>
 <p>On a vu que l’opérateur <code class="code docutils literal notranslate"><span class="pre">==</span></code> permettait de tester si deux objets étaient égaux. Mais de quel type d’égalité parle-t-on alors ? L’opérateur <code class="code docutils literal notranslate"><span class="pre">==</span></code> teste si deux objets ont la même <strong>valeur</strong> sans pour autant qu’il partage le même emplacement en mémoire. On parle alors d'<strong>égalité structurelle</strong>.</p>
 <p>Lorsque « deux » objets sont en fait identiques (c’est-à-dire lorsqu’ils ont le même emplacement en mémoire), on parle d'<strong>égalité physique</strong>. Pour tester l’égalité physique, on peut comparer les emplacements en mémoire à l’aide de la fonction <code class="code docutils literal notranslate"><span class="pre">id</span></code> ou plus simplement utiliser l’opérateur <code class="code docutils literal notranslate"><span class="pre">is</span></code>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [48]: </span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="gp">In [49]: </span><span class="n">liste2</span> <span class="o">=</span> <span class="n">liste1</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="n">liste2</span> <span class="o">=</span> <span class="n">liste1</span>
 
-<span class="gp">In [50]: </span><span class="n">liste3</span> <span class="o">=</span> <span class="n">liste1</span><span class="p">[:]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">50</span><span class="p">]:</span> <span class="n">liste3</span> <span class="o">=</span> <span class="n">liste1</span><span class="p">[:]</span>
 
-<span class="gp">In [51]: </span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">,</span> <span class="n">liste3</span>
-<span class="gh">Out[51]: </span><span class="go">([1, 2, 3], [1, 2, 3], [1, 2, 3])</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">,</span> <span class="n">liste3</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
-<span class="gp">In [52]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste3</span><span class="p">)</span>
-<span class="gh">Out[52]: </span><span class="go">(1943408789888, 1943408789888, 1943408791232)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste3</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="p">(</span><span class="mi">2325458332800</span><span class="p">,</span> <span class="mi">2325458332800</span><span class="p">,</span> <span class="mi">2325458342208</span><span class="p">)</span>
 
-<span class="gp">In [53]: </span><span class="n">liste2</span> <span class="o">==</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste3</span> <span class="o">==</span> <span class="n">liste1</span>
-<span class="gh">Out[53]: </span><span class="go">(True, True)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="n">liste2</span> <span class="o">==</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste3</span> <span class="o">==</span> <span class="n">liste1</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
-<span class="gp">In [54]: </span><span class="n">liste2</span> <span class="ow">is</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste3</span> <span class="ow">is</span> <span class="n">liste1</span>
-<span class="gh">Out[54]: </span><span class="go">(True, False)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="n">liste2</span> <span class="ow">is</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste3</span> <span class="ow">is</span> <span class="n">liste1</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Un exemple peut-être un peu plus surprenant.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [55]: </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="gh">Out[55]: </span><span class="go">True</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">55</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">55</span><span class="p">]:</span> <span class="kc">True</span>
 
-<span class="gp">In [56]: </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="ow">is</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="gh">Out[56]: </span><span class="go">False</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">56</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="ow">is</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">56</span><span class="p">]:</span> <span class="kc">False</span>
 </pre></div>
 </div>
 <p>Python a en fait stocké deux versions de la liste <code class="code docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> dans deux emplacements en mémoire distincts.</p>
 <hr class="docutils" />
 <p>On termine par un cas plus vicieux que les deux exemples initiaux et qui peut faire passer des nuits blanches au programmeur débutant en Python.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [57]: </span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>
 
-<span class="gp">In [58]: </span><span class="n">a</span>
-<span class="gh">Out[58]: </span><span class="go">[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
 
-<span class="gp">In [59]: </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># on pense n&#39;avoir modifié qu&#39;un élément de la liste de listes a</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># on pense n&#39;avoir modifié qu&#39;un élément de la liste de listes a</span>
 
-<span class="gp">In [60]: </span><span class="n">a</span>               <span class="c1"># en fait non...</span>
-<span class="gh">Out[60]: </span><span class="go">[[1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="n">a</span>               <span class="c1"># en fait non...</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
 <dl class="footnote brackets">
 <dt class="label" id="immutable"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Ce n’est pas rigoureusement exact. Un objet immutable tel qu’un tuple peut contenir des objets mutables comme des listes. Néanmoins, chaque objet du tuple conserve le même emplacement en mémoire même s’il a été modifié.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [61]: </span><span class="n">a</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;toto&#39;</span><span class="p">,</span> <span class="s1">&#39;tata&#39;</span><span class="p">)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;toto&#39;</span><span class="p">,</span> <span class="s1">&#39;tata&#39;</span><span class="p">)</span>
 
-<span class="gp">In [62]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
-<span class="gp">In [63]: </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
 
-<span class="gp">In [64]: </span><span class="n">a</span>
-<span class="gh">Out[64]: </span><span class="go">([1, 1000, 3], &#39;toto&#39;, &#39;tata&#39;)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">64</span><span class="p">]:</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">64</span><span class="p">]:</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;toto&#39;</span><span class="p">,</span> <span class="s1">&#39;tata&#39;</span><span class="p">)</span>
 
-<span class="gp">In [65]: </span><span class="n">b</span>                   <span class="c1"># b a egalement ete modifié</span>
-<span class="gh">Out[65]: </span><span class="go">([1, 1000, 3], &#39;toto&#39;, &#39;tata&#39;)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">65</span><span class="p">]:</span> <span class="n">b</span>                   <span class="c1"># b a egalement ete modifié</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">65</span><span class="p">]:</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;toto&#39;</span><span class="p">,</span> <span class="s1">&#39;tata&#39;</span><span class="p">)</span>
 
-<span class="gp">In [66]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># le premier élément du tuple est toujours le même</span>
-<span class="gh">Out[66]: </span><span class="go">(1943408736320, 1943408736320)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># le premier élément du tuple est toujours le même</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="p">(</span><span class="mi">2325457828864</span><span class="p">,</span> <span class="mi">2325457828864</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd>

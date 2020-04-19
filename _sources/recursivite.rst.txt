@@ -4,7 +4,7 @@ Récursivité
 
 On appelle fonction **récursive** une fonction qui s'appelle elle-même. Ceci est très lié à la notion de **récurrence** en mathématiques.
 
-Par exemple, la factorielle en mathématiques est définie par la condition intiale :math:`0!=1` et par la relation de récurrence :math:`n!=n\cdot(n-1)!` lorsque :math:`n\geq1`.
+Par exemple, la factorielle en mathématiques est définie par la condition intiale :math:`0! = 1` et par la relation de récurrence :math:`n! = n\cdot(n-1)!` lorsque :math:`n\geq1`.
 
 .. ipython:: python
     :okexcept:
@@ -34,4 +34,5 @@ A noter que le case de base doit être impérativement défini sinon l'algorithm
 
 .. todo:: baratin sur la tour de Hanoï
 
-.. image:: _images/hanoi.gif
+.. jupyter-execute:: _scripts/hanoi.py
+    :hide-code:

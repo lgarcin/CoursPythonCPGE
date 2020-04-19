@@ -26,6 +26,8 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -35,6 +37,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Glossaire" href="glossaire.html" />
@@ -167,13 +170,13 @@
 <div class="section" id="algorithme-d-euclide-etendu">
 <h2>Algorithme d’Euclide étendu<a class="headerlink" href="#algorithme-d-euclide-etendu" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On rappelle la définition de l’algorithme en Python.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">bezout</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-<span class="gp">   ...: </span>    <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">   ...: </span>        <span class="n">q</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
-<span class="gp">   ...: </span>        <span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">s</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">u</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">v</span>
-<span class="gp">   ...: </span>    <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">t</span><span class="p">)</span>     <span class="c1"># Le pgcd doit être positif</span>
-<span class="gp">   ...: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">bezout</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="o">...</span><span class="p">:</span>         <span class="n">q</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
+   <span class="o">...</span><span class="p">:</span>         <span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">s</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">u</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">v</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="n">t</span><span class="p">)</span>     <span class="c1"># Le pgcd doit être positif</span>
+   <span class="o">...</span><span class="p">:</span> 
 </pre></div>
 </div>
 <p>Tout d’abord, l’algorithme se termine car <code class="code docutils literal notranslate"><span class="pre">b</span></code> est un entier naturel qui décroît strictement à chaque itération de la boucle <code class="code docutils literal notranslate"><span class="pre">while</span></code>.</p>
@@ -183,22 +186,22 @@
 <div class="section" id="recherche-par-dichotomie">
 <h2>Recherche par dichotomie<a class="headerlink" href="#recherche-par-dichotomie" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On rappelle l’algorithme en Python.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="k">def</span> <span class="nf">appartient_dicho</span><span class="p">(</span><span class="n">elt</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-<span class="gp">   ...: </span>    <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="gp">   ...: </span>    <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="gp">   ...: </span>    <span class="k">while</span> <span class="n">g</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">:</span>
-<span class="gp">   ...: </span>        <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-<span class="gp">   ...: </span>        <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">==</span> <span class="n">elt</span><span class="p">:</span>
-<span class="gp">   ...: </span>            <span class="k">return</span> <span class="kc">True</span>
-<span class="gp">   ...: </span>        <span class="k">if</span> <span class="n">elt</span> <span class="o">&lt;</span> <span class="n">lst</span><span class="p">[</span><span class="n">m</span><span class="p">]:</span>
-<span class="gp">   ...: </span>            <span class="n">d</span> <span class="o">=</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="gp">   ...: </span>        <span class="k">else</span><span class="p">:</span>
-<span class="gp">   ...: </span>            <span class="n">g</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="gp">   ...: </span>    <span class="k">return</span> <span class="kc">False</span>
-<span class="gp">   ...: </span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">appartient_dicho</span><span class="p">(</span><span class="n">elt</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="k">while</span> <span class="n">g</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">:</span>
+   <span class="o">...</span><span class="p">:</span>         <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+   <span class="o">...</span><span class="p">:</span>         <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">==</span> <span class="n">elt</span><span class="p">:</span>
+   <span class="o">...</span><span class="p">:</span>             <span class="k">return</span> <span class="kc">True</span>
+   <span class="o">...</span><span class="p">:</span>         <span class="k">if</span> <span class="n">elt</span> <span class="o">&lt;</span> <span class="n">lst</span><span class="p">[</span><span class="n">m</span><span class="p">]:</span>
+   <span class="o">...</span><span class="p">:</span>             <span class="n">d</span> <span class="o">=</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span>
+   <span class="o">...</span><span class="p">:</span>         <span class="k">else</span><span class="p">:</span>
+   <span class="o">...</span><span class="p">:</span>             <span class="n">g</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="k">return</span> <span class="kc">False</span>
+   <span class="o">...</span><span class="p">:</span> 
 </pre></div>
 </div>
-<p>Notons <span class="math notranslate nohighlight">\(n\)</span> la taille de la liste à trier.</p>
+<p>Notons <span class="math notranslate nohighlight">\(n\)</span> la taille de la liste où on recherche l’élément.</p>
 </div>
 </div>
 
