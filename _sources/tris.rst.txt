@@ -50,10 +50,8 @@ Le **tri rapide** est une application du principe *diviser pour régner*. Il con
 * à séparer le tableau à trier en deux sous-tableaux contenant respectivement les éléments inférieurs et supérieurs au pivot ;
 * et à répéter le processus sur les deux sous-tableaux.
 
-Dans l'image suivante, le tableau initial est en vert, les pivots choisis sont indiqués en orange et les deux sous-tableaux respectivement en bleu et en rouge.
-
-.. image:: _images/tri_rapide.png
-
+.. jupyter-execute:: _scripts/tri_rapide.py
+    :hide-code:
 
 Comme tout algorithme du type *diviser pour régner*, le tri rapide se prête bien à une implémentation récursive [#tri_rapide_pythonesque]_.
 
