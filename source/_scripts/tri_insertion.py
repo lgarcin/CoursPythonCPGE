@@ -1,5 +1,5 @@
 from matplotlib import rc
-from matplotlib.pyplot import gca, figure, axis, close, Rectangle, grid
+from matplotlib.pyplot import gca, figure, axis, close, Rectangle
 from matplotlib.animation import FuncAnimation
 from numpy.random import permutation
 from numpy import array
@@ -7,53 +7,66 @@ from numpy import array
 rc('animation', html='jshtml')
 
 
-def move_horizontal(j, i):
-    for _ in range(width):
-        positions[i] -= array([1, 0])
-        positions[j] += array([1, 0])
-        yield i
-
-
 def move_up(i):
     for _ in range(width):
-        positions[i] += array([0, 1])
-        yield i
+        rectangles[i].set_xy(array(rectangles[i].get_xy())+array([0, 1]))
+        annotations[i].set_position(
+            array(annotations[i].get_position())+array([0, 1]))
+        yield
 
 
 def move_down(i):
     for _ in range(width):
-        positions[i] -= array([0, 1])
-        yield i
+        rectangles[i].set_xy(array(rectangles[i].get_xy())-array([0, 1]))
+        annotations[i].set_position(
+            array(annotations[i].get_position())-array([0, 1]))
+        yield
 
 
-def tri():
-    global positions, tab
-    yield -1
-    for i in range(1, len(tab)):
-        p = positions[:]
-        t = tab.copy()
-        val = t[i]
-        j = i
-        yield from move_up(i)
-        while j > 0 and t[j - 1] > val:
-            j -= 1
-            yield from move_horizontal(j, i)
-            t[j+1] = t[j]
-            p[j+1] = p[j]
-        yield from move_down(i)
-        t[j] = val
-        p[j] = positions[i]
-        positions = p
-        tab = t
-
-
-def trace(i):
-    for j in range(N):
-        rectangles[j].set_color('b' if j != i else 'r')
-        rectangles[j].set_xy(positions[j])
-        annotations[j].set_text(tab[j])
+def move_horizontal(i, j):
+    for _ in range(width):
+        rectangles[i].set_xy(array(rectangles[i].get_xy())+array([1, 0]))
+        annotations[i].set_position(
+            array(annotations[i].get_position())+array([1, 0]))
+        rectangles[j].set_xy(array(rectangles[j].get_xy())-array([1, 0]))
         annotations[j].set_position(
-            positions[j]+array([(width-1)*.5, (width-1)*.5]))
+            array(annotations[j].get_position())-array([1, 0]))
+        yield
+
+
+def change_color(i):
+    rectangles[i].set_color('r')
+    yield
+
+
+def unchange_color(i):
+    rectangles[i].set_color('b')
+    yield
+
+
+def tri(n):
+    yield
+    if n > 1:
+        yield from tri(n-1)
+        yield from change_color(n-1)
+        yield from move_up(n-1)
+        val = tab[n-1]
+        j = n-1
+        while j > 0 and tab[indices[j-1]] > val:
+            j -= 1
+            yield from move_horizontal(indices[j], n-1)
+            indices[j+1] = indices[j]
+        yield from move_down(n-1)
+        yield from unchange_color(n-1)
+        indices[j] = n-1
+
+
+def gen():
+    yield from tri(N)
+
+
+def animate(i):
+    pass
 
 
 N = 10
@@ -65,14 +78,14 @@ axis('off')
 axis('equal')
 axis([0, len(tab) * width, 0, width])
 
-positions = [array([i*width, 0]) for i in range(N)]
-rectangles = [gca().add_patch(Rectangle(p, width-1, width-1, fc='b'))
-              for p in positions]
-annotations = [gca().annotate(tab[i], positions[i]+array([(width-1)*.5, (width-1)*.5]), color='w',
+rectangles = [gca().add_patch(Rectangle(array([i*width, 0]), width-1, width-1, fc='b'))
+              for i in range(N)]
+annotations = [gca().annotate(tab[i], array([i*width, 0])+array([(width-1)*.5, (width-1)*.5]), color='w',
                               weight='bold', fontsize=20,
                               ha='center',
                               va='center') for i in range(N)]
+indices = [n for n in range(N)]
 
-ani = FuncAnimation(fig, trace, frames=tri, save_count=N*(N-1)/2*width*3)
+ani = FuncAnimation(fig, animate, frames=gen, save_count=N*(N-1)/2*width*3)
 close()
 ani
