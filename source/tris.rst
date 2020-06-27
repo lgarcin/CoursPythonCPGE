@@ -142,6 +142,9 @@ Le principe de fusion de deux listes triées en une liste triée est très simpl
 * on répète le processus jusqu'à ce qu'une des deux listes soient vides ;
 * on ajoute l'intégralité de l'autre liste à la fin de la liste à renvoyer.
 
+.. jupyter-execute:: _scripts/tri_fusion.py
+    :hide-code:
+
 .. ipython:: python
 
     def fusion(t1, t2):
@@ -164,7 +167,7 @@ Le principe de fusion de deux listes triées en une liste triée est très simpl
     tab
     tri_fusion(tab)
 
-On peut également donner une implémentation récursive de l'lagorithme de fusion.
+On peut également donner une implémentation récursive de l'algorithme de fusion.
 
 .. ipython:: python
 
