@@ -1,15 +1,20 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.1. Preuve d’un algorithme &mdash; Documentation CoursPythonCPGE </title>
+  <title>6.1. Preuve d’un algorithme &mdash; Documentation CoursPythonCPGE </title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
 
   
   
@@ -17,7 +22,9 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -25,23 +32,19 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script src="_static/thebelab-helper.js"></script>
         <script src="_static/translations.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="5.2. Complexité" href="complexite.html" />
-    <link rel="prev" title="5. Un peu de théorie" href="theorie.html" /> 
+    <link rel="next" title="6.2. Complexité" href="complexite.html" />
+    <link rel="prev" title="6. Un peu de théorie" href="theorie.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +58,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CoursPythonCPGE
           
 
           
@@ -78,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -86,17 +90,18 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.1. Preuve d’un algorithme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="complexite.html">5.2. Complexité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preliminaires.html">1. Préliminaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">4. Entrée/sortie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">5. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="theorie.html">6. Un peu de théorie</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.1. Preuve d’un algorithme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complexite.html">6.2. Complexité</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">7. Récursivité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">8. Algorithmes classiques</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
@@ -106,6 +111,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -144,11 +150,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="theorie.html"><span class="section-number">5. </span>Un peu de théorie</a> &raquo;</li>
+          <li><a href="theorie.html"><span class="section-number">6. </span>Un peu de théorie</a> &raquo;</li>
         
-      <li><span class="section-number">5.1. </span>Preuve d’un algorithme</li>
+      <li><span class="section-number">6.1. </span>Preuve d’un algorithme</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,10 +174,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="preuve-d-un-algorithme">
-<h1><span class="section-number">5.1. </span>Preuve d’un algorithme<a class="headerlink" href="#preuve-d-un-algorithme" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">6.1. </span>Preuve d’un algorithme<a class="headerlink" href="#preuve-d-un-algorithme" title="Lien permanent vers ce titre">¶</a></h1>
 <p><em>Prouver</em> un algorithme signifie démontrer qu’un algorithme effectue bien la tâche qui lui est demandée.</p>
 <div class="section" id="terminaison">
-<h2><span class="section-number">5.1.1. </span>Terminaison<a class="headerlink" href="#terminaison" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">6.1.1. </span>Terminaison<a class="headerlink" href="#terminaison" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il s’agit de montrer que l’algorithme se termine bien. La question se pose notamment lorsque l’algorithme comporte une boucle conditionnelle <code class="code docutils literal notranslate"><span class="pre">while</span></code>. La plupart du temps, cela revient à montrer qu’une quantité entière positive décroît strictement à chaque itération de la boucle (une suite d’entiers naturels strictement décroissante est nécessairement <em>finie</em>). Cette quantité est généralement appelé le <strong>variant</strong>.</p>
 <p>On peut par exemple étudier l’algorithme d’Euclide pour le calcul du pgcd.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -183,8 +189,8 @@
 <p>On suppose que l’argument <code class="code docutils literal notranslate"><span class="pre">b</span></code> est un entier naturel. En notant <span class="math notranslate nohighlight">\(b_k\)</span> la valeur de <code class="code docutils literal notranslate"><span class="pre">b</span></code> à la fin de la <span class="math notranslate nohighlight">\(k^\text{ème}\)</span> itération (<span class="math notranslate nohighlight">\(b_0\)</span> désigne la valeur de <code class="code docutils literal notranslate"><span class="pre">b</span></code> avant d’entrer dans la boucle), on a <span class="math notranslate nohighlight">\(0\leq b_{k+1}&lt;b_k\)</span> si <span class="math notranslate nohighlight">\(b_k&gt;0\)</span>. La suite <span class="math notranslate nohighlight">\((b_k)\)</span> est donc une suite strictement décroissante d’entiers naturels : elle est finie et la boucle se termine.</p>
 </div>
 <div class="section" id="correction">
-<h2><span class="section-number">5.1.2. </span>Correction<a class="headerlink" href="#correction" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Il s’agit de savoir si l’algorithme fournit bien la réponse attendue. Si l’algorithme comporte une boucle, on recherche généralement une quantité ou une propriété qui ne change pas au cours des itérations : on parle d'<strong>invariant de boucle</strong>.</p>
+<h2><span class="section-number">6.1.2. </span>Correction<a class="headerlink" href="#correction" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il s’agit de savoir si l’algorithme fournit bien la réponse attendue. Si l’algorithme comporte une boucle, on recherche généralement une quantité ou une propriété qui ne change pas au cours des itérations : on parle d\”<strong>invariant de boucle</strong>.</p>
 <p>A nouveau, on peut étudier l’algorithme d’Euclide.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
   <span class="k">while</span> <span class="n">b</span><span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
@@ -204,10 +210,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="complexite.html" class="btn btn-neutral float-right" title="5.2. Complexité" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="complexite.html" class="btn btn-neutral float-right" title="6.2. Complexité" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="theorie.html" class="btn btn-neutral float-left" title="5. Un peu de théorie" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="theorie.html" class="btn btn-neutral float-left" title="6. Un peu de théorie" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -216,11 +222,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2018, Laurent Garcin
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -231,7 +245,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

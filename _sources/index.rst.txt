@@ -11,6 +11,7 @@ Python pour les CPGE scientifiques
     :numbered:
     :titlesonly:
 
+    preliminaires
     types_operateurs_variables
     types_composes
     io
@@ -30,8 +31,6 @@ Index et tables
 * :ref:`modindex`
 * :ref:`search`
 
-.. todo:: Installation Python + comment taper les exemples du bouquin
-.. todo:: directive exercice https://stackoverflow.com/questions/2454577/sphinx-restructuredtext-show-hide-code-snippets
 .. todo:: blabla sur l'interpréteur qui affiche et pas l'éditeur
 .. todo:: mettre factorielle quelque part (comme mauvais exemple de récursivité)
 .. todo:: opérateur * (unpacking)

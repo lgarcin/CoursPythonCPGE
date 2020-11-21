@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,21 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+    
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -25,20 +33,16 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script src="_static/thebelab-helper.js"></script>
         <script src="_static/translations.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script src="_static/searchtools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
+    <script type="text/javascript" src="_static/searchtools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="#" /> 
 </head>
@@ -54,7 +58,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CoursPythonCPGE
           
 
           
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,13 +90,14 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preliminaires.html">1. Préliminaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">4. Entrée/sortie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">5. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">6. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">7. Récursivité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">8. Algorithmes classiques</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
@@ -101,6 +107,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -139,7 +146,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Recherche</li>
     
@@ -161,8 +168,7 @@
   <noscript>
   <div id="fallback" class="admonition warning">
     <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
+      Please activate JavaScript to enable the search functionality.
     </p>
   </div>
   </noscript>
@@ -182,11 +188,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2018, Laurent Garcin
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -197,7 +211,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

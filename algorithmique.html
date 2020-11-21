@@ -1,15 +1,20 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. Rudiments d’algorithmique &mdash; Documentation CoursPythonCPGE </title>
+  <title>5. Rudiments d’algorithmique &mdash; Documentation CoursPythonCPGE </title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
 
   
   
@@ -17,7 +22,9 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -25,23 +32,19 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script src="_static/thebelab-helper.js"></script>
         <script src="_static/translations.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="4.1. Indentation" href="indentation.html" />
-    <link rel="prev" title="3. Entrée/sortie" href="io.html" /> 
+    <link rel="next" title="5.1. Indentation" href="indentation.html" />
+    <link rel="prev" title="4. Entrée/sortie" href="io.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +58,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CoursPythonCPGE
           
 
           
@@ -78,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -86,19 +90,20 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Rudiments d’algorithmique</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="indentation.html">4.1. Indentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html">4.2. Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boucles.html">4.3. Boucles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonctions.html">4.4. Fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preliminaires.html">1. Préliminaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">4. Entrée/sortie</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Rudiments d’algorithmique</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="indentation.html">5.1. Indentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">5.2. Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boucles.html">5.3. Boucles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html">5.4. Fonctions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">6. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">7. Récursivité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">8. Algorithmes classiques</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
@@ -108,6 +113,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -146,9 +152,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">4. </span>Rudiments d’algorithmique</li>
+      <li><span class="section-number">5. </span>Rudiments d’algorithmique</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,7 +174,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="rudiments-d-algorithmique">
-<h1><span class="section-number">4. </span>Rudiments d’algorithmique<a class="headerlink" href="#rudiments-d-algorithmique" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">5. </span>Rudiments d’algorithmique<a class="headerlink" href="#rudiments-d-algorithmique" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Jusqu’à maintenant, les exemples donnés dans le langage Python consistaient en une ou quelques instructions. Bien évidemment, si on veut créer des programmes plus élaborés, on ne peut pas se contenter d’une simple succession d’instructions. Par exemple, pour une tâche aussi simple que déterminer le plus grand élément d’une liste de nombres de longueur arbitraire, il faut pouvoir parcourir tous les éléments de la liste et choisir le maximum après avoir comparé les éléments les uns aux autres. Pour cela, il faut introduire ce qu’on appelle des <em>structures de contrôle</em>. Il en existe de plusieurs sortes :</p>
 <blockquote>
 <div><ul class="simple">
@@ -179,29 +185,29 @@
 </div></blockquote>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="indentation.html">4.1. Indentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tests.html">4.2. Tests</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#branchements-conditionnels">4.2.1. Branchements conditionnels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#expression-conditionnelle">4.2.2. Expression conditionnelle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indentation.html">5.1. Indentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">5.2. Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#branchements-conditionnels">5.2.1. Branchements conditionnels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#expression-conditionnelle">5.2.2. Expression conditionnelle</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="boucles.html">4.3. Boucles</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="boucles.html#boucles-inconditionnelles">4.3.1. Boucles inconditionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boucles.html#listes-en-comprehension">4.3.2. Listes en compréhension</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boucles.html#boucles-conditionnelles">4.3.3. Boucles conditionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boucles.html#les-instructions-break-et-continue">4.3.4. Les instructions <code class="code docutils literal notranslate"><span class="pre">break</span></code> et <code class="code docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="boucles.html">5.3. Boucles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="boucles.html#boucles-inconditionnelles">5.3.1. Boucles inconditionnelles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boucles.html#listes-en-comprehension">5.3.2. Listes en compréhension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boucles.html#boucles-conditionnelles">5.3.3. Boucles conditionnelles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boucles.html#les-instructions-break-et-continue">5.3.4. Les instructions <code class="code docutils literal notranslate"><span class="pre">break</span></code> et <code class="code docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fonctions.html">4.4. Fonctions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fonctions.html#definir-une-fonction">4.4.1. Définir une fonction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonctions.html#l-instruction-return">4.4.2. L’instruction <code class="code docutils literal notranslate"><span class="pre">return</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonctions.html#parametres-et-arguments">4.4.3. Paramètres et arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonctions.html#portee-des-variables">4.4.4. Portée des variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonctions.html#fonctions-et-mutabilite">4.4.5. Fonctions et mutabilité</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonctions.html#une-fonction-est-un-objet">4.4.6. Une fonction est un objet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonctions.html#documentation-d-une-fonction">4.4.7. Documentation d’une fonction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonctions.html#effets-de-bord">4.4.8. Effets de bord</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonctions.html#fonctions-anonymes">4.4.9. Fonctions anonymes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonctions.html">5.4. Fonctions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html#definir-une-fonction">5.4.1. Définir une fonction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html#l-instruction-return">5.4.2. L’instruction <code class="code docutils literal notranslate"><span class="pre">return</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html#parametres-et-arguments">5.4.3. Paramètres et arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html#portee-des-variables">5.4.4. Portée des variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html#fonctions-et-mutabilite">5.4.5. Fonctions et mutabilité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html#une-fonction-est-un-objet">5.4.6. Une fonction est un objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html#documentation-d-une-fonction">5.4.7. Documentation d’une fonction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html#effets-de-bord">5.4.8. Effets de bord</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html#fonctions-anonymes">5.4.9. Fonctions anonymes</a></li>
 </ul>
 </li>
 </ul>
@@ -220,10 +226,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="indentation.html" class="btn btn-neutral float-right" title="4.1. Indentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="indentation.html" class="btn btn-neutral float-right" title="5.1. Indentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="io.html" class="btn btn-neutral float-left" title="3. Entrée/sortie" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="io.html" class="btn btn-neutral float-left" title="4. Entrée/sortie" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -232,11 +238,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2018, Laurent Garcin
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -247,7 +261,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

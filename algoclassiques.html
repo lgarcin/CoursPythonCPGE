@@ -1,15 +1,20 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7. Algorithmes classiques &mdash; Documentation CoursPythonCPGE </title>
+  <title>8. Algorithmes classiques &mdash; Documentation CoursPythonCPGE </title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
 
   
   
@@ -17,7 +22,9 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -25,23 +32,19 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script src="_static/thebelab-helper.js"></script>
         <script src="_static/translations.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="7.1. Algorithmes de recherche" href="recherche.html" />
-    <link rel="prev" title="6. Récursivité" href="recursivite.html" /> 
+    <link rel="next" title="8.1. Algorithmes de recherche" href="recherche.html" />
+    <link rel="prev" title="7. Récursivité" href="recursivite.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +58,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CoursPythonCPGE
           
 
           
@@ -78,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -86,19 +90,20 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Algorithmes classiques</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="recherche.html">7.1. Algorithmes de recherche</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html">7.2. Analyse numérique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arithmetique.html">7.3. Arithmétique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probabilites.html">7.4. Probabilités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrices.html">7.5. Matrices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tris.html">7.6. Tris</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preliminaires.html">1. Préliminaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">4. Entrée/sortie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">5. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">6. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">7. Récursivité</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Algorithmes classiques</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recherche.html">8.1. Algorithmes de recherche</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html">8.2. Analyse numérique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetique.html">8.3. Arithmétique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="probabilites.html">8.4. Probabilités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html">8.5. Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tris.html">8.6. Tris</a></li>
 </ul>
 </li>
 </ul>
@@ -110,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -148,9 +154,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">7. </span>Algorithmes classiques</li>
+      <li><span class="section-number">8. </span>Algorithmes classiques</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,56 +176,56 @@
            <div itemprop="articleBody">
             
   <div class="section" id="algorithmes-classiques">
-<h1><span class="section-number">7. </span>Algorithmes classiques<a class="headerlink" href="#algorithmes-classiques" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">8. </span>Algorithmes classiques<a class="headerlink" href="#algorithmes-classiques" title="Lien permanent vers ce titre">¶</a></h1>
 <p>On détaille dans ce chapitre quelques algorithmes classiques dont certains figurent officiellement au programme de CPGE.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="recherche.html">7.1. Algorithmes de recherche</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="recherche.html#recherche-d-un-element-dans-une-liste">7.1.1. Recherche d’un élément dans une liste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="recherche.html#recherche-par-dichotomie-dans-une-liste-triee">7.1.2. Recherche par dichotomie dans une liste triée</a></li>
-<li class="toctree-l2"><a class="reference internal" href="recherche.html#recherche-du-maximum-ou-du-minimim-d-une-liste">7.1.3. Recherche du maximum ou du minimim d’une liste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="recherche.html#recherche-d-une-sous-chaine-dans-une-chaine-de-caracteres">7.1.4. Recherche d’une sous-chaîne dans une chaîne de caractères</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recherche.html">8.1. Algorithmes de recherche</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recherche.html#recherche-d-un-element-dans-une-liste">8.1.1. Recherche d’un élément dans une liste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recherche.html#recherche-par-dichotomie-dans-une-liste-triee">8.1.2. Recherche par dichotomie dans une liste triée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recherche.html#recherche-du-maximum-ou-du-minimim-d-une-liste">8.1.3. Recherche du maximum ou du minimim d’une liste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recherche.html#recherche-d-une-sous-chaine-dans-une-chaine-de-caracteres">8.1.4. Recherche d’une sous-chaîne dans une chaîne de caractères</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="analysenumerique.html">7.2. Analyse numérique</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html#resolution-d-equations-par-dichotomie">7.2.1. Résolution d’équations par dichotomie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html#calcul-d-integrales">7.2.2. Calcul d’intégrales</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="analysenumerique.html#methode-des-rectangles">7.2.2.1. Méthode des rectangles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="analysenumerique.html#methode-des-trapezes">7.2.2.2. Méthode des trapèzes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysenumerique.html">8.2. Analyse numérique</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html#resolution-d-equations-par-dichotomie">8.2.1. Résolution d’équations par dichotomie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html#calcul-d-integrales">8.2.2. Calcul d’intégrales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analysenumerique.html#methode-des-rectangles">8.2.2.1. Méthode des rectangles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysenumerique.html#methode-des-trapezes">8.2.2.2. Méthode des trapèzes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html#resolution-d-equations-differentielles">7.2.3. Résolution d’équations différentielles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html#resolution-d-equations-differentielles">8.2.3. Résolution d’équations différentielles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="arithmetique.html">7.3. Arithmétique</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arithmetique.html#decomposition-d-un-entier-dans-une-base">7.3.1. Décomposition d’un entier dans une base</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arithmetique.html#calcul-de-pgcd">7.3.2. Calcul de PGCD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arithmetique.html#exponentiation-rapide">7.3.3. Exponentiation rapide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arithmetique.html#evaluation-de-polynomes">7.3.4. Evaluation de polynômes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arithmetique.html">8.3. Arithmétique</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arithmetique.html#decomposition-d-un-entier-dans-une-base">8.3.1. Décomposition d’un entier dans une base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetique.html#calcul-de-pgcd">8.3.2. Calcul de PGCD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetique.html#exponentiation-rapide">8.3.3. Exponentiation rapide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetique.html#evaluation-de-polynomes">8.3.4. Evaluation de polynômes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="probabilites.html">7.4. Probabilités</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="probabilites.html#statistiques">7.4.1. Statistiques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probabilites.html#simuler-une-variable-aleatoire">7.4.2. Simuler une variable aléatoire</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="probabilites.html#variables-aleatoires-finies">7.4.2.1. Variables aléatoires finies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="probabilites.html#variables-aleatoires-denombrables">7.4.2.2. Variables aléatoires dénombrables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probabilites.html">8.4. Probabilités</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="probabilites.html#statistiques">8.4.1. Statistiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="probabilites.html#simuler-une-variable-aleatoire">8.4.2. Simuler une variable aléatoire</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="probabilites.html#variables-aleatoires-finies">8.4.2.1. Variables aléatoires finies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="probabilites.html#variables-aleatoires-denombrables">8.4.2.2. Variables aléatoires dénombrables</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="matrices.html">7.5. Matrices</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="matrices.html#produit-matriciel">7.5.1. Produit matriciel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrices.html#operations-elementaires">7.5.2. Opérations élémentaires</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrices.html#algorithme-du-pivot-de-gauss">7.5.3. Algorithme du pivot de Gauss</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrices.html#resolution-de-systemes-lineaires">7.5.4. Résolution de systèmes linéaires</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrices.html#inversion-d-une-matrice">7.5.5. Inversion d’une matrice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrices.html#calcul-du-determinant">7.5.6. Calcul du déterminant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrices.html">8.5. Matrices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html#produit-matriciel">8.5.1. Produit matriciel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html#operations-elementaires">8.5.2. Opérations élémentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html#algorithme-du-pivot-de-gauss">8.5.3. Algorithme du pivot de Gauss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html#resolution-de-systemes-lineaires">8.5.4. Résolution de systèmes linéaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html#inversion-d-une-matrice">8.5.5. Inversion d’une matrice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html#calcul-du-determinant">8.5.6. Calcul du déterminant</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tris.html">7.6. Tris</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tris.html#tri-par-insertion">7.6.1. Tri par insertion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tris.html#tri-rapide">7.6.2. Tri rapide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tris.html#tri-par-fusion">7.6.3. Tri par fusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tris.html">8.6. Tris</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tris.html#tri-par-insertion">8.6.1. Tri par insertion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tris.html#tri-rapide">8.6.2. Tri rapide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tris.html#tri-par-fusion">8.6.3. Tri par fusion</a></li>
 </ul>
 </li>
 </ul>
@@ -234,10 +240,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="recherche.html" class="btn btn-neutral float-right" title="7.1. Algorithmes de recherche" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="recherche.html" class="btn btn-neutral float-right" title="8.1. Algorithmes de recherche" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="recursivite.html" class="btn btn-neutral float-left" title="6. Récursivité" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="recursivite.html" class="btn btn-neutral float-left" title="7. Récursivité" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -246,11 +252,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2018, Laurent Garcin
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -261,7 +275,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

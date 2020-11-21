@@ -23,15 +23,6 @@ Par exemple lors de l'appel de :code:`factorielle(3)`
 
 A noter que le case de base doit être impérativement défini sinon l'algorithme ne termine pas. En Python, il existe un garde-fou consistant à imposer un niveau maximum de récursion. Si jamais celui-ci est dépassé, une exception est levée.
 
-.. ipython:: python
-    :okexcept:
-
-    def factorielle(n):
-        return n*factorielle(n-1)
-    
-    factorielle(3)
-
-
 .. todo:: baratin sur la tour de Hanoï
 
 .. jupyter-execute:: _scripts/hanoi.py

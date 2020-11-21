@@ -1,15 +1,20 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.2. Analyse numérique &mdash; Documentation CoursPythonCPGE </title>
+  <title>8.2. Analyse numérique &mdash; Documentation CoursPythonCPGE </title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
 
   
   
@@ -17,7 +22,9 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -25,23 +32,19 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script src="_static/thebelab-helper.js"></script>
         <script src="_static/translations.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="7.3. Arithmétique" href="arithmetique.html" />
-    <link rel="prev" title="7.1. Algorithmes de recherche" href="recherche.html" /> 
+    <link rel="next" title="8.3. Arithmétique" href="arithmetique.html" />
+    <link rel="prev" title="8.1. Algorithmes de recherche" href="recherche.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +58,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CoursPythonCPGE
           
 
           
@@ -78,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -86,19 +90,20 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="io.html">3. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="recherche.html">7.1. Algorithmes de recherche</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.2. Analyse numérique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arithmetique.html">7.3. Arithmétique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probabilites.html">7.4. Probabilités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrices.html">7.5. Matrices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tris.html">7.6. Tris</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preliminaires.html">1. Préliminaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">4. Entrée/sortie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">5. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">6. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">7. Récursivité</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="algoclassiques.html">8. Algorithmes classiques</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="recherche.html">8.1. Algorithmes de recherche</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.2. Analyse numérique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetique.html">8.3. Arithmétique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="probabilites.html">8.4. Probabilités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrices.html">8.5. Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tris.html">8.6. Tris</a></li>
 </ul>
 </li>
 </ul>
@@ -110,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -148,11 +154,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="algoclassiques.html"><span class="section-number">7. </span>Algorithmes classiques</a> &raquo;</li>
+          <li><a href="algoclassiques.html"><span class="section-number">8. </span>Algorithmes classiques</a> &raquo;</li>
         
-      <li><span class="section-number">7.2. </span>Analyse numérique</li>
+      <li><span class="section-number">8.2. </span>Analyse numérique</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,9 +178,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="analyse-numerique">
-<h1><span class="section-number">7.2. </span>Analyse numérique<a class="headerlink" href="#analyse-numerique" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">8.2. </span>Analyse numérique<a class="headerlink" href="#analyse-numerique" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="resolution-d-equations-par-dichotomie">
-<h2><span class="section-number">7.2.1. </span>Résolution d’équations par dichotomie<a class="headerlink" href="#resolution-d-equations-par-dichotomie" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">8.2.1. </span>Résolution d’équations par dichotomie<a class="headerlink" href="#resolution-d-equations-par-dichotomie" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il s’agit ici de calculer une <em>valeur approchée</em> d’une solution d’une équation du type <span class="math notranslate nohighlight">\(f(x)=0\)</span>. On ne cherche pas à obtenir une expression exacte d’une telle solution, ce qui est de toute façon évidemment impossible de manière générale.</p>
 <p>On suppose qu’on dispose d’une fonction <span class="math notranslate nohighlight">\(f\)</span> continue et strictement monotone sur un intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> vérifiant <span class="math notranslate nohighlight">\(f(a)f(b)\leq0\)</span>. Le théorème des valeurs intermédiaires garantit l’existence d’une unique solution à l’équation <span class="math notranslate nohighlight">\(f(x)=0\)</span> sur l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span>. Pour obtenir une <em>valeur approchée</em> de cette solution, on procède par <strong>dichotomie</strong> :</p>
 <blockquote>
@@ -187,71 +193,71 @@
 </ol>
 </div></blockquote>
 
-<script src="bokeh-plot-d5dbe46daeb24d9f9742a15437554342-external-analysenumerique.js" id="d8a8ab28-9552-4e25-9fb3-8e9c4865c737"></script><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">dicho</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">eps</span><span class="p">):</span>
-   <span class="o">...</span><span class="p">:</span>     <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">eps</span><span class="p">:</span>
-   <span class="o">...</span><span class="p">:</span>         <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-   <span class="o">...</span><span class="p">:</span>         <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-   <span class="o">...</span><span class="p">:</span>             <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
-   <span class="o">...</span><span class="p">:</span>         <span class="k">else</span><span class="p">:</span>
-   <span class="o">...</span><span class="p">:</span>             <span class="n">a</span> <span class="o">=</span> <span class="n">c</span>
-   <span class="o">...</span><span class="p">:</span>     <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-   <span class="o">...</span><span class="p">:</span> 
+<script src="bokeh-plot-c22995ca038f4f38b7726cc8db81ce37-external-analysenumerique.js" id="28c2aa35-3970-46a1-b26b-53f3f7a71aea"></script><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">dicho</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">eps</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">eps</span><span class="p">:</span>
+<span class="gp">   ...: </span>        <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="gp">   ...: </span>        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">   ...: </span>            <span class="n">b</span> <span class="o">=</span> <span class="n">c</span>
+<span class="gp">   ...: </span>        <span class="k">else</span><span class="p">:</span>
+<span class="gp">   ...: </span>            <span class="n">a</span> <span class="o">=</span> <span class="n">c</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="gp">   ...: </span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span>
+<span class="gp">In [2]: </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">dicho</span><span class="p">(</span><span class="n">sin</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mi">0001</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="mf">3.141571044921875</span>
+<span class="gp">In [3]: </span><span class="n">dicho</span><span class="p">(</span><span class="n">sin</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mi">0001</span><span class="p">)</span>
+<span class="gh">Out[3]: </span><span class="go">3.141571044921875</span>
 </pre></div>
 </div>
 <p>Il est à remarquer que le module <code class="code docutils literal notranslate"><span class="pre">scipy</span></code> dispose déjà de fonctions pouvant résoudre de manière approchée des équations du type <span class="math notranslate nohighlight">\(f(x)=0\)</span>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span>
+<span class="gp">In [5]: </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">In [6]: </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">In [7]: </span><span class="n">x0</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">x0</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">49.99136881</span><span class="p">])</span>
+<span class="gp">In [8]: </span><span class="n">x0</span>
+<span class="gh">Out[8]: </span><span class="go">array([-49.99136881])</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">x0</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="o">-</span><span class="mf">1.063024370691732e-13</span>
+<span class="gp">In [9]: </span><span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">x0</span><span class="p">)</span>
+<span class="gh">Out[9]: </span><span class="go">-1.063024370691732e-13</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="calcul-d-integrales">
-<h2><span class="section-number">7.2.2. </span>Calcul d’intégrales<a class="headerlink" href="#calcul-d-integrales" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">8.2.2. </span>Calcul d’intégrales<a class="headerlink" href="#calcul-d-integrales" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On expose ici des algorithmes de calcul <em>approché</em> d’intégrales <a class="footnote-reference brackets" href="#quad" id="id1">1</a>. A nouveau, on ne cherche pas à obtenir des expressions exactes de ces intégrales.</p>
 <div class="section" id="methode-des-rectangles">
-<h3><span class="section-number">7.2.2.1. </span>Méthode des rectangles<a class="headerlink" href="#methode-des-rectangles" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.2.2.1. </span>Méthode des rectangles<a class="headerlink" href="#methode-des-rectangles" title="Lien permanent vers ce titre">¶</a></h3>
 <p>On peut approcher une intégrale par une somme d’aire de rectangles comme l’indique la figure suivante.</p>
 
-<script src="bokeh-plot-085dd01fc5074397bdc6b46cc32a9417-external-analysenumerique.js" id="d776322b-42f8-4708-a4a7-a6da35eee750"></script><p>Plus précisément, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de rectangles :</p>
+<script src="bokeh-plot-7fc84558f9d94febb1ffdcf93d0307bc-external-analysenumerique.js" id="8868bc6e-8b7a-4ddc-b221-b90048e8c518"></script><p>Plus précisément, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de rectangles :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 R_n&amp;=\frac{b-a}{n}\sum_{k=0}^{n-1}f(x_k)\approx\int_a^bf(t)\,\mathrm{dt}&amp;\text{(rectangles verts)}\\
 S_n&amp;=\frac{b-a}{n}\sum_{k=1}^nf(x_k)\approx\int_a^bf(t)\,\mathrm{dt}&amp;\text{(rectangles rouges)}
 \end{align*}\end{split}\]</div>
 <p>On peut alors proposer la fonction suivante pour approcher l’intégrale d’une fonction <span class="math notranslate nohighlight">\(f\)</span> sur un intervalle <span class="math notranslate nohighlight">\([a,b]\)</span>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">rectangles</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">side</span><span class="p">):</span>
-   <span class="o">....</span><span class="p">:</span>     <span class="n">pas</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
-   <span class="o">....</span><span class="p">:</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
-   <span class="o">....</span><span class="p">:</span>     <span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
-   <span class="o">....</span><span class="p">:</span>     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-   <span class="o">....</span><span class="p">:</span>         <span class="k">if</span> <span class="n">side</span><span class="p">:</span>
-   <span class="o">....</span><span class="p">:</span>             <span class="n">somme</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-   <span class="o">....</span><span class="p">:</span>         <span class="n">x</span> <span class="o">+=</span> <span class="n">pas</span>
-   <span class="o">....</span><span class="p">:</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">side</span><span class="p">:</span>
-   <span class="o">....</span><span class="p">:</span>             <span class="n">somme</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="n">somme</span> <span class="o">/</span> <span class="n">N</span>
-   <span class="o">....</span><span class="p">:</span> 
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="k">def</span> <span class="nf">rectangles</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">side</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">pas</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+<span class="gp">   ....: </span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
+<span class="gp">   ....: </span>    <span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="gp">   ....: </span>        <span class="k">if</span> <span class="n">side</span><span class="p">:</span>
+<span class="gp">   ....: </span>            <span class="n">somme</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">   ....: </span>        <span class="n">x</span> <span class="o">+=</span> <span class="n">pas</span>
+<span class="gp">   ....: </span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">side</span><span class="p">:</span>
+<span class="gp">   ....: </span>            <span class="n">somme</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">somme</span> <span class="o">/</span> <span class="n">N</span>
+<span class="gp">   ....: </span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">rectangles</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="mf">0.3283500000000004</span>
+<span class="gp">In [11]: </span><span class="n">rectangles</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gh">Out[11]: </span><span class="go">0.3283500000000004</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">rectangles</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="mf">0.33835000000000043</span>
+<span class="gp">In [12]: </span><span class="n">rectangles</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gh">Out[12]: </span><span class="go">0.33835000000000043</span>
 </pre></div>
 </div>
 <p>Les sommes <span class="math notranslate nohighlight">\(R_n\)</span> et <span class="math notranslate nohighlight">\(S_n\)</span> sont appelées des <em>sommes de Riemann</em> et on peut même prouver que pour une fonction <span class="math notranslate nohighlight">\(f\)</span> continue,</p>
@@ -260,28 +266,28 @@ S_n&amp;=\frac{b-a}{n}\sum_{k=1}^nf(x_k)\approx\int_a^bf(t)\,\mathrm{dt}&amp;\te
 <p>En particulier, l’appoximation de l’intégrale <span class="math notranslate nohighlight">\(\int_a^bf(t)\,\mathrm{dt}\)</span> est d’autant meilleure que le nombre <span class="math notranslate nohighlight">\(n\)</span> de rectangles est grand, ce qui se conçoit très bien géométriquement <a class="footnote-reference brackets" href="#erreur-arrondi-integrale" id="id2">2</a>.</p>
 </div>
 <div class="section" id="methode-des-trapezes">
-<h3><span class="section-number">7.2.2.2. </span>Méthode des trapèzes<a class="headerlink" href="#methode-des-trapezes" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.2.2.2. </span>Méthode des trapèzes<a class="headerlink" href="#methode-des-trapezes" title="Lien permanent vers ce titre">¶</a></h3>
 <p>On peut également apporcher une intégrale comme une somme d’aires de trapèzes comme sur la figure suivante. Bien évidemment, l’approximation de l’intégrale est meilleure qu’avec des rectangles.</p>
 
-<script src="bokeh-plot-ae01ef4727b54c5db8a7c2460cfb1634-external-analysenumerique.js" id="c88cbc1a-f9bf-41e6-b20b-bb9fcf923ca0"></script><p>A nouveau, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de trapèzes :</p>
+<script src="bokeh-plot-df45ff5135d34b98b63daf7e0994d407-external-analysenumerique.js" id="9d6af31e-0174-47d3-bf3f-f5b39ab5685a"></script><p>A nouveau, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de trapèzes :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}T_n=\frac{b-a}{n}\sum_{k=0}^{n-1}\frac{f(x_k)+f(x_{k+1})}{2}\approx\int_a^bf(t)\,\mathrm{dt}\\\end{split}\]</div>
 <p>On peut évidemment remarquer que <span class="math notranslate nohighlight">\(T_n=(R_n+S_n)/2\)</span>. En fait, la somme précédente peut se réécrire de manière différente :</p>
 <div class="math notranslate nohighlight">
 \[T_n=\frac{b-a}{n}\left(\frac{f(a)+f(b)}{2}+\sum_{k=1}^{n-1}f(x_k)\right)\]</div>
 <p>Cette nouvelle formule permet de calculer <span class="math notranslate nohighlight">\(T_n\)</span> en effectuant moins d’opérations qu’avec la formule précédente. On peut alors donner l’algorithme suivant.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">trapezes</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-   <span class="o">....</span><span class="p">:</span>     <span class="n">pas</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
-   <span class="o">....</span><span class="p">:</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
-   <span class="o">....</span><span class="p">:</span>     <span class="n">somme</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
-   <span class="o">....</span><span class="p">:</span>     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-   <span class="o">....</span><span class="p">:</span>         <span class="n">x</span> <span class="o">+=</span> <span class="n">pas</span>
-   <span class="o">....</span><span class="p">:</span>         <span class="n">somme</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-   <span class="o">....</span><span class="p">:</span>     <span class="k">return</span> <span class="n">somme</span> <span class="o">/</span> <span class="n">N</span>
-   <span class="o">....</span><span class="p">:</span> 
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">def</span> <span class="nf">trapezes</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="n">pas</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+<span class="gp">   ....: </span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
+<span class="gp">   ....: </span>    <span class="n">somme</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="gp">   ....: </span>        <span class="n">x</span> <span class="o">+=</span> <span class="n">pas</span>
+<span class="gp">   ....: </span>        <span class="n">somme</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">somme</span> <span class="o">/</span> <span class="n">N</span>
+<span class="gp">   ....: </span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">trapezes</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="mf">0.3333500000000004</span>
+<span class="gp">In [14]: </span><span class="n">trapezes</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="gh">Out[14]: </span><span class="go">0.3333500000000004</span>
 </pre></div>
 </div>
 <div class="admonition-todo admonition" id="id3">
@@ -291,7 +297,7 @@ S_n&amp;=\frac{b-a}{n}\sum_{k=1}^nf(x_k)\approx\int_a^bf(t)\,\mathrm{dt}&amp;\te
 </div>
 </div>
 <div class="section" id="resolution-d-equations-differentielles">
-<h2><span class="section-number">7.2.3. </span>Résolution d’équations différentielles<a class="headerlink" href="#resolution-d-equations-differentielles" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">8.2.3. </span>Résolution d’équations différentielles<a class="headerlink" href="#resolution-d-equations-differentielles" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’objectif est de résoudre numériquement des équations différentielles : c’est-à-dire qu’on ne cherche pas des expressions explicites des solutions mais des valeurs approchées <a class="footnote-reference brackets" href="#odeint" id="id4">3</a>.</p>
 <p>Pour commencer, on traitera le cas de <em>problème de Cauchy</em> d’ordre 1.</p>
 <div class="math notranslate nohighlight">
@@ -311,8 +317,9 @@ y(t_3) &amp; \approx y(t_2)+y'(t_2)\Delta\!t &amp; \approx y(t_2)+f(t_2,y_2)\Del
 \dots
 \end{alignat}\end{split}\]</div>
 <p>La méthode que l’on vient de décrire porte le nom de <strong>méthode d’Euler</strong>.</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">pas</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">pas</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">t0</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
     <span class="n">liste_t</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span>
@@ -326,6 +333,9 @@ y(t_3) &amp; \approx y(t_2)+y'(t_2)\Delta\!t &amp; \approx y(t_2)+f(t_2,y_2)\Del
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>Par exemple, on calcule ici une solution approchée du système de Cauchy</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left\{
@@ -334,16 +344,21 @@ y'&amp;=\cos(t)y\\
 y(0)&amp;=1
 \end{aligned}
 \right.\end{split}\]</div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span>
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span>
 <span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_y</span> <span class="o">=</span> <span class="n">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>On peut tracer la courbe de la solution approchée que l’on peut comparer à la courbe de la solution exacte. En effet, on montre sans peine que l’unique solution de ce problème de Cauchy est la fonction <span class="math notranslate nohighlight">\(x\mapsto e^{\sin(x)}\)</span>.</p>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Tracé de la solution approchée</span>
@@ -357,11 +372,14 @@ y(0)&amp;=1
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <img alt="_images/analysenumerique_2_0.png" src="_images/analysenumerique_2_0.png" />
+</div>
 </div>
 <p>Bien entendu, l’approximation affine <span class="math notranslate nohighlight">\(y'(t+\Delta\!t)\approx f(t)+f'(t)\Delta\!t\)</span> est d’autant meilleure que <span class="math notranslate nohighlight">\(\Delta\!t\)</span> est petit.</p>
 
-<script src="bokeh-plot-37ff0caf4709414eb17fae4337a8715c-external-analysenumerique.js" id="1db420ce-8157-461f-b3ea-dfb44326b24a"></script><p>On peut adapter la méthode au cas d’un système différentiel d’ordre 1. Soit par exemple à résoudre le système différentiel suivant.</p>
+<script src="bokeh-plot-7be17a15f77748d4b489f0083f57e1a8-external-analysenumerique.js" id="41c89ca0-cc1d-4734-b887-d59b53672f2c"></script><p>On peut adapter la méthode au cas d’un système différentiel d’ordre 1. Soit par exemple à résoudre le système différentiel suivant.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left\{
 \begin{aligned}
@@ -370,8 +388,9 @@ y'&amp;=\sin(t)x+\cos(t)y\\
 (x(0),y(0))&amp;=(1,0)
 \end{aligned}
 \right.\end{split}\]</div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">X0</span><span class="p">,</span> <span class="n">pas</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">X0</span><span class="p">,</span> <span class="n">pas</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">t0</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">X0</span>
     <span class="n">liste_t</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span>
@@ -385,15 +404,23 @@ y'&amp;=\sin(t)x+\cos(t)y\\
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="p">[</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
 <span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_X</span> <span class="o">=</span> <span class="n">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="o">.</span><span class="mi">01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
@@ -410,7 +437,10 @@ y'&amp;=\sin(t)x+\cos(t)y\\
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <img alt="_images/analysenumerique_5_0.png" src="_images/analysenumerique_5_0.png" />
+</div>
 </div>
 <p>On sait qu’il est toujours possible de ramener une équation différentielle scalaire d’ordre strictement supérieur à 1 à un système différentiel d’ordre 1.</p>
 <p>Par exemple, si l’on désire résoudre le problème de Cauchy</p>
@@ -426,14 +456,19 @@ y'&amp;=z\\
 z'&amp;=-\frac{2t}{1+t^2}z-\frac{1}{(1+t^2)^2}y\\
 (y(0),z(0))&amp;=(1,0)
 \end{aligned}\right.\end{split}\]</div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
 <span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_X</span> <span class="o">=</span> <span class="n">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="o">.</span><span class="mi">01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Tracé de la solution approchée</span>
@@ -447,7 +482,10 @@ z'&amp;=-\frac{2t}{1+t^2}z-\frac{1}{(1+t^2)^2}y\\
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 <img alt="_images/analysenumerique_7_0.png" src="_images/analysenumerique_7_0.png" />
+</div>
 </div>
 <dl class="footnote brackets">
 <dt class="label" id="quad"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -456,10 +494,10 @@ z'&amp;=-\frac{2t}{1+t^2}z-\frac{1}{(1+t^2)^2}y\\
 <p class="admonition-title">À faire</p>
 <p>Renvoyer vers le chapitre scipy/numpy</p>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="p">(</span><span class="mf">0.49999999999999994</span><span class="p">,</span> <span class="mf">5.551115123125782e-15</span><span class="p">)</span>
+<span class="gp">In [16]: </span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gh">Out[16]: </span><span class="go">(0.49999999999999994, 5.551115123125782e-15)</span>
 </pre></div>
 </div>
 <p>La fonction <code class="code docutils literal notranslate"><span class="pre">quad</span></code> renvoie un couple formé de l’approximation de l’intégrale et d’une majoration de l’erreur d’approximation.</p>
@@ -486,10 +524,10 @@ z'&amp;=-\frac{2t}{1+t^2}z-\frac{1}{(1+t^2)^2}y\\
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="arithmetique.html" class="btn btn-neutral float-right" title="7.3. Arithmétique" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="arithmetique.html" class="btn btn-neutral float-right" title="8.3. Arithmétique" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="recherche.html" class="btn btn-neutral float-left" title="7.1. Algorithmes de recherche" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="recherche.html" class="btn btn-neutral float-left" title="8.1. Algorithmes de recherche" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -498,11 +536,19 @@ z'&amp;=-\frac{2t}{1+t^2}z-\frac{1}{(1+t^2)^2}y\\
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2018, Laurent Garcin
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -513,7 +559,6 @@ z'&amp;=-\frac{2t}{1+t^2}z-\frac{1}{(1+t^2)^2}y\\
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,15 +1,20 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Entrée/sortie &mdash; Documentation CoursPythonCPGE </title>
+  <title>4. Entrée/sortie &mdash; Documentation CoursPythonCPGE </title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
 
   
   
@@ -17,7 +22,9 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -25,23 +32,19 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script src="_static/thebelab-helper.js"></script>
         <script src="_static/translations.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="4. Rudiments d’algorithmique" href="algorithmique.html" />
-    <link rel="prev" title="2.5. Dictionnaires" href="dictionnaires.html" /> 
+    <link rel="next" title="5. Rudiments d’algorithmique" href="algorithmique.html" />
+    <link rel="prev" title="3.5. Dictionnaires" href="dictionnaires.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +58,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CoursPythonCPGE
           
 
           
@@ -78,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -86,13 +90,14 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">1. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">2. Types composés</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">4. Rudiments d’algorithmique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theorie.html">5. Un peu de théorie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursivite.html">6. Récursivité</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">7. Algorithmes classiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preliminaires.html">1. Préliminaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Entrée/sortie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">5. Rudiments d’algorithmique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theorie.html">6. Un peu de théorie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recursivite.html">7. Récursivité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algoclassiques.html">8. Algorithmes classiques</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
@@ -102,6 +107,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -140,9 +146,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">3. </span>Entrée/sortie</li>
+      <li><span class="section-number">4. </span>Entrée/sortie</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -162,14 +168,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="entree-sortie">
-<h1><span class="section-number">3. </span>Entrée/sortie<a class="headerlink" href="#entree-sortie" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">4. </span>Entrée/sortie<a class="headerlink" href="#entree-sortie" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Un programme informatique doit souvent pouvoir interagir avec l’extérieur. Il existe plusieurs manières de faire cela :</p>
 <ul class="simple">
 <li><p>soit en interagissant directement avec l’utilisateur : celui-ci peut rentrer des données grâce au clavier ou voir le résultat du programme s’afficher à l’écran ;</p></li>
 <li><p>soit au moyen de fichiers : le programme peut lire des informations dans des fichiers ou au contraire écrire des résultats dans des fichiers.</p></li>
 </ul>
 <div class="section" id="interaction-directe-avec-l-utilisateur">
-<h2><span class="section-number">3.1. </span>Interaction directe avec l’utilisateur<a class="headerlink" href="#interaction-directe-avec-l-utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Interaction directe avec l’utilisateur<a class="headerlink" href="#interaction-directe-avec-l-utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’interpéteur <strong>IPython</strong> affiche par défaut le résultat d’une expression non évaluée à <code class="code docutils literal notranslate"><span class="pre">None</span></code>. Ce n’est pas le cas lorsque l’on exécute un script Python. Si l’on veut afficher des résultats à l’écran, il faut explicitement utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">print</span></code>.</p>
 <p>Dans cet exemple, on exécute le script stocké dans le fichier <code class="file docutils literal notranslate"><span class="pre">script_print.py</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;titi&#39;</span>          <span class="c1"># Cette ligne n&#39;affiche rien</span>
@@ -181,16 +187,16 @@ toto
 </pre></div>
 </div>
 <p>Inversement lorsque l’on souhaite demander une information à l’utilisateur, on utilise la fonction <code class="code docutils literal notranslate"><span class="pre">input</span></code>. Celle-ci interrompt l’exécution du programme, ce qui permet à l’utilsateur d’entrer des caractères au clavier. Pour terminer sa saisie, l’utilisateur appuie alors sur la touche <kbd class="kbd docutils literal notranslate">Entrée</kbd>. La fonction <code class="code docutils literal notranslate"><span class="pre">input</span></code> renvoie alors la chaîne de caractères entrée par l’utilisateur et l’exécution du programme reprend son cours. On peut également fournir en argument optionnel à la fonction <code class="code docutils literal notranslate"><span class="pre">input</span></code> un message à destination de l’utilisateur qui sera affiché avant que celui-ci commence à saisir des caractères au clavier.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">result</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Quel est votre nom ?&#39;</span><span class="p">)</span>
-<span class="n">Quel</span> <span class="n">est</span> <span class="n">votre</span> <span class="n">nom</span> <span class="o">?</span>
-<span class="c1"># Ici l&#39;utilisateur a entré Toto</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">result</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s1">&#39;Toto&#39;</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">result</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Quel est votre nom ?&#39;</span><span class="p">)</span>
+<span class="go">Quel est votre nom ?</span>
+<span class="go"># Ici l&#39;utilisateur a entré Toto</span>
+<span class="gp">In [2]: </span><span class="n">result</span>
+<span class="gh">Out[2]: </span><span class="go">&#39;Toto&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="fichiers">
-<h2><span class="section-number">3.2. </span>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour ouvrir un fichier, on utilise la fonction <code class="code docutils literal notranslate"><span class="pre">open</span></code> en donnant en argument le chemin du fichier. On peut préciser plusieurs paramètres optionnels.</p>
 <dl class="simple">
 <dt><code class="code docutils literal notranslate"><span class="pre">mode</span></code></dt><dd><p><strong>Mode d’ouverture</strong> du fichier : essentiellement <code class="code docutils literal notranslate"><span class="pre">'r'</span></code> pour lecture, <code class="code docutils literal notranslate"><span class="pre">'w'</span></code> pour écriture et <code class="code docutils literal notranslate"><span class="pre">'r+'</span></code> pour lecture/écriture. Par défaut, un fichier est ouvert en lecture seulement.</p>
@@ -198,13 +204,13 @@ toto
 <dt><code class="code docutils literal notranslate"><span class="pre">encoding</span></code></dt><dd><p><strong>Encodage</strong> <a class="footnote-reference brackets" href="#encodage" id="id1">1</a> du fichier : de nombreux encodages sont disponibles comme <code class="code docutils literal notranslate"><span class="pre">'utf8'</span></code> (à privilégier) ou <code class="code docutils literal notranslate"><span class="pre">'ascii'</span></code>.</p>
 </dd>
 </dl>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">f</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">_io</span><span class="o">.</span><span class="n">TextIOWrapper</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;test.txt&#39;</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="o">&gt;</span>
+<span class="gp">In [4]: </span><span class="n">f</span>
+<span class="gh">Out[4]: </span><span class="go">&lt;_io.TextIOWrapper name=&#39;test.txt&#39; mode=&#39;r&#39; encoding=&#39;utf8&#39;&gt;</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">_io</span><span class="o">.</span><span class="n">TextIOWrapper</span>
+<span class="gp">In [5]: </span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gh">Out[5]: </span><span class="go">_io.TextIOWrapper</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -212,7 +218,7 @@ toto
 <p>Le mode d’écriture <code class="code docutils literal notranslate"><span class="pre">'w'</span></code> crée un nouveau fichier si un fichier du même nom n’existe pas mais « écrase » un fichier existant dans le cas contraire.</p>
 </div>
 <p>L’objet renvoyé par open dispose d’une méthode <code class="code docutils literal notranslate"><span class="pre">close</span></code> pour fermer le fichier. On ne pourra alors plus lire ou écrire dedans.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>L’objet renvoyé par <code class="code docutils literal notranslate"><span class="pre">open</span></code> dispose de plusieurs méthodes permettant de lire ou d’écrire dans le fichier ouvert.</p>
@@ -223,31 +229,31 @@ Troisième ligne
 </pre></div>
 </div>
 <p>Dans les exemples suivants, le caractère <code class="code docutils literal notranslate"><span class="pre">\n</span></code> désigne un <em>retour à la ligne</em>.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 
-<span class="c1"># Renvoie l&#39;intégralité d&#39;un fichier</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="s1">&#39;Première ligne</span><span class="se">\n</span><span class="s1">Deuxième ligne</span><span class="se">\n</span><span class="s1">Troisième ligne</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="go"># Renvoie l&#39;intégralité d&#39;un fichier</span>
+<span class="gp">In [8]: </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gh">Out[8]: </span><span class="go">&#39;Première ligne\nDeuxième ligne\nTroisième ligne\n&#39;</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">In [9]: </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+<span class="gp">In [10]: </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 
-<span class="c1"># Renvoie la liste des lignes</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;Première ligne</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;Deuxième ligne</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;Troisième ligne</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="go"># Renvoie la liste des lignes</span>
+<span class="gp">In [11]: </span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="gh">Out[11]: </span><span class="go">[&#39;Première ligne\n&#39;, &#39;Deuxième ligne\n&#39;, &#39;Troisième ligne\n&#39;]</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">In [12]: </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;toto.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+<span class="gp">In [13]: </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;toto.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Ce qui se conçoit bien s&#39;énonce clairement</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="mi">43</span>
+<span class="gp">In [14]: </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Ce qui se conçoit bien s&#39;énonce clairement</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gh">Out[14]: </span><span class="go">43</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Et les mots pour le dire viennent aisément.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="mi">44</span>
+<span class="gp">In [15]: </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Et les mots pour le dire viennent aisément.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gh">Out[15]: </span><span class="go">44</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">In [16]: </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>On vérifie que le fichier <code class="file docutils literal notranslate"><span class="pre">toto.txt</span></code> a bien été créé et que son contenu correspond bien à ce qu’on y a écrit.</p>
@@ -271,10 +277,10 @@ Et les mots pour le dire viennent aisément.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="algorithmique.html" class="btn btn-neutral float-right" title="4. Rudiments d’algorithmique" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="algorithmique.html" class="btn btn-neutral float-right" title="5. Rudiments d’algorithmique" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dictionnaires.html" class="btn btn-neutral float-left" title="2.5. Dictionnaires" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dictionnaires.html" class="btn btn-neutral float-left" title="3.5. Dictionnaires" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -283,11 +289,19 @@ Et les mots pour le dire viennent aisément.
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2018, Laurent Garcin
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -298,7 +312,6 @@ Et les mots pour le dire viennent aisément.
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
