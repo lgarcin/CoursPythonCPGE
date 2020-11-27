@@ -50,7 +50,7 @@ extensions = ['sphinx.ext.mathjax',
               'bokeh.sphinxext.bokeh_plot',
               'sphinxcontrib.tikz',
               'sphinxcontrib.programoutput',
-              'jupyter_sphinx.execute']
+              'jupyter_sphinx']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

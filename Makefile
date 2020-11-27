@@ -8,8 +8,6 @@ SPHINXAUTOBUILD = sphinx-autobuild
 SPHINXPROJ    	= CoursPythonCPGE
 SOURCEDIR     	= source
 BUILDDIR      	= build
-IMAGEDIR 		= $(SOURCEDIR)/_images
-IMAGES 			= $(addprefix $(IMAGEDIR)/,tri_rapide.png)
 SCRIPTSDIR		= $(SOURCEDIR)/_scripts
 
 deploy:
@@ -26,19 +24,11 @@ deploy:
 
 	# git worktree remove build/html
 
-livehtml: $(IMAGES)
-	@$(SPHINXAUTOBUILD) -B $(SOURCEDIR) $(SPHINXOPTS) $(BUILDDIR)/html
+livehtml:
+	@$(SPHINXAUTOBUILD) $(SOURCEDIR) $(SPHINXOPTS) $(BUILDDIR)/html
 
-html: $(IMAGES)
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
-
-$(IMAGEDIR)/tri_rapide.png: $(SCRIPTSDIR)/tri_rapide.py
-	@python $<
-
-images:
-	@for i in $(IMAGES); do \
-		make --no-print-directory $$i; \
-	done
+html:
+	@$(SPHINXBUILD) $(SOURCEDIR) $(BUILDDIR)/html $(SPHINXOPTS)
 
 clean:
 	rm -rf $(BUILDDIR)/*

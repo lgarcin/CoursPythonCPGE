@@ -4,7 +4,6 @@
         "--ignore D002",
         "--ignore D004"
     ],
-    "python.pythonPath": "C:\\Users\\laure\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
     "python.linting.enabled": true,
     "restructuredtext.confPath": "${workspaceFolder}\\source"
 }
