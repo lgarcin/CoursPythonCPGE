@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>8.4. Probabilités &mdash; Documentation CoursPythonCPGE </title>
   
@@ -13,12 +14,18 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -28,15 +35,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/thebelab-helper.js"></script>
         <script src="_static/translations.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -58,7 +65,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CoursPythonCPGE
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
           
 
           
@@ -72,7 +79,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Rechercher docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -150,6 +157,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -163,8 +172,8 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/probabilites.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/probabilites.rst.txt" rel="nofollow"> Afficher la source de la page</a>
           
         
       </li>
@@ -177,9 +186,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="probabilites">
+  <section id="probabilites">
 <h1><span class="section-number">8.4. </span>Probabilités<a class="headerlink" href="#probabilites" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="statistiques">
+<section id="statistiques">
 <h2><span class="section-number">8.4.1. </span>Statistiques<a class="headerlink" href="#statistiques" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le calcul de la moyenne est on ne peut plus simple : il s’agit de la somme des éléments de la liste divisée par le nombre d’éléments de cette liste <a class="footnote-reference brackets" href="#numpy-moyenne" id="id1">1</a>. De manière plus formmelle, la moyenne <span class="math notranslate nohighlight">\(m\)</span> d’une liste <span class="math notranslate nohighlight">\((x_1,\dots,x_n)\)</span> de nombres est</p>
 <div class="math notranslate nohighlight">
@@ -229,28 +238,28 @@
 <span class="gh">Out[8]: </span><span class="go">0.6666666666666666</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="simuler-une-variable-aleatoire">
+</section>
+<section id="simuler-une-variable-aleatoire">
 <h2><span class="section-number">8.4.2. </span>Simuler une variable aléatoire<a class="headerlink" href="#simuler-une-variable-aleatoire" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Dans la suite, on fera appel à la fonction <code class="code docutils literal notranslate"><span class="pre">random</span></code> du module <code class="code docutils literal notranslate"><span class="pre">random</span></code> qui renvoie un flottant tiré aléatoirement dans l’intervalle <span class="math notranslate nohighlight">\([0,1[\)</span>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
 
 <span class="gp">In [10]: </span><span class="p">[</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 <span class="gh">Out[10]: </span><span class="go"></span>
-<span class="go">[0.5417991520682762,</span>
-<span class="go"> 0.3449384152183733,</span>
-<span class="go"> 0.7893857113525695,</span>
-<span class="go"> 0.8997363205397411,</span>
-<span class="go"> 0.8516944854028369,</span>
-<span class="go"> 0.017168523691879822,</span>
-<span class="go"> 0.33057807891378177,</span>
-<span class="go"> 0.6956000362647332,</span>
-<span class="go"> 0.8622475791343757,</span>
-<span class="go"> 0.08767414656889605]</span>
+<span class="go">[0.4459566879883474,</span>
+<span class="go"> 0.31628241067261664,</span>
+<span class="go"> 0.5856577665164745,</span>
+<span class="go"> 0.6963149387616805,</span>
+<span class="go"> 0.968576633532851,</span>
+<span class="go"> 0.6297915992191665,</span>
+<span class="go"> 0.08602168094760476,</span>
+<span class="go"> 0.15586797612875725,</span>
+<span class="go"> 0.3331215623867021,</span>
+<span class="go"> 0.08970132737416348]</span>
 </pre></div>
 </div>
 <p>Cela nous permettra de simuler des variables aléatoires connaissant leurs lois <a class="footnote-reference brackets" href="#numpy-random" id="id3">3</a>.</p>
-<div class="section" id="variables-aleatoires-finies">
+<section id="variables-aleatoires-finies">
 <h3><span class="section-number">8.4.2.1. </span>Variables aléatoires finies<a class="headerlink" href="#variables-aleatoires-finies" title="Lien permanent vers ce titre">¶</a></h3>
 <p>On cherche dans un premier temps à simuler une variable aléatoire <span class="math notranslate nohighlight">\(X\)</span> <strong>à valeurs dans un ensemble fini</strong>, disons <span class="math notranslate nohighlight">\(\{0,\dots,n-1\}\)</span> où <span class="math notranslate nohighlight">\(n\in\mathbb{N}^*\)</span>, dont on connaît la loi, c’est-à-dire les valeurs de <span class="math notranslate nohighlight">\(\mathbb{P}(X=k)\)</span> pour <span class="math notranslate nohighlight">\(k\in\{0,\dots,n-1\}\)</span>.</p>
 <p>On construit pour cela une fonction prenant pour argument la loi d’une telle variable aléatoire sous la forme d’une liste de réels positifs de somme 1.</p>
@@ -264,8 +273,8 @@
 <span class="gp">   ....: </span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="p">[</span><span class="n">simul</span><span class="p">([</span><span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">])</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[12]: </span><span class="go">[2, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 2, 0, 1, 2, 2, 0, 1, 0]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="p">[</span><span class="n">simul</span><span class="p">([</span><span class="mf">.3</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.2</span><span class="p">])</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+<span class="gh">Out[12]: </span><span class="go">[1, 1, 1, 0, 0, 2, 2, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 1, 0, 1]</span>
 </pre></div>
 </div>
 <p>On pourrait par exemple utiliser la méthode précédente pour simuler une <strong>loi binomiale</strong>.</p>
@@ -273,11 +282,11 @@
 
 <span class="gp">In [14]: </span><span class="n">binomiale</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">:</span> <span class="n">simul</span><span class="p">([</span><span class="n">binom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
 
-<span class="gp">In [15]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">8</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[15]: </span><span class="go">[4, 5, 3, 5, 4, 5, 4, 5, 5, 4, 5, 5, 3, 3, 5, 3, 4, 3, 5, 4]</span>
+<span class="gp">In [15]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">.8</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+<span class="gh">Out[15]: </span><span class="go">[3, 4, 4, 4, 4, 5, 5, 4, 4, 4, 4, 2, 3, 4, 4, 5, 5, 4, 3, 4]</span>
 
-<span class="gp">In [16]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[16]: </span><span class="go">[1, 1, 1, 0, 1, 1, 2, 0, 1, 2, 2, 1, 0, 1, 2, 0, 0, 2, 1, 1]</span>
+<span class="gp">In [16]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">.2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+<span class="gh">Out[16]: </span><span class="go">[1, 1, 1, 1, 0, 0, 0, 2, 0, 0, 1, 0, 1, 1, 2, 1, 0, 0, 1, 4]</span>
 </pre></div>
 </div>
 <p>Evidemment, il existe un méthode plus simple pour simuler une variable suivant une <strong>loi binomiale</strong> puisque l’on sait qu’elle est de même loi qu’une somme de variables de Bernoulli indépendantes.</p>
@@ -289,15 +298,15 @@
 <span class="gp">   ....: </span>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">bernoulli</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 <span class="gp">   ....: </span>
 
-<span class="gp">In [19]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">8</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[19]: </span><span class="go">[4, 2, 5, 2, 3, 5, 3, 2, 5, 4, 5, 4, 4, 5, 2, 4, 4, 3, 4, 3]</span>
+<span class="gp">In [19]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">.8</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+<span class="gh">Out[19]: </span><span class="go">[5, 4, 4, 4, 3, 5, 3, 3, 2, 3, 5, 4, 3, 3, 2, 5, 4, 3, 4, 4]</span>
 
-<span class="gp">In [20]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[20]: </span><span class="go">[2, 0, 0, 0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 1, 0, 0, 1, 1, 2, 0]</span>
+<span class="gp">In [20]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">.2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+<span class="gh">Out[20]: </span><span class="go">[2, 1, 1, 0, 0, 1, 1, 1, 1, 2, 2, 0, 0, 1, 1, 1, 0, 0, 3, 1]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="variables-aleatoires-denombrables">
+</section>
+<section id="variables-aleatoires-denombrables">
 <h3><span class="section-number">8.4.2.2. </span>Variables aléatoires dénombrables<a class="headerlink" href="#variables-aleatoires-denombrables" title="Lien permanent vers ce titre">¶</a></h3>
 <p>On désire maintenant simuler une variable aléatoire <span class="math notranslate nohighlight">\(X\)</span> <strong>à valeurs dans un ensemble dénombrable</strong>, disons <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>, dont on connaît la loi, c’est-à-dire les valeurs de <span class="math notranslate nohighlight">\(\mathbb{P}(X=k)\)</span> pour <span class="math notranslate nohighlight">\(k\in\mathbb{N}\)</span>.</p>
 <p>La loi de cette variable aléatoire ne peut alors plus être représentée sous la forme d’une liste finie ; on la représente donc comme une fonction d’argument un entier <span class="math notranslate nohighlight">\(n\)</span> et renvoyant <span class="math notranslate nohighlight">\(\mathbb{P}(X=n)\)</span>.</p>
@@ -319,7 +328,7 @@
 <span class="gp">In [23]: </span><span class="n">poisson</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">simul</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">l</span><span class="p">)</span> <span class="o">*</span> <span class="n">l</span><span class="o">**</span><span class="n">n</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
 <span class="gp">In [24]: </span><span class="p">[</span><span class="n">poisson</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[24]: </span><span class="go">[3, 5, 2, 2, 1, 1, 3, 5, 3, 2, 1, 2, 1, 3, 1, 3, 1, 6, 0, 4]</span>
+<span class="gh">Out[24]: </span><span class="go">[2, 1, 0, 2, 2, 2, 1, 1, 3, 2, 4, 4, 0, 0, 2, 4, 3, 3, 2, 3]</span>
 </pre></div>
 </div>
 <p>De la même manière, on peut simuler une loi géométrique.</p>
@@ -328,8 +337,8 @@
 <span class="go"># Simulation d&#39;une loi géométrique</span>
 <span class="gp">In [26]: </span><span class="n">geometrique</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">simul</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span>
 
-<span class="gp">In [27]: </span><span class="p">[</span><span class="n">geometrique</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[27]: </span><span class="go">[2, 2, 3, 4, 3, 5, 3, 2, 16, 6, 8, 2, 4, 1, 4, 11, 2, 3, 3, 6]</span>
+<span class="gp">In [27]: </span><span class="p">[</span><span class="n">geometrique</span><span class="p">(</span><span class="mf">.2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+<span class="gh">Out[27]: </span><span class="go">[3, 3, 16, 5, 10, 4, 4, 14, 7, 2, 1, 7, 1, 2, 2, 5, 7, 7, 2, 4]</span>
 </pre></div>
 </div>
 <p>Bien entendu, il est plus facile d’utiliser l’interprétation de la loi géométrique comme le numéro d’un premier succès.</p>
@@ -340,8 +349,8 @@
 <span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">n</span>
 <span class="gp">   ....: </span>
 
-<span class="gp">In [29]: </span><span class="p">[</span><span class="n">geometrique</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[29]: </span><span class="go">[10, 2, 10, 3, 3, 4, 1, 2, 4, 4, 3, 3, 1, 1, 2, 12, 6, 13, 13, 12]</span>
+<span class="gp">In [29]: </span><span class="p">[</span><span class="n">geometrique</span><span class="p">(</span><span class="mf">.2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+<span class="gh">Out[29]: </span><span class="go">[1, 9, 3, 5, 6, 5, 1, 3, 4, 2, 7, 3, 10, 8, 5, 1, 1, 2, 1, 5]</span>
 </pre></div>
 </div>
 <dl class="footnote brackets">
@@ -374,46 +383,38 @@
 <dd><p>A nouveau, le module <code class="code docutils literal notranslate"><span class="pre">numpy.random</span></code> dispose déjà de fonctions permettant de simuler la plupart des lois classiques.</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="matrices.html" class="btn btn-neutral float-right" title="8.5. Matrices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="arithmetique.html" class="btn btn-neutral float-left" title="8.3. Arithmétique" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="matrices.html" class="btn btn-neutral float-right" title="8.5. Matrices" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arithmetique.html" class="btn btn-neutral float-left" title="8.3. Arithmétique" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2018, Laurent Garcin
+        &#169; Copyright 2018, Laurent Garcin.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

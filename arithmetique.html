@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>8.3. Arithmétique &mdash; Documentation CoursPythonCPGE </title>
   
@@ -13,12 +14,18 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -28,15 +35,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/thebelab-helper.js"></script>
         <script src="_static/translations.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -58,7 +65,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CoursPythonCPGE
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
           
 
           
@@ -72,7 +79,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Rechercher docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -150,6 +157,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -163,8 +172,8 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/arithmetique.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/arithmetique.rst.txt" rel="nofollow"> Afficher la source de la page</a>
           
         
       </li>
@@ -177,9 +186,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="arithmetique">
+  <section id="arithmetique">
 <h1><span class="section-number">8.3. </span>Arithmétique<a class="headerlink" href="#arithmetique" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="decomposition-d-un-entier-dans-une-base">
+<section id="decomposition-d-un-entier-dans-une-base">
 <h2><span class="section-number">8.3.1. </span>Décomposition d’un entier dans une base<a class="headerlink" href="#decomposition-d-un-entier-dans-une-base" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’écriture d’un entier <span class="math notranslate nohighlight">\(n\in\mathbb{N}^*\)</span> dans une base <span class="math notranslate nohighlight">\(b\)</span> où <span class="math notranslate nohighlight">\(b\)</span> est un entier supérieur ou égal à <span class="math notranslate nohighlight">\(2\)</span> est une écriture de la forme</p>
 <div class="math notranslate nohighlight">
@@ -220,8 +229,8 @@
 <span class="gh">Out[6]: </span><span class="go">3678</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="calcul-de-pgcd">
+</section>
+<section id="calcul-de-pgcd">
 <h2><span class="section-number">8.3.2. </span>Calcul de PGCD<a class="headerlink" href="#calcul-de-pgcd" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On peut implémenter l’algorithme d’Euclide en Python.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -256,8 +265,8 @@
 </pre></div>
 </div>
 <p>La preuve de l’algorithme est donnée en <a class="reference internal" href="appendice_preuves_complexites.html#algorithme-d-euclide-etendu"><span class="std std-ref">annexe</span></a>.</p>
-</div>
-<div class="section" id="exponentiation-rapide">
+</section>
+<section id="exponentiation-rapide">
 <h2><span class="section-number">8.3.3. </span>Exponentiation rapide<a class="headerlink" href="#exponentiation-rapide" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il s’agit ici de calculer efficacement une puissance entière d’un objet mathématique (nombre ou matrice par exemple). Un algorithme naïf serait le suivant.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">def</span> <span class="nf">exponentiation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
@@ -334,8 +343,8 @@
 <span class="gh">Out[20]: </span><span class="go">243</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="evaluation-de-polynomes">
+</section>
+<section id="evaluation-de-polynomes">
 <h2><span class="section-number">8.3.4. </span>Evaluation de polynômes<a class="headerlink" href="#evaluation-de-polynomes" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La méthode naïve pour évaluer un polynôme <span class="math notranslate nohighlight">\(P\)</span> en un scalaire <span class="math notranslate nohighlight">\(x\)</span> consiste à calculer les différentes puissances de <span class="math notranslate nohighlight">\(x\)</span> puis à les multiplier par les coefficients de <span class="math notranslate nohighlight">\(P\)</span> correspondant puis à effectuer la somme de ces produits.</p>
 <p>Par exemple, pour évaluer <span class="math notranslate nohighlight">\(5X^3+4X^2-3X+7\)</span> en un scalaire <span class="math notranslate nohighlight">\(x\)</span>, on calcule successivement :</p>
@@ -385,45 +394,37 @@
 <dd><p>On peut également utiliser du slicing : <code class="code docutils literal notranslate"><span class="pre">lst[::-1]</span></code> est également la liste <code class="code docutils literal notranslate"><span class="pre">lst</span></code> « renversée ».</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="probabilites.html" class="btn btn-neutral float-right" title="8.4. Probabilités" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="analysenumerique.html" class="btn btn-neutral float-left" title="8.2. Analyse numérique" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="probabilites.html" class="btn btn-neutral float-right" title="8.4. Probabilités" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="analysenumerique.html" class="btn btn-neutral float-left" title="8.2. Analyse numérique" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2018, Laurent Garcin
+        &#169; Copyright 2018, Laurent Garcin.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

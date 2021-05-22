@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2.3. Opérateurs &mdash; Documentation CoursPythonCPGE </title>
   
@@ -13,12 +14,18 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -28,15 +35,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/thebelab-helper.js"></script>
         <script src="_static/translations.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -58,7 +64,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CoursPythonCPGE
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
           
 
           
@@ -72,7 +78,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Rechercher docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -148,6 +154,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -161,8 +169,8 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/operateurs.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/operateurs.rst.txt" rel="nofollow"> Afficher la source de la page</a>
           
         
       </li>
@@ -175,9 +183,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="operateurs">
+  <section id="operateurs">
 <h1><span class="section-number">2.3. </span>Opérateurs<a class="headerlink" href="#operateurs" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="operateurs-arithmetiques">
+<section id="operateurs-arithmetiques">
 <h2><span class="section-number">2.3.1. </span>Opérateurs arithmétiques<a class="headerlink" href="#operateurs-arithmetiques" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Python dispose des opérateurs arithmétiques de base <code class="code docutils literal notranslate"><span class="pre">+</span></code> (addition), <code class="code docutils literal notranslate"><span class="pre">-</span></code> (soustraction), <code class="code docutils literal notranslate"><span class="pre">*</span></code> (multiplication) et <code class="code docutils literal notranslate"><span class="pre">/</span></code> (division).</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="mi">1</span> <span class="o">+</span> <span class="mf">2.3</span> <span class="o">*</span> <span class="p">(</span><span class="mf">4.5</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="mf">7.8</span>
@@ -197,8 +205,8 @@
 <span class="gh">Out[4]: </span><span class="go">3</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="operateurs-de-comparaison">
+</section>
+<section id="operateurs-de-comparaison">
 <h2><span class="section-number">2.3.2. </span>Opérateurs de comparaison<a class="headerlink" href="#operateurs-de-comparaison" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le résultat d’une comparaison est un booléen. Python dispose des opérateurs de comparaison <code class="code docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="code docutils literal notranslate"><span class="pre">==</span></code> (égalité), <code class="code docutils literal notranslate"><span class="pre">!=</span></code> (différence).</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mf">3.4</span>
@@ -218,8 +226,8 @@
 <p class="admonition-title">Note</p>
 <p>Il faut prendre garde de ne pas confondre l’opérateur d”<strong>égalité</strong> <code class="code docutils literal notranslate"><span class="pre">==</span></code> avec l’opérateur d”<strong>affectation</strong> <code class="code docutils literal notranslate"><span class="pre">=</span></code>.</p>
 </div>
-</div>
-<div class="section" id="operateurs-logiques">
+</section>
+<section id="operateurs-logiques">
 <h2><span class="section-number">2.3.3. </span>Opérateurs logiques<a class="headerlink" href="#operateurs-logiques" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On dispose des opérateurs logique classiques : <code class="code docutils literal notranslate"><span class="pre">not</span></code> (négation), <code class="code docutils literal notranslate"><span class="pre">and</span></code> (conjonction) et <code class="code docutils literal notranslate"><span class="pre">or</span></code> (disjonction).</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="ow">not</span> <span class="kc">False</span>
@@ -232,8 +240,8 @@
 <span class="gh">Out[11]: </span><span class="go">True</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="operation-affectation">
+</section>
+<section id="operation-affectation">
 <h2><span class="section-number">2.3.4. </span>Opération/affectation<a class="headerlink" href="#operation-affectation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les opérateurs binaires peuvent être suivis du symbole <code class="code docutils literal notranslate"><span class="pre">=</span></code> pour effectuer simultanément une opération et une affectation. Ainsi <code class="code docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code> équivaut à <code class="code docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code></p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -259,45 +267,37 @@
 <span class="gh">Out[20]: </span><span class="go">10</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="conversions.html" class="btn btn-neutral float-right" title="2.4. Conversions de types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="types.html" class="btn btn-neutral float-left" title="2.2. Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="conversions.html" class="btn btn-neutral float-right" title="2.4. Conversions de types" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="types.html" class="btn btn-neutral float-left" title="2.2. Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2018, Laurent Garcin
+        &#169; Copyright 2018, Laurent Garcin.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

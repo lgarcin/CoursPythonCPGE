@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>5.2. Tests &mdash; Documentation CoursPythonCPGE </title>
   
@@ -13,12 +14,18 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -28,15 +35,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/thebelab-helper.js"></script>
         <script src="_static/translations.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -58,7 +64,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CoursPythonCPGE
+            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
           
 
           
@@ -72,7 +78,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Rechercher docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -148,6 +154,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -161,8 +169,8 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/tests.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/tests.rst.txt" rel="nofollow"> Afficher la source de la page</a>
           
         
       </li>
@@ -175,9 +183,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tests">
+  <section id="tests">
 <h1><span class="section-number">5.2. </span>Tests<a class="headerlink" href="#tests" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="branchements-conditionnels">
+<section id="branchements-conditionnels">
 <h2><span class="section-number">5.2.1. </span>Branchements conditionnels<a class="headerlink" href="#branchements-conditionnels" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On souhaite exécuter un bloc d’instructions uniquement si une condition est remplie. On emploie pour cela le mot-clé <code class="code docutils literal notranslate"><span class="pre">if</span></code> suivie d’une expression à valeur booléenne.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>       <span class="c1"># Changer la valeur de a pour comprendre ce qui se passe</span>
@@ -223,8 +231,8 @@
 <span class="go">a est impair et inférieur ou égal à 3</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="expression-conditionnelle">
+</section>
+<section id="expression-conditionnelle">
 <h2><span class="section-number">5.2.2. </span>Expression conditionnelle<a class="headerlink" href="#expression-conditionnelle" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On appelle <em>expression conditionnelle</em> une expression de la forme suivante.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">expression1</span><span class="o">&gt;</span> <span class="k">if</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span> <span class="k">else</span> <span class="o">&lt;</span><span class="n">expression2</span><span class="o">&gt;</span>
@@ -263,45 +271,37 @@
 <dd><p>On dit également que <code class="code docutils literal notranslate"><span class="pre">...</span> <span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span> <span class="pre">...</span></code> est un opérateur <em>ternaire</em>. En effet, une expression conditionnelle prend <em>trois</em> arguments et renvoie une valeur.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="boucles.html" class="btn btn-neutral float-right" title="5.3. Boucles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="indentation.html" class="btn btn-neutral float-left" title="5.1. Indentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="boucles.html" class="btn btn-neutral float-right" title="5.3. Boucles" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="indentation.html" class="btn btn-neutral float-left" title="5.1. Indentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2018, Laurent Garcin
+        &#169; Copyright 2018, Laurent Garcin.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
