@@ -13,16 +13,16 @@ SCRIPTSDIR		= $(SOURCEDIR)/_scripts
 deploy:
 	make clean &&\
 	git worktree prune &&\
-	git worktree add build/html gh-pages &&\
+	git worktree add $(BUILDDIR)/html gh-pages &&\
 	make html &&\
 	git config user.email "laurent.garcin@gmail.com" &&\
 	git config user.name "lgarcin" &&\
-	cd _build/html &&\
+	cd $(BUILDDIR)/html &&\
 	git add -A &&\
 	git commit -a -m "Rebuilt docs" &&\
 	git push origin gh-pages
 
-	# git worktree remove _build/html
+	# git worktree remove $(BUILDDIR)/html
 
 livehtml:
 	@$(SPHINXAUTOBUILD) $(SOURCEDIR) $(SPHINXOPTS) $(BUILDDIR)/html
