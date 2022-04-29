@@ -6,8 +6,8 @@ SPHINXOPTS    	=
 SPHINXBUILD   	= sphinx-build
 SPHINXAUTOBUILD = sphinx-autobuild
 SPHINXPROJ    	= CoursPythonCPGE
-SOURCEDIR     	= source
-BUILDDIR      	= build
+SOURCEDIR     	= .
+BUILDDIR      	= _build
 SCRIPTSDIR		= $(SOURCEDIR)/_scripts
 
 deploy:
@@ -17,12 +17,12 @@ deploy:
 	make html &&\
 	git config user.email "laurent.garcin@gmail.com" &&\
 	git config user.name "lgarcin" &&\
-	cd build/html &&\
+	cd _build/html &&\
 	git add -A &&\
 	git commit -a -m "Rebuilt docs" &&\
 	git push origin gh-pages
 
-	# git worktree remove build/html
+	# git worktree remove _build/html
 
 livehtml:
 	@$(SPHINXAUTOBUILD) $(SOURCEDIR) $(SPHINXOPTS) $(BUILDDIR)/html
