@@ -128,12 +128,12 @@
 <span class="gp">In [12]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
 <span class="gp">In [13]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent vers le même emplacement en mémoire</span>
-<span class="gh">Out[13]: </span><span class="go">(2596794532080, 2596794532080)</span>
+<span class="gh">Out[13]: </span><span class="go">(3156519878896, 3156519878896)</span>
 
 <span class="gp">In [14]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 
-<span class="gp">In [15]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># la variable b pointe toujours vers le même emplacement mais plus la variable b</span>
-<span class="gh">Out[15]: </span><span class="go">(2596794532112, 2596794532080)</span>
+<span class="gp">In [15]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># la variable b pointe toujours vers le même emplacement mais plus la variable a</span>
+<span class="gh">Out[15]: </span><span class="go">(3156519878928, 3156519878896)</span>
 </pre></div>
 </div>
 <p>L’instruction <code class="code docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">2</span></code> a fait pointer la variable <code class="code docutils literal notranslate"><span class="pre">a</span></code> vers un autre emplacement en mémoire où est stocké l’entier <code class="code docutils literal notranslate"><span class="pre">2</span></code>.</p>
@@ -143,12 +143,12 @@
 <span class="gp">In [17]: </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
 
 <span class="gp">In [18]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent vers le même emplacement en mémoire</span>
-<span class="gh">Out[18]: </span><span class="go">(2597491625664, 2597491625664)</span>
+<span class="gh">Out[18]: </span><span class="go">(3155069467456, 3155069467456)</span>
 
 <span class="gp">In [19]: </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>
 
 <span class="gp">In [20]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># les variables a et b pointent toujours vers le même emplacement</span>
-<span class="gh">Out[20]: </span><span class="go">(2597491625664, 2597491625664)</span>
+<span class="gh">Out[20]: </span><span class="go">(3155069467456, 3155069467456)</span>
 </pre></div>
 </div>
 <p>Ici, l’instruction <code class="code docutils literal notranslate"><span class="pre">a[0]</span> <span class="pre">=</span> <span class="pre">'foo'</span></code> a modifié l’objet stocké à l’emplacement commun vers lequel pointent les variables <code class="code docutils literal notranslate"><span class="pre">a</span></code> et <code class="code docutils literal notranslate"><span class="pre">b</span></code>. Comme <code class="code docutils literal notranslate"><span class="pre">a</span></code> et <code class="code docutils literal notranslate"><span class="pre">b</span></code> pointent toujours le même emplacement en mémoire, la variable <code class="code docutils literal notranslate"><span class="pre">b</span></code> est maintenant associée à ce nouvel objet.</p>
@@ -183,7 +183,7 @@
 <span class="gp">In [24]: </span><span class="n">liste4</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">liste1</span><span class="p">)</span>
 
 <span class="gp">In [25]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste3</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste4</span><span class="p">)</span>  <span class="c1"># les objets sont bien distincts</span>
-<span class="gh">Out[25]: </span><span class="go">(2597491670912, 2597491654720, 2597491641472, 2597491640832)</span>
+<span class="gh">Out[25]: </span><span class="go">(3155067907264, 3155067904960, 3155067904704, 3155067900480)</span>
 
 <span class="gp">In [26]: </span><span class="n">liste1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;toto&#39;</span>
 
@@ -193,11 +193,11 @@
 </div>
 </div>
 <p class="rubric">Les opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> et <code class="code docutils literal notranslate"><span class="pre">+=</span></code></p>
-<p>Le lecteur attentif aura remarqué qu’on semblerait pouvoir modifier un objet immutable telle qu’une chaîne de caractères ou une liste à l’aide des opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> ou <code class="code docutils literal notranslate"><span class="pre">+=</span></code>. Mais ces opérateurs ne modifient pas l’objet en question ; ils créent en fait un <strong>nouvel</strong> objet. On peut s’en convaincre à l’aide de la fonction <code class="code docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<p>Le lecteur attentif aura remarqué qu’on semblerait pouvoir modifier un objet immutable telle qu’une chaîne de caractères ou un tuple à l’aide des opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> ou <code class="code docutils literal notranslate"><span class="pre">+=</span></code>. Mais ces opérateurs ne modifient pas l’objet en question ; ils créent en fait un <strong>nouvel</strong> objet. On peut s’en convaincre à l’aide de la fonction <code class="code docutils literal notranslate"><span class="pre">id</span></code>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="gp">In [29]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[29]: </span><span class="go">2597490987840</span>
+<span class="gh">Out[29]: </span><span class="go">3155067555328</span>
 
 <span class="gp">In [30]: </span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
@@ -205,13 +205,13 @@
 <span class="gh">Out[31]: </span><span class="go">(1, 2, 3, 4, 5)</span>
 
 <span class="gp">In [32]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[32]: </span><span class="go">2597487683008</span>
+<span class="gh">Out[32]: </span><span class="go">3155068742016</span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [33]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="gp">In [34]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[34]: </span><span class="go">2597489614080</span>
+<span class="gh">Out[34]: </span><span class="go">3155069300480</span>
 
 <span class="gp">In [35]: </span><span class="n">t</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
@@ -219,7 +219,7 @@
 <span class="gh">Out[36]: </span><span class="go">(1, 2, 3, 4, 5)</span>
 
 <span class="gp">In [37]: </span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="gh">Out[37]: </span><span class="go">2597487682208</span>
+<span class="gh">Out[37]: </span><span class="go">3155069644656</span>
 </pre></div>
 </div>
 <p>Pour les objets mutables tels que les listes, les opérateurs <code class="code docutils literal notranslate"><span class="pre">+</span></code> et <code class="code docutils literal notranslate"><span class="pre">+=</span></code> se comportent de manières différentes : l’opérateur <code class="code docutils literal notranslate"><span class="pre">+</span></code> crée un nouvel objet tandis que l’opérateur <code class="code docutils literal notranslate"><span class="pre">+=</span></code> modifie l’objet initial.</p>
@@ -233,7 +233,7 @@
 <span class="gh">Out[41]: </span><span class="go">([1, 2, 3, 4, 5], [1, 2, 3])</span>
 
 <span class="gp">In [42]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">)</span>  <span class="c1"># c&#39;est normal : liste1 et liste2 pointent vers des objets distincts</span>
-<span class="gh">Out[42]: </span><span class="go">(2597491016960, 2597491342016)</span>
+<span class="gh">Out[42]: </span><span class="go">(3155068057984, 3155068058880)</span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [43]: </span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -246,7 +246,7 @@
 <span class="gh">Out[46]: </span><span class="go">([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])</span>
 
 <span class="gp">In [47]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">)</span>  <span class="c1"># c&#39;est normal : liste1 et liste2 pointent vers le même objet</span>
-<span class="gh">Out[47]: </span><span class="go">(2597491644736, 2597491644736)</span>
+<span class="gh">Out[47]: </span><span class="go">(3155068057024, 3155068057024)</span>
 </pre></div>
 </div>
 <p class="rubric">Egalité structurelle ou physique</p>
@@ -262,7 +262,7 @@
 <span class="gh">Out[51]: </span><span class="go">([1, 2, 3], [1, 2, 3], [1, 2, 3])</span>
 
 <span class="gp">In [52]: </span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste3</span><span class="p">)</span>
-<span class="gh">Out[52]: </span><span class="go">(2597491688832, 2597491688832, 2597491670848)</span>
+<span class="gh">Out[52]: </span><span class="go">(3155067351296, 3155067351296, 3155067348160)</span>
 
 <span class="gp">In [53]: </span><span class="n">liste2</span> <span class="o">==</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste3</span> <span class="o">==</span> <span class="n">liste1</span>
 <span class="gh">Out[53]: </span><span class="go">(True, True)</span>
@@ -310,7 +310,7 @@
 <span class="gh">Out[65]: </span><span class="go">([1, 1000, 3], &#39;toto&#39;, &#39;tata&#39;)</span>
 
 <span class="gp">In [66]: </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># le premier élément du tuple est toujours le même</span>
-<span class="gh">Out[66]: </span><span class="go">(2597491827776, 2597491827776)</span>
+<span class="gh">Out[66]: </span><span class="go">(3155067342976, 3155067342976)</span>
 </pre></div>
 </div>
 </dd>

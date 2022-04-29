@@ -33,7 +33,7 @@ Pour expliquer la différence entre ces deux exemples, il faut comprendre la rep
     b = a
     id(a), id(b)    # les variables a et b pointent vers le même emplacement en mémoire
     a = 2
-    id(a), id(b)    # la variable b pointe toujours vers le même emplacement mais plus la variable b
+    id(a), id(b)    # la variable b pointe toujours vers le même emplacement mais plus la variable a
 
 L'instruction :code:`a = 2` a fait pointer la variable :code:`a` vers un autre emplacement en mémoire où est stocké l'entier :code:`2`.
 
@@ -98,7 +98,7 @@ Voilà la solution du mystère : toutes les variables pointant vers un même obj
 
 .. rubric:: Les opérateurs :code:`+` et :code:`+=`
 
-Le lecteur attentif aura remarqué qu'on semblerait pouvoir modifier un objet immutable telle qu'une chaîne de caractères ou une liste à l'aide des opérateurs :code:`+` ou :code:`+=`. Mais ces opérateurs ne modifient pas l'objet en question ; ils créent en fait un **nouvel** objet. On peut s'en convaincre à l'aide de la fonction :code:`id`.
+Le lecteur attentif aura remarqué qu'on semblerait pouvoir modifier un objet immutable telle qu'une chaîne de caractères ou un tuple à l'aide des opérateurs :code:`+` ou :code:`+=`. Mais ces opérateurs ne modifient pas l'objet en question ; ils créent en fait un **nouvel** objet. On peut s'en convaincre à l'aide de la fonction :code:`id`.
 
 .. ipython:: python
 
