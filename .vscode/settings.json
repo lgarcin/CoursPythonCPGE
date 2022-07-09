@@ -1,10 +1,4 @@
 {
-    "restructuredtext.linter.extraArgs": [
-        "--ignore D001",
-        "--ignore D002",
-        "--ignore D004"
-    ],
     "python.linting.enabled": true,
-    "restructuredtext.confPath": "${workspaceFolder}\\source",
-    "esbonio.sphinx.confDir": ""
+    "esbonio.sphinx.confDir": "${workspaceFolder}"
 }
