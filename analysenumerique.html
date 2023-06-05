@@ -1,102 +1,304 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.2. Analyse numérique &mdash; Documentation CoursPythonCPGE </title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
-      <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/thebelab-helper.js"></script>
-        <script src="_static/translations.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="_static/js/theme.js"></script>
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>8.2. Analyse numérique &#8212; Documentation CoursPythonCPGE </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="8.3. Arithmétique" href="arithmetique.html" />
-    <link rel="prev" title="8.1. Algorithmes de recherche" href="recherche.html" /> 
-</head>
+    <link rel="prev" title="8.1. Algorithmes de recherche" href="recherche.html" />
+  
+   
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Rechercher docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="preliminaires.html">1. Préliminaires</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="io.html">4. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">5. Rudiments d’algorithmique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theorie.html">6. Un peu de théorie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursivite.html">7. Récursivité</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="algoclassiques.html">8. Algorithmes classiques</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="recherche.html">8.1. Algorithmes de recherche</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.2. Analyse numérique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arithmetique.html">8.3. Arithmétique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="probabilites.html">8.4. Probabilités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrices.html">8.5. Matrices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tris.html">8.6. Tris</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
-</ul>
-
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#analysenumerique" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="index.html" title="Documentation CoursPythonCPGE "
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Documentation CoursPythonCPGE </span>
+          <span class="md-header-nav__topic"> 8.2. Analyse numérique </span>
         </div>
       </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">CoursPythonCPGE</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="algoclassiques.html"><span class="section-number">8. </span>Algorithmes classiques</a> &raquo;</li>
-      <li><span class="section-number">8.2. </span>Analyse numérique</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/analysenumerique.rst.txt" rel="nofollow"> Afficher la source de la page</a>
-      </li>
-  </ul>
-  <hr/>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+      </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = ""versions.json"",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Documentation CoursPythonCPGE </a></li>
+          <li class="md-tabs__item"><a href="algoclassiques.html" class="md-tabs__link"><span class="section-number">8. </span>Algorithmes classiques</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="index.html" title="Documentation CoursPythonCPGE" class="md-nav__button md-logo">
+      
+        <img src="_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="index.html"
+       title="Documentation CoursPythonCPGE">Documentation CoursPythonCPGE </a>
+  </label>
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="preliminaires.html" class="md-nav__link">1. Préliminaires</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="types_operateurs_variables.html" class="md-nav__link">2. Types, opérateurs et variables</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="types_composes.html" class="md-nav__link">3. Types composés</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="io.html" class="md-nav__link">4. Entrée/sortie</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="algorithmique.html" class="md-nav__link">5. Rudiments d’algorithmique</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="theorie.html" class="md-nav__link">6. Un peu de théorie</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="recursivite.html" class="md-nav__link">7. Récursivité</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="algoclassiques.html" class="md-nav__link">8. Algorithmes classiques</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="appendice_preuves_complexites.html" class="md-nav__link">Preuves et complexités</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="glossaire.html" class="md-nav__link">Glossaire</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#analysenumerique--page-root" class="md-nav__link">8.2. Analyse numérique</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#resolution-d-equations-par-dichotomie" class="md-nav__link">8.2.1. Résolution d’équations par dichotomie</a>
+        </li>
+        <li class="md-nav__item"><a href="#calcul-d-integrales" class="md-nav__link">8.2.2. Calcul d’intégrales</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#methode-des-rectangles" class="md-nav__link">8.2.2.1. Méthode des rectangles</a>
+        </li>
+        <li class="md-nav__item"><a href="#methode-des-trapezes" class="md-nav__link">8.2.2.2. Méthode des trapèzes</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#resolution-d-equations-differentielles" class="md-nav__link">8.2.3. Résolution d’équations différentielles</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/analysenumerique.rst.txt">Montrer le code source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
   <section id="analyse-numerique">
-<h1><span class="section-number">8.2. </span>Analyse numérique<a class="headerlink" href="#analyse-numerique" title="Lien permanent vers ce titre"></a></h1>
+<h1 id="analysenumerique--page-root"><span class="section-number">8.2. </span>Analyse numérique<a class="headerlink" href="#analysenumerique--page-root" title="Lien permanent vers cette rubrique">¶</a></h1>
 <section id="resolution-d-equations-par-dichotomie">
-<h2><span class="section-number">8.2.1. </span>Résolution d’équations par dichotomie<a class="headerlink" href="#resolution-d-equations-par-dichotomie" title="Lien permanent vers ce titre"></a></h2>
+<h2 id="resolution-d-equations-par-dichotomie"><span class="section-number">8.2.1. </span>Résolution d’équations par dichotomie<a class="headerlink" href="#resolution-d-equations-par-dichotomie" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Il s’agit ici de calculer une <em>valeur approchée</em> d’une solution d’une équation du type <span class="math notranslate nohighlight">\(f(x)=0\)</span>. On ne cherche pas à obtenir une expression exacte d’une telle solution, ce qui est de toute façon évidemment impossible de manière générale.</p>
 <p>On suppose qu’on dispose d’une fonction <span class="math notranslate nohighlight">\(f\)</span> continue et strictement monotone sur un intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> vérifiant <span class="math notranslate nohighlight">\(f(a)f(b)\leq0\)</span>. Le théorème des valeurs intermédiaires garantit l’existence d’une unique solution à l’équation <span class="math notranslate nohighlight">\(f(x)=0\)</span> sur l’intervalle <span class="math notranslate nohighlight">\([a,b]\)</span>. Pour obtenir une <em>valeur approchée</em> de cette solution, on procède par <strong>dichotomie</strong> :</p>
 <blockquote>
@@ -108,8 +310,7 @@
 <li><p>La valeur de <span class="math notranslate nohighlight">\(c\)</span> est alors une valeur appochée de la solution de <span class="math notranslate nohighlight">\(f(x)=0\)</span> à <span class="math notranslate nohighlight">\(\epsilon/2\)</span> près.</p></li>
 </ol>
 </div></blockquote>
-
-<script src="bokeh-content-38456cd99b2b441aa5b896acf16f84b7-analysenumerique.js" id="6975f80a-45c3-41b0-887b-e043ca38e541"></script><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">dicho</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">eps</span><span class="p">):</span>
+<script id="c2d5453b-e0b4-40b3-a23d-4af18d3db8b0" src="bokeh-content-5d375d4bf96a45cfb208bea2d9b97bdf-analysenumerique.js"></script><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">dicho</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">eps</span><span class="p">):</span>
 <span class="gp">   ...: </span>    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">eps</span><span class="p">:</span>
 <span class="gp">   ...: </span>        <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="gp">   ...: </span>        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
@@ -143,13 +344,12 @@
 </div>
 </section>
 <section id="calcul-d-integrales">
-<h2><span class="section-number">8.2.2. </span>Calcul d’intégrales<a class="headerlink" href="#calcul-d-integrales" title="Lien permanent vers ce titre"></a></h2>
-<p>On expose ici des algorithmes de calcul <em>approché</em> d’intégrales <a class="footnote-reference brackets" href="#quad" id="id1">1</a>. A nouveau, on ne cherche pas à obtenir des expressions exactes de ces intégrales.</p>
+<h2 id="calcul-d-integrales"><span class="section-number">8.2.2. </span>Calcul d’intégrales<a class="headerlink" href="#calcul-d-integrales" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>On expose ici des algorithmes de calcul <em>approché</em> d’intégrales <a class="footnote-reference brackets" href="#quad" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. A nouveau, on ne cherche pas à obtenir des expressions exactes de ces intégrales.</p>
 <section id="methode-des-rectangles">
-<h3><span class="section-number">8.2.2.1. </span>Méthode des rectangles<a class="headerlink" href="#methode-des-rectangles" title="Lien permanent vers ce titre"></a></h3>
+<h3 id="methode-des-rectangles"><span class="section-number">8.2.2.1. </span>Méthode des rectangles<a class="headerlink" href="#methode-des-rectangles" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>On peut approcher une intégrale par une somme d’aire de rectangles comme l’indique la figure suivante.</p>
-
-<script src="bokeh-content-805b8921909948818549a52b4b4a6ad0-analysenumerique.js" id="cbf67621-90ec-4b3b-86d7-a961fbfdb647"></script><p>Plus précisément, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de rectangles :</p>
+<script id="d7e2ddfc-9d41-4a4c-a12f-57dc30e4dda9" src="bokeh-content-353cbb594dcb478b9b32091fd7184aff-analysenumerique.js"></script><p>Plus précisément, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de rectangles :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 R_n&amp;=\frac{b-a}{n}\sum_{k=0}^{n-1}f(x_k)\approx\int_a^bf(t)\,\mathrm{dt}&amp;\text{(rectangles verts)}\\
@@ -179,13 +379,12 @@ S_n&amp;=\frac{b-a}{n}\sum_{k=1}^nf(x_k)\approx\int_a^bf(t)\,\mathrm{dt}&amp;\te
 <p>Les sommes <span class="math notranslate nohighlight">\(R_n\)</span> et <span class="math notranslate nohighlight">\(S_n\)</span> sont appelées des <em>sommes de Riemann</em> et on peut même prouver que pour une fonction <span class="math notranslate nohighlight">\(f\)</span> continue,</p>
 <div class="math notranslate nohighlight">
 \[\lim_{n\to+\infty}S_n=\lim_{n\to+\infty}T_n=\int_a^bf(t)\,\mathrm{dt}\]</div>
-<p>En particulier, l’appoximation de l’intégrale <span class="math notranslate nohighlight">\(\int_a^bf(t)\,\mathrm{dt}\)</span> est d’autant meilleure que le nombre <span class="math notranslate nohighlight">\(n\)</span> de rectangles est grand, ce qui se conçoit très bien géométriquement <a class="footnote-reference brackets" href="#erreur-arrondi-integrale" id="id2">2</a>.</p>
+<p>En particulier, l’appoximation de l’intégrale <span class="math notranslate nohighlight">\(\int_a^bf(t)\,\mathrm{dt}\)</span> est d’autant meilleure que le nombre <span class="math notranslate nohighlight">\(n\)</span> de rectangles est grand, ce qui se conçoit très bien géométriquement <a class="footnote-reference brackets" href="#erreur-arrondi-integrale" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="methode-des-trapezes">
-<h3><span class="section-number">8.2.2.2. </span>Méthode des trapèzes<a class="headerlink" href="#methode-des-trapezes" title="Lien permanent vers ce titre"></a></h3>
+<h3 id="methode-des-trapezes"><span class="section-number">8.2.2.2. </span>Méthode des trapèzes<a class="headerlink" href="#methode-des-trapezes" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>On peut également apporcher une intégrale comme une somme d’aires de trapèzes comme sur la figure suivante. Bien évidemment, l’approximation de l’intégrale est meilleure qu’avec des rectangles.</p>
-
-<script src="bokeh-content-f6c948d5abb84d6c8b3e25f55b076943-analysenumerique.js" id="b45f1e34-46fd-430c-bbe6-6d2a11527555"></script><p>A nouveau, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de trapèzes :</p>
+<script id="fabe4248-ac1d-4bf3-861b-e8d8fcd31ab6" src="bokeh-content-c809bac0db2344f28f62296afb659c7f-analysenumerique.js"></script><p>A nouveau, en posant <span class="math notranslate nohighlight">\(x_k=a+k(b-a)/n\)</span> où <span class="math notranslate nohighlight">\(n\)</span> désigne le nombre de trapèzes :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}T_n=\frac{b-a}{n}\sum_{k=0}^{n-1}\frac{f(x_k)+f(x_{k+1})}{2}\approx\int_a^bf(t)\,\mathrm{dt}\\\end{split}\]</div>
 <p>On peut évidemment remarquer que <span class="math notranslate nohighlight">\(T_n=(R_n+S_n)/2\)</span>. En fait, la somme précédente peut se réécrire de manière différente :</p>
@@ -213,8 +412,8 @@ S_n&amp;=\frac{b-a}{n}\sum_{k=1}^nf(x_k)\approx\int_a^bf(t)\,\mathrm{dt}&amp;\te
 </section>
 </section>
 <section id="resolution-d-equations-differentielles">
-<h2><span class="section-number">8.2.3. </span>Résolution d’équations différentielles<a class="headerlink" href="#resolution-d-equations-differentielles" title="Lien permanent vers ce titre"></a></h2>
-<p>L’objectif est de résoudre numériquement des équations différentielles : c’est-à-dire qu’on ne cherche pas des expressions explicites des solutions mais des valeurs approchées <a class="footnote-reference brackets" href="#odeint" id="id4">3</a>.</p>
+<h2 id="resolution-d-equations-differentielles"><span class="section-number">8.2.3. </span>Résolution d’équations différentielles<a class="headerlink" href="#resolution-d-equations-differentielles" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>L’objectif est de résoudre numériquement des équations différentielles : c’est-à-dire qu’on ne cherche pas des expressions explicites des solutions mais des valeurs approchées <a class="footnote-reference brackets" href="#odeint" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.</p>
 <p>Pour commencer, on traitera le cas de <em>problème de Cauchy</em> d’ordre 1.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left\{
@@ -235,7 +434,7 @@ y(t_3) &amp; \approx y(t_2)+y'(t_2)\Delta\!t &amp; \approx y(t_2)+f(t_2,y_2)\Del
 <p>La méthode que l’on vient de décrire porte le nom de <strong>méthode d’Euler</strong>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">pas</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">pas</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">t0</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
     <span class="n">liste_t</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span>
@@ -262,7 +461,7 @@ y(0)&amp;=1
 \right.\end{split}\]</div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span>
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span>
 <span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_y</span> <span class="o">=</span> <span class="n">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">.01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 </pre></div>
@@ -274,28 +473,27 @@ y(0)&amp;=1
 <p>On peut tracer la courbe de la solution approchée que l’on peut comparer à la courbe de la solution exacte. En effet, on montre sans peine que l’unique solution de ce problème de Cauchy est la fonction <span class="math notranslate nohighlight">\(x\mapsto e^{\sin(x)}\)</span>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Tracé de la solution approchée</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution approchée&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Solution approchée'</span><span class="p">);</span>
 
 <span class="c1"># Tracé de la solution exacte</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution exacte&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'--'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Solution exacte'</span><span class="p">);</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/analysenumerique_2_0.png" src="_images/analysenumerique_2_0.png" />
+<img alt="_images/analysenumerique_2_0.png" src="_images/analysenumerique_2_0.png"/>
 </div>
 </div>
 <p>Bien entendu, l’approximation affine <span class="math notranslate nohighlight">\(y'(t+\Delta\!t)\approx f(t)+f'(t)\Delta\!t\)</span> est d’autant meilleure que <span class="math notranslate nohighlight">\(\Delta\!t\)</span> est petit.</p>
-
-<script src="bokeh-content-f953892fb0754afeb608c2d9cfb4a10c-analysenumerique.js" id="f5dcc42c-6b00-457d-9ff7-7eb8f9178b8b"></script><p>On peut adapter la méthode au cas d’un système différentiel d’ordre 1. Soit par exemple à résoudre le système différentiel suivant.</p>
+<script id="d9cc1cd6-2bad-4e4d-89ba-1619bc03754b" src="bokeh-content-193021e835824dca9b76aaad6cd04154-analysenumerique.js"></script><p>On peut adapter la méthode au cas d’un système différentiel d’ordre 1. Soit par exemple à résoudre le système différentiel suivant.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left\{
 \begin{aligned}
@@ -306,7 +504,7 @@ y'&amp;=\sin(t)x+\cos(t)y\\
 \right.\end{split}\]</div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">X0</span><span class="p">,</span> <span class="n">pas</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">X0</span><span class="p">,</span> <span class="n">pas</span><span class="p">,</span> <span class="n">nb</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">t0</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">X0</span>
     <span class="n">liste_t</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span>
@@ -325,7 +523,7 @@ y'&amp;=\sin(t)x+\cos(t)y\\
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="p">[</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
 <span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_X</span> <span class="o">=</span> <span class="n">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">.01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 </pre></div>
@@ -336,26 +534,26 @@ y'&amp;=\sin(t)x+\cos(t)y\\
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
 
 <span class="c1"># Tracé de la solution approchée</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">liste_X</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution approchée&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">liste_X</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Solution approchée'</span><span class="p">);</span>
 
 <span class="c1"># Tracé de la solution exacte</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution exacte&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'--'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Solution exacte'</span><span class="p">);</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/analysenumerique_5_0.png" src="_images/analysenumerique_5_0.png" />
+<img alt="_images/analysenumerique_5_0.png" src="_images/analysenumerique_5_0.png"/>
 </div>
 </div>
 <p>On sait qu’il est toujours possible de ramener une équation différentielle scalaire d’ordre strictement supérieur à 1 à un système différentiel d’ordre 1.</p>
@@ -374,7 +572,7 @@ z'&amp;=-\frac{2t}{1+t^2}z-\frac{1}{(1+t^2)^2}y\\
 \end{aligned}\right.\end{split}\]</div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
 <span class="n">liste_t</span><span class="p">,</span> <span class="n">liste_X</span> <span class="o">=</span> <span class="n">euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="mf">.01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -384,28 +582,29 @@ z'&amp;=-\frac{2t}{1+t^2}z-\frac{1}{(1+t^2)^2}y\\
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Tracé de la solution approchée</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">liste_t</span><span class="p">,</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">X</span> <span class="ow">in</span> <span class="n">liste_X</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution approchée&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">liste_t</span><span class="p">,</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">X</span> <span class="ow">in</span> <span class="n">liste_X</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Solution approchée'</span><span class="p">);</span>
 
 <span class="c1"># Tracé de la solution exacte</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solution exacte&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'--'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Solution exacte'</span><span class="p">);</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/analysenumerique_7_0.png" src="_images/analysenumerique_7_0.png" />
+<img alt="_images/analysenumerique_7_0.png" src="_images/analysenumerique_7_0.png"/>
 </div>
 </div>
-<dl class="footnote brackets">
-<dt class="label" id="quad"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Le module <code class="code docutils literal notranslate"><span class="pre">scipy.integrate</span></code> dispose déjà d’une fonction <code class="code docutils literal notranslate"><span class="pre">quad</span></code> à cet effet.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="quad" role="note">
+<span class="label"><span class="fn-bracket">[</span><a href="#id1" role="doc-backlink">1</a><span class="fn-bracket">]</span></span>
+<p>Le module <code class="code docutils literal notranslate"><span class="pre">scipy.integrate</span></code> dispose déjà d’une fonction <code class="code docutils literal notranslate"><span class="pre">quad</span></code> à cet effet.</p>
 <div class="admonition-todo admonition" id="id5">
 <p class="admonition-title">À faire</p>
 <p>Renvoyer vers le chapitre scipy/numpy</p>
@@ -417,50 +616,79 @@ z'&amp;=-\frac{2t}{1+t^2}z-\frac{1}{(1+t^2)^2}y\\
 </pre></div>
 </div>
 <p>La fonction <code class="code docutils literal notranslate"><span class="pre">quad</span></code> renvoie un couple formé de l’approximation de l’intégrale et d’une majoration de l’erreur d’approximation.</p>
-</dd>
-<dt class="label" id="erreur-arrondi-integrale"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Il ne faut cependant pas crier victoire trop tôt. Tout d’abord, le temps de calcul augmente avec <span class="math notranslate nohighlight">\(n\)</span>. De plus, chaque opération dans l’algorithme entraîne une erreur d’arrondi minime mais, le nombre d’opérations augmentant avec <span class="math notranslate nohighlight">\(n\)</span>, le cumul de ces erreurs d’arrondi finit par dépasser le gain en précision lorsque <span class="math notranslate nohighlight">\(n\)</span> est très grand.</p>
-</dd>
-<dt class="label" id="odeint"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
-<dd><p>Le module <code class="code docutils literal notranslate"><span class="pre">scipy.integrate</span></code> dispose déjà d’une fonction <code class="code docutils literal notranslate"><span class="pre">odeint</span></code> à cet effet.</p>
+</aside>
+<aside class="footnote brackets" id="erreur-arrondi-integrale" role="note">
+<span class="label"><span class="fn-bracket">[</span><a href="#id2" role="doc-backlink">2</a><span class="fn-bracket">]</span></span>
+<p>Il ne faut cependant pas crier victoire trop tôt. Tout d’abord, le temps de calcul augmente avec <span class="math notranslate nohighlight">\(n\)</span>. De plus, chaque opération dans l’algorithme entraîne une erreur d’arrondi minime mais, le nombre d’opérations augmentant avec <span class="math notranslate nohighlight">\(n\)</span>, le cumul de ces erreurs d’arrondi finit par dépasser le gain en précision lorsque <span class="math notranslate nohighlight">\(n\)</span> est très grand.</p>
+</aside>
+<aside class="footnote brackets" id="odeint" role="note">
+<span class="label"><span class="fn-bracket">[</span><a href="#id4" role="doc-backlink">3</a><span class="fn-bracket">]</span></span>
+<p>Le module <code class="code docutils literal notranslate"><span class="pre">scipy.integrate</span></code> dispose déjà d’une fonction <code class="code docutils literal notranslate"><span class="pre">odeint</span></code> à cet effet.</p>
 <div class="admonition-todo admonition" id="id6">
 <p class="admonition-title">À faire</p>
 <p>Renvoyer vers le chapitre scipy/numpy</p>
 </div>
-</dd>
-</dl>
+</aside>
+</aside>
 </section>
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="recherche.html" class="btn btn-neutral float-left" title="8.1. Algorithmes de recherche" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="arithmetique.html" class="btn btn-neutral float-right" title="8.3. Arithmétique" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2018, Laurent Garcin.</p>
-  </div>
-
-  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
-    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+          </article>
         </div>
       </div>
-    </section>
+    </main>
   </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="recherche.html" title="8.1. Algorithmes de recherche"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <span class="section-number">8.1. </span>Algorithmes de recherche </span>
+              </div>
+            </a>
+          
+          
+            <a href="arithmetique.html" title="8.3. Arithmétique"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <span class="section-number">8.3. </span>Arithmétique </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2018, Laurent Garcin.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
 </html>

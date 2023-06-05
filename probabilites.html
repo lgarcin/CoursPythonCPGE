@@ -1,103 +1,303 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.4. Probabilités &mdash; Documentation CoursPythonCPGE </title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
-      <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/thebelab-helper.js"></script>
-        <script src="_static/translations.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="_static/js/theme.js"></script>
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>8.4. Probabilités &#8212; Documentation CoursPythonCPGE </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="8.5. Matrices" href="matrices.html" />
-    <link rel="prev" title="8.3. Arithmétique" href="arithmetique.html" /> 
-</head>
+    <link rel="prev" title="8.3. Arithmétique" href="arithmetique.html" />
+  
+   
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> CoursPythonCPGE
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Rechercher docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="preliminaires.html">1. Préliminaires</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_operateurs_variables.html">2. Types, opérateurs et variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types_composes.html">3. Types composés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="io.html">4. Entrée/sortie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithmique.html">5. Rudiments d’algorithmique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theorie.html">6. Un peu de théorie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recursivite.html">7. Récursivité</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="algoclassiques.html">8. Algorithmes classiques</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="recherche.html">8.1. Algorithmes de recherche</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysenumerique.html">8.2. Analyse numérique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arithmetique.html">8.3. Arithmétique</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.4. Probabilités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrices.html">8.5. Matrices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tris.html">8.6. Tris</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="appendice_preuves_complexites.html">Preuves et complexités</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossaire.html">Glossaire</a></li>
-</ul>
-
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#probabilites" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="index.html" title="Documentation CoursPythonCPGE "
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Documentation CoursPythonCPGE </span>
+          <span class="md-header-nav__topic"> 8.4. Probabilités </span>
         </div>
       </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">CoursPythonCPGE</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="algoclassiques.html"><span class="section-number">8. </span>Algorithmes classiques</a> &raquo;</li>
-      <li><span class="section-number">8.4. </span>Probabilités</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/probabilites.rst.txt" rel="nofollow"> Afficher la source de la page</a>
-      </li>
-  </ul>
-  <hr/>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+      </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = ""versions.json"",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Documentation CoursPythonCPGE </a></li>
+          <li class="md-tabs__item"><a href="algoclassiques.html" class="md-tabs__link"><span class="section-number">8. </span>Algorithmes classiques</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="index.html" title="Documentation CoursPythonCPGE" class="md-nav__button md-logo">
+      
+        <img src="_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="index.html"
+       title="Documentation CoursPythonCPGE">Documentation CoursPythonCPGE </a>
+  </label>
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="preliminaires.html" class="md-nav__link">1. Préliminaires</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="types_operateurs_variables.html" class="md-nav__link">2. Types, opérateurs et variables</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="types_composes.html" class="md-nav__link">3. Types composés</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="io.html" class="md-nav__link">4. Entrée/sortie</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="algorithmique.html" class="md-nav__link">5. Rudiments d’algorithmique</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="theorie.html" class="md-nav__link">6. Un peu de théorie</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="recursivite.html" class="md-nav__link">7. Récursivité</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="algoclassiques.html" class="md-nav__link">8. Algorithmes classiques</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="appendice_preuves_complexites.html" class="md-nav__link">Preuves et complexités</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="glossaire.html" class="md-nav__link">Glossaire</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#probabilites--page-root" class="md-nav__link">8.4. Probabilités</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#statistiques" class="md-nav__link">8.4.1. Statistiques</a>
+        </li>
+        <li class="md-nav__item"><a href="#simuler-une-variable-aleatoire" class="md-nav__link">8.4.2. Simuler une variable aléatoire</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#variables-aleatoires-finies" class="md-nav__link">8.4.2.1. Variables aléatoires finies</a>
+        </li>
+        <li class="md-nav__item"><a href="#variables-aleatoires-denombrables" class="md-nav__link">8.4.2.2. Variables aléatoires dénombrables</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/probabilites.rst.txt">Montrer le code source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
   <section id="probabilites">
-<h1><span class="section-number">8.4. </span>Probabilités<a class="headerlink" href="#probabilites" title="Lien permanent vers ce titre"></a></h1>
+<h1 id="probabilites--page-root"><span class="section-number">8.4. </span>Probabilités<a class="headerlink" href="#probabilites--page-root" title="Lien permanent vers cette rubrique">¶</a></h1>
 <section id="statistiques">
-<h2><span class="section-number">8.4.1. </span>Statistiques<a class="headerlink" href="#statistiques" title="Lien permanent vers ce titre"></a></h2>
-<p>Le calcul de la moyenne est on ne peut plus simple : il s’agit de la somme des éléments de la liste divisée par le nombre d’éléments de cette liste <a class="footnote-reference brackets" href="#numpy-moyenne" id="id1">1</a>. De manière plus formmelle, la moyenne <span class="math notranslate nohighlight">\(m\)</span> d’une liste <span class="math notranslate nohighlight">\((x_1,\dots,x_n)\)</span> de nombres est</p>
+<h2 id="statistiques"><span class="section-number">8.4.1. </span>Statistiques<a class="headerlink" href="#statistiques" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Le calcul de la moyenne est on ne peut plus simple : il s’agit de la somme des éléments de la liste divisée par le nombre d’éléments de cette liste <a class="footnote-reference brackets" href="#numpy-moyenne" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. De manière plus formmelle, la moyenne <span class="math notranslate nohighlight">\(m\)</span> d’une liste <span class="math notranslate nohighlight">\((x_1,\dots,x_n)\)</span> de nombres est</p>
 <div class="math notranslate nohighlight">
 \[m=\frac{1}{n}\sum_{k=1}^nx_k\]</div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
@@ -114,7 +314,7 @@
 <p>On peut donner deux expressions de la variance <span class="math notranslate nohighlight">\(v\)</span> d’une liste <span class="math notranslate nohighlight">\((x_1,\dots,x_n)\)</span> de nombres dont on dispose déjà de la moyenne <span class="math notranslate nohighlight">\(m\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[v = \left(\frac{1}{n}\sum_{k=1}^nx_k^2\right)-m^2 = \frac{1}{n}\sum_{k=1}^n(x_k-m)^2\]</div>
-<p>En utilisant la première expression, on peut par exemple donner cette fonction de calcul de la variance <a class="footnote-reference brackets" href="#numpy-variance" id="id2">2</a>.</p>
+<p>En utilisant la première expression, on peut par exemple donner cette fonction de calcul de la variance <a class="footnote-reference brackets" href="#numpy-variance" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="k">def</span> <span class="nf">variance</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
 <span class="gp">   ...: </span>    <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
 <span class="gp">   ...: </span>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
@@ -147,27 +347,27 @@
 </div>
 </section>
 <section id="simuler-une-variable-aleatoire">
-<h2><span class="section-number">8.4.2. </span>Simuler une variable aléatoire<a class="headerlink" href="#simuler-une-variable-aleatoire" title="Lien permanent vers ce titre"></a></h2>
+<h2 id="simuler-une-variable-aleatoire"><span class="section-number">8.4.2. </span>Simuler une variable aléatoire<a class="headerlink" href="#simuler-une-variable-aleatoire" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Dans la suite, on fera appel à la fonction <code class="code docutils literal notranslate"><span class="pre">random</span></code> du module <code class="code docutils literal notranslate"><span class="pre">random</span></code> qui renvoie un flottant tiré aléatoirement dans l’intervalle <span class="math notranslate nohighlight">\([0,1[\)</span>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
 
 <span class="gp">In [10]: </span><span class="p">[</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-<span class="gh">Out[10]: </span><span class="go"></span>
-<span class="go">[0.9605549497558362,</span>
-<span class="go"> 0.9316419672338663,</span>
-<span class="go"> 0.17376195549840023,</span>
-<span class="go"> 0.4235970909623622,</span>
-<span class="go"> 0.1606186626624898,</span>
-<span class="go"> 0.3670722212261064,</span>
-<span class="go"> 0.09160580796918094,</span>
-<span class="go"> 0.18405007471296675,</span>
-<span class="go"> 0.3436881895505287,</span>
-<span class="go"> 0.8961071402557433]</span>
+<span class="gh">Out[10]: </span>
+<span class="go">[0.5482426686157745,</span>
+<span class="go"> 0.026431151841090794,</span>
+<span class="go"> 0.25126388990526305,</span>
+<span class="go"> 0.30600886835596897,</span>
+<span class="go"> 0.5612372655336763,</span>
+<span class="go"> 0.10168486062819282,</span>
+<span class="go"> 0.4874913243778479,</span>
+<span class="go"> 0.6872614645961589,</span>
+<span class="go"> 0.9751794225826002,</span>
+<span class="go"> 0.6645486996202976]</span>
 </pre></div>
 </div>
-<p>Cela nous permettra de simuler des variables aléatoires connaissant leurs lois <a class="footnote-reference brackets" href="#numpy-random" id="id3">3</a>.</p>
+<p>Cela nous permettra de simuler des variables aléatoires connaissant leurs lois <a class="footnote-reference brackets" href="#numpy-random" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.</p>
 <section id="variables-aleatoires-finies">
-<h3><span class="section-number">8.4.2.1. </span>Variables aléatoires finies<a class="headerlink" href="#variables-aleatoires-finies" title="Lien permanent vers ce titre"></a></h3>
+<h3 id="variables-aleatoires-finies"><span class="section-number">8.4.2.1. </span>Variables aléatoires finies<a class="headerlink" href="#variables-aleatoires-finies" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>On cherche dans un premier temps à simuler une variable aléatoire <span class="math notranslate nohighlight">\(X\)</span> <strong>à valeurs dans un ensemble fini</strong>, disons <span class="math notranslate nohighlight">\(\{0,\dots,n-1\}\)</span> où <span class="math notranslate nohighlight">\(n\in\mathbb{N}^*\)</span>, dont on connaît la loi, c’est-à-dire les valeurs de <span class="math notranslate nohighlight">\(\mathbb{P}(X=k)\)</span> pour <span class="math notranslate nohighlight">\(k\in\{0,\dots,n-1\}\)</span>.</p>
 <p>On construit pour cela une fonction prenant pour argument la loi d’une telle variable aléatoire sous la forme d’une liste de réels positifs de somme 1.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="k">def</span> <span class="nf">simul</span><span class="p">(</span><span class="n">loi</span><span class="p">):</span>
@@ -181,7 +381,7 @@
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="p">[</span><span class="n">simul</span><span class="p">([</span><span class="mf">.3</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.2</span><span class="p">])</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[12]: </span><span class="go">[1, 1, 2, 1, 1, 1, 0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0]</span>
+<span class="gh">Out[12]: </span><span class="go">[0, 1, 0, 1, 0, 1, 1, 1, 2, 2, 0, 0, 2, 1, 1, 0, 1, 1, 0, 2]</span>
 </pre></div>
 </div>
 <p>On pourrait par exemple utiliser la méthode précédente pour simuler une <strong>loi binomiale</strong>.</p>
@@ -190,10 +390,10 @@
 <span class="gp">In [14]: </span><span class="n">binomiale</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">:</span> <span class="n">simul</span><span class="p">([</span><span class="n">binom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
 
 <span class="gp">In [15]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">.8</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[15]: </span><span class="go">[4, 4, 4, 4, 4, 5, 2, 5, 3, 5, 5, 4, 5, 5, 3, 4, 3, 3, 4, 4]</span>
+<span class="gh">Out[15]: </span><span class="go">[3, 5, 3, 5, 5, 5, 4, 3, 4, 4, 4, 3, 4, 3, 4, 4, 5, 4, 4, 5]</span>
 
 <span class="gp">In [16]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">.2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[16]: </span><span class="go">[1, 0, 1, 0, 2, 1, 3, 2, 1, 0, 2, 1, 1, 1, 1, 0, 0, 2, 2, 0]</span>
+<span class="gh">Out[16]: </span><span class="go">[0, 0, 2, 2, 2, 2, 1, 0, 0, 0, 3, 1, 1, 2, 1, 2, 0, 0, 1, 1]</span>
 </pre></div>
 </div>
 <p>Evidemment, il existe un méthode plus simple pour simuler une variable suivant une <strong>loi binomiale</strong> puisque l’on sait qu’elle est de même loi qu’une somme de variables de Bernoulli indépendantes.</p>
@@ -206,15 +406,15 @@
 <span class="gp">   ....: </span>
 
 <span class="gp">In [19]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">.8</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[19]: </span><span class="go">[3, 4, 3, 4, 5, 5, 4, 4, 3, 4, 5, 3, 4, 4, 5, 4, 4, 4, 4, 3]</span>
+<span class="gh">Out[19]: </span><span class="go">[4, 5, 4, 3, 4, 4, 1, 3, 2, 4, 5, 4, 4, 3, 4, 4, 3, 3, 4, 4]</span>
 
 <span class="gp">In [20]: </span><span class="p">[</span><span class="n">binomiale</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">.2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[20]: </span><span class="go">[2, 0, 1, 0, 1, 1, 1, 1, 0, 2, 1, 0, 0, 1, 1, 2, 2, 1, 0, 1]</span>
+<span class="gh">Out[20]: </span><span class="go">[1, 1, 1, 0, 1, 1, 1, 2, 1, 0, 1, 0, 1, 2, 1, 2, 0, 1, 0, 1]</span>
 </pre></div>
 </div>
 </section>
 <section id="variables-aleatoires-denombrables">
-<h3><span class="section-number">8.4.2.2. </span>Variables aléatoires dénombrables<a class="headerlink" href="#variables-aleatoires-denombrables" title="Lien permanent vers ce titre"></a></h3>
+<h3 id="variables-aleatoires-denombrables"><span class="section-number">8.4.2.2. </span>Variables aléatoires dénombrables<a class="headerlink" href="#variables-aleatoires-denombrables" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>On désire maintenant simuler une variable aléatoire <span class="math notranslate nohighlight">\(X\)</span> <strong>à valeurs dans un ensemble dénombrable</strong>, disons <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>, dont on connaît la loi, c’est-à-dire les valeurs de <span class="math notranslate nohighlight">\(\mathbb{P}(X=k)\)</span> pour <span class="math notranslate nohighlight">\(k\in\mathbb{N}\)</span>.</p>
 <p>La loi de cette variable aléatoire ne peut alors plus être représentée sous la forme d’une liste finie ; on la représente donc comme une fonction d’argument un entier <span class="math notranslate nohighlight">\(n\)</span> et renvoyant <span class="math notranslate nohighlight">\(\mathbb{P}(X=n)\)</span>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="k">def</span> <span class="nf">simul</span><span class="p">(</span><span class="n">loi</span><span class="p">):</span>
@@ -231,21 +431,21 @@
 <p>On peut utiliser cette méthode pour simuler une loi de Poisson.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">exp</span>
 
-<span class="go"># Simulation d&#39;une loi de Poisson</span>
+<span class="go"># Simulation d'une loi de Poisson</span>
 <span class="gp">In [23]: </span><span class="n">poisson</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">simul</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">l</span><span class="p">)</span> <span class="o">*</span> <span class="n">l</span><span class="o">**</span><span class="n">n</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
 <span class="gp">In [24]: </span><span class="p">[</span><span class="n">poisson</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[24]: </span><span class="go">[2, 1, 1, 1, 2, 3, 1, 2, 4, 1, 4, 2, 0, 1, 0, 2, 4, 3, 1, 0]</span>
+<span class="gh">Out[24]: </span><span class="go">[3, 2, 3, 1, 2, 2, 2, 1, 0, 2, 2, 1, 3, 2, 0, 4, 1, 0, 1, 4]</span>
 </pre></div>
 </div>
 <p>De la même manière, on peut simuler une loi géométrique.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">exp</span>
 
-<span class="go"># Simulation d&#39;une loi géométrique</span>
+<span class="go"># Simulation d'une loi géométrique</span>
 <span class="gp">In [26]: </span><span class="n">geometrique</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">simul</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span>
 
 <span class="gp">In [27]: </span><span class="p">[</span><span class="n">geometrique</span><span class="p">(</span><span class="mf">.2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[27]: </span><span class="go">[16, 8, 6, 1, 7, 2, 11, 3, 1, 3, 8, 2, 3, 14, 3, 4, 1, 5, 7, 9]</span>
+<span class="gh">Out[27]: </span><span class="go">[10, 3, 4, 6, 3, 1, 8, 1, 3, 2, 5, 1, 3, 2, 3, 5, 10, 2, 4, 1]</span>
 </pre></div>
 </div>
 <p>Bien entendu, il est plus facile d’utiliser l’interprétation de la loi géométrique comme le numéro d’un premier succès.</p>
@@ -257,12 +457,13 @@
 <span class="gp">   ....: </span>
 
 <span class="gp">In [29]: </span><span class="p">[</span><span class="n">geometrique</span><span class="p">(</span><span class="mf">.2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
-<span class="gh">Out[29]: </span><span class="go">[4, 1, 2, 8, 9, 5, 4, 16, 12, 9, 1, 2, 2, 1, 3, 3, 8, 4, 9, 8]</span>
+<span class="gh">Out[29]: </span><span class="go">[1, 4, 2, 1, 6, 6, 2, 2, 12, 2, 3, 4, 5, 3, 2, 6, 2, 4, 2, 4]</span>
 </pre></div>
 </div>
-<dl class="footnote brackets">
-<dt class="label" id="numpy-moyenne"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Evidemment, Python dispose déjà deux fonctions permettant de calculer aisément la moyenne d’une liste de nombres. On peut par exemple utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">sum</span></code> qui, comme son nom l’indique, calcule la somme des éléments d’une liste (ou plus généralement d’un objet de type itérable).</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="numpy-moyenne" role="note">
+<span class="label"><span class="fn-bracket">[</span><a href="#id1" role="doc-backlink">1</a><span class="fn-bracket">]</span></span>
+<p>Evidemment, Python dispose déjà deux fonctions permettant de calculer aisément la moyenne d’une liste de nombres. On peut par exemple utiliser la fonction <code class="code docutils literal notranslate"><span class="pre">sum</span></code> qui, comme son nom l’indique, calcule la somme des éléments d’une liste (ou plus généralement d’un objet de type itérable).</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="n">moyenne</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">liste</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 
 <span class="gp">In [31]: </span><span class="n">moyenne</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -276,53 +477,82 @@
 <span class="gh">Out[33]: </span><span class="go">2.0</span>
 </pre></div>
 </div>
-</dd>
-<dt class="label" id="numpy-variance"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Bien entendu, le module <code class="code docutils literal notranslate"><span class="pre">numpy</span></code> dipose déjà d’une fonction ad hoc : la fonction <code class="code docutils literal notranslate"><span class="pre">var</span></code>.</p>
+</aside>
+<aside class="footnote brackets" id="numpy-variance" role="note">
+<span class="label"><span class="fn-bracket">[</span><a href="#id2" role="doc-backlink">2</a><span class="fn-bracket">]</span></span>
+<p>Bien entendu, le module <code class="code docutils literal notranslate"><span class="pre">numpy</span></code> dipose déjà d’une fonction ad hoc : la fonction <code class="code docutils literal notranslate"><span class="pre">var</span></code>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [34]: </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">var</span>
 
 <span class="gp">In [35]: </span><span class="n">var</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="gh">Out[35]: </span><span class="go">0.6666666666666666</span>
 </pre></div>
 </div>
-</dd>
-<dt class="label" id="numpy-random"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>A nouveau, le module <code class="code docutils literal notranslate"><span class="pre">numpy.random</span></code> dispose déjà de fonctions permettant de simuler la plupart des lois classiques.</p>
-</dd>
-</dl>
+</aside>
+<aside class="footnote brackets" id="numpy-random" role="note">
+<span class="label"><span class="fn-bracket">[</span><a href="#id3" role="doc-backlink">3</a><span class="fn-bracket">]</span></span>
+<p>A nouveau, le module <code class="code docutils literal notranslate"><span class="pre">numpy.random</span></code> dispose déjà de fonctions permettant de simuler la plupart des lois classiques.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="arithmetique.html" class="btn btn-neutral float-left" title="8.3. Arithmétique" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="matrices.html" class="btn btn-neutral float-right" title="8.5. Matrices" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2018, Laurent Garcin.</p>
-  </div>
-
-  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
-    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+          </article>
         </div>
       </div>
-    </section>
+    </main>
   </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="arithmetique.html" title="8.3. Arithmétique"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <span class="section-number">8.3. </span>Arithmétique </span>
+              </div>
+            </a>
+          
+          
+            <a href="matrices.html" title="8.5. Matrices"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <span class="section-number">8.5. </span>Matrices </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2018, Laurent Garcin.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
 </html>
