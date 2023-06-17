@@ -1,4 +1,7 @@
 {
     "python.linting.enabled": true,
-    "esbonio.sphinx.confDir": "${workspaceFolder}"
+    "esbonio.sphinx.confDir": "${workspaceFolder}",
+    "terminal.integrated.env.windows": {
+        "PYTHONUTF8": "1"
+    }
 }

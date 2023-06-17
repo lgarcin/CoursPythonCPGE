@@ -27,7 +27,7 @@ def plot_config(config):
             y += 1
     ims.append(
         (plt.gca().add_collection(PatchCollection(patches, edgecolors='red', facecolors='blue', linewidths=5)),
-         plt.text(-N + 1, N + 1, 'It\u00e9ration ' + ' ' + str(config['iter']))))
+         plt.text(-N + 1, N + 1, 'Itération ' + ' ' + str(config['iter']))))
 
 
 class Piquet(Enum):

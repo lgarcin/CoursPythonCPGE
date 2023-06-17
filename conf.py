@@ -8,7 +8,8 @@
 
 
 # See https://bugs.python.org/issue37373 :(
-import asyncio, sys
+import asyncio
+import sys
 if sys.version_info[0] == 3 and sys.version_info[1] >= 8 and sys.platform.startswith('win'):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
@@ -18,7 +19,6 @@ if sys.version_info[0] == 3 and sys.version_info[1] >= 8 and sys.platform.starts
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import sphinx_rtd_theme
 import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
@@ -88,17 +88,22 @@ pygments_style = 'sphinx'
 
 # -- Options for HTML output -------------------------------------------------
 
+html_short_title='Python CPGE'
+html_title='Python CPGE'
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
-#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme = "sphinx_material"
+# html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'nav_title': 'Cours Python CPGE',
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -113,7 +118,9 @@ html_static_path = []
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-# html_sidebars = {}
+html_sidebars = {
+    "**": ["globaltoc.html", "localtoc.html", "searchbox.html"]
+}
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
@@ -195,8 +202,8 @@ latex_elements = {
 
 # Google API key (for bokeh)
 os.environ["GOOGLE_API_KEY"] = "AIzaSyDDqERR0JGYccAP_vlLzaKRPxrngg-xTew"
-#bokeh_plot_pyfile_include_dirs = ["_scripts"]
-#exclude_patterns = ['conf.py']
+# bokeh_plot_pyfile_include_dirs = ["_scripts"]
+# exclude_patterns = ['conf.py']
 
 
 # import _scripts.recherche_chaine

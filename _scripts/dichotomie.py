@@ -24,11 +24,11 @@ for _ in range(N + 1):
 
 source = ColumnDataSource(data=dict(la=la, lb=lb, lc=lc))
 
-p = figure(title='R\u00e9solution par dichotomie', plot_width=700, plot_height=500)
+p = figure(title='Résolution par dichotomie', width=700, height=500)
 p.title.align = 'center'
 p.line(x, y, line_width=2)
 
-slider = Slider(start=0, end=N, value=0, step=1, title="It\u00e9rations")
+slider = Slider(start=0, end=N, value=0, step=1, title="Itérations")
 spa = Span(location=la[slider.value], dimension='height',
            line_color='red', line_dash='dashed', line_width=3)
 p.add_layout(spa)

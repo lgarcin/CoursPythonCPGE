@@ -86,6 +86,6 @@ annotations = [gca().annotate(tab[i], array([i*width, 0])+array([(width-1)*.5, (
                               va='center') for i in range(N)]
 indices = [n for n in range(N)]
 
-ani = FuncAnimation(fig, animate, frames=gen, save_count=N*(N-1)/2*width*3)
+ani = FuncAnimation(fig, animate, frames=gen, save_count=N*(N-1)//2*width*3)
 close()
 ani

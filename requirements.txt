@@ -4,4 +4,4 @@ sphinxcontrib-tikz
 sphinxcontrib-programoutput
 bokeh
 scipy
-sphinx-rtd-theme
+sphinx-material

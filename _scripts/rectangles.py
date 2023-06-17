@@ -13,7 +13,7 @@ yy = f(xx)
 source = ColumnDataSource(
     dict(xleft=xx[:-1], xright=xx[1:], yleft=yy[1:], yright=yy[:-1], bottom=[0]*9))
 
-p = figure(title='M\u00e9thode des rectangles', plot_width=700, plot_height=500)
+p = figure(title='Méthode des rectangles', width=700, height=500)
 p.title.align = 'center'
 p.xgrid.grid_line_color = None
 p.ygrid.grid_line_color = None

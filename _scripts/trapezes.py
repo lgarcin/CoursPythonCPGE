@@ -14,7 +14,7 @@ xpatches = [[xx[i], xx[i+1], xx[i+1], xx[i]] for i in range(len(xx)-1)]
 ypatches = [[0, 0, yy[i+1], yy[i]] for i in range(len(yy)-1)]
 source = ColumnDataSource(dict(xpatches=xpatches, ypatches=ypatches))
 
-p = figure(title="M\u00e9thode des trap\u00e8zes", plot_width=700, plot_height=500)
+p = figure(title="Méthode des trapèzes", width=700, height=500)
 p.title.align = 'center'
 p.xgrid.grid_line_color = None
 p.ygrid.grid_line_color = None
